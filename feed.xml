@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JBake</title>
+    <link>http://jbake.org</link>
+    <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
+    <description>JBake Bootstrap Template</description>
+    <language>en-gb</language>
+    <pubDate>Tue, 1 Aug 2023 14:04:12 +0000</pubDate>
+    <lastBuildDate>Tue, 1 Aug 2023 14:04:12 +0000</lastBuildDate>
+
+    
+    <item>
+      <title>Projekt Loom ist da</title>
+      <link>http://jbake.org/blog/2023/2023-05-05-loom-threading.html</link>
+      <pubDate>Fri, 5 May 2023 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2023/2023-05-05-loom-threading.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_threading_wie_es_sein_soll_projekt_loom_ist_da&quot;&gt;Threading wie es sein soll: Projekt Loom ist da&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_virtualisierung_hilft_schon_immer&quot;&gt;Virtualisierung hilft schon immer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_und_der_weg_ins_schlamassel&quot;&gt;… und der Weg ins Schlamassel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_threads_sind_die_grundlage_der_nebenläufigkeit&quot;&gt;Threads sind die Grundlage der Nebenläufigkeit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_asynchrone_programmierung_als_notlösung&quot;&gt;Asynchrone Programmierung als Notlösung&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_projekt_loom_als_rettung&quot;&gt;Projekt Loom als Rettung&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_virtualthreads_benutzen_ist_fast_einfacher_als_vermeiden&quot;&gt;VirtualThreads: benutzen ist (fast) einfacher als vermeiden&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_anpassungen_im_eigenen_code&quot;&gt;Anpassungen im eigenen Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_angewohnheiten_hinterfragen&quot;&gt;Angewohnheiten hinterfragen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_synchron_war_nie_schlecht&quot;&gt;Synchron war nie schlecht&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_ausblick_structured_concurrency&quot;&gt;Ausblick: Structured Concurrency&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_threading_wie_es_sein_soll_projekt_loom_ist_da&quot;&gt;Threading wie es sein soll: Projekt Loom ist da&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Es ist endlich so weit - das lang ersehnte Projekt Loom hat seinen Weg in das JDK gefunden!&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Seit über fünf Jahren haben wir uns danach gesehnt, all die Krücken wie
+&lt;a href=&quot;https://www.tutorialspoint.com/java_nio/java_nio_socket_channel.htm&quot;&gt;NIO&lt;/a&gt;,
+&lt;a href=&quot;https://www.ideas2it.com/blogs/the-future-interface-the-best-way-for-asynchronous-java-programming/&quot;&gt;asynchrone Programmierung&lt;/a&gt;,
+&lt;code&gt;CompletableFutures&lt;/code&gt; und
+&lt;code&gt;&lt;a href=&quot;https://www.hackerearth.com/practice/notes/asynchronous-servlets-in-java/&quot;&gt;AsyncServlets&lt;/a&gt;&lt;/code&gt;
+hinter uns zu lassen und Java wieder so zu schreiben, wie wir es schon immer wollten.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_virtualisierung_hilft_schon_immer&quot;&gt;Virtualisierung hilft schon immer&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Auf jedem Rechner gibt es Ressourcen, die begrenzt sind. CPU-Zeit ist seit jeher eine knappe Ressource. Gleichzeitig müssen jedoch häufig viele kleine Aufgaben erledigt werden. Heutzutage verwenden wir meist API-Backends, die Anfragen über HTTP erhalten.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Sie lesen Daten, transformieren sie und verändern sie gegebenenfalls. Anschließend wird die Antwort per Netzwerk-IO gesendet. Dabei die Ressourcen effizient zu nutzen, war von Anfang an eine Herausforderung und erforderte viel manuelle Arbeit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Zum Glück hatte Edsger W. Dijkstra bereits im Jahr 1965 die brillante Idee, den Zugriff auf wertvolle Ressourcen zu virtualisieren. So bekam das
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Berkeley_Timesharing_System&quot;&gt;Berkeley Timesharing System&lt;/a&gt;
+die
+&lt;a href=&quot;http://www.serpentine.com/blog/threads-faq/the-history-of-threads/&quot;&gt;ersten Threads&lt;/a&gt;
+der Computer-Geschichte. Das Konzept war einfach: Threads sind kostengünstig und virtualisieren den Zugriff auf wertvolle Ressourcen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;//images/20230505-loom-threading/bs-threads.svg&quot; alt=&quot;Threading wie die Urahnen - mit einer CPU&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;title&quot;&gt;Figure 1. Threading wie die Urahnen - mit einer CPU&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Ein Scheduler sorgt dafür, dass blockierte Threads unterbrochen werden und andere Aufgaben ausgeführt werden können, bis die notwendigen Ressourcen verfügbar sind. Ein wahrhaft revolutionäres Konzept!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Welt hat sich seit den ersten Threads des Berkeley Timesharing Systems weiterentwickelt. „Moderne“ Betriebssysteme wie
+&lt;a href=&quot;https://de.wikipedia.org/wiki/AmigaOS&quot;&gt;AmigaOS&lt;/a&gt;
+haben das Konzept des Threading verbessert, indem sie es dem Betriebssystem erlauben, rechnende Prozesse zu unterbrechen und an anderer Stelle fortfahren zu lassen. Anders als bei
+&lt;a href=&quot;https://docs.oracle.com/cd/E19455-01/806-5257/6je9h033n/index.html&quot;&gt;User Threads in SunOS&lt;/a&gt;,
+wo der Code im Thread selbst anzeigt, wann er unterbrochen werden soll.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_und_der_weg_ins_schlamassel&quot;&gt;… und der Weg ins Schlamassel&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wir haben seitdem viel getan, um das Thread-Konzept kaputt zu bekommen. Wir nutzen gerade Netz-IO in modernen Anwendungen ganz intensiv. IO ist oft das, was diese Anwendungen am meisten machen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Und auf der anderen Seite ist die
+&lt;a href=&quot;https://www.researchgate.net/figure/CPU-performance-Historical-trends_fig1_321800076&quot;&gt;Hardware viel schneller als `65&lt;/a&gt;. Wir haben so viele Requests zu verarbeiten und die Rechner sind schnell genug. Das geht. Wir können mal eben eine Million Sockets offenhalten und damit arbeiten. Nur: das Threading selbst kommt nur mit
+&lt;a href=&quot;https://www.tutorialspoint.com/what-is-the-maximum-number-of-threads-per-process-in-linux&quot;&gt;ein paar zehntausend Threads&lt;/a&gt;
+klar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Und deswegen sind inzwischen die Threads selbst die wertvolle Ressource. Und deswegen mussten wir anfangen, die Threads selbst zu teilen, zu poolen und sie wiederzuverwenden.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Hierhin fällt der Aufstieg der
+&lt;a href=&quot;https://blog.bitsrc.io/event-based-asynchronous-programming-abb0447381eb?gi=dc11417acbc0&quot;&gt;Event-basierten IO-Bibliotheken&lt;/a&gt;.
+Netty fällt in diese Kategorie.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;//images/20230505-loom-threading/ioloop.svg&quot; alt=&quot;IO-Thread und Worker-Thread bei der Arbeit&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;title&quot;&gt;Figure 2. IO-Thread und Worker-Thread bei der Arbeit&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;IO und Worker Threads: ein speziell für IO-Operationen abgestellter Thread nimmt Daten entgegen. Dieser Thread wickelt sämtliche IO-Operationen ab. Damit entfällt auch die Notwendigkeit für Locking und Synchronisierung. Sobald Daten eingetroffen sind, werden sie in separaten Worker-Threads verarbeitet. Worker-Threads sollen selbst nie blockieren.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Es wird dabei meistens nur ein Thread (manchmal einer pro CPU)
+&lt;a href=&quot;https://medium.com/@akhaku/netty-data-model-threading-and-gotchas-cab820e4815a&quot;&gt;mit IO&lt;/a&gt;
+beauftragt. Er arbeitet mit
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Non-blocking_I/O_(Java)&quot;&gt;„non-blocking IO“&lt;/a&gt;
+, erhält also Events, sobald eine IO-Operation abgeschlossen ist. Dadurch kann ein Thread alle offenen Sockets auf einmal bearbeiten.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Sobald das IO abgeschlossen ist, wandert die Arbeit zu einem Worker-Thread weiter, der Berechnungen vornimmt. So lässt sich in unserem Beispiel bei drei gleichzeitig aktiven Requests die Thread-Zahl auf zwei reduzieren.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Der Preis dafür ist, dass die Worker-Threads selbst Bescheid geben müssen, wenn sie fertig sind. Da ist dann das „alte“ kooperative Multitasking wieder. In der Praxis spielt das aber weniger eine Rolle, weil wir mehrere Worker-Threads benutzen, als Thread-Pool.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Trotzdem – wir bezahlen gleich mehrere Preise dafür:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Für jeden Request gibt es mindestens zwei Thread-Wechsel. Und die sind teuer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sind Teile der Anwendung rechenintensiv, dann müssen wir selbst dafür sorgen, dass sie niemanden blockieren. Dann gibt es mehrere Thread-Pools.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;#8230;&amp;#8203; und wir brauchen ein kluges Threading-Konzept. Meistens heißt das, verschiedene Pools für Rechenlast, Netzwerk und File-IO einzuführen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die IO-APIs sind alles andere als einfach zu bedienen. Und immer etwas anders. Netty für Netzwerk-IO. NIO für File-IO. RDBC für den Datenbankzugriff.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_threads_sind_die_grundlage_der_nebenläufigkeit&quot;&gt;Threads sind die Grundlage der Nebenläufigkeit&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Kernkonzepte von Java basieren auf Threads. Das gilt für den Sprachkern, die VM, fürs Debugging und das Profiling.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;IO-APIs waren synchron und sind in synchroner Form heute noch am übersichtlichsten zu benutzen. Das gesamte Exception-System ergibt nur
+&lt;a href=&quot;https://stackoverflow.com/questions/67631513/short-circuiting-the-chain-of-completionstage&quot;&gt;innerhalb eines Threads&lt;/a&gt;
+wirklich Sinn. Speicherzugriffe innerhalb eines Threads sind geordnet und überschaubar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wir könnten am übersichtlichsten alle Arbeit für einen Request in einem eigenen Thread erledigen. Wir könnten einfach einen
+&lt;a href=&quot;https://dzone.com/articles/spring-webflux-eventloop-vs-thread-per-request-mod&quot;&gt;Thread pro Request starten&lt;/a&gt;,
+synchrone APIs verwenden. Aber es geht nicht, weil einfach zu wenige Threads verfügbar sind.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_asynchrone_programmierung_als_notlösung&quot;&gt;Asynchrone Programmierung als Notlösung&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Als Konsequenz opfern wir den Java-Sprachkern und verwenden reaktive Bibliotheken. Und müssen uns für Konstrukte wie Schleifen, If und Try-Catch komplett neue Konstrukte einfallen lassen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;CompletableFuture
+    .supplyAsync(info::getUrl, pool)
+    .thenCompose(url -&amp;gt; getBodyAsync(
+        pool,
+        HttpResponse.BodySubscribers.ofString(UTF_8)))
+    .thenApply(info::findImage)
+    .thenCompose(url -&amp;gt; getBodyAsync(
+        pool,
+        HttpResponse.BodySubscribers.ofByteArray()))
+    .thenApply(info::setImageData)
+    .thenAccept(this::process)
+    .exceptionally(t -&amp;gt; { t.printStackTrace(); return null; });&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;em&gt;Ohne auf den konkreten Inhalt dieses Handlers einzugehen, lässt sich die Auswirkung auf die Struktur der Programmiersprache erkennen: Das Programm wird nicht mehr in der üblichen Weise strukturiert, sondern über eine &quot;Fluent API&quot; erstellt und gestartet. Im Kern stellt das eine Monade dar, wie sie zum Beispiel aus Haskell bekannt ist. Dieses neue Sprachkonstrukt hat eine Reihe von Folgen, die interessant zu nutzen sind.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Mit all den Problemen, die daraus resultieren, dass jetzt JVM, Werkzeuge, Sprache und Tools nicht mehr so recht zusammenpassen wollen: In Stack Traces steht oft
+&lt;a href=&quot;https://www.baeldung.com/spring-debugging-reactive-streams&quot;&gt;kaum noch Hilfreiches&lt;/a&gt;.
+Mit dem Debugger durch ein reaktives Programm zu steppen ist eine Herausforderung. Und die Ursache für Lastprobleme zu finden, ist problematisch.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Diesen Programmierstil verwenden wir definitiv nicht, weil er einfacher zu verstehen wäre. Oder weil er sonst irgendwie nützlicher zu handhaben wäre.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wir verwenden diesen Programmierstil, weil wir nicht anders skalieren können.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_projekt_loom_als_rettung&quot;&gt;Projekt Loom als Rettung&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Idee hinter Projekt Loom: Threads müssen wieder so billig werden wie damals. Es darf kein Problem sein, Millionen davon zu starten.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die JVM mappt dazu ihre eigene Art von Threads, die dort VirtualThreads heißen, auf Betriebssystem-Threads. Das ist ein M:N-Mapping. Also anders als damals zu Solaris-Zeiten, als „Green Threads“ eben nur auf einen einzigen OS-Thread abgebildet werden konnten. Aber ziemlich so, wie es
+&lt;a href=&quot;https://www.poeticoding.com/spawning-processes-in-elixir-a-gentle-introduction-to-concurrency/&quot;&gt;in Erlang&lt;/a&gt;
+schon immer war. Und auch die Go-Fans lachten ja bereits über uns Java-Menschen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die JVM kann das deswegen besser als das Betriebssystem, weil es zum einen mehr Wissen besitzt (zum Beispiel über Stack-Größen und das Speichermodell) und zum anderen, weil es Threads nicht jederzeit unterbrechen kann. Stattdessen wird nur dort unterbrochen, wo es blockierende Operationen gibt. Das sind hauptsächlich IO-Operationen, aber auch dort, wo wir in unseren Programmen manuell synchronisieren.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Damit das funktioniert, gab es im Rahmen des Projekts Loom Anpassungen quer durch die JVM und die Basis-Bibliotheken. NIO wurde umgebaut. Das „alte“ IO wurde angepasst (und darf und soll damit ruhig wieder benutzt werden). Nur File-IO unter Windows ist noch ein Problem und dauert noch.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_virtualthreads_benutzen_ist_fast_einfacher_als_vermeiden&quot;&gt;VirtualThreads: benutzen ist (fast) einfacher als vermeiden&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Seit Java 19 können wir Threads sehr einfach als „virtual“ starten:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;var thread = Thread.startVirtualThread(() -&amp;gt; { ... });&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Das ist schon alles. Die JVM kümmert sich darum, dass diese VirtualThreads automatisch auf OS-Threads abgebildet werden. Normalerweise auf einen pro CPU-Kern.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In diesem VirtualThread lassen sich nach Herzens Lust blockierende Aufrufe, Locks und Sleeps in synchroner Art platzieren. Wir sollen uns keine Gedanken mehr darüber machen, wie der Wettstreit um die Ressourcen läuft.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_anpassungen_im_eigenen_code&quot;&gt;Anpassungen im eigenen Code&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Einige Code-Konstrukte spielen nicht so gut mit VirtualThreads zusammen. Wir können sie ersetzen, damit der Code noch besser skaliert.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Ganz weit vorne ist (jedenfalls derzeit) noch der „synchronized“-Block. Der hängt immer an einem OS-Thread, weil er mit Betriebssystemmitteln implementiert ist. Wir wollen ihn mit „ReentrantLock“ oder noch besser mit „StampedLock“ ersetzen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Der zweite Bereich sind JNI-Aufrufe. Die sind immer dann problematisch, wenn sie innerhalb von „synchronized“ passieren. Vor allem, wenn wir von nativem Code wieder nach Java callen, zum Beispiel bei Callbacks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Alles das muss uns aber nicht aufhalten. In den meisten Fällen machen ein paar wenige solche Stellen wenig aus.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_viele_frameworks_integrieren_virtualthreads_bereits&quot;&gt;Viele Frameworks integrieren VirtualThreads bereits&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In Spring Boot Projekten werden wir bereits dahin geführt, dass wir Threading an zentraler Stelle implementieren. So wie Spring Boot es intern auch bereits macht.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wir können heute schon dafür sorgen, dass Spring Boot auf VirtualThreads setzt:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;@Configuration
+class ConfigureVirtualThreads {
+
+    @Bean(TaskExecutionAutoConfiguration.APPLICATION_TASK_EXECUTOR_BEAN_NAME)
+    public AsyncTaskExecutor asyncTaskExecutor() {
+        return new TaskExecutorAdapter(
+                Executors.newVirtualThreadPerTaskExecutor());
+    }
+
+    @Bean
+    public TomcatProtocolHandlerCustomizer&amp;lt;?&amp;gt; protocolHandlerVirtualThreadExecutorCustomizer() {
+        return protocolHandler -&amp;gt; {
+            protocolHandler.setExecutor(
+                Executors.newVirtualThreadPerTaskExecutor());
+        };
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;em&gt;Mit der ersten Deklaration wird Spring konfiguriert. Der neue Task-Executor, den Spring an verschiedenen Stellen für asynchrone Aufrufe nutzt, erhält dafür jeweils einen neuen VirtualThread, statt wie vorher einen Thread-Pool.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;em&gt;Die zweite Deklaration konfiguriert den eingebetteten Tomcat, mit dem Spring Boot die Web-Anfragen bearbeitet. Hier ist normalerweise ebenfalls ein Threadpool hinterlegt. Mit der Konfiguration fällt dieser Pool weg und es wird jedes Mal ein neuer VirtualThread zur Bearbeitung angelegt.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Das als Configuration eingefügt und schon kommen Servlet-Requests bereits fertig als VirtualThread an.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Spring Boot hat VirtualThreads auf dem Schirm, passt immer mal wieder etwas an und ist schon recht weit damit, VirtualThreads sehr effizient zu nutzen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/micronaut-projects/micronaut-core/pull/8180&quot;&gt;Micronaut hat ebenfalls schon Support vorbereitet&lt;/a&gt;,
+der getestet werden kann.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Und für Quarkus gibt es schon
+&lt;a href=&quot;https://piotrminkowski.com/2022/10/06/quarkus-with-java-virtual-threads/&quot;&gt;sehr weitreichenden Support&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Und sogar in Wildfly 27 lässt sich VirtualThread-Support aktivieren.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_angewohnheiten_hinterfragen&quot;&gt;Angewohnheiten hinterfragen&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Mit Projekt Loom müssen wir fast nie neue Konzepte lernen. Stattdessen können wir alte Gewohnheiten ablegen:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;ThreadPools werden in den meisten Fällen keinen Mehrwert mehr bieten. Im Gegenteil fügen sie Overhead hinzu und
+&lt;a href=&quot;https://medium.com/javarevisited/is-the-thread-per-request-model-a-good-thing-after-project-loom-6d08012839e8&quot;&gt;verlangsamen den eigenen Code&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wo wir bisher Poolen, zum Beispiel um die Anzahl gleichzeitig durchgeführter Requests zu limitieren, können wir wieder (wie früher) Semaphoren beim Funktionsaufruf nutzen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_synchron_war_nie_schlecht&quot;&gt;Synchron war nie schlecht&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Und dann natürlich die Erkenntnis: für 99&amp;#160;% aller Applikationen da draußen war asynchrone Programmierung nie nötig. Auch nicht ohne Projekt Loom. Die wenigsten haben mehr als 30.000 gleichzeitige Requests pro Service-Instanz. Moderne Hardware hat damit kein Problem, auch nicht mit 30k Betriebssystem-Threads. Und weil die Stack-Größe nur virtuellen Speicher angibt, haben wir auf 64-Bit-Systemen kein Problem damit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_ausblick_structured_concurrency&quot;&gt;Ausblick: Structured Concurrency&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Bis mit Java 21 im Herbst 2023 das nächste LTS-Release aufschlägt, soll auch Structured Concurrency mit aufgenommen sein.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Damit lassen sich dann die Stellen übersichtlich angehen, bei denen innerhalb einer Aufgabe Anfragen und Berechnungen parallel erfolgen sollen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;kotlin&quot;&gt;@GetMapping(&quot;/trains&quot;)
+fun listTrainsParallel(): TrainList&amp;lt;TrainRepresentation&amp;gt; {
+    val list = StructuredTaskScope.ShutdownOnSuccess&amp;lt;List&amp;lt;Train&amp;gt;&amp;gt;().use { scope -&amp;gt;
+        scope.fork { serverA.listActiveSync() }
+        scope.fork { serverB.listActiveSync() }
+        scope.join().result().map { it.toListRepresentation() }
+    }
+    val count = StructuredTaskScope.ShutdownOnSuccess&amp;lt;Int&amp;gt;().use { scope -&amp;gt;
+        scope.fork { serverA.countActiveSync() }
+        scope.fork { serverB.countActiveSync() }
+        scope.joinUntil(Instant.now().plusSeconds(15)).result()
+    }
+    return TrainList(list, count)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;em&gt;Bei den beiden Abfragen können wir einfach (übrigens wieder als Monade) deklarieren, dass die dahinter liegenden Abfragen in separaten Threads erfolgen - im besten Fall in VirtualThreads. &quot;ShutdownOnSuccess&quot; sorgt dafür, dass das erste verfügbare Ergebnis gewinnt und alle anderen Threads beendet werden. Wir können einen Timeout mitgeben, um die Laufzeit - hier auf 15 Sekunden - zu begrenzen.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dabei ist wichtig: Es geht bei Structured Concurrency wirklich fast nur um die Lesbarkeit und Wartbarkeit. Schneller oder Ressourcen-sparender wird es dadurch nicht.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Also: Es wird spannend im Java-Ökosystem. Mit Projekt Loom werden tatsächlich die Karten neu gemischt. Endlich können wir den Programmierstil wieder so aussuchen, wie er zu unseren Gehirnen passt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+
+  </channel> 
+</rss>

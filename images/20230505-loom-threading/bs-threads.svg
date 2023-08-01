@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1289.5" height="482" overflow="hidden" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <clipPath id="clip2">
+   <rect x="345" y="237" width="48" height="48"/>
+  </clipPath>
+  <clipPath id="clip3">
+   <rect x="345" y="237" width="48" height="48"/>
+  </clipPath>
+  <clipPath id="clip5">
+   <rect x="542" y="374" width="48" height="48"/>
+  </clipPath>
+  <clipPath id="clip6">
+   <rect x="542" y="374" width="48" height="48"/>
+  </clipPath>
+  <clipPath id="clipPath601">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath607">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath613">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath619">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath625">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath631">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath637">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath643">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath649">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath655">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath661">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath667">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath673">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath679">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath685">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath691">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath697">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath703">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath709">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath715">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath721">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath727">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath733">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath739">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath745">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath751">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath757">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath763">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath769">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath775">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath781">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath787">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath793">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath799">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath805">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath811">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath817">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath823">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath829">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath835">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath841">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath847">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath853">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath859">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath865">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath871">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath877">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath883">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath889">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath895">
+   <rect width="1280" height="720"/>
+  </clipPath>
+  <clipPath id="clipPath901">
+   <rect width="1280" height="720"/>
+  </clipPath>
+ </defs>
+ <g fill="none" fill-rule="evenodd" stroke="#767171" stroke-miterlimit="8" stroke-width="2">
+  <path transform="translate(7.5,-117)" d="m254 123v428.8" clip-path="url(#clipPath901)"/>
+  <path transform="translate(7.5,-117)" d="m369 123v428.8" clip-path="url(#clipPath895)"/>
+  <path transform="translate(7.5,-117)" d="m453 123v428.8" clip-path="url(#clipPath889)"/>
+  <path transform="translate(7.5,-117)" d="m566 123v428.8" clip-path="url(#clipPath883)"/>
+  <path transform="translate(7.5,-117)" d="m698 123v428.8" clip-path="url(#clipPath877)"/>
+  <path transform="translate(7.5,-117)" d="m806 123v428.8" clip-path="url(#clipPath871)"/>
+  <path transform="translate(7.5,-117)" d="m921 123v428.8" clip-path="url(#clipPath865)"/>
+  <path transform="translate(7.5,-117)" d="m1028 123v428.8" clip-path="url(#clipPath859)"/>
+ </g>
+ <text x="37.528297" y="81" font-family="Calibri, Calibri_MSFontService, sans-serif" font-weight="400">Thread<tspan x="37.528297" y="219" font-size="24px">Thread</tspan><tspan x="37.528297" y="356" font-size="24px">Thread</tspan></text>
+ <g fill="none" fill-rule="evenodd" stroke="#4472c4" stroke-miterlimit="8" stroke-width=".66667">
+  <path transform="translate(7.5,-117)" d="m1280.5 168.5-1280 1e-4" clip-path="url(#clipPath853)"/>
+  <path transform="translate(7.5,-117)" d="m1280.5 213.5-1280 1e-4" clip-path="url(#clipPath847)"/>
+  <path transform="translate(7.5,-117)" d="m1281.5 306.5-1280 1e-4" clip-path="url(#clipPath841)"/>
+  <path transform="translate(7.5,-117)" d="m1281.5 350.5-1280 1e-4" clip-path="url(#clipPath835)"/>
+  <path transform="translate(7.5,-117)" d="m1281.5 443.5-1280 1e-4" clip-path="url(#clipPath829)"/>
+  <path transform="translate(7.5,-117)" d="m1281.5 488.5-1280 1e-4" clip-path="url(#clipPath823)"/>
+ </g>
+ <rect transform="translate(7.5,-117)" x="138" y="170" width="116" height="42" clip-path="url(#clipPath817)" fill="#9dc3e6"/>
+ <text x="172.683" y="69" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">Request <tspan x="183.41631" y="92" font-size="19px">lesen</tspan></text>
+ <rect transform="translate(7.5,-117)" x="254" y="170" width="115" height="42" clip-path="url(#clipPath811)" fill="#c5e0b4"/>
+ <text x="274.66299" y="80" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">verarbeiten</text>
+ <g transform="translate(7.5,-117)" clip-path="url(#clipPath805)">
+  <g clip-path="url(#clip2)">
+   <g clip-path="url(#clip3)">
+    <path d="m383 246c0 2.209-6.268 4-14 4s-14-1.791-14-4 6.268-4 14-4 14 1.791 14 4z"/>
+    <path d="m379 256c-0.6 0-1-0.4-1-1s0.4-1 1-1 1 0.4 1 1-0.4 1-1 1zm-10-4c-7.7 0-14-1.8-14-4v8c0 2.2 6.3 4 14 4s14-1.8 14-4v-8c0 2.2-6.3 4-14 4z"/>
+    <path d="m379 266c-0.6 0-1-0.4-1-1s0.4-1 1-1 1 0.4 1 1-0.4 1-1 1zm-10-4c-7.7 0-14-1.8-14-4v8c0 2.2 6.3 4 14 4s14-1.8 14-4v-8c0 2.2-6.3 4-14 4z"/>
+    <path d="m379 276c-0.6 0-1-0.4-1-1s0.4-1 1-1 1 0.4 1 1-0.4 1-1 1zm-10-4c-7.7 0-14-1.8-14-4v8c0 2.2 6.3 4 14 4s14-1.8 14-4v-8c0 2.2-6.3 4-14 4z"/>
+   </g>
+  </g>
+ </g>
+ <path transform="translate(7.5,-117)" d="m370.17 214.5v16.334h-1.334v-16.334zm3.333 15-4 8-4-8z" clip-path="url(#clipPath799)"/>
+ <rect transform="translate(7.5,-117)" x="369" y="170" width="297" height="42" clip-path="url(#clipPath793)" fill="#f2f2f2"/>
+ <rect transform="translate(7.5,-117)" x="804" y="171" width="115" height="42" clip-path="url(#clipPath787)" fill="#c5e0b4"/>
+ <text x="825.06299" y="81" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">verarbeiten</text>
+ <rect transform="translate(7.5,-117)" x="666" y="170" width="138" height="42" clip-path="url(#clipPath781)" fill="#ffe699"/>
+ <rect transform="translate(7.5,-117)" x="919" y="168" width="97" height="42" clip-path="url(#clipPath775)" fill="#9dc3e6"/>
+ <text x="943.97302" y="67" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">Antwort <tspan x="947.54639" y="90" font-size="19px">senden</tspan></text>
+ <rect transform="translate(7.5,-117)" x="138.5" y="170.5" width="878" height="42" clip-path="url(#clipPath769)" fill="none" stroke="#5b9bd5" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+ <path transform="translate(7.5,-117)" d="m393.61 264.76 266.23-46.454-0.229-1.3135-266.23 46.454zm265.49-42.941 7.193-5.3156-8.568-2.5653z" clip-path="url(#clipPath763)"/>
+ <rect transform="translate(7.5,-117)" x="337" y="306" width="116" height="42" clip-path="url(#clipPath757)" fill="#9dc3e6"/>
+ <text x="371.68301" y="205" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">Request <tspan x="382.41629" y="228" font-size="19px">lesen</tspan></text>
+ <rect transform="translate(7.5,-117)" x="453" y="306" width="113" height="42" clip-path="url(#clipPath751)" fill="#c5e0b4"/>
+ <text x="472.96301" y="216" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">verarbeiten</text>
+ <g transform="translate(7.5,-117)" clip-path="url(#clipPath745)">
+  <g clip-path="url(#clip5)">
+   <g clip-path="url(#clip6)">
+    <path d="m580 383c0 2.209-6.268 4-14 4s-14-1.791-14-4 6.268-4 14-4 14 1.791 14 4z"/>
+    <path d="m576 393c-0.6 0-1-0.4-1-1s0.4-1 1-1 1 0.4 1 1-0.4 1-1 1zm-10-4c-7.7 0-14-1.8-14-4v8c0 2.2 6.3 4 14 4s14-1.8 14-4v-8c0 2.2-6.3 4-14 4z"/>
+    <path d="m576 403c-0.6 0-1-0.4-1-1s0.4-1 1-1 1 0.4 1 1-0.4 1-1 1zm-10-4c-7.7 0-14-1.8-14-4v8c0 2.2 6.3 4 14 4s14-1.8 14-4v-8c0 2.2-6.3 4-14 4z"/>
+    <path d="m576 413c-0.6 0-1-0.4-1-1s0.4-1 1-1 1 0.4 1 1-0.4 1-1 1zm-10-4c-7.7 0-14-1.8-14-4v8c0 2.2 6.3 4 14 4s14-1.8 14-4v-8c0 2.2-6.3 4-14 4z"/>
+   </g>
+  </g>
+ </g>
+ <path transform="translate(7.5,-117)" d="m567.17 351.5v16.334h-1.334v-16.334zm3.333 15-4 8-4-8z" clip-path="url(#clipPath739)"/>
+ <rect transform="translate(7.5,-117)" x="567" y="306" width="75" height="42" clip-path="url(#clipPath733)" fill="#f2f2f2"/>
+ <rect transform="translate(7.5,-117)" x="424" y="445" width="115" height="42" clip-path="url(#clipPath727)" fill="#9dc3e6"/>
+ <text x="458.28299" y="343" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">Request <tspan x="469.0163" y="366" font-size="19px">lesen</tspan></text>
+ <rect transform="translate(7.5,-117)" x="539" y="445" width="27" height="42" clip-path="url(#clipPath721)" fill="#ffe699"/>
+ <rect transform="translate(7.5,-117)" x="568" y="445" width="129" height="42" clip-path="url(#clipPath715)" fill="#c5e0b4"/>
+ <text x="595.66302" y="355" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">verarbeiten</text>
+ <rect transform="translate(7.5,-117)" x="697" y="445" width="124" height="42" clip-path="url(#clipPath709)" fill="#9dc3e6"/>
+ <text x="735.073" y="343" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">Antwort <tspan x="738.64636" y="366" font-size="19px">senden</tspan></text>
+ <rect transform="translate(7.5,-117)" x="642" y="306" width="56" height="42" clip-path="url(#clipPath703)" fill="#ffe699"/>
+ <rect transform="translate(7.5,-117)" x="698" y="306" width="108" height="42" clip-path="url(#clipPath697)" fill="#c5e0b4"/>
+ <text x="715.56299" y="216" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">verarbeiten</text>
+ <rect transform="translate(7.5,-117)" x="806" y="306" width="115" height="42" clip-path="url(#clipPath691)" fill="#ffe699"/>
+ <rect transform="translate(7.5,-117)" x="921" y="306" width="107" height="42" clip-path="url(#clipPath685)" fill="#c5e0b4"/>
+ <text x="938.16302" y="216" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">verarbeiten</text>
+ <rect transform="translate(7.5,-117)" x="1028" y="306" width="98" height="42" clip-path="url(#clipPath679)" fill="#9dc3e6"/>
+ <text x="1053.17" y="205" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">Antwort <tspan x="1056.7434" y="228" font-size="19px">senden</tspan></text>
+ <rect transform="translate(7.5,-117)" x="338.5" y="307.5" width="786" height="42" clip-path="url(#clipPath673)" fill="none" stroke="#5b9bd5" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+ <rect transform="translate(7.5,-117)" x="424.5" y="444.5" width="397" height="43" clip-path="url(#clipPath667)" fill="none" stroke="#5b9bd5" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+ <path transform="translate(7.5,-117)" d="m590.95 398.59 46.509-43.07-0.9059-0.9783-46.509 43.07zm47.795-39.719 3.1518-8.3706-8.5875 2.5009z" clip-path="url(#clipPath661)"/>
+ <rect transform="translate(7.5,-117)" x="254.5" y="160.5" width="115" height="63" clip-path="url(#clipPath655)" fill="none" stroke="#548235" stroke-miterlimit="8" stroke-width="3"/>
+ <text x="267.47699" y="38" fill="#385723" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="16px" font-weight="700">CPU</text>
+ <rect transform="translate(7.5,-117)" x="453.5" y="297.5" width="115" height="63" clip-path="url(#clipPath649)" fill="none" stroke="#548235" stroke-miterlimit="8" stroke-width="3"/>
+ <text x="466.5" y="175" fill="#385723" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="16px" font-weight="700">CPU</text>
+ <rect transform="translate(7.5,-117)" x="699.5" y="297.5" width="107" height="63" clip-path="url(#clipPath643)" fill="none" stroke="#548235" stroke-miterlimit="8" stroke-width="3"/>
+ <text x="712.29999" y="175" fill="#385723" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="16px" font-weight="700">CPU</text>
+ <rect transform="translate(7.5,-117)" x="921.5" y="297.5" width="107" height="63" clip-path="url(#clipPath637)" fill="none" stroke="#548235" stroke-miterlimit="8" stroke-width="3"/>
+ <text x="934.09998" y="175" fill="#385723" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="16px" font-weight="700">CPU</text>
+ <rect transform="translate(7.5,-117)" x="806.5" y="160.5" width="115" height="63" clip-path="url(#clipPath631)" fill="none" stroke="#548235" stroke-miterlimit="8" stroke-width="3"/>
+ <text x="819.50098" y="38" fill="#385723" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="16px" font-weight="700">CPU</text>
+ <rect transform="translate(7.5,-117)" x="567.5" y="434.5" width="132" height="64" clip-path="url(#clipPath625)" fill="none" stroke="#548235" stroke-miterlimit="8" stroke-width="3"/>
+ <text x="580.47699" y="312" fill="#385723" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="16px" font-weight="700">CPU</text>
+ <rect transform="translate(7.5,-117)" x="1179" y="505" width="84" height="21" clip-path="url(#clipPath619)" fill="#9dc3e6"/>
+ <text x="1220.2" y="405" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">IO</text>
+ <rect transform="translate(7.5,-117)" x="1179" y="528" width="84" height="21" clip-path="url(#clipPath613)" fill="#c5e0b4"/>
+ <text x="1199.37" y="428" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">rechnet</text>
+ <rect transform="translate(7.5,-117)" x="1179" y="551" width="84" height="21" clip-path="url(#clipPath607)" fill="#ffe699"/>
+ <text x="1203.54" y="450" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">wartet</text>
+ <rect transform="translate(7.5,-117)" x="1179" y="574" width="84" height="21" clip-path="url(#clipPath601)" fill="#f2f2f2"/>
+ <text x="1197.78" y="473" fill="#3b3838" font-family="Calibri, Calibri_MSFontService, sans-serif" font-size="19px" font-weight="400">Leerlauf</text>
+</svg>
