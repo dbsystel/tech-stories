@@ -1,0 +1,856 @@
+/**
+ * Bahn-NG theme
+ */
+
+/**
+ * Typography
+ *****************************************************************************/
+
+@font-face {
+  font-family: 'DB Screen Head';
+  src: local('DB Screen Head Regular'),
+    url('../fonts/dbscreenhead-regular.woff2') format('woff2'),
+    url('../fonts/dbscreenhead-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DB Screen Head';
+  src: local('DB Screen Head Black'),
+    url('../fonts/dbscreenhead-black.woff2') format('woff2'),
+    url('../fonts/dbscreenhead-black.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DB Screen Head';
+  src: local('DB Screen Head Black'),
+    url('../fonts/dbscreenhead-black.woff2') format('woff2'),
+    url('../fonts/dbscreenhead-black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+  --db-accordion---paddingLeft: 2rem;
+}
+
+.bahn.ng p {
+  color: var(--color-cool-gray-700);
+  font-family: 'DB Screen Sans';
+  line-height: 24px;
+}
+
+.bahn.ng a {
+  color: var(--color-cool-gray-700);
+  font-family: 'DB Screen Sans';
+  line-height: 24px;
+}
+.bahn.ng a:hover {
+  color: var(--color-cyan-600);
+}
+
+.bahn.ng a.navlink {
+  color: var(--color-cool-gray-700);
+  font-family: 'DB Screen Sans';
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+
+.bahn.ng h2,
+.bahn.ng h1 {
+  color: black;
+  font-family: 'DB Screen Head';
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 28px;
+  position: relative;
+  margin-bottom: 55px;
+}
+.bahn.ng h2::after,
+.bahn.ng h1::after {
+  position: absolute;
+  bottom: -30px;
+  width: 80px;
+  height: 8px;
+  background-image: url(../images/Pulse_red_100px_rgb.svg);
+  content: '';
+  left: 0;
+}
+
+.bahn.ng h3 {
+  color: var(--color-cool-gray-700);
+  font-family: 'DB Screen Head';
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+/**
+ * Navigation bar
+ *****************************************************************************/
+.bahn.ng #document-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.bahn.ng #document-meta p {
+  margin: 0;
+  font-size: smaller;
+}
+@media only screen and (min-width: 768px) {
+  .bahn.ng #published-info {
+    text-align: right;
+  }
+}
+
+.td-navbar {
+  min-height: 68px;
+}
+
+.bahn.ng .navbar {
+  /* No bottom padding so that red bottom line can be shown for selected items. */
+  padding-bottom: 0;
+  /* The three parts of the navbar (title+logo, menu items, search box) should be spaced apart. */
+  justify-content: space-between;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-cool-gray-100);
+  box-shadow: 0 0 20px rgb(0 0 0 / 40%);
+}
+
+/* Title on the top left */
+.bahn.ng .navbar-brand {
+  font-family: DB Screen Head;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--color-cool-gray-700);
+  margin-right: auto;
+}
+
+/* DB Logo on the top left */
+.bahn.ng .navbar-brand .navbar-logo {
+  padding-left: 56px;
+  background-image: url('../images/db_logo.svg');
+  background-position: left center;
+  background-size: 40px 28px;
+  background-repeat: no-repeat;
+}
+
+.bahn.ng .navbar-brand .font-weight-bold {
+  /* override the 700!important of main.js */
+  font-weight: 300 !important;
+}
+
+/**
+ * Menu items in navigation bar
+ *****************************************************************************/
+
+.bahn.ng .td-navbar-nav-scroll {
+  /* Prevent left margin from aligning all menu items to the right. */
+  margin-left: 0px !important;
+  /* Stretch vertically in row container so that red/gray bottom border of enclosed
+       .nav-links are displayed at the very bottom. */
+  align-self: stretch;
+}
+
+.bahn.ng .navbar-nav {
+  height: 100%;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+@media (max-width: 991.98px) {
+  .bahn.ng .td-navbar .td-navbar-nav-scroll {
+    height: unset;
+  }
+  .bahn.ng .td-navbar .td-navbar-nav-scroll .navbar-nav {
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  .bahn.ng .td-navbar .td-navbar-nav-scroll {
+    max-width: 100%;
+    height: unset;
+    margin-top: 0.25rem;
+    overflow: hidden;
+    font-size: 0.875rem;
+  }
+  .bahn.ng .td-navbar .td-navbar-nav-scroll ul.navbar-nav {
+    padding-bottom: 0;
+    overflow-y: hidden;
+  }
+}
+@media (max-width: 500px) {
+  .bahn.ng .td-navbar .td-navbar-nav-scroll ul.navbar-nav .nav-item {
+    padding-bottom: 0;
+    overflow-y: hidden;
+  }
+}
+
+/* The enclosing <li> elements. */
+.bahn.ng .nav-item {
+  height: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* A navigation link element (<a> element). */
+.bahn.ng .nav-link {
+  color: var(--color-cool-gray-700);
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+/* Non-active links that the mouse hovers over show a gray bottom border and highlighted text. */
+.bahn.ng :not(.nav-link.active).nav-link:hover {
+  color: var(--color-cool-gray-900);
+  transform: scale(1.1, 1);
+  border-bottom: 3px solid var(--color-cool-gray-200);
+}
+
+/* The active link has a red bottom border. */
+.bahn.ng .nav-link.active {
+  color: var(--color-cool-gray-700);
+  height: 100%;
+  border-bottom: 3px solid var(--color-red); /* red bottom border for active items */
+}
+.bahn.ng .nav-link:hover,
+.bahn.ng .nav-link:focus {
+  color: var(--color-cool-gray-900);
+}
+
+/* Menu texts. */
+.bahn.ng .nav-link {
+  font-family: DB Screen Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+/* Search box in top bar */
+.bahn.ng .td-search-input {
+  max-width: 200px;
+  border-radius: 3px;
+  padding-left: 38px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background: url('../db-ui-icons/ic-db_search_24.svg') left no-repeat;
+  background-position-x: 10px;
+  background-size: 22px 22px;
+  background-color: var(--color-cool-gray-133);
+  border-bottom: 1px solid var(--color-cool-gray-400);
+}
+
+.bahn.ng .td-search-input::placeholder {
+  color: var(--color-cool-gray-500);
+}
+
+@media (max-width: 768px) {
+  .bahn.ng .td-sidebar__search {
+    justify-content: space-between;
+  }
+  .bahn.ng .td-sidebar__search input[type='search'] {
+    width: 100%;
+  }
+}
+
+/**
+ * Sidebar
+ */
+.bahn.ng .td-sidebar {
+  background: var(--color-cool-gray-100);
+}
+.bahn.ng td-sidebar-link__section {
+  display: none;
+}
+.bahn.ng .td-main > .row {
+  min-height: calc(100vh - 80px);
+}
+
+/**
+ * Scroll bar
+ */
+.bahn.ng #toc.toc::-webkit-scrollbar-thumb,
+div.toc-menu::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+}
+.bahn.ng #toc.toc,
+div.toc-menu {
+  scrollbar-width: thin;
+}
+
+.bahn.ng ol.breadcrumb {
+  font-size: smaller;
+}
+.td-sidebar-nav {
+  overflow-x: none;
+}
+.bahn.ng .td-sidebar-nav > .td-sidebar-nav__section {
+  padding: 0;
+}
+.bahn.ng .td-sidebar-nav__section > ul {
+  padding-left: 0;
+}
+.bahn.ng .td-sidebar-nav__section li a {
+  margin-left: 1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.bahn.ng nav.td-sidebar-nav__section-title {
+  padding-left: 1em;
+}
+.bahn.ng nav ul > li.without-child:has(a.active) {
+  background-color: var(--color-cool-gray-200);
+  border-left: 2px solid var(--color-red);
+}
+.bahn.ng .td-sidebar-nav__section-title a.active {
+  font-weight: normal;
+}
+.bahn.ng .td-sidebar-nav__section-title a:hover {
+  font-weight: bold;
+}
+.bahn.ng span.label {
+  margin-left: 1em;
+}
+.bahn.ng ul > li.with-child a.td-sidebar-link.td-sidebar-link__section {
+  padding-left: 1em !important;
+}
+#td-section-nav > ul > li > .td-sidebar-link {
+  text-transform: uppercase;
+  margin-left: 1em;
+  margin-top: 2em;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+#td-section-nav {
+  max-height: calc(100vh - 64px);
+  position: sticky;
+  top: 64px;
+}
+@media (min-width: 768px) {
+  .td-sidebar-nav {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+}
+
+/* scrollbar style */
+#td-section-nav {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-cool-gray-300) var(--color-cool-gray-300);
+}
+#td-section-nav::-webkit-scrollbar {
+  width: 6px;
+}
+#td-section-nav::-webkit-scrollbar-track {
+  background: var(--color-cool-gray-100);
+}
+#td-section-nav::-webkit-scrollbar-thumb {
+  background-color: var(--color-cool-gray-300);
+  border-radius: 20px;
+}
+
+/**
+ * Breadcrumbs
+ */
+.bahn.ng .breadcrumb-item:not(:first-child)::before {
+  content: '\203A';
+  font-size: 1.5em;
+  line-height: 1;
+}
+.bahn.ng .breadcrumb-item a {
+  z-index: 1;
+}
+
+/**
+ * Feedback buttons
+ */
+.bahn.ng button.feedback--answer {
+  color: var(--color-cool-gray-800);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0.375rem 1rem;
+  background-color: transparent;
+  box-shadow: 0 0 0 1px var(--color-cool-gray-600);
+}
+.bahn.ng button.feedback--answer:disabled {
+  opacity: 0.3;
+}
+.bahn.ng button.feedback--answer:not(:disabled):hover,
+.bahn.ng button.feedback--answer:not(:disabled):focus {
+  background-color: rgba(19, 24, 33, 0.25);
+}
+
+/* Content ASCIIDOC */
+.bahn.ng main .paragraph > .title {
+  color: var(--color-cool-gray-800);
+}
+
+/*
+ * page
+ */
+@media (min-width: 768px) {
+  .bahn.ng .td-sidebar__inner {
+    height: 100%;
+  }
+  .bahn.ng .td-toc {
+    top: 0;
+    padding-top: 5rem;
+    height: unset;
+  }
+}
+.bahn.ng .td-toc {
+  border-left: 0;
+}
+.bahn.ng .td-toc #toc {
+  border-bottom: 0;
+}
+.bahn.ng .td-toc #toc .sectlevel1 > li > a {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.bahn.ng .td-toc #toc .sectlevel1 a {
+  border-left: 1px solid var(--color-cool-gray-300);
+  padding-left: 1em;
+}
+.bahn.ng .td-toc #toc .sectlevel1 a:hover,
+.bahn.ng .td-toc #toc .sectlevel1 a.active {
+  border-left: 2px solid var(--color-red);
+}
+.bahn.ng .td-toc #toc .sectlevel2 {
+  margin-left: 0;
+}
+.bahn.ng .td-toc #toc .sectlevel2 li {
+  margin-left: 0;
+}
+.bahn.ng .td-toc #toc .sectlevel2 li > a:hover,
+.bahn.ng .td-toc #toc .sectlevel2 li > a.active {
+  border-left: 2px solid var(--color-red);
+}
+
+/*
+ * landing page
+ */
+@media (min-width: 768px) {
+  .bahn.ng main.landing-page {
+    padding-top: 5.5rem;
+  }
+}
+.bahn.ng main.landing-page {
+  display: block;
+  background-color: #f0f3f5;
+}
+.bahn.ng main.landing-page p {
+  font-size: 16px;
+}
+.bahn.ng main.landing-page > section {
+  padding: 1em 0;
+}
+.bahn.ng main.landing-page > section:nth-of-type(2) {
+  background-color: #d7dce1;
+  padding: 90px 0;
+}
+
+.bahn.ng h1,
+.bahn.ng h2,
+.bahn.ng h3,
+.bahn.ng h4 {
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+.bahn.ng h1,
+.bahn.ng h2,
+.bahn.ng h3 {
+  font-weight: 900;
+}
+.bahn.ng h1,
+.bahn.ng h2 {
+  margin-bottom: 3.5rem;
+}
+.bahn.ng h1 {
+  font-family: 'DB Screen Head', Helvetica, Arial, sans-serif;
+  font-size: 2.25rem;
+  line-height: 1.1111111111;
+}
+.bahn.ng h2 {
+  font-family: 'DB Screen Head', Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.1666666667;
+}
+.bahn.ng h3 {
+  font-family: 'DB Screen Head', Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.bahn.ng h4 {
+  font-family: 'DB Screen Sans', Helvetica, Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.3333333333;
+}
+.bahn.ng h5 {
+  font-family: 'DB Screen Sans', Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.3333333333;
+}
+
+@media (min-width: 768px) {
+  h2[id]:before,
+  h3[id]:before,
+  h4[id]:before,
+  h5[id]:before {
+    display: none;
+  }
+}
+
+.bahn.ng .cards {
+  display: flex;
+  gap: 1em;
+}
+@media (max-width: 768px) {
+  .bahn.ng .cards {
+    flex-wrap: wrap;
+  }
+}
+.bahn.ng .card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 8%), 0 5px 30px rgb(0 0 0 / 5%);
+  width: 100%;
+}
+.bahn.ng .card figure {
+  display: flex;
+  margin: 1rem 1rem 1rem 0.5rem;
+}
+.bahn.ng .card figcaption {
+  margin-left: 1rem;
+  max-width: 60ch;
+}
+.bahn.ng .card .card-title {
+  font-family: 'DB Screen Sans';
+  color: #131821;
+  font-size: 18px;
+  font-weight: bold;
+}
+.bahn.ng .card p {
+  color: #282d37;
+  word-break: break-word;
+}
+
+/*
+ * footer
+ */
+.bahn.ng footer.bg-dark {
+  min-height: unset;
+  background-color: var(--color-cool-gray-800) !important;
+}
+
+.bahn.ng footer a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+.bahn.ng footer a:hover {
+  color: var(--color-cool-gray-100);
+}
+
+/* asciidoc content */
+.bahn.ng main .sidebarblock {
+  background-color: var(--color-cool-gray-100);
+}
+.bahn.ng main .listingblock pre {
+  background-color: var(--color-cool-gray-100);
+  padding: 1em 1.5em;
+  border-radius: 6px;
+}
+.bahn.ng main pre,
+.bahn.ng main code {
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+.bahn.ng .td-content .highlight {
+  margin-top: 0;
+}
+.bahn.ng main table.tableblock.grid-all {
+  border: 1px solid var(--color-cool-gray-300);
+}
+.bahn.ng main .ulist ul {
+  margin: 0;
+  padding: 0 2em;
+}
+.bahn.ng main a,
+.bahn.ng .blogtag a,
+.bahn.ng .text-link,
+.bahn.ng .feedback--response a {
+  display: inline-block;
+  text-underline-offset: 0.1875rem;
+  text-decoration: underline;
+}
+.bahn.ng main a.anchor {
+  position: relative;
+  text-decoration: none;
+}
+.bahn.ng main .quoteblock .attribution {
+  text-align: right;
+}
+.bahn.ng .subheader,
+.bahn.ng .admonitionblock td.content > .title,
+.bahn.ng .exampleblock > .title,
+.bahn.ng .imageblock > .title,
+.bahn.ng .videoblock > .title,
+.bahn.ng .listingblock > .title,
+.bahn.ng .literalblock > .title,
+.bahn.ng .openblock > .title,
+.bahn.ng .paragraph > .title,
+.bahn.ng .quoteblock > .title,
+.bahn.ng .sidebarblock > .title,
+.bahn.ng .tableblock > .title,
+.bahn.ng .verseblock > .title,
+.bahn.ng .dlist > .title,
+.bahn.ng .olist > .title,
+.bahn.ng .ulist > .title,
+.bahn.ng .qlist > .title,
+.bahn.ng .hdlist > .title,
+.bahn.ng .tableblock > caption {
+  color: var(--color-cool-gray-800);
+}
+
+.bahn.ng .conum {
+  background-color: var(--color-cool-gray-600);
+  letter-spacing: 0;
+}
+
+/* Admonitions */
+.bahn.ng main .admonitionblock > table td.content {
+  color: unset;
+}
+.bahn.ng main .admonitionblock.caution > table .title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+.bahn.ng main .admonitionblock.warning > table .title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-yellow-700);
+}
+.bahn.ng main .admonitionblock.important > table .title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-violett-600);
+}
+.bahn.ng main .admonitionblock.tip > table .title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-green-600);
+}
+.bahn.ng main .admonitionblock.note > table .title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-cyan-600);
+}
+
+/* Text anchor */
+.bahn.ng #content h1 > a.anchor:before,
+.bahn.ng h2 > a.anchor:before,
+.bahn.ng h3 > a.anchor:before,
+.bahn.ng #toctitle > a.anchor:before,
+.bahn.ng .sidebarblock > .content > .title > a.anchor:before,
+.bahn.ng h4 > a.anchor:before,
+.bahn.ng h5 > a.anchor:before,
+.bahn.ng h6 > a.anchor:before {
+  content: '#';
+  font-size: 1.2em;
+  display: block;
+  margin-top: 0.2em;
+  vertical-align: baseline;
+}
+
+/* Details / Summary (Accordion) */
+.bahn.ng main details {
+  border-bottom: 1px solid #d7dce1;
+  padding-left: var(--db-accordion---paddingLeft);
+  padding-right: 1rem;
+}
+
+.bahn.ng main summary {
+  align-items: center;
+  display: flex;
+  padding-block: 0.75rem;
+  transform: translateX(calc(var(--db-accordion---paddingLeft) * -1));
+  width: calc(100% + var(--db-accordion---paddingLeft) + 1rem);
+}
+.bahn.ng main summary::before {
+  margin-left: 0.875rem;
+  margin-inline-end: 0.7rem;
+  content: '';
+  display: inline-block;
+  font-family: 'Font Awesome 5 Free' !important;
+  transition: transform 0.4s;
+}
+.bahn.ng main details[open] summary::before {
+  transform: rotate(90deg);
+}
+.bahn.ng main summary + p {
+  margin-top: 0;
+}
+
+/* fix footer base style */
+.bahn.ng #footnotes .footnote {
+    padding: 0;
+    margin-left: 0;
+    text-indent: 0;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  .bahn.ng #toc.toc,
+  .bahn.ng .toc-menu {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+  }
+  .bahn.ng #toc ul.sectlevel1 {
+    margin-bottom: 0;
+  }
+}
+
+.bahn.ng main a.bare {
+  overflow-wrap: anywhere;
+}
+
+
+
+/* Print styles */
+@page {
+  margin: 25mm;
+}
+@media print {
+  body.bahn.ng {
+    font-family: 'DB Office';
+    line-height: 1.3;
+    padding: 0;
+  }
+  .bahn.ng a[href]:after {
+    content: '';
+  }
+
+  .bahn.ng .columns-2 {
+    columns: 2;
+    column-gap: 4rem;
+  }
+  .bahn.ng .columns-3 {
+    columns: 2;
+    column-gap: 4rem;
+  }
+  .bahn.ng .columns-4 {
+    columns: 2;
+    column-gap: 4rem;
+  }
+  .bahn.ng .paragraph p {
+    text-align: justify;
+    margin-bottom: 0.7rem;
+  }
+  .bahn.ng #toc {
+    display: none;
+  }
+  .bahn.ng .footer {
+    display: none;
+  }
+
+  .bahn.ng h1,
+  .bahn.ng h2,
+  .bahn.ng h3,
+  .bahn.ng h4 {
+    color: #0087b9 !important;
+  }
+  .bahn.ng .rea-main .elm-headline,
+  .bahn.ng #wrap > .content .elm-headline,
+  .bahn.ng #wrap > .content h1,
+  .bahn.ng #wrap > .content h2,
+  .bahn.ng #wrap > .content h3,
+  .bahn.ng #wrap > .content h4,
+  .bahn.ng #wrap > .content h5,
+  .bahn.ng #wrap > .content h6 {
+    margin-bottom: 0.2rem;
+    font-weight: normal !important;
+  }
+  .bahn.ng h3 ~ div.paragraph {
+    padding-left: 0;
+  }
+
+  .bahn.ng .no-print {
+    display: none;
+  }
+  .bahn.ng #forkme {
+    display: none;
+  }
+
+  .bahn.ng #wrap > .content {
+    padding-top: 0px;
+  }
+
+  .bahn.ng ul {
+    margin-left: 0;
+  }
+
+  .bahn.ng .ulist ul li p::before {
+    content: '–';
+  }
+
+  .bahn.ng #footnotes {
+    columns: 2;
+    column-gap: 4rem;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  .bahn.ng a.footnote {
+    text-decoration: none;
+  }
+
+  .bahn.ng .only-print {
+    display: initial !important;
+  }
+
+  .bahn.ng .td-main main {
+    min-width: 100%;
+    padding: 0 !important;
+  }
+
+  .bahn.ng #published-info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    width: 100%;
+    font-size: larger;
+  }
+}
+@media not print {
+  .bahn.ng .only-print {
+    display: none;
+  }
+}
+
+h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before {
+  display: block;
+  content: " ";
+  visibility: hidden;
+}
+a[href^="//"]:after,
+a[href^="http://"]:after,
+a[href^="https://"]:after {
+  content: url(../images/ic-db_link-external_20.svg);
+  margin: 0 0 0 0;
+}

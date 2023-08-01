@@ -1,0 +1,83 @@
+/* SPECIAL CSS RULES FOR DB SYSTEL TECH STORIES BLOG */
+
+div.bg-light {
+  background-color: rgba(127, 180, 224, 0.3) !important;
+}
+
+/* for blog posts */
+span.blogtag {
+  border-radius: 10px;
+  color: white;
+  padding: 5px 10px;
+}
+
+span.blogblogtag a {
+  color: white;
+  padding: 0;
+}
+
+span.blogtag span {
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: #30638E;
+}
+
+div.td-toc {
+  height: calc(100vh - 5rem) !important;
+}
+
+div#toctitle {
+  display: none
+}
+
+#td-section-nav {
+  padding: 0;
+}
+
+.td-page-meta {
+  font-size: smaller;
+  line-height: 1.1;
+}
+
+#td-section-nav ul.td-sidebar-nav__section {
+  margin: 0;
+  padding: 0;
+}
+
+.match {
+  font-size: smaller;
+}
+
+.admonitionblock td.icon .fa:before {
+  font-size: xxx-large;
+}
+
+section {
+  margin-top: 2em;
+}
+h3.card-title {
+  margin-top: 0px !important;
+}
+
+/* Share buttons (LinkedIn, Twitter etc) */
+.increase-zindex {
+  position: relative;
+  z-index: 1;
+}
+a.tag {
+  font-family: DB Screen Sans;
+  xfont-size: .75rem;
+  font-style: normal;
+  xfont-weight: 400;
+  line-height: 1.4;
+  border-radius: 4px;
+  color: var(--color-cool-gray-800) !important;
+  display: inline-block;
+  line-height: 1.25rem;
+  margin-bottom: .5rem;
+  padding: 0 8px;
+  background-color: var(--color-cool-gray-200);
+  text-decoration: none !important;
+  border: 1px solid var(--color-cool-gray-600)
+}
