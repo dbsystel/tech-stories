@@ -1,0 +1,90 @@
+:jbake-title: Search
+:jbake-menu: -
+:jbake-type: page
+:jbake-status: published
+:jbake-order: 0
+:jbake-type: page
+
+== lokale Suche
+
+https://codersblock.com/blog/mini-previews-for-links/
+
+++++
+<script type="text/javascript" src="js/lunr.js"></script>
+<script type="text/javascript" src="lunrjsindex.js"></script>
+<script type="text/javascript" src="js/lunrsearch.js"></script>
+<style>
+div#searchresults h3 {
+    font-size: larger;
+    margin-top: 0 !important;
+}
+div#searchresults h4 {
+    font-size: large;
+}
+div#searchresults span {
+    font-size: small;
+}
+div#searchresults span.menu {
+    font-size: medium;
+    margin-top: 1em;
+}
+</style>
+<script>
+function dosearch(element) {
+    if (element.value.length>=3) {
+        var searchresults = document.querySelector('#searchresults');
+        out = "";
+        var results = idx.search(element.value);
+        if (results.length == 0) {
+            results = idx.search(element.value+"*");
+        }
+        if (results.length == 0) {
+            results = idx.search("*"+element.value+"*");
+        }
+        if (results.length == 0) {
+            results = idx.search(element.value+"~1");
+        }
+        var lastMenu = ""
+        var lastTitle = ""
+        results.forEach(function (item) {
+            var doc = documents[item.ref];
+            out += "<span class='menu'>"+doc.menu+"</span>";
+            if (doc.menu != lastMenu) {
+                lastMenu = doc.menu;
+            }
+            out += "<h3><a href='" + doc.uri + "#:~:text=" + element.value + "'>" + doc.title + "</a></h3>";
+            for(var field in item.matchData.metadata) {
+                console.log(field);
+                var matches = item.matchData.metadata[field]
+                if (matches['text']) {
+                    matches['text']['position'].forEach(function (pos) {
+                        var subtext = doc.text.substring(pos[0]-50,pos[0]+pos[1]+50);
+                        if (pos[0]>0) {
+                            subtext = subtext.replace(new RegExp(/^[^ ]*/,"i"),"...");
+                        }
+                        subtext = subtext.replace(new RegExp(/[^ ]*$/,"i"),"...");
+                        var re = new RegExp(field,"gi");
+                        subtext = subtext.replace(re,"<b>$&</b>");
+                        out += "<span class='foundtext'>" + subtext + "</small><br />";
+                    })
+                }
+
+            }
+            searchresults.innerHTML = out;
+        })
+
+    }
+
+}
+</script>
+<input type="text" id="lunrsrc" onkeyup="dosearch(this);" onchange="dosearch(this);"/>
+<div id="searchresults">
+</div>
+<script>
+    var input = document.querySelector("#lunrsrc");
+    input.focus();
+    var params = new URLSearchParams(window.location.search);
+    input.value = params.get('q');
+    dosearch(input);
+</script>
+++++

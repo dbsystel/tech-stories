@@ -1,0 +1,22 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Bertram Fey
+
+++++
+<style>
+span.profile img {
+border: 5px solid red;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+
+image:profiles/Bertram-Fey.jpeg[float=right,role=profile]
+
