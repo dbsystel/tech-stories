@@ -1,0 +1,11 @@
+:jbake-title: Übersicht
+:jbake-type: news
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-order: 100000000
+
+//wird über das news.gsp-template gerendert
+
+== Übersicht
+
+Willkommen auf dem Tech-Blog der DB-Systel.
