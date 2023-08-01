@@ -1,0 +1,17 @@
+We are committed to fostering a welcoming, respectful, and harassment-free environment. Be kind!
+
+== Releasing
+
+Content is being drafted and reviewed in the DB-internal Git instance while deployment takes place via its GitHub representation and GitHub pages.
+
+In order to keep things clean, we only push the `main` branch to GitHub:
+
+[source,bash]
+----
+git remote add github git@github.com:dbsystel/tech-stories.git <1>
+
+git checkout main
+git pull origin main
+git push github main
+----
+<1> You only have to do this once
