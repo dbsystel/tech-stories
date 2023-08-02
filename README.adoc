@@ -1,6 +1,6 @@
 = Tech-Stories
 
-This repository contains the sources for the DB Systel Tech-Blog called "Tech-Stories".
+This repository contains the sources for the DB Systel https://www.dbsystel.de/dbsystel/ueber-uns/Tech-Stories[Tech-Blog called "Tech-Stories"].
 
 All code is licensed under link:LICENCE[Apache-2.0], Copyright 2023 by DB Systel GmbH.
 
