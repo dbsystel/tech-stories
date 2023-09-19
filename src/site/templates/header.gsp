@@ -8,6 +8,16 @@ a[href^="https://"]:after {
 }
 
 </style>
+<%
+// for markdown content
+def metakeys="menu order teaser-image title author discussion card tags".split()
+metakeys.each { key ->
+    if (content['jbake-'+key] && !content[key]) {
+        content[key] = content['jbake-'+key]
+        System.out.println key
+    }
+}
+%>
     <%
         //let's fix the context root
         if (content.rootpath) {

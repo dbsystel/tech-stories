@@ -1,4 +1,4 @@
-image: ${dockerHub}doctoolchain/doctoolchain:v2.2.1
+image: ${dockerHub}doctoolchain/doctoolchain:v3.0.2
 
 pages:
   tags:
