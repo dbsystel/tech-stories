@@ -17,7 +17,7 @@ a.tag {
   border: 1px solid var(--color-cool-gray-600)
 }
 </style>
-<section>
+<section style="margin-top: 0px;">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 col-sm-12">
@@ -28,7 +28,7 @@ a.tag {
         </p>
       </div>
       <div class="col-md-6 d-none d-md-block pl-5">
-        <img src="images/home.png" alt="" />
+        <img style="max-height:40vh;" src="images/home.png" alt="" />
       </div>
     </div>
     <div class="row justify-content-center d-lg-none">
@@ -41,7 +41,7 @@ a.tag {
     <div class="cards">
       <div class="card">
         <figure>
-          <img style="max-height: 80px" src="images/ic-db-il_travel_dog.svg" />
+          <img style="max-height: 80px" src="images/all.svg" />
           <figcaption>
             <h3 class="card-title">Alle Beiträge</h3>
             <p>
@@ -52,7 +52,7 @@ a.tag {
       </div>
       <div class="card">
         <figure>
-          <img style="max-height: 80px" src="images/ic-db-il_travel_dog.svg" />
+          <img style="max-height: 80px" src="images/topics.svg" />
           <figcaption>
             <h3 class="card-title">Themen</h3>
             <p>
@@ -70,7 +70,7 @@ a.tag {
       </div>
       <div class="card">
         <figure>
-          <img style="max-height: 80px" src="images/ic-db-il_travel_dog.svg" />
+          <img style="max-height: 80px" src="images/author.svg" />
           <figcaption>
             <h3 class="card-title">Autoren</h3>
             <p>

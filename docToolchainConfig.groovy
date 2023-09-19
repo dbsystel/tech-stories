@@ -102,7 +102,8 @@ styling supported by <a href="https://db-ui.github.io/">DB UI Core</a>, theme ba
     // the base url for code files in github
     // Example: https://github.com/doctoolchain/doctoolchain/edit/master/src/docs
     branch = System.getenv("DTC_PROJECT_BRANCH")?:'-'
-    gitRepoUrl = 'https://github.com/dbsystel/tech-stories/edit/master/src/docs'
+    gitRepoUrl = 'https://github.com/dbsystel/tech-stories/edit/main/src/docs'
+
 
     //
     // the location of the landing page

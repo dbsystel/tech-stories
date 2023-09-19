@@ -9,7 +9,7 @@
 :jbake-author: Bertram Fey
 :icons: font
 :source-highlighter: highlight.js
-:jbake-teaser-image: 20230505-loom-threading/teaser.png
+:jbake-teaser-image: topics/dev.png
 
 ifndef::imagesdir[:imagesdir: ../../images]
 
