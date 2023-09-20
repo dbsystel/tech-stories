@@ -1,0 +1,41 @@
+:jbake-title: Spock und AsciiDoc
+:jbake-card: Spock und AsciiDoc - vom Test zur Spezifikation und zurück
+:jbake-date: 2020-12-09
+:jbake-type: post
+:jbake-tags: testing, spock, asciidoc
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Ralf D. Mueller
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/devops.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Spock und AsciiDoc - vom Test zur Spezifikation und zurück
+
+Spock ist ein Testframework für Webanwendungen, mit dem man unter Anderem den Behavior Driven Development Ansatz, kurz BDD, verfolgen kann.
+
+++++
+<!-- teaser -->
+++++
+
+Der Product Owner beschreibt das Verhalten einer Applikation und der Entwickler überprüft es über einen automatischen Test.
+Dem Entwickler reicht die Ausgabe "PASSED" oder "FAILED", denn er kennt ja den Code seiner Tests.
+
+Wäre es nicht cool, wenn auch der Product Owner ein verständliches Dokument bekäme?
+Kein Problem!
+Wir generieren über ein Template einfach einen Test-Report in AsciiDoc und fügen weitere erklärende Texte hinzu um eine les- und ausführbare Spezifikation zu erhalten.
+Screenshots aller wichtigen Schritte bereichern die Spezifikation weiter. 
+Sollte aber die Spezifikation nicht am Anfang stehen?
+Und warum Spezifikation, wenn wir agil sein wollen? Richtig!
+
+Stellen wir also eine iterative Feature-Beschreibung an den Anfang und
+verfeinern diese mit automatischen Tests um am Ende eine gut lesbare und verifizierbare Spezifikation des Verhaltens unseres Systems zu erhalten!
+Die Vorteile liegen auf der Hand – die Vorgehensweise verbessert die Kommunikation zwischen Product Owner und Entwicklern und
+am Ende bekommen wir ein Dokument welches Ihre wertvolle Software korrekt und überprüfbar beschreibt.
+
+https://www.ittage.informatik-aktuell.de/programm/2020/spock-und-asciidoc-vom-test-zur-spezifikation-und-zurueck.html[IT-Tage 2020, online]
+
+https://speakerdeck.com/rdmueller/spock-und-asciidoc-vom-test-zur-spezifikation-und-zuruck-eb532905-8b2e-4e79-831f-026d504e559c[Spock_AsciiDoc-ITTage2020.pdf]
