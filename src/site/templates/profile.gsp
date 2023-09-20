@@ -25,19 +25,20 @@
 			</div>
 			<main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
 				<%include "main.gsp"%>
-				<% content.myPosts = published_posts.findAll{it.author=='Bertram Fey'} %>
-				<%include "posts.gsp"%>
-				<% if (config.site_issueUrl && config.site_feedbackForm != 'false') {%>
-				<%include "feedback.gsp" %>
-				<% } %>
-
+            <% content.myPosts = published_posts.findAll{it.author==content.author} %>
 			<%
-			def allTags = []
-			content.myPosts.each { post ->
-			    allTags += post.tags
-			}
-			out << allTags.unique()
+                def allTags = []
+                content.myPosts.each { post ->
+                    allTags += post.tags
+                }
+                def tags = []
+                allTags.unique().forEach { tag ->
+                    tags += "<a class='tag' href='${content.rootpath}tags/${tag}.html'>$tag</a>"
+                }
+                out << tags.join(' ')
 			%>
+				<%include "posts.gsp"%>
+
 			</main>
 		</div>
 	</div>

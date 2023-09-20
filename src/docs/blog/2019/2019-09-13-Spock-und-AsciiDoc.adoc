@@ -1,6 +1,6 @@
 :jbake-title: Spock und AsciiDoc
 :jbake-card: Spock und AsciiDoc - vom Test zur Spezifikation und zurück
-:jbake-date: 2020-12-09
+:jbake-date: 2019-09-13
 :jbake-type: post
 :jbake-tags: testing, spock, asciidoc
 :jbake-status: published
@@ -15,7 +15,7 @@ ifndef::imagesdir[:imagesdir: ../../images]
 
 == Spock und AsciiDoc - vom Test zur Spezifikation und zurück
 
-Spock ist ein Testframework für Webanwendungen, mit dem man unter Anderem den Behavior Driven Development Ansatz, kurz BDD, verfolgen kann.
+Spock ist ein Testframework für Webanwendungen, mit dem man unter anderem den Behavior Driven Development Ansatz, kurz BDD, verfolgen kann.
 
 ++++
 <!-- teaser -->
@@ -36,6 +36,17 @@ verfeinern diese mit automatischen Tests um am Ende eine gut lesbare und verifiz
 Die Vorteile liegen auf der Hand – die Vorgehensweise verbessert die Kommunikation zwischen Product Owner und Entwicklern und
 am Ende bekommen wir ein Dokument welches Ihre wertvolle Software korrekt und überprüfbar beschreibt.
 
-https://www.ittage.informatik-aktuell.de/programm/2020/spock-und-asciidoc-vom-test-zur-spezifikation-und-zurueck.html[IT-Tage 2020, online]
+=== Slides und Video
 
-https://speakerdeck.com/rdmueller/spock-und-asciidoc-vom-test-zur-spezifikation-und-zuruck-eb532905-8b2e-4e79-831f-026d504e559c[Spock_AsciiDoc-ITTage2020.pdf]
+[cols="2", width=100%]
+|===
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/1ac034287b8d429d8e0dde25de0f6a66" title="Spock and AsciiDoc - ein perfektes Paar" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+
+a|
++++++
+<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube.com/embed/ebc6Xa-HC48?si=nyh6Drt45gNdbj2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
++++++
+|===

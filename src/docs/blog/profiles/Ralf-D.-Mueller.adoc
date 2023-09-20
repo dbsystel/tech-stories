@@ -3,6 +3,7 @@
 :jbake-type: profile
 :jbake-order: 1
 :sectanchors:
+:jbake-author: Ralf D. Mueller
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == Ralf D. Müller
@@ -10,14 +11,14 @@ ifndef::imagesdir[:imagesdir: ../../images]
 ++++
 <style>
 span.profile img {
-border: 5px solid red;
+border: 5px solid #288ABF;
 border-radius: 10px;
 max-width: 100px;
 }
 </style>
 ++++
 
-image:profiles/Ralf-D.-Müller.jpeg[float=right,role=profile]
+image:profiles/Ralf-D.-Mueller.png[float=right,role=profile]
 
 Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach.
 

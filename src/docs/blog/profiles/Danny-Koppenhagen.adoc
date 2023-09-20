@@ -3,6 +3,7 @@
 :jbake-type: profile
 :jbake-order: 1
 :sectanchors:
+:jbake-author: Danny Koppenhagen
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == Danny Koppenhagen
@@ -10,7 +11,7 @@ ifndef::imagesdir[:imagesdir: ../../images]
 ++++
 <style>
 span.profile img {
-border: 5px solid red;
+border: 5px solid #288ABF;
 border-radius: 10px;
 max-width: 100px;
 }
