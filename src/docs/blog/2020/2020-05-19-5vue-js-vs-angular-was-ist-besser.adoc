@@ -1,4 +1,4 @@
-:jbake-title: Vue.js vs. Angular
+:jbake-title: Vue.js vs Angular
 :jbake-card: Vue.js vs. Angular: Was ist besser?
 :jbake-date: 2020-05-19
 :jbake-type: video
