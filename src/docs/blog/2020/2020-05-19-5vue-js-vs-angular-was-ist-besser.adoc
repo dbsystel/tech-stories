@@ -1,0 +1,61 @@
+:jbake-title: Vue.js vs. Angular
+:jbake-card: Vue.js vs. Angular: Was ist besser?
+:jbake-date: 2020-05-19
+:jbake-type: video
+:jbake-tags: angular
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Danny Koppenhagen
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/dev.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Vue.js vs. Angular: Was ist besser?
+
+Heute zu Gast bei #000000 #c0ffee – Der Tech-Talk der DB Systel.
+
+++++
+<!-- teaser -->
+++++
+
+Von Techies für Techies: Danny Koppenhagen
+Danny ist Frontend-Entwickler mit den Schwerpunkten Angular und
+Vue.js und einer der Autoren des Buches
+„Angular — Grundlagen, fortgeschrittene Themen und Best Practices“.
+Im dx.house Berlin berät er außerdem Kunden und
+Teams in den Themen User Experience von Enterprise-Lösungen.
+Er engagiert sich in der Web Community der DB Systel und
+ist Mitglied im Themen Team Web der Architekturgilde.
+Dort erarbeitet er Architektur-Standards für alle Themen Web.
+Im Interview spricht er über seine Erfahrungen mit Vue.js und Angular.
+Er geht darauf ein, welches Framework sich für welche Anwendungszwecke eignet.
+So bietet Vue.js hauptsächlich Vorteile,
+wenn es um die Integration in bestehende Anwendungen handelt und
+das Team gerne JavaScript einsetzt.
+Angular ist im Enterprise-Umfeld für neue Anwendungen interessant,
+da es auf TypeScript aufsetzt, ein umfangreiches Ökosystem mitbringt und
+zum Beispiel Migrationsguides und
+Templating-Fähigkeiten über sogenannte Schematics mitbringt.
+Außerdem erläutert Danny wie der aktuelle Stand der Technik für Progressive Webapps (PWA) ist.
+Hier kommt es darauf an, ob alle benötigten Features des Betriebssystems angesprochen werden können.
+Falls nicht, sollte in Erwägung gezogen werden eine native App zu entwickeln.
+Im dritten Teil sprechen wir über die Anbindung von APIs.
+Um die Orchestrierung von APIs zu vereinfachen,
+kann hier das Architekturmuster Backend For Frontends zum Einsatz kommen.
+Das vereinfacht den Zugriff aus der Anwendung,
+da die Anbindung der APIs nicht einzeln im Frontend implementiert werden muss.
+Erfahre mehr zum Thema:    • #000000 #c0ffee Tech-Talk  
+
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="video-iframe" frameborder="0" src="https://youtu.be/O3bYfZ8tcLc" title="Vue.js vs. Angular: Was ist besser?" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+|===

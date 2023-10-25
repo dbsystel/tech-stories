@@ -1,0 +1,32 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Danny Koppenhagen
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Danny Koppenhagen
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+
+image:profiles/Danny-Koppenhagen.png[float=right,role=profile]
+
+Danny is an experienced frontend architect at https://www.dbsystel.de/dbsystel-en[DB Systel GmbH] which is the digital partner of the biggest German railway company https://www.deutschebahn.com/[Deutsche Bahn]. He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language https://angular-buch.com/[Angular book].
+
+=== Links
+
+* https://techhub.social/@k9n[Mastodon Profile]
+* https://twitter.com/d_koppenhagen[X (formerly known as Twitter) Profile]
+* https://github.com/d-koppenhagen[GitHub Profile]
+* https://k9n.dev/[Personal Website]
+
