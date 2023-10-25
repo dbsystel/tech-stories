@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="de">
+<head>
+<style>
+a[href^="//"]:after,
+a[href^="http://"]:after,
+a[href^="https://"]:after {
+    content: "" !important;
+    margin: 0 0 0 0;
+}
+
+</style>
+
+    
+    <script>var toRoot = '../../';</script>
+    <!-- blog/2023/2023-08-21-vue2-vue3-migration.html -->
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="jbake" name="generator">
+    <meta content="INDEX, FOLLOW" name="ROBOTS">
+
+    <title>Migrate Vue 2 to Vue 3</title>
+    <meta content="How we migrated our Vue 2 enterprise project to Vue 3" property="og:title">
+    <meta content="" property="og:description">
+    <meta content="website" property="og:type">
+    <meta content="Tech-Stories" property="og:site_name">
+    <meta content="docToolchain" itemprop="name">
+    <meta content="build your dev docs the easy way..." itemprop="description">
+    <meta content="summary" name="twitter:card">
+    <meta content="docToolchain" name="twitter:title">
+    <meta content="build your dev docs the easy way..." name="twitter:description">
+
+    <link as="style" href="../../css/main.min.docsy.css" rel="preload">
+    <link href="../../css/main.min.docsy.css" integrity="" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+    <link href="../../css/bahn-ng-theme.css" rel="stylesheet">
+    <link href="../../css/tabbed-blocks.css" rel="stylesheet">
+    <link href="../../css/tech-stories.css" rel="stylesheet">
+
+    <!-- favicon generated with https://www.favicon-generator.org/ -->
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="../../apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="../../js/jquery-3.5.1.min.js"></script>
+
+
+    <link rel="stylesheet" href="../../css/micrositemaster.db-ui-core.css" rel="stylesheet">
+
+</head>
+
+<body onload="prettyPrint()" class="td-section bahn ng">
+<header>
+  
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="../../index.html">
+      <span class="navbar-logo"></span><span
+          class="font-weight-bold">Tech-Stories</span>
+  </a>
+  <div class="td-navbar-nav-scroll ml-auto mx-lg-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      
+    </ul>
+  </div>
+  <div class="navbar-nav d-none d-lg-block" >
+    
+  </div>
+</nav>
+
+</header>
+<div class="container-fluid">
+  <div class="td-main">
+    <div class="row flex-xl-nowrap">
+      <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+        <div class="td-sidebar__inner" id="td-sidebar-menu">
+          
+        <form class="td-sidebar__search d-flex align-items-center d-lg-none" action="../../search.html">
+
+            <input aria-label="Suchen" name="q" autocomplete="off" class="form-control td-search-input"
+                   placeholder="Suchen" type="search">
+
+
+            <button aria-controls="td-docs-nav" aria-expanded="false"
+                    aria-label="Toggle section navigation" class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" data-target="#td-section-nav"
+                    data-toggle="collapse" type="button">
+            </button>
+        </form>
+
+        <nav class="collapse td-sidebar-nav" id="td-section-nav" >
+
+            <ul class="td-sidebar-nav__section">
+                <li class="td-sidebar-nav__section-title">
+                    <span class="align-left pl-0 pr-2 pt-2 active td-sidebar-link td-sidebar-link__section">Blog</span>
+                </li>
+                <ul>
+                    <li class="collapse show" id="docs">
+                        
+                        <ul class="td-sidebar-nav__section ul-0">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/index.html">Übersicht</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2023</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section active"
+                                   href="../../blog/2023/2023-08-21-vue2-vue3-migration.html">Migrate Vue 2 to Vue 3</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-05-05-loom-threading.html">Projekt Loom ist da</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2019</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2019/2019-09-13-Spock-und-AsciiDoc.html">Spock und AsciiDoc</a>
+                            </li>
+                        </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        </nav>
+
+        </div>
+      </div>
+      <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+        <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+          
+
+        <a href="https://github.com/dbsystel/tech-stories/edit/main/src/docs/blog/2023/2023-08-21-vue2-vue3-migration.adoc"
+           target="_blank"><i class="fa fa-edit fa-fw"></i> Improve this doc</a>
+
+
+        <a href="https://github.com/dbsystel/tech-stories/issues/new?issue%5Btitle%5D=Docs%3A+Feedback+for+%27Migrate+Vue+2+to+Vue+3%27&issue%5Bdescription%5D=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page: https://github.com/dbsystel/tech-stories/edit/main/src/docs/blog/2023/2023-08-21-vue2-vue3-migration.adoc%0A%23branch: main" target="_blank"><i
+                class="fab fa-github fa-fw"></i> Create an issue</a>
+
+        
+        <hr />
+
+<!--script>
+    var discussionId = 1076;
+    alert(discussionId);
+</script>
+
+
+<script>
+
+    function showNumberOfComments() {
+        console.log("DiscussionId: 1076");
+
+        const query = `
+            query {
+                repository(owner: "docToolchain", name: "docToolchain") {
+                    discussion(number: 1076) {
+                        comments {
+                            totalCount
+                        }
+                    }
+                }
+            }
+        `;
+
+        fetch('https://api.github.com/graphql', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer GITHUB_TOKEN',
+        },
+        body: JSON.stringify({ query }),
+        })
+        .then((response) => response.json())
+        .then((data) => document.getElementById("noOfComments").innerHTML = data.data.repository.discussion.comments.totalCount);
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        showNumberOfComments();
+    });
+
+</script-->
+<div id="noOfComments" style="border: solid 0px red; font-size: 16pt;"></div>
+
+
+
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_how_we_migrated_our_vue_2_enterprise_project_to_vue_3">How we migrated our Vue 2 enterprise project to Vue 3</a>
+<ul class="sectlevel2">
+<li><a href="#_about_me_and_my_team">About me and my Team</a></li>
+<li><a href="#_where_we_started">Where we started</a></li>
+<li><a href="#_preparations">Preparations</a></li>
+<li><a href="#_migrations_before_the_migration">Migrations before the migration</a></li>
+<li><a href="#_finally_migrate_to_vue_3">Finally: Migrate to Vue 3</a></li>
+<li><a href="#_post_migration_steps">Post-Migration-Steps</a></li>
+<li><a href="#_conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+        </div>
+      </div>
+      <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+        <!-- Date, Author -->
+        <p class="increase-zindex">
+          <em>21 August 2023,
+          <a href="../../blog/profiles/Danny-Koppenhagen.html">Danny Koppenhagen</a></em>
+        </p>
+        <!-- Share buttons above headline -->
+        
+<div class="increase-zindex">
+    <span style="font-size: x-large;">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdbsystel.github.io%2Ftech-stories%2Fblog%2F2023%2F2023-08-21-vue2-vue3-migration.html&text=How+we+migrated+our+Vue+2+enterprise+project+to+Vue+3" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdbsystel.github.io%2Ftech-stories%2Fblog%2F2023%2F2023-08-21-vue2-vue3-migration.html" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdbsystel.github.io%2Ftech-stories%2Fblog%2F2023%2F2023-08-21-vue2-vue3-migration.html" target="_blank"><i class="fab fa-facebook"></i></a>
+    </span>
+</div>
+
+        <!-- Content -->
+        
+<div class="sect1">
+<h2 id="_how_we_migrated_our_vue_2_enterprise_project_to_vue_3">How we migrated our Vue 2 enterprise project to Vue 3</h2><img src='../../images/profiles/Danny-Koppenhagen.png' style='float:right;max-width: 10em; margin-left: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>It&#8217;s been a while:
+Since the 2nd February 2022, Vue 3 became the new default for Vue.js apps.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>It&#8217;s done! Vue 3 is now the default version and the brand new <a href="http://vuejs.org" class="bare">http://vuejs.org</a> is live! More details in the blog post in case you missed it:
+<a href="https://blog.vuejs.org/posts/vue-3-as-the-new-default.html" class="bare">https://blog.vuejs.org/posts/vue-3-as-the-new-default.html</a></p>
+</div>
+<div class="paragraph">
+<p><strong><em><a href="https://twitter.com/vuejs/status/1490592213184573441?s=20&amp;t=sXiVzjkn_9nfgrYgrBK8SQ">Tweet from @vuejs on Twitter</a></em></strong></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>It was a long journey to the final default release of Vue 3 since the first version published on 18th September 2020.
+But: even if Vue 3 isn&#8217;t a new thing anymore, there are still a lot of Vue 2 apps which haven&#8217;t been migrated yet.
+The migration can be quite heavy since in practice it&#8217;s much more than only following the migration guide.
+Projects usually rely also on 3rd-party dependencies which are maybe not available for Vue 3 or not maintained anymore.</p>
+</div>
+<div class="paragraph">
+<p>In this blog post I will give you an insight into how my team mastered the migration and what pitfalls we faced.
+I will describe how we planned and migrated our whole Vue 2 codebase to Vue 3 using Pinia as Store-Solution, Vite for our build environment and Vitest for fast unit test executions.
+The focus of this article is not to provide a very detailed step-by-step migration guide.
+I will focus about what things you should keep in mind, what you can already do before starting the migration and about some pitfalls we pointed out.
+However, I will provide you links to more detailed blog posts about specific topics.
+Please keep in mind, that the way we solved the migration won&#8217;t probably fit to your very specific setup for 100%, but you can check what parts seem to be good for you and your team.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Vue 2 EOL:</strong> Please note, that the Vue 2 support will end on December 31st, 2023.
+This means there will be no fixes and features provided anymore (unless you are <a href="https://v2.vuejs.org/lts/">actively extending the support</a>)</p>
+</div>
+</blockquote>
+</div>
+<div class="sect2">
+<h3 id="_about_me_and_my_team">About me and my Team</h3>
+<div class="paragraph">
+<p>To give you a high level overview about our context, I would just like to say a few short words about myself and my team.
+I am working at <a href="https://www.dbsystel.de/dbsystel-en">DB Systel GmbH</a>, in a DevOps Team building a Business-to-Government (B2G) solution together with our partner <a href="https://www.deutschebahnconnect.com">Deutsche Bahn Connect GmbH</a> named <a href="https://www.deutschebahnconnect.com/en/products/curbside-management"><strong><em>DB Curbside Management</em></strong></a>.
+Our product focuses on helping cities and councils to effectively manage shared mobility offerings and their jurisdictions dynamically.
+They will be able to get insights about statistics, violations of agreements with the mobility providers to regulate a fair and steady distribution of all the different shared mobility vehicles across managed area.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_where_we_started">Where we started</h3>
+<div class="paragraph">
+<p>My team added the migration to Vue 3 with the new default setup and tools using <a href="https://vitejs.dev">Vite</a>, <a href="https://pinia.vuejs.org">Pinia</a> and <a href="https://vitest.dev">Vitest</a> to our backlog many months ago, but the switch to Vue 3 as default gave us another push for facing the migration.
+We realized pretty fast, that a <em>big-bang</em> migration wouldn&#8217;t be possible for us, since it will block us releasing new features for quite a long time.
+Our codebase contained already ~200 Vue 2 components using the old-fashioned Options API as well as a huge Vuex Store and some libraries that aren&#8217;t compatible with Vue 3.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_preparations">Preparations</h3>
+<div class="paragraph">
+<p>Let&#8217;s start with the preparation of your team and questions you should answer yourself before starting the migration.</p>
+</div>
+<div class="paragraph">
+<p>The first thing you should do is to get comfy with Vue 3, and you should learn about the differences compared to Vue 2 and the options you have.
+You can set up a Vue 3 playground app locally and explore yourself the new setup and components.
+To know what things will change when starting the migration, I would recommend you the read the following articles in advance:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Official Vue 2 to Vue 3 <a href="https://v3-migration.vuejs.org">Migration Guide</a></p>
+</li>
+<li>
+<p>Blogpost: <a href="https://crisp.chat/blog/vuejs-migration">"Vue.js: How to Migrate a large project from Vue 2 to Vue 3"</a> from <a href="https://twitter.com/baptistejamin">Baptiste Jamin</a></p>
+</li>
+<li>
+<p>Official Vue 3 notes about the <a href="https://vuejs.org/guide/extras/composition-api-faq.html#what-is-composition-api">Composition API</a> and the relationship / differences compared to the Options API</p>
+</li>
+<li>
+<p>Vue Master Blog-Series by Andy Li <a href="https://www.vuemastery.com/blog/vue-3-migration-build">Part 1</a> | <a href="https://www.vuemastery.com/blog/migration/">Part 2</a></p>
+</li>
+<li>
+<p>Free Vue Mastery Video Course <a href="https://www.vuemastery.com/courses/from-vue2-to-vue3/from-vue-2-to-vue-3">"From Vue 2 to Vue 3"</a></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_update_to_the_latest_minor_vue_2_version">Update to the latest minor Vue 2 version</h4>
+<div class="paragraph">
+<p>My first advice is to keep your current app as up-to-date as possible.
+Especially when your Vue version is below <code>2.7.x</code>, I would recommend you to update it.
+With Vue <code>2.7.x</code> "Naruto" release, the Vue team aimed to backport lots of features from Vue 3 to Vue 2 without introducing a breaking change.
+This will help you to migrate some things in preparation for a smooth Vue 3 switch.
+Check out the <a href="https://blog.vuejs.org/posts/vue-2-7-naruto.html">official announcement</a> and start migrating to the Vue 3 flavour in your Vue 2 app:</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_typescript_or_not">TypeScript or not?</h4>
+<div class="paragraph">
+<p>Are you using TypeScript right now or do you plan to migrate to TypeScript?
+In that case you should read the <a href="https://vuejs.org/guide/typescript/overview.html">TypeScript Notes for Vue 3</a>.
+Generally I would highly recommend to use TypeScript as the Vue 2 and Vue 3 TypeScript integration is great.
+It will help you a lot to reduce runtime errors as hard debugging nights by analyzing bugs in production.
+Be prepared, that switching to Typescript might require quite an effort, but it&#8217;s still worth it.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_check_your_dependencies">Check your dependencies</h4>
+<div class="paragraph">
+<p>A big thing you definitely have to check before is: dependencies.
+You should check if you are using packages that will rely on Vue 2 and won&#8217;t be available for Vue 3.
+Such dependencies will require your attention as they may block you from updating to Vue 3.
+In my previous project we weren&#8217;t able to update to Vue 3 a long time since we had a dependency to <a href="https://bootstrap-vue.org">BootstrapVue</a> which wasn&#8217;t working with Vue 3 and isn&#8217;t still.
+In such case where a package isn&#8217;t compatible you have the following options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Check if there is an equivalent package or a fork of your dependency that will support Vue 3. If there is one: be sure it&#8217;s still maintained and alive.</p>
+</li>
+<li>
+<p>If the package is just a Vue-wrapper for a common library, you may need to use the library directly</p>
+</li>
+<li>
+<p>Find a similar package that supports Vue 3. In this case you have to make sure the new dependency supports all your use-cases, and you have to plan how to migrate this dependency.</p>
+</li>
+<li>
+<p>You can contribute to the dependency and help to make it Vue 3 compatible. You may have to check <a href="https://github.com/vueuse/vue-demi">VueDemi</a> which is a great developing utility to create or update Universal Vue Libraries for Vue 2 &amp; 3.</p>
+</li>
+<li>
+<p>Worst Case: Write the features you need by yourself, but be sure to open-source it afterwards ;-)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In all these cases you should make yourself a list of the relevant development tasks with a very rough estimate about how complex the migration will be.
+For example write a <code>+</code> if the dependency migration is straight forward (already Vue 3 compatible).
+Write <code>+</code> for very hard-to-migrate dependencies, where you may need another solution or lib or implement stuff by yourself.
+Add Notes about things you shouldn&#8217;t forget when starting the migration.
+You should also include development dependencies for example for webpack plugins.
+It could look like the following example:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Vue 2 dependency</th>
+<th class="tableblock halign-left valign-top">Vue 3 dependency</th>
+<th class="tableblock halign-left valign-top">notes</th>
+<th class="tableblock halign-left valign-top">estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">@dsb-norge/vue-keycloak-js</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">@baloise/vue-keycloak</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">similar API, similar features</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">++</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v-tooltip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">floating-vue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">same lib under the hood with more features</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vue2-datepicker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vue-datepicker-next</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">same lib with Vue 3 support</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vue2-leaflet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">@vue-leaflet/vue-leaflet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">same API, but lots of relying components</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">++</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>| vue2-leaflet-draw-toolbar | - | no Vue 3 equivalent | ++ |
+| webpack-license-plugin | rollup-plugin-license | different plugin for rollup, with a different API, we need to check / adjust the output format |  |</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_try_out_things_in_a_playground">Try out things in a playground</h4>
+<div class="paragraph">
+<p>For dependency update / migrations you can&#8217;t estimate, it&#8217;s a good idea to set them up / try them out in an isolated new Vue 3 playground environment.
+After playing around, you should be able to estimate the effort.
+A good example when having a look at the migration list above would be to try out the <code>rollup-plugin-license</code> package.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_check_your_current_webpack_environment">Check your current Webpack environment</h4>
+<div class="paragraph">
+<p>When coming from webpack and planning to migrate to Vite, you should check your webpack config for any special behaviors.
+You can use the playground to reflect / try out the setup in Vite.
+Here are some points that were interesting for us:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We don&#8217;t need a specific SCSS/SASS/LESS configuration anymore as Vite brings <a href="https://vitejs.dev/guide/features.html#css-pre-processors">support for this out-of-the-box</a></p>
+</li>
+<li>
+<p>We needed to migrate the <code>webpack-license-plugin</code> to <code>rollup-plugin-license</code> (see above)</p>
+</li>
+<li>
+<p>Vite comes with its own <a href="https://vitejs.dev/guide/env-and-mode.html">approach of reading and passing environment variables and build modes</a> which is quite easy and handy</p>
+</li>
+<li>
+<p><a href="https://vitejs.dev/guide/assets.html">Static Asset Handling by Vite</a> is something you should probably know before</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_split_your_store_on_paper">Split your Store on paper</h4>
+<div class="paragraph">
+<p>When currently using Vuex, you may be lucky, and you have already some modules splitting your store into logical parts.
+In our case we had just one big store without any modules as the codebase has evolved over time, and we haven&#8217;t made the step to split the store.
+The migration to Pinia can be a good chance to face this now as Pinia lets you easily compose multiple small stores.
+You should check your current store configuration and write down the modules that are loosely coupled or even completely independent (e.g. a <code>user</code> or an <code>auth</code> store).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_make_the_migration_transparent_and_estimable">Make the migration transparent and estimable</h4>
+<div class="paragraph">
+<p>The last thing we have done was to create a new epic for the whole migration and to create small estimable tasks.
+This was very important as we were now able to identify things we can prepare and do even before we started the migration itself and also tasks we can do in advance.
+On the other hand it helped us for the communication with the product owner and to make things transparent.
+Please keep in mind to add some time buffer for unexpected things occurring during the migration where you may need some extra time.
+For example: the migration from Vuex to Pinia took a lot more time than we thought before.
+But: it was definitely worth it.
+The TypeScript support is way better and the unification of actions and mutations reduces the Boilerplate code a lot.
+We also underestimated the time we needed to migrate the tests.
+This was hard by definition but quite time-consuming as I wrote in the introduction: We had a huge Vuex store.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migrations_before_the_migration">Migrations before the migration</h3>
+<div class="paragraph">
+<p>Before starting the migration itself you should migrate everything you can, which is not related to Vue 3 / vite.
+Here is what we have done in my team before the migration itself.</p>
+</div>
+<div class="sect3">
+<h4 id="_convert_filters_to_functions">Convert Filters to functions</h4>
+<div class="paragraph">
+<p>Vue 3 kicked out the concept of using filters in the template using the pipe (<code>|</code>) syntax (<code>{{ expression | myFilter }}</code>).
+Filters are simply functions that can be imported and used directly.
+You can already import the functions, use them as a method and then pass through the expression in the template before starting the Vu3 migration:
+<code>{{ myFilter(expression) }}</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_update_and_migrate_dependencies">Update and migrate dependencies</h4>
+<div class="paragraph">
+<p>Update all possible dependencies to their latest versions to make migrations for other libs in advance.
+At this step: double-check if vue-specific libs are ready for using with Vue 3 or if there are other libs you have to use.
+If you have to change to other libs and this one supports Vue 3, make the migration now.
+In our team we had already lots of our dependencies updated, since we are using <a href="https://www.mend.io/free-developer-tools/renovate/">Mend (formerly Whitesource) Renovate</a> for housekeeping and continuous dependency version updates.</p>
+</div>
+<div class="paragraph">
+<p>When you decide to migrate a dependency to a new one that supports Vue 2 and Vue 3 or which should be replaced with a self-implementation:
+Do it in advance before the actual Vue migration.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_isolate_hard_to_migrate_components">Isolate hard-to-migrate components</h4>
+<div class="paragraph">
+<p>It may happens, you realize, for some of your dependencies a migration won&#8217;t be straight-forward.
+In our case we decided some years ago, we want to use <a href="https://leafletjs.com/">Leaflet.js</a> as our map library to display and interact with features on a map.
+Therefore we also used a wrapper for Vue 2 applications called <a href="https://github.com/vue-leaflet/Vue2Leaflet">Vue2Leaflet</a> which made us use Leaflet in a declarative manner.
+However, this architectural decision was now a problem for us, as not only this dependency is not supposed to use it with Vue 3 but also extensions for this library such as <a href="https://www.npmjs.com/package/@ozangokhanhergul/leaflet.heat">Leaflet.heat</a> needed to be migrated.
+To face this issue we&#8217;ve gone one step back and rethink our architectural decision to use Leaflet. At this time there was already a Vue 3 wrapper for leaflet available but not as feature-rich as we needed it.
+So we created a new Architectural Decision Record (ADR) to evaluate and choose our future map library as it is a central component of our app and can&#8217;t be easily replaced.
+After doing a Proof-of-Concept (PoC), we decided to switch to <a href="https://openlayers.org/">OpenLayers</a> and make use of the <a href="https://github.com/MelihAltintas/vue3-openlayers">vue3-openlayers</a> wrapper too, where we were also able to contribute missing features back into the project.</p>
+</div>
+<div class="paragraph">
+<p>This whole story is probably quite special to my team and our app, but the essential thing here was, that we prepared the central components in parallel to our productive app in a separate repository in isolation.
+Therefore, we created the components and defined their props and events with the help of <a href="https://storybook.js.org/">Storybook</a>.
+Of course, we also created tests for these components, so that we were prepared to copy over all this into the productive app and replace the existing components later, when we were ready to actually migrate to Vue 3.</p>
+</div>
+<div class="paragraph">
+<p>A drawback with this approach is of course: It probably blocks you with releasing new features or you have to implement them twice during the preparation time (one time for the productive app based on Vue 2, one time for the isolated components based on Vue 3).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_update_your_npm_scripts">Update your NPM Scripts</h4>
+<div class="paragraph">
+<p>When checking your Vue 3 default setup you will notice that some NPM script names have changed by default.
+For example the default command to run the development build and server is now <code>npm run dev</code> instead of <code>npm run serve</code>.
+You can either change the names back since you are used to the "old" commands, or you can already name your commands in the Vue 2 setup to the new ones to get comfy with it.
+Please note that you may have to change the commands in you CI/CD Pipeline too.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_switch_to_vite">Switch to Vite</h4>
+<div class="paragraph">
+<p>You can switch to Vite before updating to Vue 3 this makes the "big bang" migration a bit smaller.
+For that, you should install Vite and use the official plugin <a href="https://www.npmjs.com/package/@vitejs/plugin-vue2">@vitejs/plugin-vue2</a>.
+You also need to migrate all the webpack plugins and configs.
+When the setup is finished, cleanup all the webpack stuff including the config and the dependencies.</p>
+</div>
+<div class="paragraph">
+<p>During the migration we noticed, that we haven&#8217;t used <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export">Type-Only Imports</a> in all our typescript and <code>.vue</code> files.
+The default Vite setup is configured in such way, Type-Only Imports will be forced when needed, otherwise you&#8217;ll receive errors during the build.
+We had the option to either deactivate this strict behavior by setting the <a href="https://www.typescriptlang.org/tsconfig#importsNotUsedAsValues">typescript config option <code>importsNotUsedAsValues</code></a> to either <code>preserve</code> or <code>remove</code> (not recommended) or to migrate.
+Luckily, there is a community project called <a href="https://github.com/JamieMason/ts-import-types-cli">ts-import-types-cli</a> that will automate a part of this step.
+So we just had to run the following command to migrate to Type-Only Imports at places needed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="bash"># remove the `--dry-run` flag to migrate actually and not only list the changes
+npx ts-import-types-cli --no-organise-imports -p tsconfig.json --dry-run</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The bad news: The tool didn&#8217;t find all occurrences of the Type-Only Imports, so when running <code>npm run build</code>, we caught some more we had to fix manually.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_switch_to_vitest">Switch to Vitest</h4>
+<div class="paragraph">
+<p>After your migration to Vite, you should make use of Vitest as your new pretty and fast unit testing framework.
+In comparison to <a href="https://jestjs.io/">Jest</a> it comes with a stable out-of-the-box ESM support and faster test executions.
+Until now Jest&#8217;s support for ESM is <a href="https://jestjs.io/docs/ecmascript-modules">still experimental</a> (State: Jest Version 29.5).
+<a href="https://vitest.dev/guide/migration.html#migrating-from-jest">The API is quite similar and mostly compatible to jest</a>.
+If you used Mocha before, the migration shouldn&#8217;t be hard either.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_switch_to_pinia">Switch to Pinia</h4>
+<div class="paragraph">
+<p>The next big step you should do in advance is the migration of your Vuex store.
+You can also do this step after the migration itself and keep Vuex for now.
+However, we decided, it&#8217;s a good idea, to migrate the store before and switch to Pinia since the API is a lot simpler and better composable when slicing our big store into chunks.
+Furthermore, it comes with better TypeScript support.
+At the <a href="https://pinia.vuejs.org/cookbook/migration-vuex.html">Pinia-Docs you will find a very detailed Guide for the Migration from Vuex</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_migrate_components">Migrate Components</h4>
+<div class="paragraph">
+<p>Last but not least we decided to migrate all our components to the <a href="https://vuejs.org/api/composition-api-setup.html">composition API</a> with the <a href="https://vuejs.org/api/sfc-script-setup.html"><code>&lt;script setup&gt;</code> syntactical sugar</a>.
+This is a step you can also omit or do in advance, but we recommend using this API since it&#8217;s also a bit more performant, and it reduces the boilerplate code you have to write.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_finally_migrate_to_vue_3">Finally: Migrate to Vue 3</h3>
+<div class="paragraph">
+<p>You are now prepared to migrate to Vue 3, and you&#8217;ve done already a lot of things which made this step much easier and shorter.
+Now you can start the migration of Vue itself.
+Keep in mind, that for the actual migration you must migrate the unit tests too as the test utils for vue3 are slightly different.</p>
+</div>
+<div class="sect3">
+<h4 id="_migrate_the_source_code">Migrate the source code</h4>
+<div class="paragraph">
+<p>Here we started by adding Vue 3 as well as the <code>@vue/compat</code> package as described in the <a href="https://v3-migration.vuejs.org/migration-build.html#migration-build">Vue 3 Migration Build documentation</a>.
+Also, we needed to update the <code>VueRouter</code> to version <code>4.x.x</code> and adjust the configuration.
+As good step-by-step guides, I would recommend you again to read the following Blogposts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://crisp.chat/blog/vuejs-migration">"Vue.js: How to Migrate a large project from Vue 2 to Vue 3"</a> from <a href="https://twitter.com/baptistejamin">Baptiste Jamin</a></p>
+</li>
+<li>
+<p>The official Vue 2 to Vue 3 <a href="https://v3-migration.vuejs.org">Migration Guide</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you have already prepared some components in isolation to work with Vue 3 as we did:
+Of course you should replace the old ones and probably adjust the props or events if the API of your new components changed compared to the Vue 2 ones.</p>
+</div>
+<div class="paragraph">
+<p>After this step your whole app should work as before (fingers crossed).
+The migration of the components itself can be done one by one after the migration until everything is converted to Vue 3.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_migrate_to_vuetest_utilsv2">Migrate to <code>@vue/test-utils@v2</code></h4>
+<div class="paragraph">
+<p>After you migrated everything, you need to update to <code>@vue/test-utils@v2</code>.
+The migration should be straight-forward when <a href="https://test-utils.vuejs.org/migration/">following the migration guide</a>.
+Nonetheless it can take quite a bit of time depending on the amount of unit tests you have.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_post_migration_steps">Post-Migration-Steps</h3>
+<div class="sect3">
+<h4 id="_remove_compatibility_package">Remove Compatibility Package</h4>
+<div class="paragraph">
+<p>Once every component is migrated, make sure to remove the <code>@vue/compat</code> and it&#8217;s configuration as you don&#8217;t need it anymore.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_make_use_of_the_teleport_feature">Make use of the Teleport feature</h4>
+<div class="paragraph">
+<p>Now that we are using Vue 3, we can use the <a href="https://vuejs.org/guide/built-ins/teleport.html">"Teleport"</a> feature.
+Think about components creating their DOM elements deeply in the DOM caused by the component hierarchy but where you would expect the elements to appear somewhere else close to the root.
+A good example is displaying a modal conditionally:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="html">&lt;body&gt;
+  &lt;ComponentOne&gt;
+    &lt;ComponentTwo&gt;
+      &lt;ComponentThree&gt;
+        &lt;MyModal v-if="myCondition"&gt;
+      &lt;/ComponentThree&gt;
+    &lt;/ComponentTwo&gt;
+  &lt;/ComponentOne&gt;
+&lt;/body&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In Vue 2, the modal would be rendered and appear inside the <code>ComponentThree</code>.
+Using teleport in <code>MyModal</code> can lift the element up to the <code>body</code> tag which makes more sense for common modal dialogs.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conclusion">Conclusion</h3>
+<div class="paragraph">
+<p>Migrating from Vue 2 to Vue 3 can be a huge thing and takes quite a bit of time.
+But good preparation and pre-migration will make the whole migration process much easier, more estimable and won&#8217;t block you for so long with releasing new features. Compared to writing the whole thing from scratch, we think this was well worth it.</p>
+</div>
+<div class="paragraph">
+<p>I hope this post gave you some inspiration of how you can face the migration of your project.
+Happy Migration ✌🏼</p>
+</div>
+</div>
+</div>
+</div>
+        <!-- tags -->
+        <p>
+        <a class='tag' href='../../tags/javascript.html'>javascript</a> <a class='tag' href='../../tags/vue.html'>vue</a>
+        </p>
+        <!-- Share buttons below content -->
+        
+<div class="increase-zindex">
+    <span style="font-size: x-large;">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdbsystel.github.io%2Ftech-stories%2Fblog%2F2023%2F2023-08-21-vue2-vue3-migration.html&text=How+we+migrated+our+Vue+2+enterprise+project+to+Vue+3" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdbsystel.github.io%2Ftech-stories%2Fblog%2F2023%2F2023-08-21-vue2-vue3-migration.html" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdbsystel.github.io%2Ftech-stories%2Fblog%2F2023%2F2023-08-21-vue2-vue3-migration.html" target="_blank"><i class="fab fa-facebook"></i></a>
+    </span>
+</div>
+
+        
+        <style>
+.feedback--answer {
+    display: inline-block;
+}
+
+.feedback--answer-no {
+    margin-left: 1em;
+}
+
+.feedback--response {
+    display: none;
+    margin-top: 1em;
+}
+
+.feedback--response__visible {
+    display: block;
+}
+</style>
+
+<div class="d-print-none">
+    <h2 class="feedback--title">Feedback</h2>
+    <p class="feedback--question">Was this page helpful?</p>
+    <button class="feedback--answer feedback--answer-yes">Yes</button>
+    <button class="feedback--answer feedback--answer-no">No</button>
+    <p class="feedback--response feedback--response-yes">
+        Glad to hear it! Please <a href="https://github.com/dbsystel/tech-stories/issues/new?issue%5Btitle%5D=Docs%3A+Feedback+for+%27Migrate+Vue+2+to+Vue+3%27%20%F0%9F%91%8D&issue%5Bdescription%5D=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:blog/2023/2023-08-21-vue2-vue3-migration.adoc">tell us
+    how we can improve</a>.
+    </p>
+    <p class="feedback--response feedback--response-no">
+        Sorry to hear that. Please <a href="https://github.com/dbsystel/tech-stories/issues/new?issue%5Btitle%5D=Docs%3A+Feedback+for+%27Migrate+Vue+2+to+Vue+3%27%20%F0%9F%91%8E&issue%5Bdescription%5D=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:blog/2023/2023-08-21-vue2-vue3-migration.adoc">tell
+    us how we can improve</a>.
+    </p>
+</div>
+<script>
+    const yesButton = document.querySelector('.feedback--answer-yes');
+    const noButton = document.querySelector('.feedback--answer-no');
+    const yesResponse = document.querySelector('.feedback--response-yes');
+    const noResponse = document.querySelector('.feedback--response-no');
+    const disableButtons = () => {
+        yesButton.disabled = true;
+        noButton.disabled = true;
+    };
+    const sendFeedback = (value) => {
+        if (typeof ga !== 'function') return;
+        const args = {
+            command: 'send',
+            hitType: 'event',
+            category: 'Helpful',
+            action: 'click',
+            label: window.location.pathname,
+            value: value
+        };
+        ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+    };
+    yesButton.addEventListener('click', () => {
+        yesResponse.classList.add('feedback--response__visible');
+        disableButtons();
+        sendFeedback(1);
+    });
+    noButton.addEventListener('click', () => {
+        noResponse.classList.add('feedback--response__visible');
+        disableButtons();
+        sendFeedback(0);
+    });
+</script>
+
+        
+
+      </main>
+    </div>
+  </div>
+  
+    <!--footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">&copy; 2020 | based on <a href="https://arc42.org">arc42 7.0</a> | mixed with <a href="http://getbootstrap.com/">Bootstrap v5.0.0-beta</a> | Baked with <a href="http://jbake.org">JBake v2.6.7</a></span>
+        </div>
+    </footer-->
+
+    <footer class="bg-dark py-2 row d-print-none">
+        <div class="container-fluid mx-sm-5">
+            <div class="row">
+                <div class="col-3 col-sm-2 text-xs-center order-sm-2">
+
+
+                    <ul class="list-inline mb-0">
+                        
+                        
+                        <li aria-label="Twitter" class="list-inline-item mx-2 h3" data-original-title="Twitter" data-placement="top"
+                            data-toggle="tooltip" title="">
+                            <a class="text-white" href="https://twitter.com/dbsystel" rel="noopener noreferrer"
+                               target="_blank" style="text-decoration: none;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                    </ul>
+
+
+                </div>
+                <div class="col-3 col-sm-2 text-right text-xs-center order-sm-3">
+
+
+                    <ul class="list-inline mb-0">
+
+                        
+                        <li aria-label="GitHub" class="list-inline-item mx-2 h3" data-original-title="GitHub" data-placement="top"
+                            data-toggle="tooltip" title="">
+                            <a class="text-white" href="https://github.com/dbsystel" rel="noopener noreferrer"
+                               target="_blank" style="text-decoration: none;">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        
+
+                        
+
+
+                    </ul>
+
+
+                </div>
+                <div class="col-18 col-sm-8 text-center py-2 order-sm-2">
+
+                        [<small class="text-white">built with <a href="https://doctoolchain.org">docToolchain</a> and <a href="https://jbake.org">jBake</a>, <br />
+styling supported by <a href="https://db-ui.github.io/">DB UI Core</a>, theme based on <a href="https://www.docsy.dev/">Docsy</a><br />
+<a href="https://db-ui.github.io/datenschutzerklaerung.html">Datenschutzerklärung / Data Privacy</a> |
+<a href="https://www.dbsystel.de/dbsystel-en/legal-3715942">Imprint</a> |
+<a href="https://www.dbsystel.de/">DB Systel GmbH</a></small>]
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script crossorigin="anonymous"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            src="../../js/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            src="../../js/bootstrap.min.js"></script>
+
+
+    <script crossorigin="anonymous"
+            integrity="sha256-tfwbKdJGWDWEQlS9TYBHOOryTAzsUwCbTGiZmJvlWkc=" src="../..//js/main.min.b5fc1b29d2465835844254bd4d804738eaf24c0cec53009b4c6899989be55a47.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/blocks.js" ></script>
+    <script src="../../js/prettify.js"></script>
+    <script src="../../js/adoc-scrollspy.js"></script>
+
+    
+
+</body>
+</html>

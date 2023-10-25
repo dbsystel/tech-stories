@@ -2,12 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>http://jbake.orgnull/</loc>
-        <lastmod>2023-08-01</lastmod>
+        <lastmod>2023-10-25</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/search.html</loc>
-        <lastmod>2023-08-01</lastmod>
+        <lastmod>2023-10-25</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/2023/2023-08-21-vue2-vue3-migration.html</loc>
+        <lastmod>2023-08-21</lastmod>
     </url>
     
     <url>
@@ -16,18 +21,33 @@
     </url>
     
     <url>
+        <loc>http://jbake.orgnull/blog/2019/2019-09-13-Spock-und-AsciiDoc.html</loc>
+        <lastmod>2019-09-13</lastmod>
+    </url>
+    
+    <url>
         <loc>http://jbake.orgnull/blog/index.html</loc>
-        <lastmod>2023-08-01</lastmod>
+        <lastmod>2023-10-25</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/blog/profiles/Bertram-Fey.html</loc>
-        <lastmod>2023-08-01</lastmod>
+        <lastmod>2023-10-25</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Ralf-D.-Mueller.html</loc>
+        <lastmod>2023-10-25</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Danny-Koppenhagen.html</loc>
+        <lastmod>2023-10-25</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/lunrjsindex.html</loc>
-        <lastmod>2023-08-01</lastmod>
+        <lastmod>2023-10-25</lastmod>
     </url>
     
 </urlset>
