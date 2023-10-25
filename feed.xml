@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 25 Oct 2023 11:09:17 +0000</pubDate>
-    <lastBuildDate>Wed, 25 Oct 2023 11:09:17 +0000</lastBuildDate>
+    <pubDate>Wed, 25 Oct 2023 15:21:27 +0000</pubDate>
+    <lastBuildDate>Wed, 25 Oct 2023 15:21:27 +0000</lastBuildDate>
 
     
     <item>
@@ -822,6 +822,134 @@ fun listTrainsParallel(): TrainList&amp;lt;TrainRepresentation&amp;gt; {
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Also: Es wird spannend im Java-Ökosystem. Mit Projekt Loom werden tatsächlich die Karten neu gemischt. Endlich können wir den Programmierstil wieder so aussuchen, wie er zu unseren Gehirnen passt.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>Digitaler Blindenhund</title>
+      <link>http://jbake.org/blog/2020/2020-12-15-digitaler-blindenhund.html</link>
+      <pubDate>Sat, 5 Dec 2020 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2020/2020-12-15-digitaler-blindenhund.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_digitaler_blindenhund&quot;&gt;Digitaler Blindenhund&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_digitaler_blindenhund&quot;&gt;Digitaler Blindenhund&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Marcus hat den digitalen Blindenhund erdacht&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Eine Smartphone App, die es Menschen mit Seheinschränkung am Bahnhof ermöglicht,
+die Eingangstüren zu ihrem Zug selbstständig zu finden.
+Im Interview mit spricht Marcus über Barrierefreiheit im Allgemeinen und
+bei der Darstellung von digitalen Inhalten.
+Und wir sprechen über die alltäglichen Herausforderungen an Bahnhöfen,
+zum Beispiel das Finden des richtigen Bahnsteigs.
+Der digitale Blindenhund ist ein Beispiel,
+wie für solche Fälle eine Hilfe aussehen kann.
+Im ersten Schritt wurde sich auf die Erkennung von Türen fokussiert,
+da dieses Problem für Blinde eine besondere Herausforderung darstellt.
+Marcus erläutert uns dabei die vielfältigen Herausforderungen und
+Ansätze die ausprobiert wurden,
+bis sie zu einer technisch sinnvollen Lösung auf Basis eines neuronalen Netzes gekommen sind.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=https://www.youtube.com/watch?v=xkJuZtK-3fM title=&quot;Digitaler Blindenhund&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>Vue.js vs. Angular</title>
+      <link>http://jbake.org/blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_vue_js_vs_angular_was_ist_besser&quot;&gt;Vue.js vs. Angular: Was ist besser?&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_vue_js_vs_angular_was_ist_besser&quot;&gt;Vue.js vs. Angular: Was ist besser?&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Heute zu Gast bei #000000 #c0ffee – Der Tech-Talk der DB Systel.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Von Techies für Techies: Danny Koppenhagen
+Danny ist Frontend-Entwickler mit den Schwerpunkten Angular und
+Vue.js und einer der Autoren des Buches
+„Angular — Grundlagen, fortgeschrittene Themen und Best Practices“.
+Im dx.house Berlin berät er außerdem Kunden und
+Teams in den Themen User Experience von Enterprise-Lösungen.
+Er engagiert sich in der Web Community der DB Systel und
+ist Mitglied im Themen Team Web der Architekturgilde.
+Dort erarbeitet er Architektur-Standards für alle Themen Web.
+Im Interview spricht er über seine Erfahrungen mit Vue.js und Angular.
+Er geht darauf ein, welches Framework sich für welche Anwendungszwecke eignet.
+So bietet Vue.js hauptsächlich Vorteile,
+wenn es um die Integration in bestehende Anwendungen handelt und
+das Team gerne JavaScript einsetzt.
+Angular ist im Enterprise-Umfeld für neue Anwendungen interessant,
+da es auf TypeScript aufsetzt, ein umfangreiches Ökosystem mitbringt und
+zum Beispiel Migrationsguides und
+Templating-Fähigkeiten über sogenannte Schematics mitbringt.
+Außerdem erläutert Danny wie der aktuelle Stand der Technik für Progressive Webapps (PWA) ist.
+Hier kommt es darauf an, ob alle benötigten Features des Betriebssystems angesprochen werden können.
+Falls nicht, sollte in Erwägung gezogen werden eine native App zu entwickeln.
+Im dritten Teil sprechen wir über die Anbindung von APIs.
+Um die Orchestrierung von APIs zu vereinfachen,
+kann hier das Architekturmuster Backend For Frontends zum Einsatz kommen.
+Das vereinfacht den Zugriff aus der Anwendung,
+da die Anbindung der APIs nicht einzeln im Frontend implementiert werden muss.
+Erfahre mehr zum Thema:    • #000000 #c0ffee Tech-Talk  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://youtu.be/O3bYfZ8tcLc&quot; title=&quot;Vue.js vs. Angular: Was ist besser?&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

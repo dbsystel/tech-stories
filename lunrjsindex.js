@@ -26,6 +26,22 @@ var documents = [
 
 {
     "id": 3,
+    "uri": "blog/2020/2020-12-15-digitaler-blindenhund.html",
+    "menu": "Blog",
+    "title": "Digitaler Blindenhund",
+    "text": " Table of Contents Digitaler Blindenhund Video Digitaler Blindenhund Marcus hat den digitalen Blindenhund erdacht Eine Smartphone App, die es Menschen mit Seheinschränkung am Bahnhof ermöglicht, die Eingangstüren zu ihrem Zug selbstständig zu finden. Im Interview mit spricht Marcus über Barrierefreiheit im Allgemeinen und bei der Darstellung von digitalen Inhalten. Und wir sprechen über die alltäglichen Herausforderungen an Bahnhöfen, zum Beispiel das Finden des richtigen Bahnsteigs. Der digitale Blindenhund ist ein Beispiel, wie für solche Fälle eine Hilfe aussehen kann. Im ersten Schritt wurde sich auf die Erkennung von Türen fokussiert, da dieses Problem für Blinde eine besondere Herausforderung darstellt. Marcus erläutert uns dabei die vielfältigen Herausforderungen und Ansätze die ausprobiert wurden, bis sie zu einer technisch sinnvollen Lösung auf Basis eines neuronalen Netzes gekommen sind. Video "
+},
+
+{
+    "id": 4,
+    "uri": "blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html",
+    "menu": "Blog",
+    "title": "Vue.js vs. Angular",
+    "text": " Table of Contents Vue.js vs. Angular: Was ist besser? Video Vue.js vs. Angular: Was ist besser? Heute zu Gast bei #000000 #c0ffee – Der Tech-Talk der DB Systel. Von Techies für Techies: Danny Koppenhagen Danny ist Frontend-Entwickler mit den Schwerpunkten Angular und Vue.js und einer der Autoren des Buches „Angular — Grundlagen, fortgeschrittene Themen und Best Practices“. Im dx.house Berlin berät er außerdem Kunden und Teams in den Themen User Experience von Enterprise-Lösungen. Er engagiert sich in der Web Community der DB Systel und ist Mitglied im Themen Team Web der Architekturgilde. Dort erarbeitet er Architektur-Standards für alle Themen Web. Im Interview spricht er über seine Erfahrungen mit Vue.js und Angular. Er geht darauf ein, welches Framework sich für welche Anwendungszwecke eignet. So bietet Vue.js hauptsächlich Vorteile, wenn es um die Integration in bestehende Anwendungen handelt und das Team gerne JavaScript einsetzt. Angular ist im Enterprise-Umfeld für neue Anwendungen interessant, da es auf TypeScript aufsetzt, ein umfangreiches Ökosystem mitbringt und zum Beispiel Migrationsguides und Templating-Fähigkeiten über sogenannte Schematics mitbringt. Außerdem erläutert Danny wie der aktuelle Stand der Technik für Progressive Webapps (PWA) ist. Hier kommt es darauf an, ob alle benötigten Features des Betriebssystems angesprochen werden können. Falls nicht, sollte in Erwägung gezogen werden eine native App zu entwickeln. Im dritten Teil sprechen wir über die Anbindung von APIs. Um die Orchestrierung von APIs zu vereinfachen, kann hier das Architekturmuster Backend For Frontends zum Einsatz kommen. Das vereinfacht den Zugriff aus der Anwendung, da die Anbindung der APIs nicht einzeln im Frontend implementiert werden muss. Erfahre mehr zum Thema:    • #000000 #c0ffee Tech-Talk   Video "
+},
+
+{
+    "id": 5,
     "uri": "blog/2019/2019-09-13-Spock-und-AsciiDoc.html",
     "menu": "Blog",
     "title": "Spock und AsciiDoc",
@@ -33,7 +49,7 @@ var documents = [
 },
 
 {
-    "id": 4,
+    "id": 6,
     "uri": "blog/index.html",
     "menu": "Blog",
     "title": "Übersicht",
@@ -41,7 +57,7 @@ var documents = [
 },
 
 {
-    "id": 5,
+    "id": 7,
     "uri": "blog/profiles/Bertram-Fey.html",
     "menu": "Autoren",
     "title": "Bertram Fey",
@@ -49,15 +65,15 @@ var documents = [
 },
 
 {
-    "id": 6,
-    "uri": "blog/profiles/Ralf-D.-Mueller.html",
+    "id": 8,
+    "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
-    "title": "Ralf D. Müller",
-    "text": " Table of Contents Ralf D. Müller Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach. You can follow him on mastodon rdmueller@mastodontech.de . "
+    "title": "Marcus Sümnick",
+    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
-    "id": 7,
+    "id": 9,
     "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
     "title": "Danny Koppenhagen",
@@ -65,7 +81,15 @@ var documents = [
 },
 
 {
-    "id": 8,
+    "id": 10,
+    "uri": "blog/profiles/Ralf-D.-Mueller.html",
+    "menu": "Autoren",
+    "title": "Ralf D. Müller",
+    "text": " Table of Contents Ralf D. Müller Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach. You can follow him on mastodon rdmueller@mastodontech.de . "
+},
+
+{
+    "id": 11,
     "uri": "lunrjsindex.html",
     "menu": "null",
     "title": "null",
