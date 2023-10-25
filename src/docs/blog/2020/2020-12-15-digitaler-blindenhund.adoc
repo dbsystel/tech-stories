@@ -1,12 +1,12 @@
 :jbake-title: Digitaler Blindenhund
 :jbake-card: Digitaler Blindenhund
 :jbake-date: 2020-12-05
-:jbake-type: video
+:jbake-type: post
 :jbake-tags: app, barrierefrei
 :jbake-status: published
 :jbake-menu: Blog
 :jbake-discussion: 1076
-:jbake-author: Marcus Sümnick
+:jbake-author: Marcus Suemnick
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/devops.png
