@@ -61,11 +61,12 @@ metakeys.each { key ->
     <meta content="${teaser.encodeURL()}" property="og:description">
     <meta content="website" property="og:type">
     <meta content="${config.site_title}" property="og:site_name">
-    <meta content="docToolchain" itemprop="name">
-    <meta content="build your dev docs the easy way..." itemprop="description">
+    <meta content="https://dbsystel.github.io/tech-stories/images/home.png" property="og:image">
+    <meta content="${content.card?:content.title}" itemprop="name">
+    <meta content="${teaser.encodeURL()}" itemprop="description">
     <meta content="summary" name="twitter:card">
-    <meta content="docToolchain" name="twitter:title">
-    <meta content="build your dev docs the easy way..." name="twitter:description">
+    <meta content="${content.card?:content.title}" name="twitter:title">
+    <meta content="${teaser.encodeURL()}" name="twitter:description">
 
     <link as="style" href="${content.rootpath}css/main.min.docsy.css" rel="preload">
     <link href="${content.rootpath}css/main.min.docsy.css" integrity="" rel="stylesheet">
