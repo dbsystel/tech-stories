@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 25 Oct 2023 15:21:27 +0000</pubDate>
-    <lastBuildDate>Wed, 25 Oct 2023 15:21:27 +0000</lastBuildDate>
+    <pubDate>Thu, 26 Oct 2023 15:02:48 +0000</pubDate>
+    <lastBuildDate>Thu, 26 Oct 2023 15:02:48 +0000</lastBuildDate>
 
     
     <item>
@@ -40,6 +40,7 @@
 &lt;p&gt;It&amp;#8217;s been a while:
 Since the 2nd February 2022, Vue 3 became the new default for Vue.js apps.&lt;/p&gt;
 &lt;/div&gt;
+&lt;!-- teaser --&gt;
 &lt;div class=&quot;quoteblock&quot;&gt;
 &lt;blockquote&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
