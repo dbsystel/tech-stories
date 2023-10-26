@@ -48,6 +48,9 @@ metakeys.each { key ->
         }
         content.teaser = teaser
     %>
+    <%
+        teaser = teaser.replaceAll("<[^>]*>","").replaceAll("\\n"," ").replaceAll('"',"'");
+    %>
     <script>var toRoot = '${content.rootpath}';</script>
     <!-- ${content.sourceuri} -->
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
