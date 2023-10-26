@@ -58,15 +58,15 @@ metakeys.each { key ->
 
     <title><%if (content.title) {%>${content.title}<% } else { %>${config.site_title}<% }%></title>
     <meta content="${content.card?:content.title}" property="og:title">
-    <meta content="${teaser.encodeURL()}" property="og:description">
+    <meta content="${teaser}" property="og:description">
     <meta content="website" property="og:type">
     <meta content="${config.site_title}" property="og:site_name">
     <meta content="https://dbsystel.github.io/tech-stories/images/home.png" property="og:image">
     <meta content="${content.card?:content.title}" itemprop="name">
-    <meta content="${teaser.encodeURL()}" itemprop="description">
+    <meta content="${teaser}" itemprop="description">
     <meta content="summary" name="twitter:card">
     <meta content="${content.card?:content.title}" name="twitter:title">
-    <meta content="${teaser.encodeURL()}" name="twitter:description">
+    <meta content="${teaser}" name="twitter:description">
 
     <link as="style" href="${content.rootpath}css/main.min.docsy.css" rel="preload">
     <link href="${content.rootpath}css/main.min.docsy.css" integrity="" rel="stylesheet">
