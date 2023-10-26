@@ -16,6 +16,10 @@
 It's been a while:
 Since the 2nd February 2022, Vue 3 became the new default for Vue.js apps.
 
+++++
+<!-- teaser -->
+++++
+
 ____
 
 It's done! Vue 3 is now the default version and the brand new http://vuejs.org is live! More details in the blog post in case you missed it:
