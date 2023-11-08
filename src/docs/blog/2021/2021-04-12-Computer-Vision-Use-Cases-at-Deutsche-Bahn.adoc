@@ -1,0 +1,39 @@
+:jbake-title: Computer Vision Use Cases
+:jbake-card: Computer Vision Use Cases @ Deutsche Bahn
+:jbake-date: 2021-04-12
+:jbake-type: video
+:jbake-tags: KI, data
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: 
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/dev.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Wie können KI-Bildanalysen bei der Graffiti-Erkennung helfen und welche Potentiale birgt das für die Bahn?
+
+++++
+<!-- teaser -->
+++++
+
+Im Rahmen des Data Festivals 2021 präsentierte das DB Systel Venture vsion.ai gemeinsam
+mit der Data Science Beratung Alexander Thamm Einsatzmöglichkeiten von KI-Analysen auf Bildern im Bahnkontext.
+Am Beispiel der automatischen Erkennung von Graffiti auf Zügen zeigt Peco Elenchevski die Besonderheiten des
+Use Cases auf sowie die technische Umsetzung eines Proof of Concept.
+Nico Becker knüpft dort an und beschreibt die Herausforderungen,
+welche sich aus dem Deployment von KI-Modellen ergeben.
+Dabei skizziert er einen Weg, wie sich ein Proof of Concept zu einem robusten Produktivsystem weiterentwickeln lässt.
+Der Vortrag wurde vor internationalem Publikum gehalten und ist daher auf Englisch.
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube.com/watch?v=QaDLtFEPcNo" title="Computer Vision Use Cases @ Deutsche Bahn" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+|===
