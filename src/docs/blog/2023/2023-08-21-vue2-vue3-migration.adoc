@@ -119,10 +119,9 @@ It could look like the following example:
 |v-tooltip |floating-vue |same lib under the hood with more features |+ 
 |vue2-datepicker |vue-datepicker-next |same lib with Vue 3 support |+ 
 |vue2-leaflet |@vue-leaflet/vue-leaflet |same API, but lots of relying components |++ 
+|vue2-leaflet-draw-toolbar | - | no Vue 3 equivalent | +++++ 
+|webpack-license-plugin | rollup-plugin-license | different plugin for rollup, with a different API, we need to check / adjust the output format | +++
 |===
-
-| vue2-leaflet-draw-toolbar | - | no Vue 3 equivalent | +++++ |
-| webpack-license-plugin | rollup-plugin-license | different plugin for rollup, with a different API, we need to check / adjust the output format | +++ |
 
 ==== Try out things in a playground
 
