@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Thu, 26 Oct 2023 15:02:48 +0000</pubDate>
-    <lastBuildDate>Thu, 26 Oct 2023 15:02:48 +0000</lastBuildDate>
+    <pubDate>Thu, 9 Nov 2023 20:25:13 +0000</pubDate>
+    <lastBuildDate>Thu, 9 Nov 2023 20:25:13 +0000</lastBuildDate>
 
     
     <item>
@@ -216,12 +216,20 @@ It could look like the following example:&lt;/p&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;same API, but lots of relying components&lt;/p&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;++&lt;/p&gt;&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;vue2-leaflet-draw-toolbar&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;-&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;no Vue 3 equivalent&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;+&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;webpack-license-plugin&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;rollup-plugin-license&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;different plugin for rollup, with a different API, we need to check / adjust the output format&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;+&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;| vue2-leaflet-draw-toolbar | - | no Vue 3 equivalent | ++ |
-| webpack-license-plugin | rollup-plugin-license | different plugin for rollup, with a different API, we need to check / adjust the output format |  |&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect3&quot;&gt;
 &lt;h4 id=&quot;_try_out_things_in_a_playground&quot;&gt;Try out things in a playground&lt;/h4&gt;

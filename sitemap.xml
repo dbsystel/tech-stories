@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>http://jbake.orgnull/</loc>
-        <lastmod>2023-10-26</lastmod>
+        <lastmod>2023-11-09</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/search.html</loc>
-        <lastmod>2023-10-26</lastmod>
+        <lastmod>2023-11-09</lastmod>
     </url>
     
     <url>
@@ -37,32 +37,32 @@
     
     <url>
         <loc>http://jbake.orgnull/blog/index.html</loc>
-        <lastmod>2023-10-26</lastmod>
+        <lastmod>2023-11-09</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/blog/profiles/Bertram-Fey.html</loc>
-        <lastmod>2023-10-26</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Marcus-Suemnick.html</loc>
-        <lastmod>2023-10-26</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Danny-Koppenhagen.html</loc>
-        <lastmod>2023-10-26</lastmod>
+        <lastmod>2023-11-09</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/blog/profiles/Ralf-D.-Mueller.html</loc>
-        <lastmod>2023-10-26</lastmod>
+        <lastmod>2023-11-09</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Marcus-Suemnick.html</loc>
+        <lastmod>2023-11-09</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Danny-Koppenhagen.html</loc>
+        <lastmod>2023-11-09</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/lunrjsindex.html</loc>
-        <lastmod>2023-10-26</lastmod>
+        <lastmod>2023-11-09</lastmod>
     </url>
     
 </urlset>
