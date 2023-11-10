@@ -1,7 +1,7 @@
 :jbake-title: Bad Bots
 :jbake-card: Bad Bots - Chancen und Herausforderungen für KI und Sprache
 :jbake-date: 2021-06-08
-:jbake-type: video
+:jbake-type: post
 :jbake-tags: ki
 :jbake-status: published
 :jbake-menu: Blog
