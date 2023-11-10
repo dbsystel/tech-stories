@@ -41,6 +41,6 @@ Er behandelt nicht nur die Hintergründe, sondern zeigt auch technische und gest
 |===
 a|
 ++++
-<iframe class="video-iframe" frameborder="0" src="https://www.youtube.com/watch?v=aY4I565gdM8&t=29s" title="Bad Bots - Chancen und Herausforderungen für KI und Sprache" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube-nocookie.com/embed/aY4I565gdM8?si=gxWCjUIandt7jHp9&t=29s" title="Bad Bots - Chancen und Herausforderungen für KI und Sprache" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
 ++++
 |===
