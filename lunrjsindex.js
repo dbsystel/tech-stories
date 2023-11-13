@@ -13,7 +13,7 @@ var documents = [
     "uri": "blog/2023/2023-11-08-prompt-engineering.html",
     "menu": "Blog",
     "title": "Prompt-Engineering",
-    "text": " Table of Contents Die faszinierende Welt des Prompt-Engineerings Slides Referenzen Die faszinierende Welt des Prompt-Engineerings Im Zentrum meines jüngsten Vortrags stand das Prompt-Engineering, ein Schlüsselelement im Umgang mit fortschrittlichen Sprachmodellen wie GPT-3 und GPT-4. Das Prompt-Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen. Wir tauchten tief in die Unterschiede zwischen GPT-3 und GPT-4 ein, erkundeten die Komplexität neuronaler Netze und die Bedeutung der Multi-Modalität in der heutigen KI-Landschaft. Ein besonderes Augenmerk legten wir auf die Kunst des Primings und der Kontextualisierung von Prompts, die die Effektivität und Präzision der KI-Interaktionen erheblich steigern können. Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die das Potenzial von Prompt-Engineering veranschaulichen. Slides Referenzen Golem.de: BSI sieht KI als Sicherhitsrisiko Twitter: The Hired AI Stack Overflow: Machine Learning Medium: ChatGPT Architecture Explained by Sreedev R Scientific Reports: Comparative performance of humans versus GPT-4.0 and GPT-3.5 GPT-4: Wikipedia FAZ.net: ChatGPT: Welche Einstellungen bei der Nutzung helfen OpenAI Chat: Beispiel OpenAI: Verbesserung der docToolchain Dokumentation DeepLearning.AI: ChatGPT Prompt Engineering for Developers Heise Online: Softwarearchitektur: \"KI wird unsere Fähigkeiten ergänzen, nicht ersetzen\" Heise Online: KI in der Softwareentwicklung: Überschätzt OpenAI Chat: Beispiel 2 "
+    "text": " Table of Contents Die faszinierende Welt des Prompt-Engineerings Slides Referenzen Die faszinierende Welt des Prompt-Engineerings Im Zentrum meines jüngsten Vortrags stand das Prompt-Engineering, ein Schlüsselelement im Umgang mit fortschrittlichen Sprachmodellen wie GPT-3 und GPT-4. Das Prompt-Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen. Wir tauchten tief in die Unterschiede zwischen GPT-3 und GPT-4 ein, erkundeten die Komplexität neuronaler Netze und die Bedeutung der Multi-Modalität in der heutigen KI-Landschaft. Ein besonderes Augenmerk legten wir auf die Kunst des Primings und der Kontextualisierung von Prompts, die die Effektivität und Präzision der KI-Interaktionen erheblich steigern können. Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die das Potenzial von Prompt-Engineering veranschaulichen. Slides Referenzen Golem.de: BSI sieht KI als Sicherhitsrisiko Twitter: The Hired AI Medium: ChatGPT Architecture Explained by Sreedev R Scientific Reports: Comparative performance of humans versus GPT-4.0 and GPT-3.5 GPT-4: Wikipedia FAZ.net: ChatGPT: Welche Einstellungen bei der Nutzung helfen OpenAI Chat: Beispiel OpenAI: Verbesserung der docToolchain Dokumentation DeepLearning.AI: ChatGPT Prompt Engineering for Developers Heise Online: Softwarearchitektur: \"KI wird unsere Fähigkeiten ergänzen, nicht ersetzen\" Heise Online: KI in der Softwareentwicklung: Überschätzt OpenAI Chat: Beispiel 2 Stefan Toth: Architektur in Zeiten von KI und LLMs "
 },
 
 {
@@ -66,14 +66,6 @@ var documents = [
 
 {
     "id": 8,
-    "uri": "blog/profiles/Ralf-D.-Mueller.html",
-    "menu": "Autoren",
-    "title": "Ralf D. Müller",
-    "text": " Table of Contents Ralf D. Müller Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach. You can follow him on mastodon rdmueller@mastodontech.de . "
-},
-
-{
-    "id": 9,
     "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
     "title": "Danny Koppenhagen",
@@ -81,15 +73,7 @@ var documents = [
 },
 
 {
-    "id": 10,
-    "uri": "blog/profiles/Bertram-Fey.html",
-    "menu": "Autoren",
-    "title": "Bertram Fey",
-    "text": " Table of Contents Bertram Fey Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 11,
+    "id": 9,
     "uri": "blog/profiles/Sascha-Wolter.html",
     "menu": "Autoren",
     "title": "Sascha Wolter",
@@ -97,11 +81,27 @@ var documents = [
 },
 
 {
-    "id": 12,
+    "id": 10,
+    "uri": "blog/profiles/Ralf-D.-Mueller.html",
+    "menu": "Autoren",
+    "title": "Ralf D. Müller",
+    "text": " Table of Contents Ralf D. Müller Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach. You can follow him on mastodon rdmueller@mastodontech.de . "
+},
+
+{
+    "id": 11,
     "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
     "title": "Marcus Sümnick",
     "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 12,
+    "uri": "blog/profiles/Bertram-Fey.html",
+    "menu": "Autoren",
+    "title": "Bertram Fey",
+    "text": " Table of Contents Bertram Fey Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {

@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 13 Nov 2023 12:45:48 +0000</pubDate>
-    <lastBuildDate>Mon, 13 Nov 2023 12:45:48 +0000</lastBuildDate>
+    <pubDate>Mon, 13 Nov 2023 17:43:47 +0000</pubDate>
+    <lastBuildDate>Mon, 13 Nov 2023 17:43:47 +0000</lastBuildDate>
 
     
     <item>
@@ -64,37 +64,40 @@ Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die 
 &lt;p&gt;&lt;a href=&quot;https://twitter.com/TheHiredAI/status/1716485469079257282&quot;&gt;Twitter: The Hired AI&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/tagged/machine-learning&quot;&gt;Stack Overflow: Machine Learning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@sreedevr/chatgpt-architecture-explained-7fc0cbb7426c&quot;&gt;Medium: ChatGPT Architecture Explained by Sreedev R&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@sreedevr/chatgpt-architecture-explained-b0c3c3c7b7f2&quot;&gt;Medium: ChatGPT Architecture Explained by Sreedev R&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.nature.com/articles/s41598-021-84010-1&quot;&gt;Scientific Reports: Comparative performance of humans versus GPT-4.0 and GPT-3.5&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.nature.com/articles/s41598-023-45837-2&quot;&gt;Scientific Reports: Comparative performance of humans versus GPT-4.0 and GPT-3.5&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/GPT-4&quot;&gt;GPT-4: Wikipedia&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.faz.net/aktuell/technik-motor/digital/chatgpt-welche-einstellungen-bei-der-nutzung-helfen-18112004.html&quot;&gt;FAZ.net: ChatGPT: Welche Einstellungen bei der Nutzung helfen&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.faz.net/pro/d-economy/prompt-der-woche/chatgpt-welche-einstellungen-bei-der-nutzung-helfen-19278230.html&quot;&gt;FAZ.net: ChatGPT: Welche Einstellungen bei der Nutzung helfen&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://chat.openai.com/share/eeb03d9d-8302-495e-be5d-e817cb7385ff&quot;&gt;OpenAI Chat: Beispiel&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://openai.com/docToolchain&quot;&gt;OpenAI: Verbesserung der docToolchain Dokumentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://chat.openai.com/share/3513ff43-fe92-4ebc-9e9b-1c2ca090ce1d&quot;&gt;OpenAI: Verbesserung der docToolchain Dokumentation&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.deeplearning.ai/&quot;&gt;DeepLearning.AI: ChatGPT Prompt Engineering for Developers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/&quot;&gt;DeepLearning.AI: ChatGPT Prompt Engineering for Developers&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.heise.de/news/Softwarearchitektur-KI-wird-unsere-Faehigkeiten-ergaenzen-nicht-ersetzen-6400144.html&quot;&gt;Heise Online: Softwarearchitektur: &quot;KI wird unsere Fähigkeiten ergänzen, nicht ersetzen&quot;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.heise.de/hintergrund/Softwarearchitektur-KI-wird-unsere-Faehigkeiten-ergaenzen-nicht-ersetzen-9339113.html&quot;&gt;Heise Online: Softwarearchitektur: &quot;KI wird unsere Fähigkeiten ergänzen, nicht ersetzen&quot;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.heise.de/news/KI-in-der-Softwareentwicklung-Ueberschaetzt-6400188.html&quot;&gt;Heise Online: KI in der Softwareentwicklung: Überschätzt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.heise.de/blog/KI-in-der-Softwareentwicklung-Ueberschaetzt-9336902.html&quot;&gt;Heise Online: KI in der Softwareentwicklung: Überschätzt&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://chat.openai.com/share/09fddcd1-6a71-49c1-bf27-a9ff5f40dace&quot;&gt;OpenAI Chat: Beispiel 2&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://embarc-downloads.s3.eu-central-1.amazonaws.com/folien/st/2023/LLMs+und+Architektur-komprimiert.pdf&quot;&gt;Stefan Toth: Architektur
+in Zeiten von
+KI und LLMs
+&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
