@@ -42,14 +42,6 @@ var documents = [
 
 {
     "id": 5,
-    "uri": "blog/2020/2020-12-15-digitaler-blindenhund.html",
-    "menu": "Blog",
-    "title": "Digitaler Blindenhund",
-    "text": " Table of Contents Digitaler Blindenhund Video Digitaler Blindenhund Video Digitaler Blindenhund Marcus hat den digitalen Blindenhund erdacht Eine Smartphone App, die es Menschen mit Seheinschränkung am Bahnhof ermöglicht, die Eingangstüren zu ihrem Zug selbstständig zu finden. Im Interview mit spricht Marcus über Barrierefreiheit im Allgemeinen und bei der Darstellung von digitalen Inhalten. Und wir sprechen über die alltäglichen Herausforderungen an Bahnhöfen, zum Beispiel das Finden des richtigen Bahnsteigs. Der digitale Blindenhund ist ein Beispiel, wie für solche Fälle eine Hilfe aussehen kann. Im ersten Schritt wurde sich auf die Erkennung von Türen fokussiert, da dieses Problem für Blinde eine besondere Herausforderung darstellt. Marcus erläutert uns dabei die vielfältigen Herausforderungen und Ansätze die ausprobiert wurden, bis sie zu einer technisch sinnvollen Lösung auf Basis eines neuronalen Netzes gekommen sind. Video Digitaler Blindenhund Marcus hat den digitalen Blindenhund erdacht Eine Smartphone App, die es Menschen mit Seheinschränkung am Bahnhof ermöglicht, die Eingangstüren zu ihrem Zug selbstständig zu finden. Im Interview mit spricht Marcus über Barrierefreiheit im Allgemeinen und bei der Darstellung von digitalen Inhalten. Und wir sprechen über die alltäglichen Herausforderungen an Bahnhöfen, zum Beispiel das Finden des richtigen Bahnsteigs. Der digitale Blindenhund ist ein Beispiel, wie für solche Fälle eine Hilfe aussehen kann. Im ersten Schritt wurde sich auf die Erkennung von Türen fokussiert, da dieses Problem für Blinde eine besondere Herausforderung darstellt. Marcus erläutert uns dabei die vielfältigen Herausforderungen und Ansätze die ausprobiert wurden, bis sie zu einer technisch sinnvollen Lösung auf Basis eines neuronalen Netzes gekommen sind. Video "
-},
-
-{
-    "id": 6,
     "uri": "blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html",
     "menu": "Blog",
     "title": "Vue.js vs. Angular",
@@ -57,7 +49,7 @@ var documents = [
 },
 
 {
-    "id": 7,
+    "id": 6,
     "uri": "blog/2019/2019-09-13-Spock-und-AsciiDoc.html",
     "menu": "Blog",
     "title": "Spock und AsciiDoc",
@@ -65,11 +57,19 @@ var documents = [
 },
 
 {
-    "id": 8,
+    "id": 7,
     "uri": "blog/index.html",
     "menu": "Blog",
     "title": "Übersicht",
     "text": " Table of Contents Übersicht Übersicht Willkommen auf dem Tech-Blog der DB-Systel. "
+},
+
+{
+    "id": 8,
+    "uri": "blog/profiles/Ralf-D.-Mueller.html",
+    "menu": "Autoren",
+    "title": "Ralf D. Müller",
+    "text": " Table of Contents Ralf D. Müller Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach. You can follow him on mastodon rdmueller@mastodontech.de . "
 },
 
 {
@@ -82,18 +82,18 @@ var documents = [
 
 {
     "id": 10,
-    "uri": "blog/profiles/Sascha-Wolter.html",
+    "uri": "blog/profiles/Bertram-Fey.html",
     "menu": "Autoren",
-    "title": "Sascha Wolter",
-    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Personal Website "
+    "title": "Bertram Fey",
+    "text": " Table of Contents Bertram Fey Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
     "id": 11,
-    "uri": "blog/profiles/Ralf-D.-Mueller.html",
+    "uri": "blog/profiles/Sascha-Wolter.html",
     "menu": "Autoren",
-    "title": "Ralf D. Müller",
-    "text": " Table of Contents Ralf D. Müller Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach. You can follow him on mastodon rdmueller@mastodontech.de . "
+    "title": "Sascha Wolter",
+    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Personal Website "
 },
 
 {
@@ -106,14 +106,6 @@ var documents = [
 
 {
     "id": 13,
-    "uri": "blog/profiles/Bertram-Fey.html",
-    "menu": "Autoren",
-    "title": "Bertram Fey",
-    "text": " Table of Contents Bertram Fey Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 14,
     "uri": "lunrjsindex.html",
     "menu": "null",
     "title": "null",
