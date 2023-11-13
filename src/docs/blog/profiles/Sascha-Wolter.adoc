@@ -1,0 +1,40 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Sascha Wolter
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Sascha Wolter
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+
+image:profiles/Sascha-Wolter.jpg[float=right,role=profile]
+
+Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. 
+Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine
+ – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). 
+ Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. 
+ In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee.
+
+Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn 
+und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability & User Experience der BITKOM. 
+Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. 
+Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, 
+arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler.
+
+=== Links
+
+* http://www.linkedin.com/pub/sascha-wolter/5/a38/493[LinkedIn]
+* https://www.wolter.biz/[Personal Website]
+
