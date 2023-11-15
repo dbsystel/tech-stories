@@ -1,0 +1,38 @@
+:jbake-title: OOP: Guter Code
+:jbake-card: DB Systel streitet auf der OOP für guten Code
+:jbake-date: 2020-03-27
+:jbake-type: post
+:jbake-tags: OOP, Code
+:jbake-status: published 
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Carsten Thurau
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/devops.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== DB Systel streitet auf der OOP für guten Code
+
+In diesem unterhaltsamen Pecha Kucha Vortrag spricht Carsten Thurau über seine Erfahrung aus dem Alltag als erfahrener Trainer und Coach.
+
+++++
+<!-- teaser -->
+++++
+
+Er zeigt in seinem Kurzvortrag, warum schlechter Code Entwickler unglücklich macht und
+Code Reviews, TDD und Clean Code eine gute Idee sind.
+Fazit: Entwickelt qualitativ hochwertigen Code und seid stolz auf Euer Werk!
+
+Der Talk wurde auf der OOP 2020 Konferenz in München Anfang Februar 2020 aufgezeichnet.
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
++++++
+<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/ZDIjhsRU34w?si=aKWUSc-Se2COMlcA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
++++++
+|===
