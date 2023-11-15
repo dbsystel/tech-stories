@@ -1,0 +1,37 @@
+:jbake-title: ChatGPT
+:jbake-card: ChatGPT – Funktionsweise, Chancen, Risiken und Alternativen einfach erklärt
+:jbake-date: 2023-03-28
+:jbake-type: post
+:jbake-tags: ki, ChatGPT
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Sascha Wolter
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/dev.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== ChatGPT – Funktionsweise, Chancen, Risiken und Alternativen einfach erklärt
+
+In diesem Video erkläre ich leichtverständlich die Funktionsweise von ChatGPT im Zusammenhang
+mit generativer Künstlicher Intelligenz (Generative AI) und großen Sprachmodellen (Large Language Models, kurz LLMs).
+
+++++
+<!-- teaser -->
+++++
+
+Anhand von Anwendungsfällen beschreibe ich Chancen, Risiken und Alternativen und
+diskutiere, was das für uns und unsere Jobs zukünftig bedeuten könnte. 
+
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube.com/embed/zPQqdnmZvuY?si=WG4CimKzCMu_-ihM" title="ChatGPT – Funktionsweise, Chancen, Risiken und Alternativen einfach erklärt" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+|===
