@@ -1,0 +1,45 @@
+:jbake-title: Vielfalt bei der Bahn
+:jbake-card: Vielfalt bei der Bahn: Computerlinguist:innen treiben Digitalisierung voran
+:jbake-date: 2022-03-23
+:jbake-type: post
+:jbake-tags: SALT, linguistik
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Ralf D. Mueller
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/dev.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Vielfalt bei der Bahn: Computerlinguist:innen treiben Digitalisierung voran
+
+Dieses Mal haben wir Claudia Schönfelder aus dem Team SALT zu Gast, mit der wir über das Thema “SINUS”,
+den Sprachassistenten für die Instandhaltung von Zügen,
+und den Beruf der Computerlinguist:innen, sprechen.
+
+++++
+<!-- teaser -->
+++++
+
+Claudia entwickelt multidisziplinär mit mehreren Teams von Expert:innen einen der ersten Sprachassistenten
+für die industrielle Nutzung. Wir alle kennen Siri und Alexa, aber diese bewältigen in der Regel Aufgaben des Alltags.
+Im Gegensatz dazu führt SINUS die Konzernpartner:innen aus der Instandhaltung per Sprache durch digitalisierte Formulare,
+um die Eingabe von Schäden an Loks gänzlich über die Spracherkennung zu tätigen.
+Im Interview spricht sie mit uns über dieses ehrgeizige Projekt,
+das die Effizienz bei der Befundung von Zügen deutlich steigern kann.
+Wir spielen anhand eines Beispiels durch, welche Besonderheiten dieses Tool bei der Befundung besitzt.
+Dazu erklärt Claudia wie sich das Berufsbild der Computerlinguisten in den letzten Jahren entwickelt und
+etabliert hat. Information, die auch für die jüngeren unter uns, von großem Interesse sein kann.  
+
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube-nocookie.com/embed/_fy8SD1XXLE?si=ulYO3N77YYdOYE0L" title="YouTube video player" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+|===
