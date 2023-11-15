@@ -26,6 +26,14 @@ var documents = [
 
 {
     "id": 3,
+    "uri": "blog/2023/2023-05-15-developer-experience-platform-fuer-entwicklerinnen.html",
+    "menu": "Blog",
+    "title": "Developer Experience Platform",
+    "text": " Table of Contents Developer Experience Platform (DXP) für Entwickler:innen Video Developer Experience Platform (DXP) für Entwickler:innen Die Developer Experience Platform (DXP) bietet Services für jede Phase der Software-Entwicklung. Konzern- und Betreibervorgaben sowie Cloud-Richtlinien sind in diesen Services bereits inkludiert. DXP ermöglicht damit DB-konzernweit, dass Entwickler:innen schnell, einfach und sicher Deployments vornehmen können und Software-Anwendungen von der Konzeption bis zum produktiven Einsatz schneller entwickelt werden. Das Erklärvideo zeigt dies, indem es Zuschauende in den Alltag von Entwickler:innen „entführt“. Video "
+},
+
+{
+    "id": 4,
     "uri": "blog/2023/2023-05-05-loom-threading.html",
     "menu": "Blog",
     "title": "Projekt Loom ist da",
@@ -33,7 +41,79 @@ var documents = [
 },
 
 {
-    "id": 4,
+    "id": 5,
+    "uri": "blog/2023/2023-04-09-vortrag-auf-der-javaland.html",
+    "menu": "Blog",
+    "title": "JavaLand 2023",
+    "text": " Table of Contents Vortrag auf der JavaLand 2023 Slides Vortrag auf der JavaLand 2023 Vom 20. bis 23. März fand mit der JavaLand die große Java-Community-Konferenz im Phantasialand Brühl statt - und DB Systel war mit dabei. In dem Talk \"Fantastische Diagramme und wie Du sie selbst erstellst\" haben Falk Sippach (embarc) und Ralf D. Müller (DB Systel) gemeinsam Schwachstellen von Architekturdiagrammen aufgespürt und ausgemerzt. In den Slides des Vortrags (siehe Download-Link unten) finden sich als Ergebnis ein paar Tipps und Checklisten, die jeder für seine eigenen Diagramme verwenden kann. Abends gab es dann noch einen Fun-Workshop \"Hacking the RP2040\", bei dem wir uns angesehen haben, was man so alles mit dem Tufty-Badge von Pimoroni anstellen kann. Dabei handelt es sich um ein kleines 320x240 Display mit Tastern und RP2040 Microcontroller (besser bekannt als Raspberry Pi Pico) in der Form eines Badges zum Umhängen. Das eigentliche Highlight der jährlichen JavaLand war aber die Community mit ihren vielen Hallway-Tracks und dem Newcomer-Programm \"NextGen\" über das immer wieder frische Themen und Sichtweisen in das Programm aufgenommen werden. Slides Slides des Workshops "
+},
+
+{
+    "id": 6,
+    "uri": "blog/2023/2023-04-01-Indoor-GIS-zur-Rationalisierung-von-Wartungsarbeiten.html",
+    "menu": "Blog",
+    "title": "Indoor-GIS",
+    "text": " Table of Contents Indoor-GIS zur Rationalisierung von Wartungsarbeiten Slides Indoor-GIS zur Rationalisierung von Wartungsarbeiten Genial kombiniert: Mit Tracking-Technologie und unserer Esri-Plattform Kosten und Durchlaufzeiten reduzieren. Durch die Kombination von Tracking-Technologie und unserer Esri-Plattform nutzen wir die modernsten Tracking-Systeme. Auf diese Weise reduzieren wir Kosten und Durchlaufzeiten. Eine Erfolgsgeschichte in der Arbeitswelt. Erfahren Sie, wie die offene Plattformarchitektur viele Anwendungsfälle ermöglicht. Beispiele finden Sie in der beigefügten Präsentation. Sie wurde im Rahmen eines Vortrags von Konrad Winkler &amp; Philippe Rieffel im Rahmen der Esri International Infrastructure Management &amp; GIS Conference am 18.04.2023 in Frankfurt gezeigt. Hinweis: Die Präsentation liegt in englischer Sprache vor. Slides download "
+},
+
+{
+    "id": 7,
+    "uri": "blog/2023/2023-03-28-ChatGPT-Einblicke-und-mehr-Generative-Sprachmodelle-Herausforderungen-und-Chancen.html",
+    "menu": "Blog",
+    "title": "ChatGPT",
+    "text": " Table of Contents ChatGPT – Funktionsweise, Chancen, Risiken und Alternativen einfach erklärt Video ChatGPT – Funktionsweise, Chancen, Risiken und Alternativen einfach erklärt In diesem Video erkläre ich leichtverständlich die Funktionsweise von ChatGPT im Zusammenhang mit generativer Künstlicher Intelligenz (Generative AI) und großen Sprachmodellen (Large Language Models, kurz LLMs). Anhand von Anwendungsfällen beschreibe ich Chancen, Risiken und Alternativen und diskutiere, was das für uns und unsere Jobs zukünftig bedeuten könnte.  Video "
+},
+
+{
+    "id": 8,
+    "uri": "blog/2023/2023-03-08-Re-Platforming-Mainframe-Mehr-als-nur-Lift-Shift.html",
+    "menu": "Blog",
+    "title": "Re-Platforming Mainframe",
+    "text": " Table of Contents Re-Platforming Mainframe – Mehr als nur Lift&amp;Shift Slides Re-Platforming Mainframe – Mehr als nur Lift&amp;Shift Die sinkende Bedeutung der Mainframe-Plattform führt uns zu unserem Projektziel Lift&amp;Shift. Die Migration in die Cloud soll mit möglichst wenigen Anpassungen erfolgen. Dabei wollen wir die IBM Mainframe basierten Cobol Anwendungen durch schrittweise Überführung der Anwendungen in die DB Enterprise Cloud ablösen. Die Schaffung einer zukunftsorientierten IT-Architektur und signifikante Einsparungen von Betriebskosten durch die Nutzung cloudbasierter Infrastruktur sind ebenso wichtig. Lesen Sie in unserer Präsentation, welche Projektziele wir außerdem verfolgen, wer unsere Partner sind und wie unsere Bestandsanalyse aussieht. Gezeigt wurde sie im Rahmen eines Vortrags von Tim Engeleiter am 08.03.2023 bei den Mainframe Dayz in Wiesbaden.   Slides download "
+},
+
+{
+    "id": 9,
+    "uri": "blog/2022/2022-11-24-the-journey-towards-K8s-at-Deutsche-Bahn.html",
+    "menu": "Blog",
+    "title": "K8s at Deutsche Bahn",
+    "text": " Table of Contents The journey towards K8s at Deutsche Bahn Video The journey towards K8s at Deutsche Bahn This lecture was given by Gualter Barbas Baptista from DB Systel at the Containerdays from 05 to 07 September 2022. ( https://www.containerdays.io/ ) In 2016, Deutsche Bahn decided to get rid of their own data centers and to migrate the majority of applications to the cloud. The cloudification of Deutsche Bahn was supported by a comprehensive transformation of its digital partner DB Systel from traditional working and organisational structures to self-organisation and company-wide networks, including a DevOps culture. Within this context, the first Kubernetes platform services emerge. From an OpenShift-based Kubernetes-Namespace-as-a-Service into a GitOps based K8s fleet management, we describe how the cloud, the organisational transformation and the CNCF landscape are accelerating the digitalisation of Deutsche Bahn. Video "
+},
+
+{
+    "id": 10,
+    "uri": "blog/2022/2022-11-04-Produkt-statt-Projekmanagement.html",
+    "menu": "Blog",
+    "title": "Produkt- statt Projektmanagement",
+    "text": " Table of Contents Produkt- statt Projektmanagement Video Produkt- statt Projektmanagement Warum das Funding von Projekten mittlerweile zu einem der größten Hindernisse auf dem Weg zu einer BizDevOps-Organisation geworden ist − ein Debattenbeitrag zum nächsten notwendigen Schritt der DevOps-Bewegung. Die DevOps-Bewegung ist in der Realität und im Herzen der digitalen Industrie angekommen. In der Systel arbeiten knapp 100 Teams nach dem Prinzip „Your build (or integrate) it, you run it“ und sind so in der Lage, regelmäßig und mit hoher Frequenz Änderungen und damit „Business Value“ zu den Nutzerinnen und Nutzern zu bringen. Nicht nur bei uns, sondern in allen vergleichbaren großen Konzernen sind Cloud-Nutzung, Automatisierung, Continuous Delivery, Platform Strategy und der dafür notwendige kulturelle Wandel auf der Tagesordnung. Ein großer Hebel für den Wandel zu einer DevOps-Organisation wird allerdings häufig übersehen: das etablierte Funding von digitalen Maßnahmen über Projekte ist mittlerweile zu einem der Haupt-Hindernisse auf dem Weg zu einer leistungsfähigen Delivery-Organisation geworden. Aus meiner Sicht müssen wir daher ganz vorne mit der Veränderung ansetzen, nämlich dort, wo Projekte entstehen, und über Projektbudgets entschieden wird. Warum ich dieser Meinung bin, habe ich auf einem Vortrag beim DevOps Enterprise Summit dargelegt, der mittlerweile auch über den YouTube Kanal der DB Systel zugänglich ist. Video "
+},
+
+{
+    "id": 11,
+    "uri": "blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html",
+    "menu": "Blog",
+    "title": "Deine Diagramme sind Legende?",
+    "text": " Table of Contents Deine PlantUML-Diagramme sind Legende? pre { white-space: pre-wrap; } table.tableblock { overflow: auto; width: 100%;} td.tableblock {overflow: auto; width: 50%;} Deine PlantUML-Diagramme sind Legende? &#8230;&#8203;dann verpasse ihnen eine Legende! Ein Diagramm soll nicht nur für Insider lesbar sein. Mit einer Legende erklärst du die verwendeten Symbole und Farben. In diesem Artikel zeige ich dir, wie es geht. PlantUML verfügt über ein wenig dokumentiertes Element namens \" Legend \". Damit lässt sich eine Box im Diagramm z. B. in der rechten unteren Ecke platzieren. Wie aber der Inhalt dargestellt werden soll ist unklar. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right &lt;b&gt;Legende&lt;/b&gt; ??? endlegend @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right &lt;b&gt;Legende&lt;/b&gt; ??? endlegend @enduml Google findet als Idee, dass die Legende als Tabelle in Creole-Syntax erstellt werden kann. Farben kann man damit gut erklären, aber für Symbole können nur Emojis oder spezielle Zeichen verwendet werden. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right &lt;b&gt;Legende&lt;/b&gt; | &lt;#red&gt; | Benutzer-Zugriff | | &lt;#green&gt; | Datenbank-Verbindung | | &lt;:smiley:&gt; | Benutzer :-) | endlegend @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right &lt;b&gt;Legende&lt;/b&gt; | &lt;#red&gt; | Benutzer-Zugriff | | &lt;#green&gt; | Datenbank-Verbindung | | &lt;:smiley:&gt; | Benutzer :-) | endlegend @enduml In einem Forum habe ich am Rande den Hinweis gefunden, dass man mit dem Map-Statement des Objektdiagramms auch eine Tabelle aufbauen kann. Nur geht das nicht direkt innerhalb der Legende. Es gibt aber den Trick, dass man mit der `{{ &#8230;&#8203; }} Syntax ein neues Diagramm innerhalb des Diagramms erstellen kann. Damit lässt sich dann auch eine Map innerhalb der Legende aufbauen. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { &lt;#red&gt; =&gt; Benutzer-Zugriff &lt;#green&gt; =&gt; Datenbank-Verbindung &lt;:smiley:&gt; =&gt; Benutzer :-) } }} endlegend @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { &lt;#red&gt; =&gt; Benutzer-Zugriff &lt;#green&gt; =&gt; Datenbank-Verbindung &lt;:smiley:&gt; =&gt; Benutzer :-) } }} endlegend @enduml Und wenn wir jetzt schon dabei sind Diagramme innerhalb von Diagrammen zu nutzen, dann können wir das auch noch eine Ebene tiefer machen. Dadurch schaffen wir es in der Legende die Diagramm-Elemente zu zeichnen, die wir beschreiben wollen. Dazu bauen wir uns in einer Prozedur ein universelles Mini-Diagramm: scale $scale skinparam backgroundcolor transparent label \" \" as A label \" \" as B $type Der scale-Befehl erlaubt es die zu beschreibende Komponente kleiner darzustellen und somit die Legende kompakt zu halten. Die beiden unsichtbaren Labels sorgen dafür, dass wir einen Connector von A nach B darstellen können. Das ganze sieht dann kompakt wie folgt aus: @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor:\",\" Benutzer\", 0.5) $entry(\"[component]\",\" Benutzer\", 0.7) $entry(\"database db\",\"Datenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B #green\",\"Datenbank-Verbindung\") } }} endlegend @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor:\",\" Benutzer\", 0.5) $entry(\"[component]\",\" Benutzer\", 0.7) $entry(\"database db\",\"Datenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B #green\",\"Datenbank-Verbindung\") } }} endlegend @enduml Im letzten Schritt möchte ich die Legende mit ein paar Styles noch aufhübschen. Der doppelte Rahmen soll weg und etwas kleiner wäre auch nicht schlecht. @startuml skinparam actorStyle awesome skinparam legendBackgroundColor transparent skinparam legendBorderColor transparent database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ scale 0.8 skinparam defaultFontSize 14 skinparam BackGroundColor transparent skinparam defaultBackgroundColor white !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor: #green\",\"\\nBenutzer\", 0.5) $entry(\"[component]\",\"\\nBenutzer\", 0.7) $entry(\"database db\",\"\\nDatenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B\",\"Datenbank-Verbindung\") } }} endlegend @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome skinparam legendBackgroundColor transparent skinparam legendBorderColor transparent database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ scale 0.8 skinparam defaultFontSize 14 skinparam BackGroundColor transparent skinparam defaultBackgroundColor white !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor: #green\",\"\\nBenutzer\", 0.5) $entry(\"[component]\",\"\\nBenutzer\", 0.7) $entry(\"database db\",\"\\nDatenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B\",\"Datenbank-Verbindung\") } }} endlegend @enduml Bei der Nutzung fällt schnell auf, dass die Legende zu viel Platz einnimmt. Sie duldet keine anderen Diagramm-Elemente neben sich. Also haben wir weiter geforscht. Mit dem Diagramm in der Legende besteht eigentlich kein Grund mehr wirklich das Element Legend zu verwenden. Was passiert, wenn wir es durch eine rectangle ersetzen und diese entsprechend Stylen? Dazu müssen wir dem Element einen Stereotype verpassen, da wir sonst alle rectangle -Elemente stylen würden. Und siehe da, es funktioniert. Durch diesen Trick haben wir nun mehr Einfluss auf die Platzierung, denn wir können dieses rectangle -Element durch versteckte Verbindungen beeinflussen. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -down-&gt; Datenbank #green rectangle a &lt;&lt;test&gt;&gt; Datenbank -left-&gt; a skinparam rectangle&lt;&lt;legend&gt;&gt; { backgroundColor transparent borderColor transparent shadowing false } hide &lt;&lt;legend&gt;&gt; stereotype rectangle legende &lt;&lt;legend&gt;&gt; [ {{ scale 0.8 skinparam defaultFontSize 14 skinparam BackGroundColor transparent skinparam defaultBackgroundColor white !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor:\",\"\\nBenutzer\", 0.5) $entry(\"[component]\",\"\\nBenutzer\", 0.7) $entry(\"database db\",\"\\nDatenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B #green\",\"Datenbank-Verbindung\") } }} ] User -[hidden]-&gt; legende legende -[hidden]down-&gt; a @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -down-&gt; Datenbank #green rectangle a &lt;&lt;test&gt;&gt; Datenbank -left-&gt; a skinparam rectangle&lt;&lt;legend&gt;&gt; { backgroundColor transparent borderColor transparent shadowing false } hide &lt;&lt;legend&gt;&gt; stereotype rectangle legende &lt;&lt;legend&gt;&gt; [ {{ scale 0.8 skinparam defaultFontSize 14 skinparam BackGroundColor transparent skinparam defaultBackgroundColor white !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor:\",\"\\nBenutzer\", 0.5) $entry(\"[component]\",\"\\nBenutzer\", 0.7) $entry(\"database db\",\"\\nDatenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B #green\",\"Datenbank-Verbindung\") } }} ] User -[hidden]-&gt; legende legende -[hidden]down-&gt; a @enduml Übrigens: PlantUML möchte Elemente und ihre Verbindungen immer optimiert platzieren. Es kann also sein, dass die neue Legende deshalb noch mal kräftig durchmischt. Es gibt aber nicht nur die Pfeildefinition -[hidden]&#8594; , um eine Verbindung nicht anzuzeigen. Der Pfeil -[norank]&#8594; ist eine Verbindung, welche bei besagter Optimierung ignoriert wird. Beide Features kann man kombinieren: Mit einem -[norank,hidden]&#8594; ist die Legende unsichtbar mit einem anderen Element verbunden, ohne dass dies das Diagramm umstrukturiert. "
+},
+
+{
+    "id": 12,
+    "uri": "blog/2022/2022-03-23-Vielfalt-bei-der-Bahn-Computerlinguistinnen-treiben-Digitalisierung-voran.html",
+    "menu": "Blog",
+    "title": "Vielfalt bei der Bahn",
+    "text": " Table of Contents Vielfalt bei der Bahn: Computerlinguist:innen treiben Digitalisierung voran Video Vielfalt bei der Bahn: Computerlinguist:innen treiben Digitalisierung voran Dieses Mal haben wir Claudia Schönfelder aus dem Team SALT zu Gast, mit der wir über das Thema “SINUS”, den Sprachassistenten für die Instandhaltung von Zügen, und den Beruf der Computerlinguist:innen, sprechen. Claudia entwickelt multidisziplinär mit mehreren Teams von Expert:innen einen der ersten Sprachassistenten für die industrielle Nutzung. Wir alle kennen Siri und Alexa, aber diese bewältigen in der Regel Aufgaben des Alltags. Im Gegensatz dazu führt SINUS die Konzernpartner:innen aus der Instandhaltung per Sprache durch digitalisierte Formulare, um die Eingabe von Schäden an Loks gänzlich über die Spracherkennung zu tätigen. Im Interview spricht sie mit uns über dieses ehrgeizige Projekt, das die Effizienz bei der Befundung von Zügen deutlich steigern kann. Wir spielen anhand eines Beispiels durch, welche Besonderheiten dieses Tool bei der Befundung besitzt. Dazu erklärt Claudia wie sich das Berufsbild der Computerlinguisten in den letzten Jahren entwickelt und etabliert hat. Information, die auch für die jüngeren unter uns, von großem Interesse sein kann.   Video "
+},
+
+{
+    "id": 13,
+    "uri": "blog/2021/2021-11-02-KITT-das-Kuenstliche-Intelligenz-Translation-Tool.html",
+    "menu": "Blog",
+    "title": "KITT Tool",
+    "text": " Table of Contents KITT, das Künstliche Intelligenz Translation Tool Video KITT, das Künstliche Intelligenz Translation Tool Dieses Mal haben wir Pia Schwarz aus dem Team SALT zu Gast, mit der wir über das Thema “KITT”, das Künstliche Intelligenz Translation Tool, sprechen. Pia bringt mit ihrem Team Maschinen das Sprechen bei. Im Interview spricht sie mit uns über KITT, das als Interface gesprochene Sprache entgegennimmt. Es wird eingesetzt, um die Kommunikation im Zugfunk von Fahrdienstleiter:innen und Triebfahrzeugführer:innen im Grenzbereich von Frankreich und Deutschland zu verbessern. Wir spielen anhand eines Beispiels durch, welche Besonderheiten das Bahnjargon mit sich bringt und warum am Markt verfügbare Übersetzungstool in diesem Anwendungsfall nicht ausreichend sind. KITT hilft ebenso die Anforderungen an das Sprachniveau zu senken, in dem es sogenannte Predefined Messages zuverlässig übersetzt, die im europäischen Bahnverkehr verwendet werden. In der zweiten Hälfte des Interviews steigen wir tiefer in die Technik ein und gehen auf die Herausforderungen ein. Denn die Anforderungen an KITT sind nicht weniger, als exakte Übersetzungen zu produzieren. Zum Beispiel sind Übersetzungen bei Hintergrundgeräuschen oder Sätze mit Eigennamen problematisch. Zum Abschluss sprechen wir über die technische Umsetzung, Trainingsdatenmenge und Open Source Frameworks. Video "
+},
+
+{
+    "id": 14,
     "uri": "blog/2021/2021-06-08-Bad-bots-Chancen-und-Herausforderungen-fuer-KI-und-Sprache.html",
     "menu": "Blog",
     "title": "Bad Bots",
@@ -41,7 +121,31 @@ var documents = [
 },
 
 {
-    "id": 5,
+    "id": 15,
+    "uri": "blog/2021/2021-04-12-Computer-Vision-Use-Cases-at-Deutsche-Bahn.html",
+    "menu": "Blog",
+    "title": "Computer Vision Use Cases",
+    "text": " Table of Contents Video Wie können KI-Bildanalysen bei der Graffiti-Erkennung helfen und welche Potentiale birgt das für die Bahn? Im Rahmen des Data Festivals 2021 präsentierte das DB Systel Venture vsion.ai gemeinsam mit der Data Science Beratung Alexander Thamm Einsatzmöglichkeiten von KI-Analysen auf Bildern im Bahnkontext. Am Beispiel der automatischen Erkennung von Graffiti auf Zügen zeigt Peco Elenchevski die Besonderheiten des Use Cases auf sowie die technische Umsetzung eines Proof of Concept. Nico Becker knüpft dort an und beschreibt die Herausforderungen, welche sich aus dem Deployment von KI-Modellen ergeben. Dabei skizziert er einen Weg, wie sich ein Proof of Concept zu einem robusten Produktivsystem weiterentwickeln lässt. Der Vortrag wurde vor internationalem Publikum gehalten und ist daher auf Englisch. Video "
+},
+
+{
+    "id": 16,
+    "uri": "blog/2021/2021-03-20-Die-C4-Testpyramide-eine-architekturgetriebene-Teststrategie.html",
+    "menu": "Blog",
+    "title": "Die C4-Testpyramide",
+    "text": " Table of Contents Die C4-Testpyramide - eine architekturgetriebene Teststrategie Video Die C4-Testpyramide - eine architekturgetriebene Teststrategie Die Präsentation zeigt, wie sich die Prinzipien der Test Pyramide mit dem C4 Modell zur Visualisierung von Software Architekturen verbinden lassen, um so auf einfache Weise zu einer produktspezifischen Teststrategie zu gelangen. Video "
+},
+
+{
+    "id": 17,
+    "uri": "blog/2020/2020-12-07-devops-mehr-geschwindigkeit-auf-der-schiene.html",
+    "menu": "Blog",
+    "title": "DevOps Geschwindigkeit",
+    "text": " Table of Contents DevOps - Mehr Geschwindigkeit auf der Schiene Slides und Video DevOps - Mehr Geschwindigkeit auf der Schiene In diesem Vortrag im Rahmen der IT-Tage 2020 erklärt Carsten Hoffmann von der DB Systel, warum sich der erste Ansatz einer zentralen CI/CD-Installation im Projekt, eine Cloud-native Plattform für API-getriebene Softwareentwicklung aufzubauen, für alle Teams als problematisch erwies und durch dezentrale Pipelines ersetzt wurde. Danach werden die Hindernisse bei der Einführung einer eingekauften API-Management-Lösung erklärt und wieso sich der Einkauf von großer On-Premise-Software nur schwierig mit den agilen Prinzipien vereinbaren lässt. Außerdem wird erläutert, wie im Team mit polyglotter Softwareentwicklung und permanent gegen Wissensinseln angekämpft wurde. Zuletzt geht Casten Hoffmann darauf ein, wie das Team mit umfassender Architekturdokumentation begonnen hat und gescheitert ist. Slides und Video "
+},
+
+{
+    "id": 18,
     "uri": "blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html",
     "menu": "Blog",
     "title": "Vue.js vs. Angular",
@@ -49,7 +153,15 @@ var documents = [
 },
 
 {
-    "id": 6,
+    "id": 19,
+    "uri": "blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html",
+    "menu": "Blog",
+    "title": "OOP: Guter Code",
+    "text": " Table of Contents DB Systel streitet auf der OOP für guten Code Video DB Systel streitet auf der OOP für guten Code In diesem unterhaltsamen Pecha Kucha Vortrag spricht Carsten Thurau über seine Erfahrung aus dem Alltag als erfahrener Trainer und Coach. Er zeigt in seinem Kurzvortrag, warum schlechter Code Entwickler unglücklich macht und Code Reviews, TDD und Clean Code eine gute Idee sind. Fazit: Entwickelt qualitativ hochwertigen Code und seid stolz auf Euer Werk! Der Talk wurde auf der OOP 2020 Konferenz in München Anfang Februar 2020 aufgezeichnet. Video "
+},
+
+{
+    "id": 20,
     "uri": "blog/2019/2019-09-13-Spock-und-AsciiDoc.html",
     "menu": "Blog",
     "title": "Spock und AsciiDoc",
@@ -57,7 +169,7 @@ var documents = [
 },
 
 {
-    "id": 7,
+    "id": 21,
     "uri": "blog/index.html",
     "menu": "Blog",
     "title": "Übersicht",
@@ -65,23 +177,23 @@ var documents = [
 },
 
 {
-    "id": 8,
-    "uri": "blog/profiles/Danny-Koppenhagen.html",
+    "id": 22,
+    "uri": "blog/profiles/Konrad-Winkler.html",
     "menu": "Autoren",
-    "title": "Danny Koppenhagen",
-    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+    "title": "Konrad Winkler",
+    "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
-    "id": 9,
-    "uri": "blog/profiles/Sascha-Wolter.html",
+    "id": 23,
+    "uri": "blog/profiles/Christian-Fischer.html",
     "menu": "Autoren",
-    "title": "Sascha Wolter",
-    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Personal Website "
+    "title": "Christian Fischer",
+    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
-    "id": 10,
+    "id": 24,
     "uri": "blog/profiles/Ralf-D.-Mueller.html",
     "menu": "Autoren",
     "title": "Ralf D. Müller",
@@ -89,7 +201,39 @@ var documents = [
 },
 
 {
-    "id": 11,
+    "id": 25,
+    "uri": "blog/profiles/Philippe-Rieffe.html",
+    "menu": "Autoren",
+    "title": "Philippe Rieffe",
+    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 26,
+    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
+    "menu": "Autoren",
+    "title": "Dr. Martin Strunk",
+    "text": " Table of Contents Dr. Martin Strunk Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 27,
+    "uri": "blog/profiles/Danny-Koppenhagen.html",
+    "menu": "Autoren",
+    "title": "Danny Koppenhagen",
+    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+},
+
+{
+    "id": 28,
+    "uri": "blog/profiles/Sascha-Wolter.html",
+    "menu": "Autoren",
+    "title": "Sascha Wolter",
+    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Personal Website "
+},
+
+{
+    "id": 29,
     "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
     "title": "Marcus Sümnick",
@@ -97,7 +241,31 @@ var documents = [
 },
 
 {
-    "id": 12,
+    "id": 30,
+    "uri": "blog/profiles/Johannes-Dienst.html",
+    "menu": "Autoren",
+    "title": "Johannes Dienst",
+    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 31,
+    "uri": "blog/profiles/Carsten-Thurau.html",
+    "menu": "Autoren",
+    "title": "Carsten Thurau",
+    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 32,
+    "uri": "blog/profiles/Carsten-Hoffmann.html",
+    "menu": "Autoren",
+    "title": "Carsten Hoffmann",
+    "text": " Table of Contents Carsten Hoffmann Carsten Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 33,
     "uri": "blog/profiles/Bertram-Fey.html",
     "menu": "Autoren",
     "title": "Bertram Fey",
@@ -105,7 +273,31 @@ var documents = [
 },
 
 {
-    "id": 13,
+    "id": 34,
+    "uri": "blog/profiles/buildIT.html",
+    "menu": "Autoren",
+    "title": "BuildIT",
+    "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 35,
+    "uri": "blog/profiles/Tim-Engeleiter.html",
+    "menu": "Autoren",
+    "title": "Tim Engeleiter",
+    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
+},
+
+{
+    "id": 36,
+    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
+    "menu": "Autoren",
+    "title": "Gualter Barbas Baptista",
+    "text": " Table of Contents Gualter Barbas Baptista Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 37,
     "uri": "lunrjsindex.html",
     "menu": "null",
     "title": "null",

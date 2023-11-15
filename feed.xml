@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 13 Nov 2023 17:43:47 +0000</pubDate>
-    <lastBuildDate>Mon, 13 Nov 2023 17:43:47 +0000</lastBuildDate>
+    <pubDate>Wed, 15 Nov 2023 14:27:49 +0000</pubDate>
+    <lastBuildDate>Wed, 15 Nov 2023 14:27:49 +0000</lastBuildDate>
 
     
     <item>
@@ -1053,6 +1053,55 @@ Happy Migration ✌🏼&lt;/p&gt;
     </item>
     
     <item>
+      <title>Developer Experience Platform</title>
+      <link>http://jbake.org/blog/2023/2023-05-15-developer-experience-platform-fuer-entwicklerinnen.html</link>
+      <pubDate>Mon, 15 May 2023 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2023/2023-05-15-developer-experience-platform-fuer-entwicklerinnen.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_developer_experience_platform_dxp_für_entwicklerinnen&quot;&gt;Developer Experience Platform (DXP) für Entwickler:innen&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_developer_experience_platform_dxp_für_entwicklerinnen&quot;&gt;Developer Experience Platform (DXP) für Entwickler:innen&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Developer Experience Platform (DXP) bietet Services für jede Phase der Software-Entwicklung.
+Konzern- und Betreibervorgaben sowie Cloud-Richtlinien sind in diesen Services bereits inkludiert.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;DXP ermöglicht damit DB-konzernweit, dass Entwickler:innen schnell,
+einfach und sicher Deployments vornehmen können und
+Software-Anwendungen von der Konzeption bis zum produktiven Einsatz schneller entwickelt werden.
+Das Erklärvideo zeigt dies, indem es Zuschauende in den Alltag von Entwickler:innen „entführt“.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube-nocookie.com/embed/-whkeD024zk?si=Y_mIn3Oo_r_LYq10&quot; title=&quot;YouTube video player&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
       <title>Projekt Loom ist da</title>
       <link>http://jbake.org/blog/2023/2023-05-05-loom-threading.html</link>
       <pubDate>Fri, 5 May 2023 00:00:00 +0000</pubDate>
@@ -1401,6 +1450,905 @@ fun listTrainsParallel(): TrainList&amp;lt;TrainRepresentation&amp;gt; {
     </item>
     
     <item>
+      <title>JavaLand 2023</title>
+      <link>http://jbake.org/blog/2023/2023-04-09-vortrag-auf-der-javaland.html</link>
+      <pubDate>Sat, 1 Apr 2023 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2023/2023-04-09-vortrag-auf-der-javaland.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_vortrag_auf_der_javaland_2023&quot;&gt;Vortrag auf der JavaLand 2023&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_vortrag_auf_der_javaland_2023&quot;&gt;Vortrag auf der JavaLand 2023&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Vom 20. bis 23. März fand mit der JavaLand die große Java-Community-Konferenz im Phantasialand Brühl statt - und
+DB Systel war mit dabei.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In dem Talk &quot;Fantastische Diagramme und wie Du sie selbst erstellst&quot; haben Falk Sippach (embarc) und
+Ralf D. Müller (DB Systel) gemeinsam Schwachstellen von Architekturdiagrammen aufgespürt und ausgemerzt.
+In den Slides des Vortrags (siehe Download-Link unten) finden sich als Ergebnis ein paar Tipps und Checklisten,
+die jeder für seine eigenen Diagramme verwenden kann.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Abends gab es dann noch einen Fun-Workshop &quot;Hacking the RP2040&quot;, bei dem wir uns angesehen haben,
+was man so alles mit dem Tufty-Badge von Pimoroni anstellen kann.
+Dabei handelt es sich um ein kleines 320x240 Display mit Tastern und RP2040 Microcontroller
+(besser bekannt als Raspberry Pi Pico) in der Form eines Badges zum Umhängen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Das eigentliche Highlight der jährlichen JavaLand war aber die Community mit ihren vielen Hallway-Tracks und
+dem Newcomer-Programm &quot;NextGen&quot; über das immer wieder frische Themen und Sichtweisen in das Programm aufgenommen werden.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://dbsystel.github.io/jl23-rp2040/slides.html#/&quot;&gt;Slides des Workshops&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/41f2b88302254e0cb340bec890ca0d38&quot; title=&quot;Phantastische Diagramme und wie Du sie selbst erstellst&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>Indoor-GIS</title>
+      <link>http://jbake.org/blog/2023/2023-04-01-Indoor-GIS-zur-Rationalisierung-von-Wartungsarbeiten.html</link>
+      <pubDate>Sat, 1 Apr 2023 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2023/2023-04-01-Indoor-GIS-zur-Rationalisierung-von-Wartungsarbeiten.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_indoor_gis_zur_rationalisierung_von_wartungsarbeiten&quot;&gt;Indoor-GIS zur Rationalisierung von Wartungsarbeiten&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_indoor_gis_zur_rationalisierung_von_wartungsarbeiten&quot;&gt;Indoor-GIS zur Rationalisierung von Wartungsarbeiten&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Genial kombiniert: Mit Tracking-Technologie und unserer Esri-Plattform Kosten und Durchlaufzeiten reduzieren.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Durch die Kombination von Tracking-Technologie und unserer Esri-Plattform nutzen wir die modernsten Tracking-Systeme.
+Auf diese Weise reduzieren wir Kosten und Durchlaufzeiten.
+Eine Erfolgsgeschichte in der Arbeitswelt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Erfahren Sie, wie die offene Plattformarchitektur viele Anwendungsfälle ermöglicht.
+Beispiele finden Sie in der beigefügten Präsentation.
+Sie wurde im Rahmen eines Vortrags von Konrad Winkler &amp;amp; Philippe Rieffel im Rahmen der Esri International Infrastructure Management &amp;amp; GIS Conference am 18.04.2023 in Frankfurt gezeigt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Hinweis: Die Präsentation liegt in englischer Sprache vor.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.dbsystel.de/resource/blob/10621498/fec800ef94e994a94c41bd67e80eb8c6/IMGIS_2023_Winkler_Rieffel-data-data.pdf&quot;&gt;download&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>ChatGPT</title>
+      <link>http://jbake.org/blog/2023/2023-03-28-ChatGPT-Einblicke-und-mehr-Generative-Sprachmodelle-Herausforderungen-und-Chancen.html</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2023/2023-03-28-ChatGPT-Einblicke-und-mehr-Generative-Sprachmodelle-Herausforderungen-und-Chancen.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_chatgpt_funktionsweise_chancen_risiken_und_alternativen_einfach_erklärt&quot;&gt;ChatGPT – Funktionsweise, Chancen, Risiken und Alternativen einfach erklärt&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_chatgpt_funktionsweise_chancen_risiken_und_alternativen_einfach_erklärt&quot;&gt;ChatGPT – Funktionsweise, Chancen, Risiken und Alternativen einfach erklärt&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In diesem Video erkläre ich leichtverständlich die Funktionsweise von ChatGPT im Zusammenhang
+mit generativer Künstlicher Intelligenz (Generative AI) und großen Sprachmodellen (Large Language Models, kurz LLMs).&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Anhand von Anwendungsfällen beschreibe ich Chancen, Risiken und Alternativen und
+diskutiere, was das für uns und unsere Jobs zukünftig bedeuten könnte. &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube.com/embed/zPQqdnmZvuY?si=WG4CimKzCMu_-ihM&quot; title=&quot;ChatGPT – Funktionsweise, Chancen, Risiken und Alternativen einfach erklärt&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>Re-Platforming Mainframe</title>
+      <link>http://jbake.org/blog/2023/2023-03-08-Re-Platforming-Mainframe-Mehr-als-nur-Lift-Shift.html</link>
+      <pubDate>Wed, 8 Mar 2023 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2023/2023-03-08-Re-Platforming-Mainframe-Mehr-als-nur-Lift-Shift.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_re_platforming_mainframe_mehr_als_nur_liftshift&quot;&gt;Re-Platforming Mainframe – Mehr als nur Lift&amp;amp;Shift&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_re_platforming_mainframe_mehr_als_nur_liftshift&quot;&gt;Re-Platforming Mainframe – Mehr als nur Lift&amp;amp;Shift&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die sinkende Bedeutung der Mainframe-Plattform führt uns zu unserem Projektziel Lift&amp;amp;Shift.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Migration in die Cloud soll mit möglichst wenigen Anpassungen erfolgen.
+Dabei wollen wir die IBM Mainframe basierten Cobol Anwendungen durch schrittweise Überführung der Anwendungen in die DB Enterprise Cloud ablösen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Schaffung einer zukunftsorientierten IT-Architektur und signifikante Einsparungen von Betriebskosten
+durch die Nutzung cloudbasierter Infrastruktur sind ebenso wichtig.
+Lesen Sie in unserer Präsentation, welche Projektziele wir außerdem verfolgen,
+wer unsere Partner sind und wie unsere Bestandsanalyse aussieht.
+Gezeigt wurde sie im Rahmen eines Vortrags von Tim Engeleiter am 08.03.2023 bei den Mainframe Dayz in Wiesbaden.  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.dbsystel.de/resource/blob/10618882/a9f78504495f491f52042884428c711f/Replatformin-Mainframe-data-data.pdf&quot;&gt;download&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>K8s at Deutsche Bahn</title>
+      <link>http://jbake.org/blog/2022/2022-11-24-the-journey-towards-K8s-at-Deutsche-Bahn.html</link>
+      <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2022/2022-11-24-the-journey-towards-K8s-at-Deutsche-Bahn.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_the_journey_towards_k8s_at_deutsche_bahn&quot;&gt;The journey towards K8s at Deutsche Bahn&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_the_journey_towards_k8s_at_deutsche_bahn&quot;&gt;The journey towards K8s at Deutsche Bahn&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This lecture was given by Gualter Barbas Baptista from DB Systel at the Containerdays from 05 to 07 September 2022.
+(&lt;a href=&quot;https://www.containerdays.io/&quot; class=&quot;bare&quot;&gt;https://www.containerdays.io/&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In 2016, Deutsche Bahn decided to get rid of their own data centers
+and to migrate the majority of applications to the cloud.
+The cloudification of Deutsche Bahn was supported by a comprehensive transformation of its digital partner DB Systel
+from traditional working and organisational structures to self-organisation and company-wide networks,
+including a DevOps culture. Within this context, the first Kubernetes platform services emerge.
+From an OpenShift-based Kubernetes-Namespace-as-a-Service into a GitOps based K8s fleet management,
+we describe how the cloud, the organisational transformation
+and the CNCF landscape are accelerating the digitalisation of Deutsche Bahn.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube-nocookie.com/embed/cT_xAsBSIpU?si=ripHEbkddB1YR7YC&quot; title=&quot;YouTube video player&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>Produkt- statt Projektmanagement</title>
+      <link>http://jbake.org/blog/2022/2022-11-04-Produkt-statt-Projekmanagement.html</link>
+      <pubDate>Fri, 4 Nov 2022 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2022/2022-11-04-Produkt-statt-Projekmanagement.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_produkt_statt_projektmanagement&quot;&gt;Produkt- statt Projektmanagement&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_produkt_statt_projektmanagement&quot;&gt;Produkt- statt Projektmanagement&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Warum das Funding von Projekten mittlerweile zu einem der größten Hindernisse
+auf dem Weg zu einer BizDevOps-Organisation geworden ist −
+ein Debattenbeitrag zum nächsten notwendigen Schritt der DevOps-Bewegung.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die DevOps-Bewegung ist in der Realität und im Herzen der digitalen Industrie angekommen.
+In der Systel arbeiten knapp 100 Teams nach dem Prinzip „Your build (or integrate) it, you run it“ und
+sind so in der Lage, regelmäßig und mit hoher Frequenz Änderungen und
+damit „Business Value“ zu den Nutzerinnen und Nutzern zu bringen.
+Nicht nur bei uns, sondern in allen vergleichbaren großen Konzernen sind Cloud-Nutzung, Automatisierung, Continuous Delivery, Platform Strategy und
+der dafür notwendige kulturelle Wandel auf der Tagesordnung.
+Ein großer Hebel für den Wandel zu einer DevOps-Organisation wird allerdings häufig übersehen:
+das etablierte Funding von digitalen Maßnahmen über Projekte ist mittlerweile zu einem der Haupt-Hindernisse
+auf dem Weg zu einer leistungsfähigen Delivery-Organisation geworden.
+Aus meiner Sicht müssen wir daher ganz vorne mit der Veränderung ansetzen, nämlich dort, wo Projekte entstehen, und
+über Projektbudgets entschieden wird.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Warum ich dieser Meinung bin, habe ich auf einem Vortrag beim DevOps Enterprise Summit dargelegt,
+der mittlerweile auch über den YouTube Kanal der DB Systel zugänglich ist.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/GjW4YeFjXUM?si=orqR9ChC_pWBnKij&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>Deine Diagramme sind Legende?</title>
+      <link>http://jbake.org/blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html</link>
+      <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_deine_plantuml_diagramme_sind_legende&quot;&gt;Deine PlantUML-Diagramme sind Legende?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;style&gt;
+pre { white-space: pre-wrap; }
+table.tableblock { overflow: auto; width: 100%;}
+td.tableblock {overflow: auto; width: 50%;}
+&lt;/style&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_deine_plantuml_diagramme_sind_legende&quot;&gt;Deine PlantUML-Diagramme sind Legende?&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&amp;#8230;&amp;#8203;dann verpasse ihnen eine Legende! Ein Diagramm soll nicht nur für Insider lesbar sein. Mit einer Legende erklärst du die verwendeten Symbole und Farben. In diesem Artikel zeige ich dir, wie es geht.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;PlantUML verfügt über ein wenig dokumentiertes Element namens &quot;&lt;a href=&quot;https://plantuml.com/de/commons#3b05da228ffe6d52&quot;&gt;Legend&lt;/a&gt;&quot;. Damit lässt sich eine Box im Diagramm z. B. in der rechten unteren Ecke platzieren. Wie aber der Inhalt dargestellt werden soll ist unklar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;plantuml&quot;&gt;@startuml
+skinparam actorStyle awesome
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -&amp;gt; Datenbank #green
+
+legend right
+   &amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;
+   ???
+endlegend
+@enduml&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
+@startuml
+skinparam actorStyle awesome
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -&amp;gt; Datenbank #green
+
+legend right
+   &amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;
+   ???
+endlegend
+@enduml&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Google findet als Idee, dass die Legende als &lt;a href=&quot;https://plantuml.com/de/creole#51c45b795d5d18a3&quot;&gt;Tabelle in Creole-Syntax&lt;/a&gt; erstellt werden kann. Farben kann man damit gut erklären, aber für Symbole können nur Emojis oder spezielle Zeichen verwendet werden.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;plantuml&quot;&gt;@startuml
+skinparam actorStyle awesome
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -&amp;gt; Datenbank #green
+
+legend right
+   &amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;
+   | &amp;lt;#red&amp;gt;    | Benutzer-Zugriff |
+   | &amp;lt;#green&amp;gt;  | Datenbank-Verbindung |
+   | &amp;lt;:smiley:&amp;gt; | Benutzer :-) |
+endlegend
+@enduml&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
+@startuml
+skinparam actorStyle awesome
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -&amp;gt; Datenbank #green
+
+legend right
+   &amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;
+   | &amp;lt;#red&amp;gt;    | Benutzer-Zugriff |
+   | &amp;lt;#green&amp;gt;  | Datenbank-Verbindung |
+   | &amp;lt;:smiley:&amp;gt; | Benutzer :-) |
+endlegend
+@enduml&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In einem &lt;a href=&quot;https://forum.plantuml.net/11603/how-to-add-arrows-to-a-legend-or-a-table?show=15179#a15179&quot;&gt;Forum&lt;/a&gt; habe ich am Rande den Hinweis gefunden, dass man mit dem &lt;a href=&quot;https://plantuml.com/de/object-diagram#6c738a9019f7ac08&quot;&gt;Map-Statement&lt;/a&gt; des Objektdiagramms auch eine Tabelle aufbauen kann. Nur geht das nicht direkt innerhalb der Legende. Es gibt aber den Trick, dass man mit der `{{ &amp;#8230;&amp;#8203; }} Syntax ein neues Diagramm innerhalb des Diagramms erstellen kann. Damit lässt sich dann auch eine Map innerhalb der Legende aufbauen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;plantuml&quot;&gt;@startuml
+skinparam actorStyle awesome
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -&amp;gt; Datenbank #green
+
+legend right
+{{
+   map &quot;&amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;&quot; as legend #white {
+   &amp;lt;#red&amp;gt;    =&amp;gt; Benutzer-Zugriff
+   &amp;lt;#green&amp;gt;  =&amp;gt; Datenbank-Verbindung
+   &amp;lt;:smiley:&amp;gt; =&amp;gt; Benutzer :-)
+   }
+}}
+endlegend
+@enduml&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
+@startuml
+skinparam actorStyle awesome
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -&amp;gt; Datenbank #green
+
+legend right
+{{
+   map &quot;&amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;&quot; as legend #white {
+   &amp;lt;#red&amp;gt;    =&amp;gt; Benutzer-Zugriff
+   &amp;lt;#green&amp;gt;  =&amp;gt; Datenbank-Verbindung
+   &amp;lt;:smiley:&amp;gt; =&amp;gt; Benutzer :-)
+   }
+}}
+endlegend
+@enduml&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Und wenn wir jetzt schon dabei sind Diagramme innerhalb von Diagrammen zu nutzen, dann können wir das auch noch eine Ebene tiefer machen. Dadurch schaffen wir es in der Legende die Diagramm-Elemente zu zeichnen, die wir beschreiben wollen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dazu bauen wir uns in einer Prozedur ein universelles Mini-Diagramm:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;plantUML&quot;&gt;scale $scale
+skinparam backgroundcolor transparent
+label &quot; &quot; as A
+label &quot; &quot; as B
+$type&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Der scale-Befehl erlaubt es die zu beschreibende Komponente kleiner darzustellen und somit die Legende kompakt zu halten.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die beiden unsichtbaren Labels sorgen dafür, dass wir einen Connector von A nach B darstellen können.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Das ganze sieht dann kompakt wie folgt aus:&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;plantuml&quot;&gt;@startuml
+skinparam actorStyle awesome
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -&amp;gt; Datenbank #green
+
+legend right
+{{
+
+   !procedure $entry($type, $label, $scale=1)
+      {{\nscale $scale \nskinparam backgroundcolor transparent\nlabel &quot; &quot; as A\nlabel &quot; &quot; as B\n $type \n}} =&amp;gt; $label
+   !endprocedure
+   map &quot;&amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;&quot; as legend #white {
+      $entry(&quot;:Actor:&quot;,&quot; Benutzer&quot;, 0.5)
+      $entry(&quot;[component]&quot;,&quot; Benutzer&quot;, 0.7)
+      $entry(&quot;database db&quot;,&quot;Datenbank&quot;, 0.7)
+      $entry(&quot;A -&amp;gt; B&quot;,&quot;Benutzer-Zugriff&quot;)
+      $entry(&quot;A -&amp;gt; B #green&quot;,&quot;Datenbank-Verbindung&quot;)
+   }
+}}
+endlegend
+@enduml&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
+@startuml
+skinparam actorStyle awesome
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -&amp;gt; Datenbank #green
+
+legend right
+{{
+
+   !procedure $entry($type, $label, $scale=1)
+      {{\nscale $scale \nskinparam backgroundcolor transparent\nlabel &quot; &quot; as A\nlabel &quot; &quot; as B\n $type \n}} =&amp;gt; $label
+   !endprocedure
+   map &quot;&amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;&quot; as legend #white {
+      $entry(&quot;:Actor:&quot;,&quot; Benutzer&quot;, 0.5)
+      $entry(&quot;[component]&quot;,&quot; Benutzer&quot;, 0.7)
+      $entry(&quot;database db&quot;,&quot;Datenbank&quot;, 0.7)
+      $entry(&quot;A -&amp;gt; B&quot;,&quot;Benutzer-Zugriff&quot;)
+      $entry(&quot;A -&amp;gt; B #green&quot;,&quot;Datenbank-Verbindung&quot;)
+   }
+}}
+endlegend
+@enduml&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Im letzten Schritt möchte ich die Legende mit ein paar Styles noch aufhübschen. Der doppelte Rahmen soll weg und etwas kleiner wäre auch nicht schlecht.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;plantuml&quot;&gt;@startuml
+skinparam actorStyle awesome
+skinparam legendBackgroundColor transparent
+skinparam legendBorderColor transparent
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -&amp;gt; Datenbank #green
+
+
+legend right
+{{
+   scale 0.8
+   skinparam defaultFontSize 14
+   skinparam BackGroundColor transparent
+   skinparam defaultBackgroundColor white
+
+   !procedure $entry($type, $label, $scale=1)
+      {{\nscale $scale \nskinparam backgroundcolor transparent\nlabel &quot; &quot; as A\nlabel &quot; &quot; as B\n $type \n}} =&amp;gt; $label
+   !endprocedure
+   map &quot;&amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;&quot; as legend #white {
+      $entry(&quot;:Actor: #green&quot;,&quot;\nBenutzer&quot;, 0.5)
+      $entry(&quot;[component]&quot;,&quot;\nBenutzer&quot;, 0.7)
+      $entry(&quot;database db&quot;,&quot;\nDatenbank&quot;, 0.7)
+      $entry(&quot;A -&amp;gt; B&quot;,&quot;Benutzer-Zugriff&quot;)
+      $entry(&quot;A -&amp;gt; B&quot;,&quot;Datenbank-Verbindung&quot;)
+   }
+}}
+
+endlegend
+@enduml&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
+@startuml
+skinparam actorStyle awesome
+skinparam legendBackgroundColor transparent
+skinparam legendBorderColor transparent
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -&amp;gt; Datenbank #green
+
+
+legend right
+{{
+   scale 0.8
+   skinparam defaultFontSize 14
+   skinparam BackGroundColor transparent
+   skinparam defaultBackgroundColor white
+
+   !procedure $entry($type, $label, $scale=1)
+      {{\nscale $scale \nskinparam backgroundcolor transparent\nlabel &quot; &quot; as A\nlabel &quot; &quot; as B\n $type \n}} =&amp;gt; $label
+   !endprocedure
+   map &quot;&amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;&quot; as legend #white {
+      $entry(&quot;:Actor: #green&quot;,&quot;\nBenutzer&quot;, 0.5)
+      $entry(&quot;[component]&quot;,&quot;\nBenutzer&quot;, 0.7)
+      $entry(&quot;database db&quot;,&quot;\nDatenbank&quot;, 0.7)
+      $entry(&quot;A -&amp;gt; B&quot;,&quot;Benutzer-Zugriff&quot;)
+      $entry(&quot;A -&amp;gt; B&quot;,&quot;Datenbank-Verbindung&quot;)
+   }
+}}
+
+endlegend
+@enduml&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Bei der Nutzung fällt schnell auf, dass die Legende zu viel Platz einnimmt. Sie duldet keine anderen Diagramm-Elemente neben sich. Also haben wir weiter geforscht. Mit dem Diagramm in der Legende besteht eigentlich kein Grund mehr wirklich das Element &lt;code&gt;Legend&lt;/code&gt; zu verwenden. Was passiert, wenn wir es durch eine &lt;code&gt;rectangle&lt;/code&gt; ersetzen und diese entsprechend Stylen?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dazu müssen wir dem Element einen Stereotype verpassen, da wir sonst alle &lt;code&gt;rectangle&lt;/code&gt;-Elemente stylen würden. Und siehe da, es funktioniert.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Durch diesen Trick haben wir nun mehr Einfluss auf die Platzierung, denn wir können dieses &lt;code&gt;rectangle&lt;/code&gt;-Element durch versteckte Verbindungen beeinflussen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;plantuml&quot;&gt;@startuml
+skinparam actorStyle awesome
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -down-&amp;gt; Datenbank #green
+
+rectangle a &amp;lt;&amp;lt;test&amp;gt;&amp;gt;
+Datenbank -left-&amp;gt; a
+
+skinparam rectangle&amp;lt;&amp;lt;legend&amp;gt;&amp;gt; {
+    backgroundColor transparent
+    borderColor transparent
+    shadowing false
+}
+hide &amp;lt;&amp;lt;legend&amp;gt;&amp;gt; stereotype
+
+rectangle legende &amp;lt;&amp;lt;legend&amp;gt;&amp;gt; [
+{{
+   scale 0.8
+   skinparam defaultFontSize 14
+   skinparam BackGroundColor transparent
+   skinparam defaultBackgroundColor white
+
+   !procedure $entry($type, $label, $scale=1)
+      {{\nscale $scale \nskinparam backgroundcolor transparent\nlabel &quot; &quot; as A\nlabel &quot; &quot; as B\n $type \n}} =&amp;gt; $label
+   !endprocedure
+   map &quot;&amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;&quot; as legend #white {
+      $entry(&quot;:Actor:&quot;,&quot;\nBenutzer&quot;, 0.5)
+      $entry(&quot;[component]&quot;,&quot;\nBenutzer&quot;, 0.7)
+      $entry(&quot;database db&quot;,&quot;\nDatenbank&quot;, 0.7)
+      $entry(&quot;A -&amp;gt; B&quot;,&quot;Benutzer-Zugriff&quot;)
+      $entry(&quot;A -&amp;gt; B #green&quot;,&quot;Datenbank-Verbindung&quot;)
+   }
+}}
+]
+
+User -[hidden]-&amp;gt; legende
+legende -[hidden]down-&amp;gt; a
+
+@enduml&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
+@startuml
+skinparam actorStyle awesome
+
+database Datenbank
+:User: -&amp;gt; [Komponente]
+[Komponente] -down-&amp;gt; Datenbank #green
+
+rectangle a &amp;lt;&amp;lt;test&amp;gt;&amp;gt;
+Datenbank -left-&amp;gt; a
+
+skinparam rectangle&amp;lt;&amp;lt;legend&amp;gt;&amp;gt; {
+    backgroundColor transparent
+    borderColor transparent
+    shadowing false
+}
+hide &amp;lt;&amp;lt;legend&amp;gt;&amp;gt; stereotype
+
+rectangle legende &amp;lt;&amp;lt;legend&amp;gt;&amp;gt; [
+{{
+   scale 0.8
+   skinparam defaultFontSize 14
+   skinparam BackGroundColor transparent
+   skinparam defaultBackgroundColor white
+
+   !procedure $entry($type, $label, $scale=1)
+      {{\nscale $scale \nskinparam backgroundcolor transparent\nlabel &quot; &quot; as A\nlabel &quot; &quot; as B\n $type \n}} =&amp;gt; $label
+   !endprocedure
+   map &quot;&amp;lt;b&amp;gt;Legende&amp;lt;/b&amp;gt;&quot; as legend #white {
+      $entry(&quot;:Actor:&quot;,&quot;\nBenutzer&quot;, 0.5)
+      $entry(&quot;[component]&quot;,&quot;\nBenutzer&quot;, 0.7)
+      $entry(&quot;database db&quot;,&quot;\nDatenbank&quot;, 0.7)
+      $entry(&quot;A -&amp;gt; B&quot;,&quot;Benutzer-Zugriff&quot;)
+      $entry(&quot;A -&amp;gt; B #green&quot;,&quot;Datenbank-Verbindung&quot;)
+   }
+}}
+]
+
+User -[hidden]-&amp;gt; legende
+legende -[hidden]down-&amp;gt; a
+
+@enduml&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Übrigens: PlantUML möchte Elemente und ihre Verbindungen immer optimiert platzieren. Es kann also sein, dass die neue Legende deshalb noch mal kräftig durchmischt. Es gibt aber nicht nur die Pfeildefinition &lt;code&gt;-[hidden]&amp;#8594;&lt;/code&gt;, um eine Verbindung nicht anzuzeigen. Der Pfeil &lt;code&gt;-[norank]&amp;#8594;&lt;/code&gt; ist eine Verbindung, welche bei besagter Optimierung ignoriert wird. Beide Features kann man kombinieren: Mit einem &lt;code&gt;-[norank,hidden]&amp;#8594;&lt;/code&gt; ist die Legende unsichtbar mit einem anderen Element verbunden, ohne dass dies das Diagramm umstrukturiert.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>Vielfalt bei der Bahn</title>
+      <link>http://jbake.org/blog/2022/2022-03-23-Vielfalt-bei-der-Bahn-Computerlinguistinnen-treiben-Digitalisierung-voran.html</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2022/2022-03-23-Vielfalt-bei-der-Bahn-Computerlinguistinnen-treiben-Digitalisierung-voran.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_vielfalt_bei_der_bahn_computerlinguistinnen_treiben_digitalisierung_voran&quot;&gt;Vielfalt bei der Bahn: Computerlinguist:innen treiben Digitalisierung voran&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_vielfalt_bei_der_bahn_computerlinguistinnen_treiben_digitalisierung_voran&quot;&gt;Vielfalt bei der Bahn: Computerlinguist:innen treiben Digitalisierung voran&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dieses Mal haben wir Claudia Schönfelder aus dem Team SALT zu Gast, mit der wir über das Thema “SINUS”,
+den Sprachassistenten für die Instandhaltung von Zügen,
+und den Beruf der Computerlinguist:innen, sprechen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Claudia entwickelt multidisziplinär mit mehreren Teams von Expert:innen einen der ersten Sprachassistenten
+für die industrielle Nutzung. Wir alle kennen Siri und Alexa, aber diese bewältigen in der Regel Aufgaben des Alltags.
+Im Gegensatz dazu führt SINUS die Konzernpartner:innen aus der Instandhaltung per Sprache durch digitalisierte Formulare,
+um die Eingabe von Schäden an Loks gänzlich über die Spracherkennung zu tätigen.
+Im Interview spricht sie mit uns über dieses ehrgeizige Projekt,
+das die Effizienz bei der Befundung von Zügen deutlich steigern kann.
+Wir spielen anhand eines Beispiels durch, welche Besonderheiten dieses Tool bei der Befundung besitzt.
+Dazu erklärt Claudia wie sich das Berufsbild der Computerlinguisten in den letzten Jahren entwickelt und
+etabliert hat. Information, die auch für die jüngeren unter uns, von großem Interesse sein kann.  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube-nocookie.com/embed/_fy8SD1XXLE?si=ulYO3N77YYdOYE0L&quot; title=&quot;YouTube video player&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>KITT Tool</title>
+      <link>http://jbake.org/blog/2021/2021-11-02-KITT-das-Kuenstliche-Intelligenz-Translation-Tool.html</link>
+      <pubDate>Tue, 2 Nov 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2021/2021-11-02-KITT-das-Kuenstliche-Intelligenz-Translation-Tool.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_kitt_das_künstliche_intelligenz_translation_tool&quot;&gt;KITT, das Künstliche Intelligenz Translation Tool&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_kitt_das_künstliche_intelligenz_translation_tool&quot;&gt;KITT, das Künstliche Intelligenz Translation Tool&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dieses Mal haben wir Pia Schwarz aus dem Team SALT zu Gast, mit der wir über das Thema “KITT”, das Künstliche Intelligenz Translation Tool, sprechen.
+Pia bringt mit ihrem Team Maschinen das Sprechen bei.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Im Interview spricht sie mit uns über KITT, das als Interface gesprochene Sprache entgegennimmt.
+Es wird eingesetzt, um die Kommunikation im Zugfunk von Fahrdienstleiter:innen und
+Triebfahrzeugführer:innen im Grenzbereich von Frankreich und Deutschland zu verbessern.
+Wir spielen anhand eines Beispiels durch, welche Besonderheiten das Bahnjargon mit sich bringt und
+warum am Markt verfügbare Übersetzungstool in diesem Anwendungsfall nicht ausreichend sind.
+KITT hilft ebenso die Anforderungen an das Sprachniveau zu senken,
+in dem es sogenannte Predefined Messages zuverlässig übersetzt, die im europäischen Bahnverkehr verwendet werden.
+In der zweiten Hälfte des Interviews steigen wir tiefer in die Technik ein und
+gehen auf die Herausforderungen ein. Denn die Anforderungen an KITT sind nicht weniger, als exakte Übersetzungen zu produzieren. Zum Beispiel sind Übersetzungen bei Hintergrundgeräuschen oder Sätze mit Eigennamen problematisch.
+Zum Abschluss sprechen wir über die technische Umsetzung, Trainingsdatenmenge und Open Source Frameworks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/c43j8igaVuk?si=NN_K09dVon4yBMGI&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
       <title>Bad Bots</title>
       <link>http://jbake.org/blog/2021/2021-06-08-Bad-bots-Chancen-und-Herausforderungen-fuer-KI-und-Sprache.html</link>
       <pubDate>Tue, 8 Jun 2021 00:00:00 +0000</pubDate>
@@ -1447,6 +2395,146 @@ Er behandelt nicht nur die Hintergründe, sondern zeigt auch technische und gest
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube-nocookie.com/embed/aY4I565gdM8?si=gxWCjUIandt7jHp9&amp;t=29s&quot; title=&quot;Bad Bots - Chancen und Herausforderungen für KI und Sprache&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>Computer Vision Use Cases</title>
+      <link>http://jbake.org/blog/2021/2021-04-12-Computer-Vision-Use-Cases-at-Deutsche-Bahn.html</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2021/2021-04-12-Computer-Vision-Use-Cases-at-Deutsche-Bahn.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wie können KI-Bildanalysen bei der Graffiti-Erkennung helfen und welche Potentiale birgt das für die Bahn?&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Im Rahmen des Data Festivals 2021 präsentierte das DB Systel Venture vsion.ai gemeinsam
+mit der Data Science Beratung Alexander Thamm Einsatzmöglichkeiten von KI-Analysen auf Bildern im Bahnkontext.
+Am Beispiel der automatischen Erkennung von Graffiti auf Zügen zeigt Peco Elenchevski die Besonderheiten des
+Use Cases auf sowie die technische Umsetzung eines Proof of Concept.
+Nico Becker knüpft dort an und beschreibt die Herausforderungen,
+welche sich aus dem Deployment von KI-Modellen ergeben.
+Dabei skizziert er einen Weg, wie sich ein Proof of Concept zu einem robusten Produktivsystem weiterentwickeln lässt.
+Der Vortrag wurde vor internationalem Publikum gehalten und ist daher auf Englisch.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube-nocookie.com/embed/QaDLtFEPcNo?si=IAtuP3i4KY5kopOQ&quot; title=&quot;YouTube video player&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>Die C4-Testpyramide</title>
+      <link>http://jbake.org/blog/2021/2021-03-20-Die-C4-Testpyramide-eine-architekturgetriebene-Teststrategie.html</link>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2021/2021-03-20-Die-C4-Testpyramide-eine-architekturgetriebene-Teststrategie.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_die_c4_testpyramide_eine_architekturgetriebene_teststrategie&quot;&gt;Die C4-Testpyramide - eine architekturgetriebene Teststrategie&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_die_c4_testpyramide_eine_architekturgetriebene_teststrategie&quot;&gt;Die C4-Testpyramide - eine architekturgetriebene Teststrategie&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Präsentation zeigt, wie sich die Prinzipien der Test Pyramide mit dem C4 Modell zur Visualisierung von Software Architekturen verbinden lassen,
+um so auf einfache Weise zu einer produktspezifischen Teststrategie zu gelangen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/I2UBsZAdap4?si=a-cOpaVov7LZAOf3&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>DevOps Geschwindigkeit</title>
+      <link>http://jbake.org/blog/2020/2020-12-07-devops-mehr-geschwindigkeit-auf-der-schiene.html</link>
+      <pubDate>Mon, 7 Dec 2020 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2020/2020-12-07-devops-mehr-geschwindigkeit-auf-der-schiene.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_devops_mehr_geschwindigkeit_auf_der_schiene&quot;&gt;DevOps - Mehr Geschwindigkeit auf der Schiene&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides_und_video&quot;&gt;Slides und Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_devops_mehr_geschwindigkeit_auf_der_schiene&quot;&gt;DevOps - Mehr Geschwindigkeit auf der Schiene&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In diesem Vortrag im Rahmen der IT-Tage 2020 erklärt Carsten Hoffmann von der DB Systel,
+warum sich der erste Ansatz einer zentralen CI/CD-Installation im Projekt,
+eine Cloud-native Plattform für API-getriebene Softwareentwicklung aufzubauen,
+für alle Teams als problematisch erwies und durch dezentrale Pipelines ersetzt wurde.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Danach werden die Hindernisse bei der Einführung einer eingekauften API-Management-Lösung erklärt und
+wieso sich der Einkauf von großer On-Premise-Software nur schwierig mit den agilen Prinzipien vereinbaren lässt.
+Außerdem wird erläutert, wie im Team mit polyglotter Softwareentwicklung und permanent gegen Wissensinseln angekämpft wurde.
+Zuletzt geht Casten Hoffmann darauf ein, wie das Team mit umfassender Architekturdokumentation begonnen hat und
+gescheitert ist.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_slides_und_video&quot;&gt;Slides und Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/jas5x0VREvY?si=NZwaDN1OjaWrQcTb&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/da603672d6254bbeae775bb452660876&quot; title=&quot;DevOps - Mehr Geschwindigkeit auf der Schiene&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1582,6 +2670,56 @@ Erfahre mehr zum Thema:    • #000000 #c0ffee Tech-Talk  &lt;/p&gt;
     </item>
     
     <item>
+      <title>OOP: Guter Code</title>
+      <link>http://jbake.org/blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_db_systel_streitet_auf_der_oop_für_guten_code&quot;&gt;DB Systel streitet auf der OOP für guten Code&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_db_systel_streitet_auf_der_oop_für_guten_code&quot;&gt;DB Systel streitet auf der OOP für guten Code&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In diesem unterhaltsamen Pecha Kucha Vortrag spricht Carsten Thurau über seine Erfahrung aus dem Alltag als erfahrener Trainer und Coach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Er zeigt in seinem Kurzvortrag, warum schlechter Code Entwickler unglücklich macht und
+Code Reviews, TDD und Clean Code eine gute Idee sind.
+Fazit: Entwickelt qualitativ hochwertigen Code und seid stolz auf Euer Werk!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Der Talk wurde auf der OOP 2020 Konferenz in München Anfang Februar 2020 aufgezeichnet.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/ZDIjhsRU34w?si=aKWUSc-Se2COMlcA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
       <title>Spock und AsciiDoc</title>
       <link>http://jbake.org/blog/2019/2019-09-13-Spock-und-AsciiDoc.html</link>
       <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
@@ -1633,7 +2771,7 @@ am Ende bekommen wir ein Dokument welches Ihre wertvolle Software korrekt und ü
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/1ac034287b8d429d8e0dde25de0f6a66&quot; title=&quot;Spock and AsciiDoc - ein perfektes Paar&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
-&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ebc6Xa-HC48?si=nyh6Drt45gNdbj2Y&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/ebc6Xa-HC48?si=vB62D8FhCpI9UGH3&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
