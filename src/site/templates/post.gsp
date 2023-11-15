@@ -22,7 +22,11 @@
         <!-- Date, Author -->
         <p class="increase-zindex">
           <em>${new java.text.SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH).format(content.date)},
-          <a href="${content.rootpath}blog/profiles/${(content.author?:'').replaceAll(' ','-').encodeURL()}.html">${content.author?:''}</a></em>
+          <% content.author.split(",").each { author -> 
+            author = author.trim();
+          %>
+          <a href="${content.rootpath}blog/profiles/${(author?:'').replaceAll(' ','-').encodeURL()}.html">${author?:''}</a></em>
+          <% } %>
         </p>
         <!-- Share buttons above headline -->
         <%include "social-media.gsp" %>

@@ -1,0 +1,19 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Philippe Rieffe
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Philippe Rieffe
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++

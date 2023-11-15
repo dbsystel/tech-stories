@@ -1,0 +1,38 @@
+:jbake-title: Indoor-GIS
+:jbake-card: Indoor-GIS zur Rationalisierung von Wartungsarbeiten
+:jbake-date: 2023-04-01
+:jbake-type: post
+:jbake-tags: Plattform
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Konrad Winkler, Philippe Rieffe
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/devops.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Indoor-GIS zur Rationalisierung von Wartungsarbeiten
+
+Genial kombiniert: Mit Tracking-Technologie und unserer Esri-Plattform Kosten und Durchlaufzeiten reduzieren.
+
+++++
+<!-- teaser -->
+++++
+
+Durch die Kombination von Tracking-Technologie und unserer Esri-Plattform nutzen wir die modernsten Tracking-Systeme.
+Auf diese Weise reduzieren wir Kosten und Durchlaufzeiten.
+Eine Erfolgsgeschichte in der Arbeitswelt.
+
+Erfahren Sie, wie die offene Plattformarchitektur viele Anwendungsfälle ermöglicht.
+Beispiele finden Sie in der beigefügten Präsentation.
+Sie wurde im Rahmen eines Vortrags von Konrad Winkler & Philippe Rieffel im Rahmen der Esri International Infrastructure Management & GIS Conference am 18.04.2023 in Frankfurt gezeigt.
+
+Hinweis: Die Präsentation liegt in englischer Sprache vor.
+
+=== Slides
+
+https://www.dbsystel.de/resource/blob/10621498/fec800ef94e994a94c41bd67e80eb8c6/IMGIS_2023_Winkler_Rieffel-data-data.pdf[download]
+
+|===

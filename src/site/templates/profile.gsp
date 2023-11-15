@@ -25,7 +25,7 @@
 			</div>
 			<main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
 				<%include "main.gsp"%>
-            <% content.myPosts = published_posts.findAll{it.author==content.author} %>
+            <% content.myPosts = published_posts.findAll{it.author.contains(content.author)} %>
 			<%
                 def allTags = []
                 content.myPosts.each { post ->
