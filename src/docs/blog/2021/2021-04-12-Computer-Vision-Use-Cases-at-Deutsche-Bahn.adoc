@@ -13,8 +13,6 @@
 
 ifndef::imagesdir[:imagesdir: ../../images]
 
-== 
-
 Wie können KI-Bildanalysen bei der Graffiti-Erkennung helfen und welche Potentiale birgt das für die Bahn?
 
 ++++
