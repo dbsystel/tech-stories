@@ -6,7 +6,7 @@ pages:
   stage: build
   script:
     - export DTC_HEADLESS=true
-    - ./dtcw generateSite
+    - ./dtcw generateSite --info
     - mkdir public
     - cp -r build/microsite/output/. public/.
   artifacts:

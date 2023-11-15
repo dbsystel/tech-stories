@@ -1,0 +1,48 @@
+:jbake-title: JavaLand 2023
+:jbake-card: Vortrag auf der JavaLand 2023
+:jbake-date: 2023-04-01
+:jbake-type: post
+:jbake-tags: Plattform
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Ralf D. Mueller
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/devops.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Vortrag auf der JavaLand 2023
+
+Vom 20. bis 23. März fand mit der JavaLand die große Java-Community-Konferenz im Phantasialand Brühl statt - und
+DB Systel war mit dabei.
+
+++++
+<!-- teaser -->
+++++
+
+In dem Talk "Fantastische Diagramme und wie Du sie selbst erstellst" haben Falk Sippach (embarc) und
+Ralf D. Müller (DB Systel) gemeinsam Schwachstellen von Architekturdiagrammen aufgespürt und ausgemerzt.
+In den Slides des Vortrags (siehe Download-Link unten) finden sich als Ergebnis ein paar Tipps und Checklisten,
+die jeder für seine eigenen Diagramme verwenden kann.
+
+Abends gab es dann noch einen Fun-Workshop "Hacking the RP2040", bei dem wir uns angesehen haben,
+was man so alles mit dem Tufty-Badge von Pimoroni anstellen kann.
+Dabei handelt es sich um ein kleines 320x240 Display mit Tastern und RP2040 Microcontroller
+(besser bekannt als Raspberry Pi Pico) in der Form eines Badges zum Umhängen.
+
+Das eigentliche Highlight der jährlichen JavaLand war aber die Community mit ihren vielen Hallway-Tracks und
+dem Newcomer-Programm "NextGen" über das immer wieder frische Themen und Sichtweisen in das Programm aufgenommen werden.
+
+=== Slides
+
+https://dbsystel.github.io/jl23-rp2040/slides.html#/[Slides des Workshops]
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/41f2b88302254e0cb340bec890ca0d38" title="Phantastische Diagramme und wie Du sie selbst erstellst" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+|===

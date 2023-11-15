@@ -1,0 +1,52 @@
+:jbake-title: Prompt-Engineering
+:jbake-card: Die faszinierende Welt des Prompt-Engineerings
+:jbake-date: 2023-11-08
+:jbake-type: post
+:jbake-tags: javascript, vue
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Ralf D. Mueller
+:jbake-teaser-image: profiles/Ralf-D.-Mueller.png
+:jbake-tags: chatgpt, prompt-egineering
+
+
+== Die faszinierende Welt des Prompt-Engineerings
+
+Im Zentrum meines jüngsten Vortrags stand das Prompt-Engineering, ein Schlüsselelement im Umgang mit fortschrittlichen Sprachmodellen wie GPT-3 und GPT-4.
+Das Prompt-Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen. 
+Wir tauchten tief in die Unterschiede zwischen GPT-3 und GPT-4 ein, 
+erkundeten die Komplexität neuronaler Netze und die Bedeutung der Multi-Modalität in der heutigen KI-Landschaft. 
+Ein besonderes Augenmerk legten wir auf die Kunst des Primings und der Kontextualisierung von Prompts, 
+die die Effektivität und Präzision der KI-Interaktionen erheblich steigern können. 
+Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die das Potenzial von Prompt-Engineering veranschaulichen. 
+
+=== Slides
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/f9d4a4977c4d4cc2a055a5f1687e5e56" title="Spock and AsciiDoc - ein perfektes Paar" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+
+|===
+
+=== Referenzen
+
+- link:https://www.golem.de/news/security-bsi-sieht-ki-als-sicherheitsrisiko-2311-179043.html[Golem.de: BSI sieht KI als Sicherhitsrisiko]
+- link:https://twitter.com/TheHiredAI/status/1716485469079257282[Twitter: The Hired AI]
+- link:https://medium.com/@sreedevr/chatgpt-architecture-explained-7fc0cbb7426c[Medium: ChatGPT Architecture Explained by Sreedev R]
+- link:https://www.nature.com/articles/s41598-023-45837-2[Scientific Reports: Comparative performance of humans versus GPT-4.0 and GPT-3.5]
+- link:https://en.wikipedia.org/wiki/GPT-4[GPT-4: Wikipedia]
+- link:https://www.faz.net/pro/d-economy/prompt-der-woche/chatgpt-welche-einstellungen-bei-der-nutzung-helfen-19278230.html[FAZ.net: ChatGPT: Welche Einstellungen bei der Nutzung helfen]
+- link:https://chat.openai.com/share/eeb03d9d-8302-495e-be5d-e817cb7385ff[OpenAI Chat: Beispiel]
+- link:https://chat.openai.com/share/3513ff43-fe92-4ebc-9e9b-1c2ca090ce1d[OpenAI: Verbesserung der docToolchain Dokumentation]
+- link:https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/[DeepLearning.AI: ChatGPT Prompt Engineering for Developers]
+- link:https://www.heise.de/hintergrund/Softwarearchitektur-KI-wird-unsere-Faehigkeiten-ergaenzen-nicht-ersetzen-9339113.html[Heise Online: Softwarearchitektur: "KI wird unsere Fähigkeiten ergänzen, nicht ersetzen"]
+- link:https://www.heise.de/blog/KI-in-der-Softwareentwicklung-Ueberschaetzt-9336902.html[Heise Online: KI in der Softwareentwicklung: Überschätzt]
+- link:https://chat.openai.com/share/09fddcd1-6a71-49c1-bf27-a9ff5f40dace[OpenAI Chat: Beispiel 2]
+- link:https://embarc-downloads.s3.eu-central-1.amazonaws.com/folien/st/2023/LLMs+und+Architektur-komprimiert.pdf[Stefan Toth: Architektur 
+in Zeiten von 
+KI und LLMs
+]

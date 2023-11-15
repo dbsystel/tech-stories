@@ -16,6 +16,10 @@
 It's been a while:
 Since the 2nd February 2022, Vue 3 became the new default for Vue.js apps.
 
+++++
+<!-- teaser -->
+++++
+
 ____
 
 It's done! Vue 3 is now the default version and the brand new http://vuejs.org is live! More details in the blog post in case you missed it:
@@ -109,12 +113,319 @@ You should also include development dependencies for example for webpack plugins
 It could look like the following example:
 
 |===
-|Vue 2 dependency |Vue 3 dependency |notes |estimate 
+|Vue 2 dependency |Vue 3 dependency |notes |estimate
 
-|@dsb-norge/vue-keycloak-js |@baloise/vue-keycloak |similar API, similar features |++ 
-|v-tooltip |floating-vue |same lib under the hood with more features |+ 
-|vue2-datepicker |vue-datepicker-next |same lib with Vue 3 support |+ 
-|vue2-leaflet |@vue-leaflet/vue-leaflet |same API, but lots of relying components |++ 
+|@dsb-norge/vue-keycloak-js |@baloise/vue-keycloak |similar API, similar features |++
+|v-tooltip |floating-vue |same lib under the hood with more features |+
+|vue2-datepicker |vue-datepicker-next |same lib with Vue 3 support |+
+|vue2-leaflet |@vue-leaflet/vue-leaflet |same API, but lots of relying components |++
+|vue2-leaflet-draw-toolbar | - | no Vue 3 equivalent | +++++
+|webpack-license-plugin | rollup-plugin-license | different plugin for rollup, with a different API, we need to check / adjust the output format | +++
+|===
+
+==== Try out things in a playground
+
+For dependency update / migrations you can't estimate, it's a good idea to set them up / try them out in an isolated new Vue 3 playground environment.
+After playing around, you should be able to estimate the effort.
+A good example when having a look at the migration list above would be to try out the `rollup-plugin-license` package.
+
+==== Check your current Webpack environment
+
+When coming from webpack and planning to migrate to Vite, you should check your webpack config for any special behaviors.
+You can use the playground to reflect / try out the setup in Vite.
+Here are some points that were interesting for us:
+
+* We don't need a specific SCSS/SASS/LESS configuration anymore as Vite brings https://vitejs.dev/guide/features.html#css-pre-processors[support for this out-of-the-box]
+* We needed to migrate the `webpack-license-plugin` to `rollup-plugin-license` (see above)
+* Vite comes with its own https://vitejs.dev/guide/env-and-mode.html[approach of reading and passing environment variables and build modes] which is quite easy and handy
+* https://vitejs.dev/guide/assets.html[Static Asset Handling by Vite] is something you should probably know before
+
+==== Split your Store on paper
+
+When currently using Vuex, you may be lucky, and you have already some modules splitting your store into logical parts.
+In our case we had just one big store without any modules as the codebase has evolved over time, and we haven't made the step to split the store.
+The migration to Pinia can be a good chance to face this now as Pinia lets you easily compose multiple small stores.
+You should check your current store configuration and write down the modules that are loosely coupled or even completely independent (e.g. a `user` or an `auth` store).
+
+==== Make the migration transparent and estimable
+
+The last thing we have done was to create a new epic for the whole migration and to create small estimable tasks.
+This was very important as we were now able to identify things we can prepare and do even before we started the migration itself and also tasks we can do in advance.
+On the other hand it helped us for the communication with the product owner and to make things transparent.
+Please keep in mind to add some time buffer for unexpected things occurring during the migration where you may need some extra time.
+For example: the migration from Vuex to Pinia took a lot more time than we thought before.
+But: it was definitely worth it.
+The TypeScript support is way better and the unification of actions and mutations reduces the Boilerplate code a lot.
+We also underestimated the time we needed to migrate the tests.
+This was hard by definition but quite time-consuming as I wrote in the introduction: We had a huge Vuex store.
+
+=== Migrations before the migration
+
+Before starting the migration itself you should migrate everything you can, which is not related to Vue 3 / vite.
+Here is what we have done in my team before the migration itself.
+
+==== Convert Filters to functions
+
+Vue 3 kicked out the concept of using filters in the template using the pipe (`|`) syntax (`{{ expression | myFilter }}`).
+Filters are simply functions that can be imported and used directly.
+You can already import the functions, use them as a method and then pass through the expression in the template before starting the Vu3 migration:
+`{{ myFilter(expression) }}`.
+
+==== Update and migrate dependencies
+
+Update all possible dependencies to their latest versions to make migrations for other libs in advance.
+At this step: double-check if vue-specific libs are ready for using with Vue 3 or if there are other libs you have to use.
+If you have to change to other libs and this one supports Vue 3, make the migration now.
+In our team we had already lots of our dependencies updated, since we are using https://www.mend.io/free-developer-tools/renovate/[Mend (formerly Whitesource) Renovate] for housekeeping and continuous dependency version updates.
+
+When you decide to migrate a dependency to a new one that supports Vue 2 and Vue 3 or which should be replaced with a self-implementation:
+Do it in advance before the actual Vue migration.
+
+==== Isolate hard-to-migrate components
+
+It may happens, you realize, for some of your dependencies a migration won't be straight-forward.
+In our case we decided some years ago, we want to use https://leafletjs.com/[Leaflet.js] as our map library to display and interact with features on a map.
+Therefore we also used a wrapper for Vue 2 applications called https://github.com/vue-leaflet/Vue2Leaflet[Vue2Leaflet] which made us use Leaflet in a declarative manner.
+However, this architectural decision was now a problem for us, as not only this dependency is not supposed to use it with Vue 3 but also extensions for this library such as https://www.npmjs.com/package/@ozangokhanhergul/leaflet.heat[Leaflet.heat] needed to be migrated.
+To face this issue we've gone one step back and rethink our architectural decision to use Leaflet. At this time there was already a Vue 3 wrapper for leaflet available but not as feature-rich as we needed it.
+So we created a new Architectural Decision Record (ADR) to evaluate and choose our future map library as it is a central component of our app and can't be easily replaced.
+After doing a Proof-of-Concept (PoC), we decided to switch to https://openlayers.org/[OpenLayers] and make use of the https://github.com/MelihAltintas/vue3-openlayers[vue3-openlayers] wrapper too, where we were also able to contribute missing features back into the project.
+
+This whole story is probably quite special to my team and our app, but the essential thing here was, that we prepared the central components in parallel to our productive app in a separate repository in isolation.
+Therefore, we created the components and defined their props and events with the help of https://storybook.js.org/[Storybook].
+Of course, we also created tests for these components, so that we were prepared to copy over all this into the productive app and replace the existing components later, when we were ready to actually migrate to Vue 3.
+
+A drawback with this approach is of course: It probably blocks you with releasing new features or you have to implement them twice during the preparation time (one time for the productive app based on Vue 2, one time for the isolated components based on Vue 3).
+
+==== Update your NPM Scripts
+
+When checking your Vue 3 default setup you will notice that some NPM script names have changed by default.
+For example the default command to run the development build and server is now `npm run dev` instead of `npm run serve`.
+You can either change the names back since you are used to the "old" commands, or you can already name your commands in the Vue 2 setup to the new ones to get comfy with it.
+Please note that you may have to change the commands in you CI/CD Pipeline too.
+
+==== Switch to Vite
+
+You can switch to Vite before updating to Vue 3 this makes the "big bang" migration a bit smaller.
+For that, you should install Vite and use the official plugin https://www.npmjs.com/package/@vitejs/plugin-vue2[@vitejs/plugin-vue2].
+You also need to migrate all the webpack plugins and configs.
+When the setup is finished, cleanup all the webpack stuff including the config and the dependencies.
+
+During the migration we noticed, that we haven't used https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export[Type-Only Imports] in all our typescript and `.vue` files.
+The default Vite setup is configured in such way, Type-Only Imports will be forced when needed, otherwise you'll receive errors during the build.
+We had the option to either deactivate this strict behavior by setting the https://www.typescriptlang.org/tsconfig#importsNotUsedAsValues[typescript config option `importsNotUsedAsValues`] to either `preserve` or `remove` (not recommended) or to migrate.
+Luckily, there is a community project called https://github.com/JamieMason/ts-import-types-cli[ts-import-types-cli] that will automate a part of this step.
+So we just had to run the following command to migrate to Type-Only Imports at places needed:
+
+[source,bash]
+----
+# remove the `--dry-run` flag to migrate actually and not only list the changes
+npx ts-import-types-cli --no-organise-imports -p tsconfig.json --dry-run
+
+----
+
+The bad news: The tool didn't find all occurrences of the Type-Only Imports, so when running `npm run build`, we caught some more we had to fix manually.
+
+==== Switch to Vitest
+
+After your migration to Vite, you should make use of Vitest as your new pretty and fast unit testing framework.
+In comparison to https://jestjs.io/[Jest] it comes with a stable out-of-the-box ESM support and faster test executions.
+Until now Jest's support for ESM is https://jestjs.io/docs/ecmascript-modules[still experimental] (State: Jest Version 29.5).
+https://vitest.dev/guide/migration.html#migrating-from-jest[The API is quite similar and mostly compatible to jest].
+If you used Mocha before, the migration shouldn't be hard either.
+
+==== Switch to Pinia
+
+The next big step you should do in advance is the migration of your Vuex store.
+You can also do this step after the migration itself and keep Vuex for now.
+However, we decided, it's a good idea, to migrate the store before and switch to Pinia since the API is a lot simpler and better composable when slicing our big store into chunks.
+Furthermore, it comes with better TypeScript support.
+At the https://pinia.vuejs.org/cookbook/migration-vuex.html[Pinia-Docs you will find a very detailed Guide for the Migration from Vuex]
+
+==== Migrate Components
+
+Last but not least we decided to migrate all our components to the https://vuejs.org/api/composition-api-setup.html[composition API] with the https://vuejs.org/api/sfc-script-setup.html[`&lt;script setup&gt;` syntactical sugar].
+This is a step you can also omit or do in advance, but we recommend using this API since it's also a bit more performant, and it reduces the boilerplate code you have to write.
+
+=== Finally: Migrate to Vue 3
+
+You are now prepared to migrate to Vue 3, and you've done already a lot of things which made this step much easier and shorter.
+Now you can start the migration of Vue itself.
+Keep in mind, that for the actual migration you must migrate the unit tests too as the test utils for vue3 are slightly different.
+
+==== Migrate the source code
+
+Here we started by adding Vue 3 as well as the `@vue/compat` package as described in the https://v3-migration.vuejs.org/migration-build.html#migration-build[Vue 3 Migration Build documentation].
+Also, we needed to update the `VueRouter` to version `4.x.x` and adjust the configuration.
+As good step-by-step guides, I would recommend you again to read the following Blogposts:
+
+* https://crisp.chat/blog/vuejs-migration["Vue.js: How to Migrate a large project from Vue 2 to Vue 3"] from https://twitter.com/baptistejamin[Baptiste Jamin]
+* The official Vue 2 to Vue 3 https://v3-migration.vuejs.org[Migration Guide].
+
+If you have already prepared some components in isolation to work with Vue 3 as we did:
+Of course you should replace the old ones and probably adjust the props or events if the API of your new components changed compared to the Vue 2 ones.
+
+After this step your whole app should work as before (fingers crossed).
+The migration of the components itself can be done one by one after the migration until everything is converted to Vue 3.
+
+==== Migrate to `@vue/test-utils@v2`
+
+After you migrated everything, you need to update to `@vue/test-utils@v2`.
+The migration should be straight-forward when https://test-utils.vuejs.org/migration/[following the migration guide].
+Nonetheless it can take quite a bit of time depending on the amount of unit tests you have.
+
+=== Post-Migration-Steps
+
+==== Remove Compatibility Package
+
+Once every component is migrated, make sure to remove the `@vue/compat` and it's configuration as you don't need it anymore.
+
+==== Make use of the Teleport feature
+
+Now that we are using Vue 3, we can use the https://vuejs.org/guide/built-ins/teleport.html["Teleport"] feature.
+Think about components creating their DOM elements deeply in the DOM caused by the component hierarchy but where you would expect the elements to appear somewhere else close to the root.
+A good example is displaying a modal conditionally:
+
+[source,html]
+----
+<body>
+  <ComponentOne>
+    <ComponentTwo>
+      <ComponentThree>
+        <MyModal v-if="myCondition">
+      </ComponentThree>
+    </ComponentTwo>
+  </ComponentOne>
+</body>
+----
+
+In Vue 2, the modal would be rendered and appear inside the `ComponentThree`.
+Using teleport in `MyModal` can lift the element up to the `body` tag which makes more sense for common modal dialogs.
+
+=== Conclusion
+
+Migrating from Vue 2 to Vue 3 can be a huge thing and takes quite a bit of time.
+But good preparation and pre-migration will make the whole migration process much easier, more estimable and won't block you for so long with releasing new features. Compared to writing the whole thing from scratch, we think this was well worth it.
+
+I hope this post gave you some inspiration of how you can face the migration of your project.
+Happy Migration ✌🏼
+:jbake-title: Migrate Vue 2 to Vue 3
+:jbake-card: How we migrated our Vue 2 enterprise project to Vue 3
+:jbake-date: 2023-08-21
+:jbake-type: post
+:jbake-tags: javascript, vue
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Danny Koppenhagen
+:jbake-teaser-image: profiles/Danny-Koppenhagen.png
+:jbake-tags: javascript, vue
+
+
+== How we migrated our Vue 2 enterprise project to Vue 3
+
+It's been a while:
+Since the 2nd February 2022, Vue 3 became the new default for Vue.js apps.
+
+____
+
+It's done! Vue 3 is now the default version and the brand new http://vuejs.org is live! More details in the blog post in case you missed it:
+https://blog.vuejs.org/posts/vue-3-as-the-new-default.html
+
+*_https://twitter.com/vuejs/status/1490592213184573441?s=20&t=sXiVzjkn_9nfgrYgrBK8SQ[Tweet from @vuejs on Twitter]_*
+
+____
+
+It was a long journey to the final default release of Vue 3 since the first version published on 18th September 2020.
+But: even if Vue 3 isn't a new thing anymore, there are still a lot of Vue 2 apps which haven't been migrated yet.
+The migration can be quite heavy since in practice it's much more than only following the migration guide.
+Projects usually rely also on 3rd-party dependencies which are maybe not available for Vue 3 or not maintained anymore.
+
+In this blog post I will give you an insight into how my team mastered the migration and what pitfalls we faced.
+I will describe how we planned and migrated our whole Vue 2 codebase to Vue 3 using Pinia as Store-Solution, Vite for our build environment and Vitest for fast unit test executions.
+The focus of this article is not to provide a very detailed step-by-step migration guide.
+I will focus about what things you should keep in mind, what you can already do before starting the migration and about some pitfalls we pointed out.
+However, I will provide you links to more detailed blog posts about specific topics.
+Please keep in mind, that the way we solved the migration won't probably fit to your very specific setup for 100%, but you can check what parts seem to be good for you and your team.
+
+____
+
+*Vue 2 EOL:* Please note, that the Vue 2 support will end on December 31st, 2023.
+This means there will be no fixes and features provided anymore (unless you are https://v2.vuejs.org/lts/[actively extending the support])
+
+____
+
+=== About me and my Team
+
+To give you a high level overview about our context, I would just like to say a few short words about myself and my team.
+I am working at https://www.dbsystel.de/dbsystel-en[DB Systel GmbH], in a DevOps Team building a Business-to-Government (B2G) solution together with our partner https://www.deutschebahnconnect.com[Deutsche Bahn Connect GmbH] named https://www.deutschebahnconnect.com/en/products/curbside-management[*_DB Curbside Management_*].
+Our product focuses on helping cities and councils to effectively manage shared mobility offerings and their jurisdictions dynamically.
+They will be able to get insights about statistics, violations of agreements with the mobility providers to regulate a fair and steady distribution of all the different shared mobility vehicles across managed area.
+
+=== Where we started
+
+My team added the migration to Vue 3 with the new default setup and tools using https://vitejs.dev[Vite], https://pinia.vuejs.org[Pinia] and https://vitest.dev[Vitest] to our backlog many months ago, but the switch to Vue 3 as default gave us another push for facing the migration.
+We realized pretty fast, that a _big-bang_ migration wouldn't be possible for us, since it will block us releasing new features for quite a long time.
+Our codebase contained already ~200 Vue 2 components using the old-fashioned Options API as well as a huge Vuex Store and some libraries that aren't compatible with Vue 3.
+
+=== Preparations
+
+Let's start with the preparation of your team and questions you should answer yourself before starting the migration.
+
+The first thing you should do is to get comfy with Vue 3, and you should learn about the differences compared to Vue 2 and the options you have.
+You can set up a Vue 3 playground app locally and explore yourself the new setup and components.
+To know what things will change when starting the migration, I would recommend you the read the following articles in advance:
+
+* Official Vue 2 to Vue 3 https://v3-migration.vuejs.org[Migration Guide]
+* Blogpost: https://crisp.chat/blog/vuejs-migration["Vue.js: How to Migrate a large project from Vue 2 to Vue 3"] from https://twitter.com/baptistejamin[Baptiste Jamin]
+* Official Vue 3 notes about the https://vuejs.org/guide/extras/composition-api-faq.html#what-is-composition-api[Composition API] and the relationship / differences compared to the Options API
+* Vue Master Blog-Series by Andy Li https://www.vuemastery.com/blog/vue-3-migration-build[Part 1] | https://www.vuemastery.com/blog/migration/[Part 2]
+* Free Vue Mastery Video Course https://www.vuemastery.com/courses/from-vue2-to-vue3/from-vue-2-to-vue-3["From Vue 2 to Vue 3"]
+
+==== Update to the latest minor Vue 2 version
+
+My first advice is to keep your current app as up-to-date as possible.
+Especially when your Vue version is below `2.7.x`, I would recommend you to update it.
+With Vue `2.7.x` "Naruto" release, the Vue team aimed to backport lots of features from Vue 3 to Vue 2 without introducing a breaking change.
+This will help you to migrate some things in preparation for a smooth Vue 3 switch.
+Check out the https://blog.vuejs.org/posts/vue-2-7-naruto.html[official announcement] and start migrating to the Vue 3 flavour in your Vue 2 app:
+
+==== TypeScript or not?
+
+Are you using TypeScript right now or do you plan to migrate to TypeScript?
+In that case you should read the https://vuejs.org/guide/typescript/overview.html[TypeScript Notes for Vue 3].
+Generally I would highly recommend to use TypeScript as the Vue 2 and Vue 3 TypeScript integration is great.
+It will help you a lot to reduce runtime errors as hard debugging nights by analyzing bugs in production.
+Be prepared, that switching to Typescript might require quite an effort, but it's still worth it.
+
+==== Check your dependencies
+
+A big thing you definitely have to check before is: dependencies.
+You should check if you are using packages that will rely on Vue 2 and won't be available for Vue 3.
+Such dependencies will require your attention as they may block you from updating to Vue 3.
+In my previous project we weren't able to update to Vue 3 a long time since we had a dependency to https://bootstrap-vue.org[BootstrapVue] which wasn't working with Vue 3 and isn't still.
+In such case where a package isn't compatible you have the following options:
+
+* Check if there is an equivalent package or a fork of your dependency that will support Vue 3. If there is one: be sure it's still maintained and alive.
+* If the package is just a Vue-wrapper for a common library, you may need to use the library directly
+* Find a similar package that supports Vue 3. In this case you have to make sure the new dependency supports all your use-cases, and you have to plan how to migrate this dependency.
+* You can contribute to the dependency and help to make it Vue 3 compatible. You may have to check https://github.com/vueuse/vue-demi[VueDemi] which is a great developing utility to create or update Universal Vue Libraries for Vue 2 &amp; 3.
+* Worst Case: Write the features you need by yourself, but be sure to open-source it afterwards ;-)
+
+In all these cases you should make yourself a list of the relevant development tasks with a very rough estimate about how complex the migration will be.
+For example write a `+` if the dependency migration is straight forward (already Vue 3 compatible).
+Write `+++++` for very hard-to-migrate dependencies, where you may need another solution or lib or implement stuff by yourself.
+Add Notes about things you shouldn't forget when starting the migration.
+You should also include development dependencies for example for webpack plugins.
+It could look like the following example:
+
+|===
+|Vue 2 dependency |Vue 3 dependency |notes |estimate
+
+|@dsb-norge/vue-keycloak-js |@baloise/vue-keycloak |similar API, similar features |++
+|v-tooltip |floating-vue |same lib under the hood with more features |+
+|vue2-datepicker |vue-datepicker-next |same lib with Vue 3 support |+
+|vue2-leaflet |@vue-leaflet/vue-leaflet |same API, but lots of relying components |++
 |===
 
 | vue2-leaflet-draw-toolbar | - | no Vue 3 equivalent | +++++ |

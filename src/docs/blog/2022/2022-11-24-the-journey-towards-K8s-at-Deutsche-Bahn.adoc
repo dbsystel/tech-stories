@@ -1,0 +1,42 @@
+:jbake-title: K8s at Deutsche Bahn
+:jbake-card: The journey towards K8s at Deutsche Bahn
+:jbake-date: 2022-11-24
+:jbake-type: post
+:jbake-tags: cloud
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Gualter Barbas Baptista
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/dev.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== The journey towards K8s at Deutsche Bahn
+
+This lecture was given by Gualter Barbas Baptista from DB Systel at the Containerdays from 05 to 07 September 2022.
+(https://www.containerdays.io/)
+
+++++
+<!-- teaser -->
+++++
+
+In 2016, Deutsche Bahn decided to get rid of their own data centers
+and to migrate the majority of applications to the cloud.
+The cloudification of Deutsche Bahn was supported by a comprehensive transformation of its digital partner DB Systel
+from traditional working and organisational structures to self-organisation and company-wide networks,
+including a DevOps culture. Within this context, the first Kubernetes platform services emerge.
+From an OpenShift-based Kubernetes-Namespace-as-a-Service into a GitOps based K8s fleet management,
+we describe how the cloud, the organisational transformation
+and the CNCF landscape are accelerating the digitalisation of Deutsche Bahn.
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube-nocookie.com/embed/cT_xAsBSIpU?si=ripHEbkddB1YR7YC" title="YouTube video player" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+|===

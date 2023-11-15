@@ -1,0 +1,46 @@
+:jbake-title: Bad Bots
+:jbake-card: Bad Bots - Chancen und Herausforderungen für KI und Sprache
+:jbake-date: 2021-06-08
+:jbake-type: post
+:jbake-tags: ki
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Sascha Wolter
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/dev.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Bad Bots - Chancen und Herausforderungen für KI und Sprache
+
+Sascha Wolter, Chief Advisor Conversational AI bei der DB Systel GmbH,
+hielt diesen Vortrag am 06.05.2021 im Rahmen der Digital Office Conference 2021 von Bitkom.
+
+++++
+<!-- teaser -->
+++++
+
+Kaum jemand scheint seine Alexa nach mehr als dem Wetter oder schlechten Witzen zu fragen.
+Und vier der fünf erfolgreichsten Alexa Skills erzeugen nicht mehr als Pupsgeräusche.
+Dies steht in einem krassen Widerspruch zu den Berichten über künstliche Intelligenz in den Medien,
+denen zufolge weltbeherrschende Computer wie Skynet (Terminator) unmittelbar bevorstehen.
+Und selbst die, die den technische Fortschritt weniger als Bedrohung denn als Chance verstehen,
+haben oft eine völlig falsche Vorstellung von den Möglichkeiten von #Chatbots und #Sprachassistenten.
+Nicht selten wird davon ausgegangen, dass – sofern man ausreichend Daten hat – die #KI alles automatisch erledigt
+und sich der Erfolg mehr oder weniger von ganz allein einstellt.
+Dies ist offensichtlich noch nicht so, wie die vielen schlechten Bots im Markt eindrucksvoll zeigen.
+Doch wie man diesem Ziel zumindest möglichst nahe kommt, zeigt Sascha Wolter anhand zahlreicher praktischer Beispiele.
+Er behandelt nicht nur die Hintergründe, sondern zeigt auch technische und gestalterische Lösungen. 
+
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube-nocookie.com/embed/aY4I565gdM8?si=gxWCjUIandt7jHp9&t=29s" title="Bad Bots - Chancen und Herausforderungen für KI und Sprache" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+|===

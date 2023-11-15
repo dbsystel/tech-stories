@@ -48,6 +48,9 @@ metakeys.each { key ->
         }
         content.teaser = teaser
     %>
+    <%
+        teaser = teaser.replaceAll("<[^>]*>","").replaceAll("\\n"," ").replaceAll('"',"'");
+    %>
     <script>var toRoot = '${content.rootpath}';</script>
     <!-- ${content.sourceuri} -->
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
@@ -58,14 +61,15 @@ metakeys.each { key ->
 
     <title><%if (content.title) {%>${content.title}<% } else { %>${config.site_title}<% }%></title>
     <meta content="${content.card?:content.title}" property="og:title">
-    <meta content="${teaser.encodeURL()}" property="og:description">
+    <meta content="${teaser}" property="og:description">
     <meta content="website" property="og:type">
     <meta content="${config.site_title}" property="og:site_name">
-    <meta content="docToolchain" itemprop="name">
-    <meta content="build your dev docs the easy way..." itemprop="description">
+    <meta content="https://dbsystel.github.io/tech-stories/images/home.png" property="og:image">
+    <meta content="${content.card?:content.title}" itemprop="name">
+    <meta content="${teaser}" itemprop="description">
     <meta content="summary" name="twitter:card">
-    <meta content="docToolchain" name="twitter:title">
-    <meta content="build your dev docs the easy way..." name="twitter:description">
+    <meta content="${content.card?:content.title}" name="twitter:title">
+    <meta content="${teaser}" name="twitter:description">
 
     <link as="style" href="${content.rootpath}css/main.min.docsy.css" rel="preload">
     <link href="${content.rootpath}css/main.min.docsy.css" integrity="" rel="stylesheet">

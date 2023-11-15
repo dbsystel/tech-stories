@@ -1,0 +1,24 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Marcus Suemnick
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Marcus Sümnick
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+//image:profiles/Ralf-D.-Mueller.png[float=right,role=profile]
+
+
+

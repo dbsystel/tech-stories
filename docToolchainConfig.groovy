@@ -54,7 +54,7 @@ microsite = [:]
 // other properties listed here might be used in the jBake templates and thus are not
 // documented in the jBake docs but hopefully in the template docs.
 microsite.with {
-    server = 'https://dbsystel.github.io/tech-stories/'
+    server = 'https://techstories.dbsystel.de/'
     // is your microsite deployed with a context path?
     contextPath = '/'
     // configure a port on which your preview server will run
@@ -70,7 +70,7 @@ microsite.with {
 
     search = """
         <form action="https://google.com">
-          <input type="hidden" name="site" value="dbsystel.github.io" />
+          <input type="hidden" name="site" value="techstories.dbsystel.de" />
           <input aria-label="Search this site…" autocomplete="off" class="form-control td-search-input" placeholder="Search this site…" type="search" name="q">
         </form>
     """
@@ -480,7 +480,7 @@ structurizr.with {
         // path = 'src/docs/structurizr'
 
         // By default `exportStructurizr` looks for a file '${structurizr.workspace.path}/workspace.dsl'.
-        // You can customize this behavior with 'filename'. Note that the workspace filename is provided without '.dsl' extension. 
+        // You can customize this behavior with 'filename'. Note that the workspace filename is provided without '.dsl' extension.
         // filename = 'workspace'
     }
 
@@ -493,7 +493,7 @@ structurizr.with {
 
         // Format of the exported diagrams. Defaults to 'plantuml' if the parameter is not provided.
         //
-        // Following formats are supported: 
+        // Following formats are supported:
         // - 'plantuml': the same as 'plantuml/structurizr'
         // - 'plantuml/structurizr': exports views to PlantUML
         // - 'plantuml/c4plantuml': exports views to PlantUML with https://github.com/plantuml-stdlib/C4-PlantUML
