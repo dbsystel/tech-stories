@@ -1,0 +1,45 @@
+:jbake-title: DevOps Geschwindigkeit
+:jbake-card: DevOps - Mehr Geschwindigkeit auf der Schiene
+:jbake-date: 2020-12-07
+:jbake-type: post
+:jbake-tags: devops, digitalisierung, softwareentwicklung
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Carsten Hoffmann
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/devops.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== DevOps - Mehr Geschwindigkeit auf der Schiene
+
+In diesem Vortrag im Rahmen der IT-Tage 2020 erklärt Carsten Hoffmann von der DB Systel,
+warum sich der erste Ansatz einer zentralen CI/CD-Installation im Projekt,
+eine Cloud-native Plattform für API-getriebene Softwareentwicklung aufzubauen,
+für alle Teams als problematisch erwies und durch dezentrale Pipelines ersetzt wurde.
+
+++++
+<!-- teaser -->
+++++
+
+Danach werden die Hindernisse bei der Einführung einer eingekauften API-Management-Lösung erklärt und
+wieso sich der Einkauf von großer On-Premise-Software nur schwierig mit den agilen Prinzipien vereinbaren lässt.
+Außerdem wird erläutert, wie im Team mit polyglotter Softwareentwicklung und permanent gegen Wissensinseln angekämpft wurde.
+Zuletzt geht Casten Hoffmann darauf ein, wie das Team mit umfassender Architekturdokumentation begonnen hat und
+gescheitert ist.
+
+=== Slides und Video
+
+[cols="2", width=100%]
+|===
+a|
+++++
+<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/jas5x0VREvY?si=NZwaDN1OjaWrQcTb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+++++
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/da603672d6254bbeae775bb452660876" title="DevOps - Mehr Geschwindigkeit auf der Schiene" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+|===

@@ -1,0 +1,23 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Carsten Hoffmann
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Carsten Hoffmann
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+
+image:profiles/Carsten-Hoffmann.jpg[float=right,role=profile]
+
