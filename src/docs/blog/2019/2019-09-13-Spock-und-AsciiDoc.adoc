@@ -47,6 +47,6 @@ a|
 
 a|
 +++++
-<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube.com/embed/ebc6Xa-HC48?si=nyh6Drt45gNdbj2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/ebc6Xa-HC48?si=vB62D8FhCpI9UGH3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 +++++
 |===
