@@ -1,0 +1,33 @@
+:jbake-title: Die C4-Testpyramide
+:jbake-card: Die C4-Testpyramide - eine architekturgetriebene Teststrategie
+:jbake-date: 2021-03-29
+:jbake-type: post
+:jbake-tags: c4, testing
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Christian Fischer
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/devops.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Die C4-Testpyramide - eine architekturgetriebene Teststrategie
+
+++++
+<!-- teaser -->
+++++
+
+Die Präsentation zeigt, wie sich die Prinzipien der Test Pyramide mit dem C4 Modell zur Visualisierung von Software Architekturen verbinden lassen,
+um so auf einfache Weise zu einer produktspezifischen Teststrategie zu gelangen.
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
++++++
+<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/I2UBsZAdap4?si=a-cOpaVov7LZAOf3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
++++++
+|===
