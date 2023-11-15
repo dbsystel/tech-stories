@@ -21,7 +21,7 @@ td.tableblock {overflow: auto; width: 50%;}
 
 ifndef::imagesdir[:imagesdir: ../../images]
 
-:diagram-server-url: https://gitlab-kroki-prd.gitlab.comp.db.de/
+:diagram-server-url: https://kroki.io/
 :diagram-server-type: kroki_io
 
 == Deine PlantUML-Diagramme sind Legende?
