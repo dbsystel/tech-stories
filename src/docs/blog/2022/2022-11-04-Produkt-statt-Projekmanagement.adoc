@@ -1,0 +1,49 @@
+:jbake-title: Produkt- statt Projektmanagement
+:jbake-card: Produkt- statt Projektmanagement
+:jbake-date: 2022-11-04
+:jbake-type: post
+:jbake-tags: devops
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Dr. Martin Strunk
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/devops.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Produkt- statt Projektmanagement
+
+Warum das Funding von Projekten mittlerweile zu einem der größten Hindernisse
+auf dem Weg zu einer BizDevOps-Organisation geworden ist −
+ein Debattenbeitrag zum nächsten notwendigen Schritt der DevOps-Bewegung.
+
+++++
+<!-- teaser -->
+++++
+
+Die DevOps-Bewegung ist in der Realität und im Herzen der digitalen Industrie angekommen.
+In der Systel arbeiten knapp 100 Teams nach dem Prinzip „Your build (or integrate) it, you run it“ und
+sind so in der Lage, regelmäßig und mit hoher Frequenz Änderungen und
+damit „Business Value“ zu den Nutzerinnen und Nutzern zu bringen.
+Nicht nur bei uns, sondern in allen vergleichbaren großen Konzernen sind Cloud-Nutzung, Automatisierung, Continuous Delivery, Platform Strategy und
+der dafür notwendige kulturelle Wandel auf der Tagesordnung. 
+Ein großer Hebel für den Wandel zu einer DevOps-Organisation wird allerdings häufig übersehen:
+das etablierte Funding von digitalen Maßnahmen über Projekte ist mittlerweile zu einem der Haupt-Hindernisse
+auf dem Weg zu einer leistungsfähigen Delivery-Organisation geworden.
+Aus meiner Sicht müssen wir daher ganz vorne mit der Veränderung ansetzen, nämlich dort, wo Projekte entstehen, und
+über Projektbudgets entschieden wird. 
+
+Warum ich dieser Meinung bin, habe ich auf einem Vortrag beim DevOps Enterprise Summit dargelegt,
+der mittlerweile auch über den YouTube Kanal der DB Systel zugänglich ist. 
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
++++++
+<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/GjW4YeFjXUM?si=orqR9ChC_pWBnKij" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
++++++
+|===
