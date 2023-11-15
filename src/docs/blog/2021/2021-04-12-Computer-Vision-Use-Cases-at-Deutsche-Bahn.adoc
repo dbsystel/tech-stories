@@ -1,7 +1,7 @@
 :jbake-title: Computer Vision Use Cases
 :jbake-card: Computer Vision Use Cases @ Deutsche Bahn
 :jbake-date: 2021-04-12
-:jbake-type: video
+:jbake-type: post
 :jbake-tags: KI, data
 :jbake-status: published
 :jbake-menu: Blog
@@ -34,6 +34,6 @@ Der Vortrag wurde vor internationalem Publikum gehalten und ist daher auf Englis
 |===
 a|
 ++++
-<iframe class="video-iframe" frameborder="0" src="https://www.youtube.com/watch?v=QaDLtFEPcNo" title="Computer Vision Use Cases @ Deutsche Bahn" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube-nocookie.com/embed/QaDLtFEPcNo?si=IAtuP3i4KY5kopOQ" title="YouTube video player" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
 ++++
 |===
