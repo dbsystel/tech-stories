@@ -83,7 +83,9 @@ a.tag {
                   allAuthors[author]<<post
                 }
                 allAuthors.sort().each { author, content ->
-                  allAuthorsHtml << "<a href='blog/profiles/${author.replaceAll(' ','-').encodeURL()}.html' class='tag'>$author</a>"
+                  if (author) {
+                    allAuthorsHtml << "<a href='blog/profiles/${author.replaceAll(' ','-').encodeURL()}.html' class='tag'>$author</a>"
+                  }
                 }
                 out << allAuthorsHtml.join(' ')
 
