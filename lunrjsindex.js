@@ -178,14 +178,6 @@ var documents = [
 
 {
     "id": 22,
-    "uri": "blog/profiles/Ralf-D.-Mueller.html",
-    "menu": "Autoren",
-    "title": "Ralf D. Müller",
-    "text": " Table of Contents Ralf D. Müller Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach. You can follow him on mastodon rdmueller@mastodontech.de . "
-},
-
-{
-    "id": 23,
     "uri": "blog/profiles/Philippe-Rieffe.html",
     "menu": "Autoren",
     "title": "Philippe Rieffe",
@@ -193,7 +185,7 @@ var documents = [
 },
 
 {
-    "id": 24,
+    "id": 23,
     "uri": "blog/profiles/Konrad-Winkler.html",
     "menu": "Autoren",
     "title": "Konrad Winkler",
@@ -201,7 +193,7 @@ var documents = [
 },
 
 {
-    "id": 25,
+    "id": 24,
     "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
     "title": "Danny Koppenhagen",
@@ -209,7 +201,7 @@ var documents = [
 },
 
 {
-    "id": 26,
+    "id": 25,
     "uri": "blog/profiles/Christian-Fischer.html",
     "menu": "Autoren",
     "title": "Christian Fischer",
@@ -217,15 +209,15 @@ var documents = [
 },
 
 {
-    "id": 27,
-    "uri": "blog/profiles/Sascha-Wolter.html",
+    "id": 26,
+    "uri": "blog/profiles/Ralf-D.-Mueller.html",
     "menu": "Autoren",
-    "title": "Sascha Wolter",
-    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Personal Website "
+    "title": "Ralf D. Müller",
+    "text": " Table of Contents Ralf D. Müller Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach. You can follow him on mastodon rdmueller@mastodontech.de . "
 },
 
 {
-    "id": 28,
+    "id": 27,
     "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
     "title": "Marcus Sümnick",
@@ -233,7 +225,7 @@ var documents = [
 },
 
 {
-    "id": 29,
+    "id": 28,
     "uri": "blog/profiles/Johannes-Dienst.html",
     "menu": "Autoren",
     "title": "Johannes Dienst",
@@ -241,7 +233,7 @@ var documents = [
 },
 
 {
-    "id": 30,
+    "id": 29,
     "uri": "blog/profiles/Dr.-Martin-Strunk.html",
     "menu": "Autoren",
     "title": "Dr. Martin Strunk",
@@ -249,7 +241,7 @@ var documents = [
 },
 
 {
-    "id": 31,
+    "id": 30,
     "uri": "blog/profiles/Carsten-Hoffmann.html",
     "menu": "Autoren",
     "title": "Carsten Hoffmann",
@@ -257,7 +249,7 @@ var documents = [
 },
 
 {
-    "id": 32,
+    "id": 31,
     "uri": "blog/profiles/Bertram-Fey.html",
     "menu": "Autoren",
     "title": "Bertram Fey",
@@ -265,7 +257,7 @@ var documents = [
 },
 
 {
-    "id": 33,
+    "id": 32,
     "uri": "blog/profiles/buildIT.html",
     "menu": "Autoren",
     "title": "BuildIT",
@@ -273,7 +265,7 @@ var documents = [
 },
 
 {
-    "id": 34,
+    "id": 33,
     "uri": "blog/profiles/Tim-Engeleiter.html",
     "menu": "Autoren",
     "title": "Tim Engeleiter",
@@ -281,19 +273,27 @@ var documents = [
 },
 
 {
-    "id": 35,
-    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
+    "id": 34,
+    "uri": "blog/profiles/Sascha-Wolter.html",
     "menu": "Autoren",
-    "title": "Gualter Barbas Baptista",
-    "text": " Table of Contents Gualter Barbas Baptista Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Sascha Wolter",
+    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Personal Website "
 },
 
 {
-    "id": 36,
+    "id": 35,
     "uri": "blog/profiles/Carsten-Thurau.html",
     "menu": "Autoren",
     "title": "Carsten Thurau",
     "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 36,
+    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
+    "menu": "Autoren",
+    "title": "Gualter Barbas Baptista",
+    "text": " Table of Contents Gualter Barbas Baptista Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
