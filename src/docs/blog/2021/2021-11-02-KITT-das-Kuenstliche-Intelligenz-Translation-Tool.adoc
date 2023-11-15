@@ -1,0 +1,44 @@
+:jbake-title: KITT Tool
+:jbake-card: KITT, das Künstliche Intelligenz Translation Tool
+:jbake-date: 2021-11-02
+:jbake-type: post
+:jbake-tags: KI, KITT
+:jbake-status: published
+:jbake-menu: Blog 
+:jbake-discussion: 1076
+:jbake-author: Johannes Dienst
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/devops.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== KITT, das Künstliche Intelligenz Translation Tool
+
+Dieses Mal haben wir Pia Schwarz aus dem Team SALT zu Gast, mit der wir über das Thema “KITT”, das Künstliche Intelligenz Translation Tool, sprechen.
+Pia bringt mit ihrem Team Maschinen das Sprechen bei. 
+
+++++
+<!-- teaser -->
+++++
+
+Im Interview spricht sie mit uns über KITT, das als Interface gesprochene Sprache entgegennimmt.
+Es wird eingesetzt, um die Kommunikation im Zugfunk von Fahrdienstleiter:innen und
+Triebfahrzeugführer:innen im Grenzbereich von Frankreich und Deutschland zu verbessern.
+Wir spielen anhand eines Beispiels durch, welche Besonderheiten das Bahnjargon mit sich bringt und
+warum am Markt verfügbare Übersetzungstool in diesem Anwendungsfall nicht ausreichend sind.
+KITT hilft ebenso die Anforderungen an das Sprachniveau zu senken,
+in dem es sogenannte Predefined Messages zuverlässig übersetzt, die im europäischen Bahnverkehr verwendet werden.
+In der zweiten Hälfte des Interviews steigen wir tiefer in die Technik ein und
+gehen auf die Herausforderungen ein. Denn die Anforderungen an KITT sind nicht weniger, als exakte Übersetzungen zu produzieren. Zum Beispiel sind Übersetzungen bei Hintergrundgeräuschen oder Sätze mit Eigennamen problematisch.
+Zum Abschluss sprechen wir über die technische Umsetzung, Trainingsdatenmenge und Open Source Frameworks.
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
++++++
+<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/c43j8igaVuk?si=NN_K09dVon4yBMGI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
++++++
+|===
