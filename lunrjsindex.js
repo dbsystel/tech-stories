@@ -93,7 +93,7 @@ var documents = [
     "uri": "blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html",
     "menu": "Blog",
     "title": "Deine Diagramme sind Legende?",
-    "text": " Table of Contents Deine PlantUML-Diagramme sind Legende? pre { white-space: pre-wrap; } table.tableblock { overflow: auto; width: 100%;} td.tableblock {overflow: auto; width: 50%;} Deine PlantUML-Diagramme sind Legende? &#8230;&#8203;dann verpasse ihnen eine Legende! Ein Diagramm soll nicht nur für Insider lesbar sein. Mit einer Legende erklärst du die verwendeten Symbole und Farben. In diesem Artikel zeige ich dir, wie es geht. PlantUML verfügt über ein wenig dokumentiertes Element namens \" Legend \". Damit lässt sich eine Box im Diagramm z. B. in der rechten unteren Ecke platzieren. Wie aber der Inhalt dargestellt werden soll ist unklar. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right &lt;b&gt;Legende&lt;/b&gt; ??? endlegend @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right &lt;b&gt;Legende&lt;/b&gt; ??? endlegend @enduml Google findet als Idee, dass die Legende als Tabelle in Creole-Syntax erstellt werden kann. Farben kann man damit gut erklären, aber für Symbole können nur Emojis oder spezielle Zeichen verwendet werden. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right &lt;b&gt;Legende&lt;/b&gt; | &lt;#red&gt; | Benutzer-Zugriff | | &lt;#green&gt; | Datenbank-Verbindung | | &lt;:smiley:&gt; | Benutzer :-) | endlegend @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right &lt;b&gt;Legende&lt;/b&gt; | &lt;#red&gt; | Benutzer-Zugriff | | &lt;#green&gt; | Datenbank-Verbindung | | &lt;:smiley:&gt; | Benutzer :-) | endlegend @enduml In einem Forum habe ich am Rande den Hinweis gefunden, dass man mit dem Map-Statement des Objektdiagramms auch eine Tabelle aufbauen kann. Nur geht das nicht direkt innerhalb der Legende. Es gibt aber den Trick, dass man mit der `{{ &#8230;&#8203; }} Syntax ein neues Diagramm innerhalb des Diagramms erstellen kann. Damit lässt sich dann auch eine Map innerhalb der Legende aufbauen. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { &lt;#red&gt; =&gt; Benutzer-Zugriff &lt;#green&gt; =&gt; Datenbank-Verbindung &lt;:smiley:&gt; =&gt; Benutzer :-) } }} endlegend @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { &lt;#red&gt; =&gt; Benutzer-Zugriff &lt;#green&gt; =&gt; Datenbank-Verbindung &lt;:smiley:&gt; =&gt; Benutzer :-) } }} endlegend @enduml Und wenn wir jetzt schon dabei sind Diagramme innerhalb von Diagrammen zu nutzen, dann können wir das auch noch eine Ebene tiefer machen. Dadurch schaffen wir es in der Legende die Diagramm-Elemente zu zeichnen, die wir beschreiben wollen. Dazu bauen wir uns in einer Prozedur ein universelles Mini-Diagramm: scale $scale skinparam backgroundcolor transparent label \" \" as A label \" \" as B $type Der scale-Befehl erlaubt es die zu beschreibende Komponente kleiner darzustellen und somit die Legende kompakt zu halten. Die beiden unsichtbaren Labels sorgen dafür, dass wir einen Connector von A nach B darstellen können. Das ganze sieht dann kompakt wie folgt aus: @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor:\",\" Benutzer\", 0.5) $entry(\"[component]\",\" Benutzer\", 0.7) $entry(\"database db\",\"Datenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B #green\",\"Datenbank-Verbindung\") } }} endlegend @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor:\",\" Benutzer\", 0.5) $entry(\"[component]\",\" Benutzer\", 0.7) $entry(\"database db\",\"Datenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B #green\",\"Datenbank-Verbindung\") } }} endlegend @enduml Im letzten Schritt möchte ich die Legende mit ein paar Styles noch aufhübschen. Der doppelte Rahmen soll weg und etwas kleiner wäre auch nicht schlecht. @startuml skinparam actorStyle awesome skinparam legendBackgroundColor transparent skinparam legendBorderColor transparent database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ scale 0.8 skinparam defaultFontSize 14 skinparam BackGroundColor transparent skinparam defaultBackgroundColor white !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor: #green\",\"\\nBenutzer\", 0.5) $entry(\"[component]\",\"\\nBenutzer\", 0.7) $entry(\"database db\",\"\\nDatenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B\",\"Datenbank-Verbindung\") } }} endlegend @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome skinparam legendBackgroundColor transparent skinparam legendBorderColor transparent database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ scale 0.8 skinparam defaultFontSize 14 skinparam BackGroundColor transparent skinparam defaultBackgroundColor white !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor: #green\",\"\\nBenutzer\", 0.5) $entry(\"[component]\",\"\\nBenutzer\", 0.7) $entry(\"database db\",\"\\nDatenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B\",\"Datenbank-Verbindung\") } }} endlegend @enduml Bei der Nutzung fällt schnell auf, dass die Legende zu viel Platz einnimmt. Sie duldet keine anderen Diagramm-Elemente neben sich. Also haben wir weiter geforscht. Mit dem Diagramm in der Legende besteht eigentlich kein Grund mehr wirklich das Element Legend zu verwenden. Was passiert, wenn wir es durch eine rectangle ersetzen und diese entsprechend Stylen? Dazu müssen wir dem Element einen Stereotype verpassen, da wir sonst alle rectangle -Elemente stylen würden. Und siehe da, es funktioniert. Durch diesen Trick haben wir nun mehr Einfluss auf die Platzierung, denn wir können dieses rectangle -Element durch versteckte Verbindungen beeinflussen. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -down-&gt; Datenbank #green rectangle a &lt;&lt;test&gt;&gt; Datenbank -left-&gt; a skinparam rectangle&lt;&lt;legend&gt;&gt; { backgroundColor transparent borderColor transparent shadowing false } hide &lt;&lt;legend&gt;&gt; stereotype rectangle legende &lt;&lt;legend&gt;&gt; [ {{ scale 0.8 skinparam defaultFontSize 14 skinparam BackGroundColor transparent skinparam defaultBackgroundColor white !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor:\",\"\\nBenutzer\", 0.5) $entry(\"[component]\",\"\\nBenutzer\", 0.7) $entry(\"database db\",\"\\nDatenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B #green\",\"Datenbank-Verbindung\") } }} ] User -[hidden]-&gt; legende legende -[hidden]down-&gt; a @enduml Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known) @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -down-&gt; Datenbank #green rectangle a &lt;&lt;test&gt;&gt; Datenbank -left-&gt; a skinparam rectangle&lt;&lt;legend&gt;&gt; { backgroundColor transparent borderColor transparent shadowing false } hide &lt;&lt;legend&gt;&gt; stereotype rectangle legende &lt;&lt;legend&gt;&gt; [ {{ scale 0.8 skinparam defaultFontSize 14 skinparam BackGroundColor transparent skinparam defaultBackgroundColor white !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor:\",\"\\nBenutzer\", 0.5) $entry(\"[component]\",\"\\nBenutzer\", 0.7) $entry(\"database db\",\"\\nDatenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B #green\",\"Datenbank-Verbindung\") } }} ] User -[hidden]-&gt; legende legende -[hidden]down-&gt; a @enduml Übrigens: PlantUML möchte Elemente und ihre Verbindungen immer optimiert platzieren. Es kann also sein, dass die neue Legende deshalb noch mal kräftig durchmischt. Es gibt aber nicht nur die Pfeildefinition -[hidden]&#8594; , um eine Verbindung nicht anzuzeigen. Der Pfeil -[norank]&#8594; ist eine Verbindung, welche bei besagter Optimierung ignoriert wird. Beide Features kann man kombinieren: Mit einem -[norank,hidden]&#8594; ist die Legende unsichtbar mit einem anderen Element verbunden, ohne dass dies das Diagramm umstrukturiert. "
+    "text": " Table of Contents Deine PlantUML-Diagramme sind Legende? pre { white-space: pre-wrap; } table.tableblock { overflow: auto; width: 100%;} td.tableblock {overflow: auto; width: 50%;} Deine PlantUML-Diagramme sind Legende? &#8230;&#8203;dann verpasse ihnen eine Legende! Ein Diagramm soll nicht nur für Insider lesbar sein. Mit einer Legende erklärst du die verwendeten Symbole und Farben. In diesem Artikel zeige ich dir, wie es geht. PlantUML verfügt über ein wenig dokumentiertes Element namens \" Legend \". Damit lässt sich eine Box im Diagramm z. B. in der rechten unteren Ecke platzieren. Wie aber der Inhalt dargestellt werden soll ist unklar. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right &lt;b&gt;Legende&lt;/b&gt; ??? endlegend @enduml Google findet als Idee, dass die Legende als Tabelle in Creole-Syntax erstellt werden kann. Farben kann man damit gut erklären, aber für Symbole können nur Emojis oder spezielle Zeichen verwendet werden. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right &lt;b&gt;Legende&lt;/b&gt; | &lt;#red&gt; | Benutzer-Zugriff | | &lt;#green&gt; | Datenbank-Verbindung | | &lt;:smiley:&gt; | Benutzer :-) | endlegend @enduml In einem Forum habe ich am Rande den Hinweis gefunden, dass man mit dem Map-Statement des Objektdiagramms auch eine Tabelle aufbauen kann. Nur geht das nicht direkt innerhalb der Legende. Es gibt aber den Trick, dass man mit der `{{ &#8230;&#8203; }} Syntax ein neues Diagramm innerhalb des Diagramms erstellen kann. Damit lässt sich dann auch eine Map innerhalb der Legende aufbauen. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { &lt;#red&gt; =&gt; Benutzer-Zugriff &lt;#green&gt; =&gt; Datenbank-Verbindung &lt;:smiley:&gt; =&gt; Benutzer :-) } }} endlegend @enduml Und wenn wir jetzt schon dabei sind Diagramme innerhalb von Diagrammen zu nutzen, dann können wir das auch noch eine Ebene tiefer machen. Dadurch schaffen wir es in der Legende die Diagramm-Elemente zu zeichnen, die wir beschreiben wollen. Dazu bauen wir uns in einer Prozedur ein universelles Mini-Diagramm: scale $scale skinparam backgroundcolor transparent label \" \" as A label \" \" as B $type Der scale-Befehl erlaubt es die zu beschreibende Komponente kleiner darzustellen und somit die Legende kompakt zu halten. Die beiden unsichtbaren Labels sorgen dafür, dass wir einen Connector von A nach B darstellen können. Das ganze sieht dann kompakt wie folgt aus: @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor:\",\" Benutzer\", 0.5) $entry(\"[component]\",\" Benutzer\", 0.7) $entry(\"database db\",\"Datenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B #green\",\"Datenbank-Verbindung\") } }} endlegend @enduml Im letzten Schritt möchte ich die Legende mit ein paar Styles noch aufhübschen. Der doppelte Rahmen soll weg und etwas kleiner wäre auch nicht schlecht. @startuml skinparam actorStyle awesome skinparam legendBackgroundColor transparent skinparam legendBorderColor transparent database Datenbank :User: -&gt; [Komponente] [Komponente] -&gt; Datenbank #green legend right {{ scale 0.8 skinparam defaultFontSize 14 skinparam BackGroundColor transparent skinparam defaultBackgroundColor white !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor: #green\",\"\\nBenutzer\", 0.5) $entry(\"[component]\",\"\\nBenutzer\", 0.7) $entry(\"database db\",\"\\nDatenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B\",\"Datenbank-Verbindung\") } }} endlegend @enduml Bei der Nutzung fällt schnell auf, dass die Legende zu viel Platz einnimmt. Sie duldet keine anderen Diagramm-Elemente neben sich. Also haben wir weiter geforscht. Mit dem Diagramm in der Legende besteht eigentlich kein Grund mehr wirklich das Element Legend zu verwenden. Was passiert, wenn wir es durch eine rectangle ersetzen und diese entsprechend Stylen? Dazu müssen wir dem Element einen Stereotype verpassen, da wir sonst alle rectangle -Elemente stylen würden. Und siehe da, es funktioniert. Durch diesen Trick haben wir nun mehr Einfluss auf die Platzierung, denn wir können dieses rectangle -Element durch versteckte Verbindungen beeinflussen. @startuml skinparam actorStyle awesome database Datenbank :User: -&gt; [Komponente] [Komponente] -down-&gt; Datenbank #green rectangle a &lt;&lt;test&gt;&gt; Datenbank -left-&gt; a skinparam rectangle&lt;&lt;legend&gt;&gt; { backgroundColor transparent borderColor transparent shadowing false } hide &lt;&lt;legend&gt;&gt; stereotype rectangle legende &lt;&lt;legend&gt;&gt; [ {{ scale 0.8 skinparam defaultFontSize 14 skinparam BackGroundColor transparent skinparam defaultBackgroundColor white !procedure $entry($type, $label, $scale=1) {{\\nscale $scale \\nskinparam backgroundcolor transparent\\nlabel \" \" as A\\nlabel \" \" as B\\n $type \\n}} =&gt; $label !endprocedure map \"&lt;b&gt;Legende&lt;/b&gt;\" as legend #white { $entry(\":Actor:\",\"\\nBenutzer\", 0.5) $entry(\"[component]\",\"\\nBenutzer\", 0.7) $entry(\"database db\",\"\\nDatenbank\", 0.7) $entry(\"A -&gt; B\",\"Benutzer-Zugriff\") $entry(\"A -&gt; B #green\",\"Datenbank-Verbindung\") } }} ] User -[hidden]-&gt; legende legende -[hidden]down-&gt; a @enduml Übrigens: PlantUML möchte Elemente und ihre Verbindungen immer optimiert platzieren. Es kann also sein, dass die neue Legende deshalb noch mal kräftig durchmischt. Es gibt aber nicht nur die Pfeildefinition -[hidden]&#8594; , um eine Verbindung nicht anzuzeigen. Der Pfeil -[norank]&#8594; ist eine Verbindung, welche bei besagter Optimierung ignoriert wird. Beide Features kann man kombinieren: Mit einem -[norank,hidden]&#8594; ist die Legende unsichtbar mit einem anderen Element verbunden, ohne dass dies das Diagramm umstrukturiert. "
 },
 
 {
@@ -178,22 +178,6 @@ var documents = [
 
 {
     "id": 22,
-    "uri": "blog/profiles/Konrad-Winkler.html",
-    "menu": "Autoren",
-    "title": "Konrad Winkler",
-    "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 23,
-    "uri": "blog/profiles/Christian-Fischer.html",
-    "menu": "Autoren",
-    "title": "Christian Fischer",
-    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 24,
     "uri": "blog/profiles/Ralf-D.-Mueller.html",
     "menu": "Autoren",
     "title": "Ralf D. Müller",
@@ -201,7 +185,7 @@ var documents = [
 },
 
 {
-    "id": 25,
+    "id": 23,
     "uri": "blog/profiles/Philippe-Rieffe.html",
     "menu": "Autoren",
     "title": "Philippe Rieffe",
@@ -209,15 +193,15 @@ var documents = [
 },
 
 {
-    "id": 26,
-    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
+    "id": 24,
+    "uri": "blog/profiles/Konrad-Winkler.html",
     "menu": "Autoren",
-    "title": "Dr. Martin Strunk",
-    "text": " Table of Contents Dr. Martin Strunk Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Konrad Winkler",
+    "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
-    "id": 27,
+    "id": 25,
     "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
     "title": "Danny Koppenhagen",
@@ -225,7 +209,15 @@ var documents = [
 },
 
 {
-    "id": 28,
+    "id": 26,
+    "uri": "blog/profiles/Christian-Fischer.html",
+    "menu": "Autoren",
+    "title": "Christian Fischer",
+    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 27,
     "uri": "blog/profiles/Sascha-Wolter.html",
     "menu": "Autoren",
     "title": "Sascha Wolter",
@@ -233,7 +225,7 @@ var documents = [
 },
 
 {
-    "id": 29,
+    "id": 28,
     "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
     "title": "Marcus Sümnick",
@@ -241,7 +233,7 @@ var documents = [
 },
 
 {
-    "id": 30,
+    "id": 29,
     "uri": "blog/profiles/Johannes-Dienst.html",
     "menu": "Autoren",
     "title": "Johannes Dienst",
@@ -249,15 +241,15 @@ var documents = [
 },
 
 {
-    "id": 31,
-    "uri": "blog/profiles/Carsten-Thurau.html",
+    "id": 30,
+    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
     "menu": "Autoren",
-    "title": "Carsten Thurau",
-    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Dr. Martin Strunk",
+    "text": " Table of Contents Dr. Martin Strunk Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
-    "id": 32,
+    "id": 31,
     "uri": "blog/profiles/Carsten-Hoffmann.html",
     "menu": "Autoren",
     "title": "Carsten Hoffmann",
@@ -265,7 +257,7 @@ var documents = [
 },
 
 {
-    "id": 33,
+    "id": 32,
     "uri": "blog/profiles/Bertram-Fey.html",
     "menu": "Autoren",
     "title": "Bertram Fey",
@@ -273,7 +265,7 @@ var documents = [
 },
 
 {
-    "id": 34,
+    "id": 33,
     "uri": "blog/profiles/buildIT.html",
     "menu": "Autoren",
     "title": "BuildIT",
@@ -281,7 +273,7 @@ var documents = [
 },
 
 {
-    "id": 35,
+    "id": 34,
     "uri": "blog/profiles/Tim-Engeleiter.html",
     "menu": "Autoren",
     "title": "Tim Engeleiter",
@@ -289,11 +281,19 @@ var documents = [
 },
 
 {
-    "id": 36,
+    "id": 35,
     "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
     "menu": "Autoren",
     "title": "Gualter Barbas Baptista",
     "text": " Table of Contents Gualter Barbas Baptista Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 36,
+    "uri": "blog/profiles/Carsten-Thurau.html",
+    "menu": "Autoren",
+    "title": "Carsten Thurau",
+    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {

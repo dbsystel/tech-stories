@@ -116,16 +116,6 @@
     </url>
     
     <url>
-        <loc>http://jbake.orgnull/blog/profiles/Konrad-Winkler.html</loc>
-        <lastmod>2023-11-15</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Christian-Fischer.html</loc>
-        <lastmod>2023-11-15</lastmod>
-    </url>
-    
-    <url>
         <loc>http://jbake.orgnull/blog/profiles/Ralf-D.-Mueller.html</loc>
         <lastmod>2023-11-15</lastmod>
     </url>
@@ -136,12 +126,17 @@
     </url>
     
     <url>
-        <loc>http://jbake.orgnull/blog/profiles/Dr.-Martin-Strunk.html</loc>
+        <loc>http://jbake.orgnull/blog/profiles/Konrad-Winkler.html</loc>
         <lastmod>2023-11-15</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/blog/profiles/Danny-Koppenhagen.html</loc>
+        <lastmod>2023-11-15</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Christian-Fischer.html</loc>
         <lastmod>2023-11-15</lastmod>
     </url>
     
@@ -161,7 +156,7 @@
     </url>
     
     <url>
-        <loc>http://jbake.orgnull/blog/profiles/Carsten-Thurau.html</loc>
+        <loc>http://jbake.orgnull/blog/profiles/Dr.-Martin-Strunk.html</loc>
         <lastmod>2023-11-15</lastmod>
     </url>
     
@@ -187,6 +182,11 @@
     
     <url>
         <loc>http://jbake.orgnull/blog/profiles/Gualter-Barbas-Baptista.html</loc>
+        <lastmod>2023-11-15</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Carsten-Thurau.html</loc>
         <lastmod>2023-11-15</lastmod>
     </url>
     

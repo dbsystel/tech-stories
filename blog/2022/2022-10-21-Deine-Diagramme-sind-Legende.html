@@ -355,21 +355,9 @@ endlegend
 @enduml</code></pre>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<pre>Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
-@startuml
-skinparam actorStyle awesome
-
-database Datenbank
-:User: -&gt; [Komponente]
-[Komponente] -&gt; Datenbank #green
-
-legend right
-   &lt;b&gt;Legende&lt;/b&gt;
-   ???
-endlegend
-@enduml</pre>
+<img src="../../images/diag-f9c1a40657c8f5bf22f6862687071035.png" alt="Diagram" width="374" height="161">
 </div>
 </div></div></td>
 </tr>
@@ -403,23 +391,9 @@ endlegend
 @enduml</code></pre>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<pre>Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
-@startuml
-skinparam actorStyle awesome
-
-database Datenbank
-:User: -&gt; [Komponente]
-[Komponente] -&gt; Datenbank #green
-
-legend right
-   &lt;b&gt;Legende&lt;/b&gt;
-   | &lt;#red&gt;    | Benutzer-Zugriff |
-   | &lt;#green&gt;  | Datenbank-Verbindung |
-   | &lt;:smiley:&gt; | Benutzer :-) |
-endlegend
-@enduml</pre>
+<img src="../../images/diag-c3a8ead5c9df4992e1c834a5128bd7d6.png" alt="Diagram" width="374" height="204">
 </div>
 </div></div></td>
 </tr>
@@ -456,26 +430,9 @@ endlegend
 @enduml</code></pre>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<pre>Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
-@startuml
-skinparam actorStyle awesome
-
-database Datenbank
-:User: -&gt; [Komponente]
-[Komponente] -&gt; Datenbank #green
-
-legend right
-{{
-   map "&lt;b&gt;Legende&lt;/b&gt;" as legend #white {
-   &lt;#red&gt;    =&gt; Benutzer-Zugriff
-   &lt;#green&gt;  =&gt; Datenbank-Verbindung
-   &lt;:smiley:&gt; =&gt; Benutzer :-)
-   }
-}}
-endlegend
-@enduml</pre>
+<img src="../../images/diag-238f8b73f33f13606ea63993a15e9fad.png" alt="Diagram" width="374" height="233">
 </div>
 </div></div></td>
 </tr>
@@ -539,32 +496,9 @@ endlegend
 @enduml</code></pre>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<pre>Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
-@startuml
-skinparam actorStyle awesome
-
-database Datenbank
-:User: -&gt; [Komponente]
-[Komponente] -&gt; Datenbank #green
-
-legend right
-{{
-
-   !procedure $entry($type, $label, $scale=1)
-      {{\nscale $scale \nskinparam backgroundcolor transparent\nlabel " " as A\nlabel " " as B\n $type \n}} =&gt; $label
-   !endprocedure
-   map "&lt;b&gt;Legende&lt;/b&gt;" as legend #white {
-      $entry(":Actor:"," Benutzer", 0.5)
-      $entry("[component]"," Benutzer", 0.7)
-      $entry("database db","Datenbank", 0.7)
-      $entry("A -&gt; B","Benutzer-Zugriff")
-      $entry("A -&gt; B #green","Datenbank-Verbindung")
-   }
-}}
-endlegend
-@enduml</pre>
+<img src="../../images/diag-69a88801b07d3f3a5533fe729f017f52.png" alt="Diagram" width="374" height="358">
 </div>
 </div></div></td>
 </tr>
@@ -615,40 +549,9 @@ endlegend
 @enduml</code></pre>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<pre>Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
-@startuml
-skinparam actorStyle awesome
-skinparam legendBackgroundColor transparent
-skinparam legendBorderColor transparent
-
-database Datenbank
-:User: -&gt; [Komponente]
-[Komponente] -&gt; Datenbank #green
-
-
-legend right
-{{
-   scale 0.8
-   skinparam defaultFontSize 14
-   skinparam BackGroundColor transparent
-   skinparam defaultBackgroundColor white
-
-   !procedure $entry($type, $label, $scale=1)
-      {{\nscale $scale \nskinparam backgroundcolor transparent\nlabel " " as A\nlabel " " as B\n $type \n}} =&gt; $label
-   !endprocedure
-   map "&lt;b&gt;Legende&lt;/b&gt;" as legend #white {
-      $entry(":Actor: #green","\nBenutzer", 0.5)
-      $entry("[component]","\nBenutzer", 0.7)
-      $entry("database db","\nDatenbank", 0.7)
-      $entry("A -&gt; B","Benutzer-Zugriff")
-      $entry("A -&gt; B","Datenbank-Verbindung")
-   }
-}}
-
-endlegend
-@enduml</pre>
+<img src="../../images/diag-1893f34850155c3870866563e0efca44.png" alt="Diagram" width="374" height="310">
 </div>
 </div></div></td>
 </tr>
@@ -715,50 +618,9 @@ legende -[hidden]down-&gt; a
 @enduml</code></pre>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<pre>Failed to generate image: Failed to open TCP connection to gitlab-kroki-prd.gitlab.comp.db.de:443 (initialize: name or service not known)
-@startuml
-skinparam actorStyle awesome
-
-database Datenbank
-:User: -&gt; [Komponente]
-[Komponente] -down-&gt; Datenbank #green
-
-rectangle a &lt;&lt;test&gt;&gt;
-Datenbank -left-&gt; a
-
-skinparam rectangle&lt;&lt;legend&gt;&gt; {
-    backgroundColor transparent
-    borderColor transparent
-    shadowing false
-}
-hide &lt;&lt;legend&gt;&gt; stereotype
-
-rectangle legende &lt;&lt;legend&gt;&gt; [
-{{
-   scale 0.8
-   skinparam defaultFontSize 14
-   skinparam BackGroundColor transparent
-   skinparam defaultBackgroundColor white
-
-   !procedure $entry($type, $label, $scale=1)
-      {{\nscale $scale \nskinparam backgroundcolor transparent\nlabel " " as A\nlabel " " as B\n $type \n}} =&gt; $label
-   !endprocedure
-   map "&lt;b&gt;Legende&lt;/b&gt;" as legend #white {
-      $entry(":Actor:","\nBenutzer", 0.5)
-      $entry("[component]","\nBenutzer", 0.7)
-      $entry("database db","\nDatenbank", 0.7)
-      $entry("A -&gt; B","Benutzer-Zugriff")
-      $entry("A -&gt; B #green","Datenbank-Verbindung")
-   }
-}}
-]
-
-User -[hidden]-&gt; legende
-legende -[hidden]down-&gt; a
-
-@enduml</pre>
+<img src="../../images/diag-138a71d715ccc25cdd84d12ec5d921a2.png" alt="Diagram" width="431" height="472">
 </div>
 </div></div></td>
 </tr>
