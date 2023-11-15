@@ -1,0 +1,39 @@
+:jbake-title: Developer Experience Platform
+:jbake-card: Developer Experience Platform (DXP) für Entwickler:innen
+:jbake-date: 2023-05-15
+:jbake-type: post
+:jbake-tags: software, cloud, developer
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: buildIT
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: topics/dev.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Developer Experience Platform (DXP) für Entwickler:innen
+
+Die Developer Experience Platform (DXP) bietet Services für jede Phase der Software-Entwicklung.
+Konzern- und Betreibervorgaben sowie Cloud-Richtlinien sind in diesen Services bereits inkludiert.
+
+++++
+<!-- teaser -->
+++++
+
+DXP ermöglicht damit DB-konzernweit, dass Entwickler:innen schnell,
+einfach und sicher Deployments vornehmen können und
+Software-Anwendungen von der Konzeption bis zum produktiven Einsatz schneller entwickelt werden.
+Das Erklärvideo zeigt dies, indem es Zuschauende in den Alltag von Entwickler:innen „entführt“.
+
+
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube-nocookie.com/embed/-whkeD024zk?si=Y_mIn3Oo_r_LYq10" title="YouTube video player" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+|===
