@@ -6,9 +6,70 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 15 Nov 2023 15:44:26 +0000</pubDate>
-    <lastBuildDate>Wed, 15 Nov 2023 15:44:26 +0000</lastBuildDate>
+    <pubDate>Fri, 17 Nov 2023 14:28:38 +0000</pubDate>
+    <lastBuildDate>Fri, 17 Nov 2023 14:28:38 +0000</lastBuildDate>
 
+    
+    <item>
+      <title>Conway’s Law</title>
+      <link>http://jbake.org/blog/2023/2023-11-20-conways-law.html</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2023/2023-11-20-conways-law.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_conways_law_in_real_life_why_organizational_development_and_software_engineering_have_to_go_hand_in_hand&quot;&gt;Conway’s Law in real life - why organizational development and software engineering have to go hand in hand.&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_conways_law_in_real_life_why_organizational_development_and_software_engineering_have_to_go_hand_in_hand&quot;&gt;Conway’s Law in real life - why organizational development and software engineering have to go hand in hand.&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Conway’s Law inevitably connects the architecture of an software system with the responsible delivery organization.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Unfortunately, persons responsible for organizational development and architects of software systems often work in separation – especially in large enterprises.
+What are the negative effects of this separation and what can we do about it?
+In this talk Dr. Martin Strunk presents “real world examples” of the impact that arising from the ignorance of Conway`s law by decision makers.
+He will also propose ways, in which companies might overcome and mitigate these problems.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Teams as first-class citizens&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Design comes first, then comes the participation&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Don’t rely on emergence to solve structural problems&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/ef23e5bd534243f0a14ea30bb8760344&quot; title=&quot;Conway’s Law in real life&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
     
     <item>
       <title>Prompt-Engineering</title>
@@ -32,8 +93,11 @@
 &lt;h2 id=&quot;_die_faszinierende_welt_des_prompt_engineerings&quot;&gt;Die faszinierende Welt des Prompt-Engineerings&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Im Zentrum meines jüngsten Vortrags stand das Prompt-Engineering, ein Schlüsselelement im Umgang mit fortschrittlichen Sprachmodellen wie GPT-3 und GPT-4.
-Das Prompt-Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen.
+&lt;p&gt;Im Zentrum meines jüngsten Vortrags stand das Prompt-Engineering, ein Schlüsselelement im Umgang mit fortschrittlichen Sprachmodellen wie GPT-3 und GPT-4.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Das Prompt-Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen.
 Wir tauchten tief in die Unterschiede zwischen GPT-3 und GPT-4 ein,
 erkundeten die Komplexität neuronaler Netze und die Bedeutung der Multi-Modalität in der heutigen KI-Landschaft.
 Ein besonderes Augenmerk legten wir auf die Kunst des Primings und der Kontextualisierung von Prompts,
