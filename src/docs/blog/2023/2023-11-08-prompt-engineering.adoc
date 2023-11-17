@@ -14,6 +14,11 @@
 == Die faszinierende Welt des Prompt-Engineerings
 
 Im Zentrum meines jüngsten Vortrags stand das Prompt-Engineering, ein Schlüsselelement im Umgang mit fortschrittlichen Sprachmodellen wie GPT-3 und GPT-4.
+
+++++
+<!-- teaser -->
+++++
+
 Das Prompt-Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen. 
 Wir tauchten tief in die Unterschiede zwischen GPT-3 und GPT-4 ein, 
 erkundeten die Komplexität neuronaler Netze und die Bedeutung der Multi-Modalität in der heutigen KI-Landschaft. 
