@@ -6,8 +6,6 @@
 :jbake-author: Dr. Martin Strunk
 ifndef::imagesdir[:imagesdir: ../../images]
 
-== Dr. Martin Strunk
-
 ++++
 <style>
 span.profile img {
@@ -17,6 +15,21 @@ max-width: 100px;
 }
 </style>
 ++++
+
+== Dr. Martin Strunk
+
+image:profiles/Dr.-Martin-Strunk.jpg[float=right,role=profile]
+
+Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. 
+
+In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, 
+where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created.  
+
+Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm.
+
+* https://www.linkedin.com/in/dr-martin-strunk-594387194/[LinkedIn]
+* https://www.xing.com/profile/Martin_Strunk[Xing]
+
 
 
 
