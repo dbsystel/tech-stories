@@ -34,5 +34,3 @@ Hinweis: Die Präsentation liegt in englischer Sprache vor.
 === Slides
 
 https://www.dbsystel.de/resource/blob/10621498/fec800ef94e994a94c41bd67e80eb8c6/IMGIS_2023_Winkler_Rieffel-data-data.pdf[download]
-
-|===
