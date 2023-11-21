@@ -14,13 +14,13 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 col-sm-12">
-        <h1>DB Systel Tech-Stories</h1>
+        <h1>DB Systel Tech Stories</h1>
         <p>
           Finde hier spannende Infos aus der Tech-Welt der DB Systel sowie des DB-Konzerns:
-          Talks, Fachartikel, Präsentationen und Aufzeichnungen von Vorträgen lassen Dich tief in unsere Tech-Themen eintauchen.
+          Talks, Fachartikel, Präsentationen und Aufzeichnungen von Vorträgen lassen dich tief in unsere Tech-Themen eintauchen.
         </p>
         <a class="elm-button btn-link" data-variant="primary" title="Zur Übersicht aller Tech-Stories" href='blog/index.html'>
-          Alle Tech-Stories <i class="fa fa-arrow-right fa-fw"></i>
+          Alle Tech Stories <i class="fa fa-arrow-right fa-fw"></i>
         </a>
       </div>
       <div class="col-md-6 d-none d-md-block pl-5">
@@ -43,7 +43,10 @@
             <p>
               <%
                   def allTagsHtml = []
-                  alltags.sort().each { tag ->
+                  alltags
+                  .unique({ a, b -> a.toLowerCase() <=> b.toLowerCase() })
+                  .sort({ a, b -> a.toLowerCase() <=> b.toLowerCase() })
+                  .each { tag ->
                     allTagsHtml << "<a href='tags/${tag}.html' class='tag'>$tag</a>"
                   }
                 out << allTagsHtml.join(' ')
@@ -63,16 +66,16 @@
                 def allAuthors = [:]
                 def allAuthorsHtml = []
                 published_posts.each { post ->
-                  def author = post['jbake-author']
-                  if (!allAuthors[author]) {allAuthors[author]=[]}
-                  allAuthors[author]<<post
-                }
-                allAuthors.sort().each { authors, content ->
+                  def authors = post['jbake-author']
                   authors.split(", *").each { author ->
                     if (author) {
-                      allAuthorsHtml << "<a href='blog/profiles/${author.replaceAll(' ','-').encodeURL()}.html' class='tag'>$author</a>"
+                        if (!allAuthors[author]) {allAuthors[author]=[]}
+                        allAuthors[author]<<post
                     }
                   }
+                }
+                allAuthors.sort().each { author, content ->
+                  allAuthorsHtml << "<a href='blog/profiles/${author.replaceAll(' ','-').encodeURL()}.html' class='tag'>$author</a>"
                 }
                 out << allAuthorsHtml.join(' ')
 
