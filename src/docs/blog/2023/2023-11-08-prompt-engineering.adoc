@@ -2,7 +2,6 @@
 :jbake-card: Die faszinierende Welt des Prompt-Engineerings
 :jbake-date: 2023-11-08
 :jbake-type: post
-:jbake-tags: javascript, vue
 :jbake-status: published
 :jbake-menu: Blog
 :jbake-discussion: 1076
@@ -19,12 +18,12 @@ Im Zentrum meines jüngsten Vortrags stand das Prompt-Engineering, ein Schlüsse
 <!-- teaser -->
 ++++
 
-Das Prompt-Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen. 
-Wir tauchten tief in die Unterschiede zwischen GPT-3 und GPT-4 ein, 
-erkundeten die Komplexität neuronaler Netze und die Bedeutung der Multi-Modalität in der heutigen KI-Landschaft. 
-Ein besonderes Augenmerk legten wir auf die Kunst des Primings und der Kontextualisierung von Prompts, 
-die die Effektivität und Präzision der KI-Interaktionen erheblich steigern können. 
-Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die das Potenzial von Prompt-Engineering veranschaulichen. 
+Das Prompt-Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen.
+Wir tauchten tief in die Unterschiede zwischen GPT-3 und GPT-4 ein,
+erkundeten die Komplexität neuronaler Netze und die Bedeutung der Multi-Modalität in der heutigen KI-Landschaft.
+Ein besonderes Augenmerk legten wir auf die Kunst des Primings und der Kontextualisierung von Prompts,
+die die Effektivität und Präzision der KI-Interaktionen erheblich steigern können.
+Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die das Potenzial von Prompt-Engineering veranschaulichen.
 
 === Slides
 
@@ -51,7 +50,7 @@ a|
 - link:https://www.heise.de/hintergrund/Softwarearchitektur-KI-wird-unsere-Faehigkeiten-ergaenzen-nicht-ersetzen-9339113.html[Heise Online: Softwarearchitektur: "KI wird unsere Fähigkeiten ergänzen, nicht ersetzen"]
 - link:https://www.heise.de/blog/KI-in-der-Softwareentwicklung-Ueberschaetzt-9336902.html[Heise Online: KI in der Softwareentwicklung: Überschätzt]
 - link:https://chat.openai.com/share/09fddcd1-6a71-49c1-bf27-a9ff5f40dace[OpenAI Chat: Beispiel 2]
-- link:https://embarc-downloads.s3.eu-central-1.amazonaws.com/folien/st/2023/LLMs+und+Architektur-komprimiert.pdf[Stefan Toth: Architektur 
-in Zeiten von 
+- link:https://embarc-downloads.s3.eu-central-1.amazonaws.com/folien/st/2023/LLMs+und+Architektur-komprimiert.pdf[Stefan Toth: Architektur
+in Zeiten von
 KI und LLMs
 ]

@@ -15,9 +15,9 @@
             <div class="card">
                 <figure>
                     <% if (post['jbake-teaser-image']) { %>
-                    <img style="margin-top: 40px; margin-left: 0.5em; max-height: 80px; max-width: 80px;" src='${content.rootpath}images/${post['jbake-teaser-image']}' />
+                    <img style="margin-top: 40px; margin-left: 0.5em; max-height: 80px; max-width: 80px; object-fit: contain;" src='${content.rootpath}images/${post['jbake-teaser-image']}' />
                     <% } else { %><p>-</p>
-                    <img style="margin-top: 40px; margin-left: 0.5em; max-height: 80px" src="${content.rootpath}/images/ic-db_newsletter.svg" />
+                    <img style="margin-top: 40px; margin-left: 0.5em; max-height: 80px;" src="${content.rootpath}/images/ic-db_newsletter.svg" />
                     <% } %>
                     <figcaption>
                         <p>${new java.text.SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH).format(post.date)}</p>
