@@ -6,9 +6,74 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 17 Nov 2023 14:28:38 +0000</pubDate>
-    <lastBuildDate>Fri, 17 Nov 2023 14:28:38 +0000</lastBuildDate>
+    <pubDate>Tue, 21 Nov 2023 15:00:43 +0000</pubDate>
+    <lastBuildDate>Tue, 21 Nov 2023 15:00:43 +0000</lastBuildDate>
 
+    
+    <item>
+      <title>A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!</title>
+      <link>http://jbake.org/blog/2023/2023-11-20-einfuehrung-barrierefreiheit-web.html</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2023/2023-11-20-einfuehrung-barrierefreiheit-web.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_a11y_eaa_bfsg_wcag_wai_aria_wtf_its_for_the_people_stupid&quot;&gt;A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it&amp;#8217;s for the people stupid!&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_referenzen&quot;&gt;Referenzen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_a11y_eaa_bfsg_wcag_wai_aria_wtf_its_for_the_people_stupid&quot;&gt;A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it&amp;#8217;s for the people stupid!&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Barrierefreiheit ist ein verstaubtes und unwichtiges Thema für Behördensoftware?
+Ganz im Gegenteil:
+Accessibility betrifft uns täglich und immer, wenn wir Software verwenden.
+Es ist an uns, diese umzusetzen.
+In unserem Talk von der W-JAX am 07.11.2023 zeigen wir euch, wie ihr eure Webanwendungen von Beginn an mit einfachen Mitteln zu einem hohen Grad barrierefrei gestaltet und entwickelt.
+Wir stellen euch effektive Methoden und Tools vor, die euch bei der Umsetzung und Prüfung in hohem Maße unterstützen.
+Wir gehen darauf ein, welchen Einfluss Barrierefreiheit auf eure Frontend-Architekturen hat und welche Aspekte hier zu beachten sind.
+Dabei beten wir nicht die einzelnen WCAG-Kriterien herunter – vielmehr geben wir euch eine praktische Einführung in das Thema Barrierefreiheit im Web und welche Kniffe und Fallstricke zu beachten sind.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/1801a779e99648f8b6b4beaa66fb0572&quot; title=&quot;A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it’s for the people stupid!&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_referenzen&quot;&gt;Referenzen&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://freesvg.org/download/178261&quot;&gt;Bild von Bill Clinton&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:W3C_icon.svg&quot;&gt;W3C Logo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Accessibility.svg&quot;&gt;Grafik &quot;human&quot;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
     
     <item>
       <title>Conway’s Law</title>
@@ -1617,8 +1682,6 @@ Sie wurde im Rahmen eines Vortrags von Konrad Winkler &amp;amp; Philippe Rieffel
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.dbsystel.de/resource/blob/10621498/fec800ef94e994a94c41bd67e80eb8c6/IMGIS_2023_Winkler_Rieffel-data-data.pdf&quot;&gt;download&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
-&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1712,8 +1775,6 @@ Gezeigt wurde sie im Rahmen eines Vortrags von Tim Engeleiter am 08.03.2023 bei 
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.dbsystel.de/resource/blob/10618882/a9f78504495f491f52042884428c711f/Replatformin-Mainframe-data-data.pdf&quot;&gt;download&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
-&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2338,11 +2399,18 @@ Er behandelt nicht nur die Hintergründe, sondern zeigt auch technische und gest
       <description>
       &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
 &lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_computer_vision_use_cases_deutsche_bahn&quot;&gt;Computer Vision Use Cases @ Deutsche Bahn&lt;/a&gt;
 &lt;ul class=&quot;sectlevel2&quot;&gt;
 &lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_computer_vision_use_cases_deutsche_bahn&quot;&gt;Computer Vision Use Cases @ Deutsche Bahn&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Wie können KI-Bildanalysen bei der Graffiti-Erkennung helfen und welche Potentiale birgt das für die Bahn?&lt;/p&gt;
 &lt;/div&gt;
@@ -2369,6 +2437,8 @@ Der Vortrag wurde vor internationalem Publikum gehalten und ist daher auf Englis
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 	  </description>
     </item>
@@ -2498,30 +2568,37 @@ gescheitert ist.&lt;/p&gt;
 &lt;p&gt;Von Techies für Techies: Danny Koppenhagen
 Danny ist Frontend-Entwickler mit den Schwerpunkten Angular und
 Vue.js und einer der Autoren des Buches
-„Angular — Grundlagen, fortgeschrittene Themen und Best Practices“.
+„Angular - Grundlagen, fortgeschrittene Themen und Best Practices“.
 Im dx.house Berlin berät er außerdem Kunden und
-Teams in den Themen User Experience von Enterprise-Lösungen.
-Er engagiert sich in der Web Community der DB Systel und
+Teams in den Themen User Experience von Enterprise-Lösungen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Er engagiert sich in der Web Community der DB Systel und
 ist Mitglied im Themen Team Web der Architekturgilde.
 Dort erarbeitet er Architektur-Standards für alle Themen Web.
 Im Interview spricht er über seine Erfahrungen mit Vue.js und Angular.
-Er geht darauf ein, welches Framework sich für welche Anwendungszwecke eignet.
-So bietet Vue.js hauptsächlich Vorteile,
+Er geht darauf ein, welches Framework sich für welche Anwendungszwecke eignet.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;So bietet Vue.js hauptsächlich Vorteile,
 wenn es um die Integration in bestehende Anwendungen handelt und
-das Team gerne JavaScript einsetzt.
-Angular ist im Enterprise-Umfeld für neue Anwendungen interessant,
+das Team gerne JavaScript einsetzt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Angular ist im Enterprise-Umfeld für neue Anwendungen interessant,
 da es auf TypeScript aufsetzt, ein umfangreiches Ökosystem mitbringt und
 zum Beispiel Migrationsguides und
-Templating-Fähigkeiten über sogenannte Schematics mitbringt.
-Außerdem erläutert Danny wie der aktuelle Stand der Technik für Progressive Webapps (PWA) ist.
+Templating-Fähigkeiten über sogenannte Schematics mitbringt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Außerdem erläutert Danny wie der aktuelle Stand der Technik für Progressive Webapps (PWA) ist.
 Hier kommt es darauf an, ob alle benötigten Features des Betriebssystems angesprochen werden können.
 Falls nicht, sollte in Erwägung gezogen werden eine native App zu entwickeln.
 Im dritten Teil sprechen wir über die Anbindung von APIs.
 Um die Orchestrierung von APIs zu vereinfachen,
 kann hier das Architekturmuster Backend For Frontends zum Einsatz kommen.
 Das vereinfacht den Zugriff aus der Anwendung,
-da die Anbindung der APIs nicht einzeln im Frontend implementiert werden muss.
-Erfahre mehr zum Thema:    • #000000 #c0ffee Tech-Talk  &lt;/p&gt;
+da die Anbindung der APIs nicht einzeln im Frontend implementiert werden muss.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
@@ -2531,63 +2608,9 @@ Erfahre mehr zum Thema:    • #000000 #c0ffee Tech-Talk  &lt;/p&gt;
 &lt;/colgroup&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://youtu.be/O3bYfZ8tcLc&quot; title=&quot;Vue.js vs. Angular: Was ist besser?&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;p class=&quot;tableblock&quot;&gt;===:jbake-title: Vue.js vs. Angular
-:jbake-card: Vue.js vs. Angular: Was ist besser?
-:jbake-date: 2020-05-19
-:jbake-type: video
-:jbake-tags: angular
-:jbake-status: published
-:jbake-menu: Blog
-:jbake-discussion: 1076
-:jbake-author: Danny Koppenhagen
-:icons: font
-:source-highlighter: highlight.js
-:jbake-teaser-image: topics/dev.png&lt;/p&gt;
-&lt;p class=&quot;tableblock&quot;&gt;== Vue.js vs. Angular: Was ist besser?&lt;/p&gt;
-&lt;p class=&quot;tableblock&quot;&gt;Heute zu Gast bei #000000 #c0ffee – Der Tech-Talk der DB Systel.&lt;/p&gt;
-&lt;p class=&quot;tableblock&quot;&gt;+
-&lt;!-- teaser --&gt;
-+&lt;/p&gt;
-&lt;p class=&quot;tableblock&quot;&gt;Von Techies für Techies: Danny Koppenhagen
-Danny ist Frontend-Entwickler mit den Schwerpunkten Angular und
-Vue.js und einer der Autoren des Buches
-„Angular — Grundlagen, fortgeschrittene Themen und Best Practices“.
-Im dx.house Berlin berät er außerdem Kunden und
-Teams in den Themen User Experience von Enterprise-Lösungen.
-Er engagiert sich in der Web Community der DB Systel und
-ist Mitglied im Themen Team Web der Architekturgilde.
-Dort erarbeitet er Architektur-Standards für alle Themen Web.
-Im Interview spricht er über seine Erfahrungen mit Vue.js und Angular.
-Er geht darauf ein, welches Framework sich für welche Anwendungszwecke eignet.
-So bietet Vue.js hauptsächlich Vorteile,
-wenn es um die Integration in bestehende Anwendungen handelt und
-das Team gerne JavaScript einsetzt.
-Angular ist im Enterprise-Umfeld für neue Anwendungen interessant,
-da es auf TypeScript aufsetzt, ein umfangreiches Ökosystem mitbringt und
-zum Beispiel Migrationsguides und
-Templating-Fähigkeiten über sogenannte Schematics mitbringt.
-Außerdem erläutert Danny wie der aktuelle Stand der Technik für Progressive Webapps (PWA) ist.
-Hier kommt es darauf an, ob alle benötigten Features des Betriebssystems angesprochen werden können.
-Falls nicht, sollte in Erwägung gezogen werden eine native App zu entwickeln.
-Im dritten Teil sprechen wir über die Anbindung von APIs.
-Um die Orchestrierung von APIs zu vereinfachen,
-kann hier das Architekturmuster Backend For Frontends zum Einsatz kommen.
-Das vereinfacht den Zugriff aus der Anwendung,
-da die Anbindung der APIs nicht einzeln im Frontend implementiert werden muss.
-Erfahre mehr zum Thema:    • #000000 #c0ffee Tech-Talk  &lt;/p&gt;
-&lt;p class=&quot;tableblock&quot;&gt;=== Video&lt;/p&gt;
-&lt;p class=&quot;tableblock&quot;&gt;[cols=&quot;1&quot;, width=100%]&lt;/p&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; src=&quot;https://www.youtube-nocookie.com/embed/O3bYfZ8tcLc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;a|&lt;/p&gt;
-&lt;/div&gt;
-&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://youtu.be/O3bYfZ8tcLc&quot; title=&quot;Vue.js vs. Angular: Was ist besser?&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;
-&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;

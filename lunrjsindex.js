@@ -10,6 +10,14 @@ var documents = [
 
 {
     "id": 1,
+    "uri": "blog/2023/2023-11-20-einfuehrung-barrierefreiheit-web.html",
+    "menu": "Blog",
+    "title": "A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!",
+    "text": " Table of Contents A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it&#8217;s for the people stupid! Slides Referenzen A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it&#8217;s for the people stupid! Barrierefreiheit ist ein verstaubtes und unwichtiges Thema für Behördensoftware? Ganz im Gegenteil: Accessibility betrifft uns täglich und immer, wenn wir Software verwenden. Es ist an uns, diese umzusetzen. In unserem Talk von der W-JAX am 07.11.2023 zeigen wir euch, wie ihr eure Webanwendungen von Beginn an mit einfachen Mitteln zu einem hohen Grad barrierefrei gestaltet und entwickelt. Wir stellen euch effektive Methoden und Tools vor, die euch bei der Umsetzung und Prüfung in hohem Maße unterstützen. Wir gehen darauf ein, welchen Einfluss Barrierefreiheit auf eure Frontend-Architekturen hat und welche Aspekte hier zu beachten sind. Dabei beten wir nicht die einzelnen WCAG-Kriterien herunter – vielmehr geben wir euch eine praktische Einführung in das Thema Barrierefreiheit im Web und welche Kniffe und Fallstricke zu beachten sind. Slides Referenzen Bild von Bill Clinton W3C Logo Grafik \"human\" "
+},
+
+{
+    "id": 2,
     "uri": "blog/2023/2023-11-20-conways-law.html",
     "menu": "Blog",
     "title": "Conway’s Law",
@@ -17,7 +25,7 @@ var documents = [
 },
 
 {
-    "id": 2,
+    "id": 3,
     "uri": "blog/2023/2023-11-08-prompt-engineering.html",
     "menu": "Blog",
     "title": "Prompt-Engineering",
@@ -25,7 +33,7 @@ var documents = [
 },
 
 {
-    "id": 3,
+    "id": 4,
     "uri": "blog/2023/2023-08-21-vue2-vue3-migration.html",
     "menu": "Blog",
     "title": "Migrate Vue 2 to Vue 3",
@@ -33,7 +41,7 @@ var documents = [
 },
 
 {
-    "id": 4,
+    "id": 5,
     "uri": "blog/2023/2023-05-15-developer-experience-platform-fuer-entwicklerinnen.html",
     "menu": "Blog",
     "title": "Developer Experience Platform",
@@ -41,7 +49,7 @@ var documents = [
 },
 
 {
-    "id": 5,
+    "id": 6,
     "uri": "blog/2023/2023-05-05-loom-threading.html",
     "menu": "Blog",
     "title": "Projekt Loom ist da",
@@ -49,7 +57,7 @@ var documents = [
 },
 
 {
-    "id": 6,
+    "id": 7,
     "uri": "blog/2023/2023-04-09-vortrag-auf-der-javaland.html",
     "menu": "Blog",
     "title": "JavaLand 2023",
@@ -57,7 +65,7 @@ var documents = [
 },
 
 {
-    "id": 7,
+    "id": 8,
     "uri": "blog/2023/2023-04-01-Indoor-GIS-zur-Rationalisierung-von-Wartungsarbeiten.html",
     "menu": "Blog",
     "title": "Indoor-GIS",
@@ -65,7 +73,7 @@ var documents = [
 },
 
 {
-    "id": 8,
+    "id": 9,
     "uri": "blog/2023/2023-03-28-ChatGPT-Einblicke-und-mehr-Generative-Sprachmodelle-Herausforderungen-und-Chancen.html",
     "menu": "Blog",
     "title": "ChatGPT",
@@ -73,7 +81,7 @@ var documents = [
 },
 
 {
-    "id": 9,
+    "id": 10,
     "uri": "blog/2023/2023-03-08-Re-Platforming-Mainframe-Mehr-als-nur-Lift-Shift.html",
     "menu": "Blog",
     "title": "Re-Platforming Mainframe",
@@ -81,7 +89,7 @@ var documents = [
 },
 
 {
-    "id": 10,
+    "id": 11,
     "uri": "blog/2022/2022-11-24-the-journey-towards-K8s-at-Deutsche-Bahn.html",
     "menu": "Blog",
     "title": "K8s at Deutsche Bahn",
@@ -89,7 +97,7 @@ var documents = [
 },
 
 {
-    "id": 11,
+    "id": 12,
     "uri": "blog/2022/2022-11-04-Produkt-statt-Projekmanagement.html",
     "menu": "Blog",
     "title": "Produkt- statt Projektmanagement",
@@ -97,7 +105,7 @@ var documents = [
 },
 
 {
-    "id": 12,
+    "id": 13,
     "uri": "blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html",
     "menu": "Blog",
     "title": "Deine Diagramme sind Legende?",
@@ -105,7 +113,7 @@ var documents = [
 },
 
 {
-    "id": 13,
+    "id": 14,
     "uri": "blog/2022/2022-03-23-Vielfalt-bei-der-Bahn-Computerlinguistinnen-treiben-Digitalisierung-voran.html",
     "menu": "Blog",
     "title": "Vielfalt bei der Bahn",
@@ -113,7 +121,7 @@ var documents = [
 },
 
 {
-    "id": 14,
+    "id": 15,
     "uri": "blog/2021/2021-11-02-KITT-das-Kuenstliche-Intelligenz-Translation-Tool.html",
     "menu": "Blog",
     "title": "KITT Tool",
@@ -121,7 +129,7 @@ var documents = [
 },
 
 {
-    "id": 15,
+    "id": 16,
     "uri": "blog/2021/2021-06-08-Bad-bots-Chancen-und-Herausforderungen-fuer-KI-und-Sprache.html",
     "menu": "Blog",
     "title": "Bad Bots",
@@ -129,15 +137,15 @@ var documents = [
 },
 
 {
-    "id": 16,
+    "id": 17,
     "uri": "blog/2021/2021-04-12-Computer-Vision-Use-Cases-at-Deutsche-Bahn.html",
     "menu": "Blog",
     "title": "Computer Vision Use Cases",
-    "text": " Table of Contents Video Wie können KI-Bildanalysen bei der Graffiti-Erkennung helfen und welche Potentiale birgt das für die Bahn? Im Rahmen des Data Festivals 2021 präsentierte das DB Systel Venture vsion.ai gemeinsam mit der Data Science Beratung Alexander Thamm Einsatzmöglichkeiten von KI-Analysen auf Bildern im Bahnkontext. Am Beispiel der automatischen Erkennung von Graffiti auf Zügen zeigt Peco Elenchevski die Besonderheiten des Use Cases auf sowie die technische Umsetzung eines Proof of Concept. Nico Becker knüpft dort an und beschreibt die Herausforderungen, welche sich aus dem Deployment von KI-Modellen ergeben. Dabei skizziert er einen Weg, wie sich ein Proof of Concept zu einem robusten Produktivsystem weiterentwickeln lässt. Der Vortrag wurde vor internationalem Publikum gehalten und ist daher auf Englisch. Video "
+    "text": " Table of Contents Computer Vision Use Cases @ Deutsche Bahn Video Computer Vision Use Cases @ Deutsche Bahn Wie können KI-Bildanalysen bei der Graffiti-Erkennung helfen und welche Potentiale birgt das für die Bahn? Im Rahmen des Data Festivals 2021 präsentierte das DB Systel Venture vsion.ai gemeinsam mit der Data Science Beratung Alexander Thamm Einsatzmöglichkeiten von KI-Analysen auf Bildern im Bahnkontext. Am Beispiel der automatischen Erkennung von Graffiti auf Zügen zeigt Peco Elenchevski die Besonderheiten des Use Cases auf sowie die technische Umsetzung eines Proof of Concept. Nico Becker knüpft dort an und beschreibt die Herausforderungen, welche sich aus dem Deployment von KI-Modellen ergeben. Dabei skizziert er einen Weg, wie sich ein Proof of Concept zu einem robusten Produktivsystem weiterentwickeln lässt. Der Vortrag wurde vor internationalem Publikum gehalten und ist daher auf Englisch. Video "
 },
 
 {
-    "id": 17,
+    "id": 18,
     "uri": "blog/2021/2021-03-20-Die-C4-Testpyramide-eine-architekturgetriebene-Teststrategie.html",
     "menu": "Blog",
     "title": "Die C4-Testpyramide",
@@ -145,7 +153,7 @@ var documents = [
 },
 
 {
-    "id": 18,
+    "id": 19,
     "uri": "blog/2020/2020-12-07-devops-mehr-geschwindigkeit-auf-der-schiene.html",
     "menu": "Blog",
     "title": "DevOps Geschwindigkeit",
@@ -153,15 +161,15 @@ var documents = [
 },
 
 {
-    "id": 19,
+    "id": 20,
     "uri": "blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html",
     "menu": "Blog",
     "title": "Vue.js vs. Angular",
-    "text": " Table of Contents Vue.js vs. Angular: Was ist besser? Video Vue.js vs. Angular: Was ist besser? Heute zu Gast bei #000000 #c0ffee – Der Tech-Talk der DB Systel. Von Techies für Techies: Danny Koppenhagen Danny ist Frontend-Entwickler mit den Schwerpunkten Angular und Vue.js und einer der Autoren des Buches „Angular — Grundlagen, fortgeschrittene Themen und Best Practices“. Im dx.house Berlin berät er außerdem Kunden und Teams in den Themen User Experience von Enterprise-Lösungen. Er engagiert sich in der Web Community der DB Systel und ist Mitglied im Themen Team Web der Architekturgilde. Dort erarbeitet er Architektur-Standards für alle Themen Web. Im Interview spricht er über seine Erfahrungen mit Vue.js und Angular. Er geht darauf ein, welches Framework sich für welche Anwendungszwecke eignet. So bietet Vue.js hauptsächlich Vorteile, wenn es um die Integration in bestehende Anwendungen handelt und das Team gerne JavaScript einsetzt. Angular ist im Enterprise-Umfeld für neue Anwendungen interessant, da es auf TypeScript aufsetzt, ein umfangreiches Ökosystem mitbringt und zum Beispiel Migrationsguides und Templating-Fähigkeiten über sogenannte Schematics mitbringt. Außerdem erläutert Danny wie der aktuelle Stand der Technik für Progressive Webapps (PWA) ist. Hier kommt es darauf an, ob alle benötigten Features des Betriebssystems angesprochen werden können. Falls nicht, sollte in Erwägung gezogen werden eine native App zu entwickeln. Im dritten Teil sprechen wir über die Anbindung von APIs. Um die Orchestrierung von APIs zu vereinfachen, kann hier das Architekturmuster Backend For Frontends zum Einsatz kommen. Das vereinfacht den Zugriff aus der Anwendung, da die Anbindung der APIs nicht einzeln im Frontend implementiert werden muss. Erfahre mehr zum Thema:    • #000000 #c0ffee Tech-Talk   Video ===:jbake-title: Vue.js vs. Angular :jbake-card: Vue.js vs. Angular: Was ist besser? :jbake-date: 2020-05-19 :jbake-type: video :jbake-tags: angular :jbake-status: published :jbake-menu: Blog :jbake-discussion: 1076 :jbake-author: Danny Koppenhagen :icons: font :source-highlighter: highlight.js :jbake-teaser-image: topics/dev.png == Vue.js vs. Angular: Was ist besser? Heute zu Gast bei #000000 #c0ffee – Der Tech-Talk der DB Systel. + + Von Techies für Techies: Danny Koppenhagen Danny ist Frontend-Entwickler mit den Schwerpunkten Angular und Vue.js und einer der Autoren des Buches „Angular — Grundlagen, fortgeschrittene Themen und Best Practices“. Im dx.house Berlin berät er außerdem Kunden und Teams in den Themen User Experience von Enterprise-Lösungen. Er engagiert sich in der Web Community der DB Systel und ist Mitglied im Themen Team Web der Architekturgilde. Dort erarbeitet er Architektur-Standards für alle Themen Web. Im Interview spricht er über seine Erfahrungen mit Vue.js und Angular. Er geht darauf ein, welches Framework sich für welche Anwendungszwecke eignet. So bietet Vue.js hauptsächlich Vorteile, wenn es um die Integration in bestehende Anwendungen handelt und das Team gerne JavaScript einsetzt. Angular ist im Enterprise-Umfeld für neue Anwendungen interessant, da es auf TypeScript aufsetzt, ein umfangreiches Ökosystem mitbringt und zum Beispiel Migrationsguides und Templating-Fähigkeiten über sogenannte Schematics mitbringt. Außerdem erläutert Danny wie der aktuelle Stand der Technik für Progressive Webapps (PWA) ist. Hier kommt es darauf an, ob alle benötigten Features des Betriebssystems angesprochen werden können. Falls nicht, sollte in Erwägung gezogen werden eine native App zu entwickeln. Im dritten Teil sprechen wir über die Anbindung von APIs. Um die Orchestrierung von APIs zu vereinfachen, kann hier das Architekturmuster Backend For Frontends zum Einsatz kommen. Das vereinfacht den Zugriff aus der Anwendung, da die Anbindung der APIs nicht einzeln im Frontend implementiert werden muss. Erfahre mehr zum Thema:    • #000000 #c0ffee Tech-Talk   === Video [cols=\"1\", width=100%] a| "
+    "text": " Table of Contents Vue.js vs. Angular: Was ist besser? Video Vue.js vs. Angular: Was ist besser? Heute zu Gast bei #000000 #c0ffee – Der Tech-Talk der DB Systel. Von Techies für Techies: Danny Koppenhagen Danny ist Frontend-Entwickler mit den Schwerpunkten Angular und Vue.js und einer der Autoren des Buches „Angular - Grundlagen, fortgeschrittene Themen und Best Practices“. Im dx.house Berlin berät er außerdem Kunden und Teams in den Themen User Experience von Enterprise-Lösungen. Er engagiert sich in der Web Community der DB Systel und ist Mitglied im Themen Team Web der Architekturgilde. Dort erarbeitet er Architektur-Standards für alle Themen Web. Im Interview spricht er über seine Erfahrungen mit Vue.js und Angular. Er geht darauf ein, welches Framework sich für welche Anwendungszwecke eignet. So bietet Vue.js hauptsächlich Vorteile, wenn es um die Integration in bestehende Anwendungen handelt und das Team gerne JavaScript einsetzt. Angular ist im Enterprise-Umfeld für neue Anwendungen interessant, da es auf TypeScript aufsetzt, ein umfangreiches Ökosystem mitbringt und zum Beispiel Migrationsguides und Templating-Fähigkeiten über sogenannte Schematics mitbringt. Außerdem erläutert Danny wie der aktuelle Stand der Technik für Progressive Webapps (PWA) ist. Hier kommt es darauf an, ob alle benötigten Features des Betriebssystems angesprochen werden können. Falls nicht, sollte in Erwägung gezogen werden eine native App zu entwickeln. Im dritten Teil sprechen wir über die Anbindung von APIs. Um die Orchestrierung von APIs zu vereinfachen, kann hier das Architekturmuster Backend For Frontends zum Einsatz kommen. Das vereinfacht den Zugriff aus der Anwendung, da die Anbindung der APIs nicht einzeln im Frontend implementiert werden muss. Video "
 },
 
 {
-    "id": 20,
+    "id": 21,
     "uri": "blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html",
     "menu": "Blog",
     "title": "OOP: Guter Code",
@@ -169,7 +177,7 @@ var documents = [
 },
 
 {
-    "id": 21,
+    "id": 22,
     "uri": "blog/2019/2019-09-13-Spock-und-AsciiDoc.html",
     "menu": "Blog",
     "title": "Spock und AsciiDoc",
@@ -177,15 +185,15 @@ var documents = [
 },
 
 {
-    "id": 22,
+    "id": 23,
     "uri": "blog/index.html",
     "menu": "Blog",
     "title": "Übersicht",
-    "text": " Table of Contents Übersicht Übersicht Willkommen auf dem Tech-Blog der DB-Systel. "
+    "text": " Table of Contents Übersicht Übersicht Willkommen auf dem Tech Blog der DB Systel. "
 },
 
 {
-    "id": 23,
+    "id": 24,
     "uri": "blog/profiles/Ralf-D.-Mueller.html",
     "menu": "Autoren",
     "title": "Ralf D. Müller",
@@ -193,7 +201,7 @@ var documents = [
 },
 
 {
-    "id": 24,
+    "id": 25,
     "uri": "blog/profiles/Philippe-Rieffe.html",
     "menu": "Autoren",
     "title": "Philippe Rieffe",
@@ -201,7 +209,7 @@ var documents = [
 },
 
 {
-    "id": 25,
+    "id": 26,
     "uri": "blog/profiles/Konrad-Winkler.html",
     "menu": "Autoren",
     "title": "Konrad Winkler",
@@ -209,47 +217,7 @@ var documents = [
 },
 
 {
-    "id": 26,
-    "uri": "blog/profiles/Danny-Koppenhagen.html",
-    "menu": "Autoren",
-    "title": "Danny Koppenhagen",
-    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
-},
-
-{
     "id": 27,
-    "uri": "blog/profiles/Christian-Fischer.html",
-    "menu": "Autoren",
-    "title": "Christian Fischer",
-    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 28,
-    "uri": "blog/profiles/Sascha-Wolter.html",
-    "menu": "Autoren",
-    "title": "Sascha Wolter",
-    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Personal Website "
-},
-
-{
-    "id": 29,
-    "uri": "blog/profiles/Marcus-Suemnick.html",
-    "menu": "Autoren",
-    "title": "Marcus Sümnick",
-    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 30,
-    "uri": "blog/profiles/Johannes-Dienst.html",
-    "menu": "Autoren",
-    "title": "Johannes Dienst",
-    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 31,
     "uri": "blog/profiles/Dr.-Martin-Strunk.html",
     "menu": "Autoren",
     "title": "Dr. Martin Strunk",
@@ -257,19 +225,51 @@ var documents = [
 },
 
 {
-    "id": 32,
-    "uri": "blog/profiles/Carsten-Hoffmann.html",
+    "id": 28,
+    "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
-    "title": "Carsten Hoffmann",
-    "text": " Table of Contents Carsten Hoffmann Carsten Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Danny Koppenhagen",
+    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+},
+
+{
+    "id": 29,
+    "uri": "blog/profiles/Christian-Fischer.html",
+    "menu": "Autoren",
+    "title": "Christian Fischer",
+    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 30,
+    "uri": "blog/profiles/Sascha-Wolter.html",
+    "menu": "Autoren",
+    "title": "Sascha Wolter",
+    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Personal Website "
+},
+
+{
+    "id": 31,
+    "uri": "blog/profiles/Marcus-Suemnick.html",
+    "menu": "Autoren",
+    "title": "Marcus Sümnick",
+    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 32,
+    "uri": "blog/profiles/Johannes-Dienst.html",
+    "menu": "Autoren",
+    "title": "Johannes Dienst",
+    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
     "id": 33,
-    "uri": "blog/profiles/Bertram-Fey.html",
+    "uri": "blog/profiles/Carsten-Hoffmann.html",
     "menu": "Autoren",
-    "title": "Bertram Fey",
-    "text": " Table of Contents Bertram Fey Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Carsten Hoffmann",
+    "text": " Table of Contents Carsten Hoffmann Carsten Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
@@ -290,6 +290,14 @@ var documents = [
 
 {
     "id": 36,
+    "uri": "blog/profiles/Maximilian-Franzke.html",
+    "menu": "Autoren",
+    "title": "Maximilian-Franzke",
+    "text": " Table of Contents Maximilian-Franzke Links Maximilian-Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
+},
+
+{
+    "id": 37,
     "uri": "blog/profiles/Carsten-Thurau.html",
     "menu": "Autoren",
     "title": "Carsten Thurau",
@@ -297,7 +305,15 @@ var documents = [
 },
 
 {
-    "id": 37,
+    "id": 38,
+    "uri": "blog/profiles/Bertram-Fey.html",
+    "menu": "Autoren",
+    "title": "Bertram Fey",
+    "text": " Table of Contents Bertram Fey Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 39,
     "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
     "menu": "Autoren",
     "title": "Gualter Barbas Baptista",
@@ -305,7 +321,7 @@ var documents = [
 },
 
 {
-    "id": 38,
+    "id": 40,
     "uri": "lunrjsindex.html",
     "menu": "null",
     "title": "null",
