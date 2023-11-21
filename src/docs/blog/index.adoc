@@ -8,4 +8,4 @@
 
 == Übersicht
 
-Willkommen auf dem Tech-Blog der DB-Systel.
+Willkommen auf dem Tech Blog der DB Systel.

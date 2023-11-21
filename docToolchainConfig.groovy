@@ -93,7 +93,7 @@ styling supported by <a href="https://db-ui.github.io/">DB UI Core</a>, theme ba
 <a href="https://www.dbsystel.de/">DB Systel GmbH</a></small>'''
     //
     // site title if no other title is given
-    title = 'Tech-Stories'
+    title = 'Tech Stories'
     //
     // the url to create an issue in github
     // Example: https://github.com/docToolchain/docToolchain/issues/new
