@@ -1,0 +1,39 @@
+:jbake-title: A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!
+:jbake-card: A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!
+:jbake-date: 2023-11-20
+:jbake-type: post
+:jbake-tags: JavaScript, HTML, CSS, a11y, Digitale Barrierefreiheit, digital accessibility
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Danny Koppenhagen, Maximilian Franzke
+:jbake-teaser-image: wjax.png
+
+
+== A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!
+
+Barrierefreiheit ist ein verstaubtes und unwichtiges Thema für Behördensoftware?
+Ganz im Gegenteil:
+Accessibility betrifft uns täglich und immer, wenn wir Software verwenden.
+Es ist an uns, diese umzusetzen.
+In unserem Talk von der W-JAX am 07.11.2023 zeigen wir euch, wie ihr eure Webanwendungen von Beginn an mit einfachen Mitteln zu einem hohen Grad barrierefrei gestaltet und entwickelt.
+Wir stellen euch effektive Methoden und Tools vor, die euch bei der Umsetzung und Prüfung in hohem Maße unterstützen.
+Wir gehen darauf ein, welchen Einfluss Barrierefreiheit auf eure Frontend-Architekturen hat und welche Aspekte hier zu beachten sind.
+Dabei beten wir nicht die einzelnen WCAG-Kriterien herunter – vielmehr geben wir euch eine praktische Einführung in das Thema Barrierefreiheit im Web und welche Kniffe und Fallstricke zu beachten sind.
+
+=== Slides
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/1801a779e99648f8b6b4beaa66fb0572" title="A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it’s for the people stupid!" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+
+|===
+
+=== Referenzen
+
+* https://freesvg.org/download/178261[Bild von Bill Clinton]
+* https://commons.wikimedia.org/wiki/File:W3C_icon.svg[W3C Logo]
+* https://commons.wikimedia.org/wiki/File:Accessibility.svg[Grafik "human"]

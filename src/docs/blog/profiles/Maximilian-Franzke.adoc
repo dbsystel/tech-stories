@@ -1,0 +1,32 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Maximilian-Franzke
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Maximilian-Franzke
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+
+image:profiles/Maximilian-Franzke.jpg[float=right,role=profile]
+
+Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG.
+Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit.
+Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt.
+
+=== Links
+
+* https://twitter.com/maedmaex[X (formerly known as Twitter) Profile]
+* https://github.com/mfranzke[GitHub Profile]
+
