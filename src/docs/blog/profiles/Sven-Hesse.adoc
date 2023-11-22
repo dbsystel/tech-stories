@@ -1,0 +1,28 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Sven Hesse
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Sven Hesse
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+image:profiles/Sven-Hesse.jpg[float=right,role=profile]
+
+Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH.
+Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility.
+
+=== Links
+
+* https://svenhesse.de/[Persönliche Website]
