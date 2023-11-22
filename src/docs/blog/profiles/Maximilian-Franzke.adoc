@@ -3,10 +3,10 @@
 :jbake-type: profile
 :jbake-order: 1
 :sectanchors:
-:jbake-author: Maximilian-Franzke
+:jbake-author: Maximilian Franzke
 ifndef::imagesdir[:imagesdir: ../../images]
 
-== Maximilian-Franzke
+== Maximilian Franzke
 
 ++++
 <style>
