@@ -29,15 +29,17 @@ task createStory (
         def authorIndex = ant.properties["authorIndex"]
 
         // Get the selected file name based on author input
-        def author = fileNames[authorIndex.toInteger() - 1]
+        def author = fileNames[authorIndex.toInteger() - 1].replaceAll("-"," ")
 
         ant.input(message: "Please enter your the desired publish date (Format must be: YYYY-MM-DD):", addproperty: "date")
         ant.input(message: "Please enter the title of your Tech Story:", addproperty: "title")
         ant.input(message: "Please enter an optional short title for the Tech Story that's shown in the left menu:", addproperty: "shorttitle")
+        ant.input(message: "Please enter some comma separated tags:", addproperty: "tags")
 
         def date = ant.properties["date"]
         def title = ant.properties["title"]
         def shorttitle = ant.properties["shorttitle"]
+        def tags = ant.properties["tags"]
 
         // Parse the timestamp into a LocalDate
         def parsedDate = LocalDate.parse(date)
@@ -54,6 +56,7 @@ task createStory (
         println "Publish Date: ${date}"
         println "Title: ${title}"
         println "Title (Short): ${shorttitle}"
+        println "Tags: ${tags}"
         println "Filename: ${targetFilename}"
         println "Filepath: ${targetFilePath}"
 
@@ -71,6 +74,7 @@ task createStory (
         templateContent = templateContent.replaceAll('SHORT', shorttitle)
         templateContent = templateContent.replaceAll('TITLE', title)
         templateContent = templateContent.replaceAll('DATE', date)
+        templateContent = templateContent.replaceAll('TAGS', tags)
 
         templateContent = templateContent.replaceAll(':jbake-status: draft', ':jbake-status: published')
 
@@ -78,7 +82,7 @@ task createStory (
         new File(docDir, targetFilePath).parentFile.mkdirs()
         file(outputFilePath).text = templateContent
 
-        println("Created Tech Story: $out")
+        println("Created Tech Story: $outputFilePath")
         println("Happy writing!")
     }
 }

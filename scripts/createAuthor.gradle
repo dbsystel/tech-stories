@@ -11,8 +11,8 @@ task createAuthor (
         ant.input(message: "If you have a Github Profile, please enter your username:", addproperty: "github")
 
         // Access the entered values
-        def firstname = ant.properties["firstname"]
-        def lastname = ant.properties["lastname"]
+        def firstname = ant.properties["firstname"].replaceAll("ä","ae").replaceAll("ü","ue").replaceAll("ö","oe")
+        def lastname = ant.properties["lastname"].replaceAll("ä","ae").replaceAll("ü","ue").replaceAll("ö","oe")
         def linkedin = ant.properties["linkedin"]
         def mastodon = ant.properties["mastodon"]
         def xtwitter = ant.properties["xtwitter"]

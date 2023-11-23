@@ -29,15 +29,15 @@ Bitte ergänze hier ein paar Sätze über dich.
 
 === Links
 
-ifdef::linkedin[]
+ifeval::["{linkedin}" != ""]
 * https://www.linkedin.com/in/{linkedin}[LinkedIn Profile]
-endif::linkedin[]
-ifdef::mastodon[]
+endif::[]
+ifeval::["{mastodon}" != ""]
 * {mastodon}[Mastodon Profile]
-endif::mastodon[]
-ifdef::xtwitter[]
+endif::[]
+ifeval::["{xtwitter}" != ""]
 * https://twitter.com/{xtwitter}[X (formerly known as Twitter) Profile]
-endif::xtwitter[]
-ifdef::github[]
+endif::[]
+ifeval::["{github}" != ""]
 * https://github.com/{github}[GitHub Profile]
-endif::github[]
+endif::[]
