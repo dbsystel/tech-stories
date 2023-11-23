@@ -7,7 +7,7 @@
 :jbake-menu: Blog
 :jbake-discussion: 1076
 :jbake-author: Sven Hesse
-:jbake-teaser-image: profiles/Sven-Hesse.png
+:jbake-teaser-image: profiles/Sven-Hesse.jpg
 
 
 == Hätt' ich das früher gewusst - Good Practices bei API-Konzeption & -Entwicklung
@@ -23,3 +23,18 @@ Aber warum ist API-first gar nicht immer optimal?
 Und wieso können wir heute mit imperfekten REST-APIs ruhig schlafen?
 Mittlerweile nutzen wir Tools und Frameworks wie den OpenAPI-Generator, MapStruct, Lombok und OpenFeign.
 Was hat uns anfangs davon abgehalten?
+
+=== Slides und Video
+
+[cols="2", width=100%]
+|===
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/ff4ac44c9d3b47a5881e8b49d9cb469e" title="Spock and AsciiDoc - ein perfektes Paar" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+a|
++++++
+<iframe src="https://player.vimeo.com/video/728535240?h=ffe28f2c25&color=FCB913" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
++++++
+|===
+
