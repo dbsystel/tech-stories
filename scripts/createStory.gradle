@@ -1,0 +1,84 @@
+import groovy.util.*
+import static groovy.io.FileType.*
+import java.nio.file.Files
+import java.nio.file.Paths
+
+task createStory (
+    description: 'Create a new Tech Story',
+    group: 'docToolchain'
+) {
+    doLast {
+        def fileNames = []
+
+        // Get a list of file names (excluding _template.adoc) without file extensions
+        new File(docDir, "src/docs/blog/profiles").eachFile { file ->
+            if (file.isFile() && file.name != '_template.adoc') {
+                def fileNameWithoutExtension = file.name.take(file.name.lastIndexOf('.'))
+                fileNames << fileNameWithoutExtension
+            }
+        }
+
+        // Display the list of author names
+        println "Select an author:"
+        fileNames.eachWithIndex { fileName, index ->
+            println "${index + 1}. ${fileName}"
+        }
+
+        // Get author input using Scanner
+        ant.input(message: 'Enter the number corresponding to your choice.\nIf the author profile was not created, be sure to do this first.\nRun: ./dtcw createAuthor first', addproperty: "authorIndex")
+        def authorIndex = ant.properties["authorIndex"]
+
+        // Get the selected file name based on author input
+        def author = fileNames[authorIndex.toInteger() - 1]
+
+        ant.input(message: "Please enter your the desired publish date (Format must be: YYYY-MM-DD):", addproperty: "date")
+        ant.input(message: "Please enter the title of your Tech Story:", addproperty: "title")
+        ant.input(message: "Please enter an optional short title for the Tech Story that's shown in the left menu:", addproperty: "shorttitle")
+
+        def date = ant.properties["date"]
+        def title = ant.properties["title"]
+        def shorttitle = ant.properties["shorttitle"]
+
+        // Parse the timestamp into a LocalDate
+        def parsedDate = LocalDate.parse(date)
+
+        // Extract the year
+        def year = parsedDate.year
+
+        def filenameTitle = (shorttitle ?: title).replaceAll(/[^\w\s]/, '').replaceAll(/\s+/, '-')
+        def targetFilename = "${date}-${filenameTitle}"
+        def targetFilePath = "src/docs/blog/${year}/${targetFilename}.adoc"
+
+        println("\nEntered Information:")
+        println "Author: ${author}"
+        println "Publish Date: ${date}"
+        println "Title: ${title}"
+        println "Title (Short): ${shorttitle}"
+        println "Filename: ${targetFilename}"
+        println "Filepath: ${targetFilePath}"
+
+        // Set the template file path
+        def templateFilePath = new File(docDir, "src/docs/blog/_template.adoc")
+
+        // Set the output file path
+        def outputFilePath = new File(docDir, targetFilePath)
+
+        // Read the template file
+        def templateContent = file(templateFilePath).text
+
+                // Perform variable replacement
+        templateContent = templateContent.replaceAll('AUTHOR', author)
+        templateContent = templateContent.replaceAll('SHORT', shorttitle)
+        templateContent = templateContent.replaceAll('TITLE', title)
+        templateContent = templateContent.replaceAll('DATE', date)
+
+        templateContent = templateContent.replaceAll(':jbake-status: draft', ':jbake-status: published')
+
+        // Write the updated content to the output file
+        new File(docDir, targetFilePath).parentFile.mkdirs()
+        file(outputFilePath).text = templateContent
+
+        println("Created Tech Story: $out")
+        println("Happy writing!")
+    }
+}

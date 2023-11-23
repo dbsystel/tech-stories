@@ -1,0 +1,24 @@
+:jbake-title: SHORT
+:jbake-card: TITLE
+:jbake-date: DATE
+:jbake-type: post
+// enter tags comma separated
+:jbake-tags:
+:jbake-status: draft
+:jbake-menu: Blog
+:jbake-discussion: 1076
+// multiple authors can be comma separated. Be sure the spelling matches with the Authors in the profiles
+:jbake-author: AUTHOR
+// cou can add a teaser image. The path to place the image is src/docs/images
+:jbake-teaser-image:
+
+
+== TITLE
+
+The content above the teaser is used fot the cards as a short description
+
+++++
+<!-- teaser -->
+++++
+
+Your main content goes here
