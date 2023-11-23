@@ -1,0 +1,43 @@
+:jbake-status: draft
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: FIRSTNAME LASTNAME
+:linkedin: LINKEDIN
+:mastodon: MASTODON
+:xtwitter: XTWITTER
+:github: GITHUB
+ifdef::imagesdir[:imagesdir: ../../images]
+
+== FIRSTNAME LASTNAME
+
+++++
+<style>
+span.profile img {
+  border: 5px solid #288ABF;
+  border-radius: 10px;
+  max-width: 100px;
+}
+</style>
+++++
+
+
+image:profiles/FIRSTNAME-LASTNAME.jpg[float=right,role=profile]
+
+Bitte ergänze hier ein paar Sätze über dich.
+
+=== Links
+
+ifeval::["{linkedin}" != ""]
+* https://www.linkedin.com/in/{linkedin}[LinkedIn Profile]
+endif::[]
+ifeval::["{mastodon}" != ""]
+* {mastodon}[Mastodon Profile]
+endif::[]
+ifeval::["{xtwitter}" != ""]
+* https://twitter.com/{xtwitter}[X (formerly known as Twitter) Profile]
+endif::[]
+ifeval::["{github}" != ""]
+* https://github.com/{github}[GitHub Profile]
+endif::[]

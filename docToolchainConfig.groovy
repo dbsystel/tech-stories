@@ -29,7 +29,7 @@ taskInputsDirs = [
                     "${inputPath}",
 //                  "${inputPath}/src",
 //                  "${inputPath}/images",
-                 ]
+]
 
 taskInputsFiles = []
 
@@ -38,7 +38,9 @@ taskInputsFiles = []
 // Configuration for customTasks
 // create a new Task with ./dtcw createTask
 customTasks = [
-/** customTasks **/
+		/** customTasks **/
+    'scripts/createAuthor.gradle',
+    'scripts/createStory.gradle',
 ]
 
 

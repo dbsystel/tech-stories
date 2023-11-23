@@ -1,0 +1,59 @@
+task createAuthor (
+    description: 'Create a new author profile',
+    group: 'docToolchain'
+) {
+    doLast {
+        ant.input(message: "Please enter your firstname:", addproperty: "firstname")
+        ant.input(message: "Please enter your lastname:", addproperty: "lastname")
+        ant.input(message: "If you have a LinkedIn Profile, please enter your username:", addproperty: "linkedin")
+        ant.input(message: "If you have a Mastodon Profile, please enter the link:", addproperty: "mastodon")
+        ant.input(message: "If you have a X (formerly known as Twitter) Profile, please enter your handle without the @:", addproperty: "xtwitter")
+        ant.input(message: "If you have a Github Profile, please enter your username:", addproperty: "github")
+
+        // Access the entered values
+        def firstname = ant.properties["firstname"].replaceAll("ä","ae").replaceAll("ü","ue").replaceAll("ö","oe")
+        def lastname = ant.properties["lastname"].replaceAll("ä","ae").replaceAll("ü","ue").replaceAll("ö","oe")
+        def linkedin = ant.properties["linkedin"]
+        def mastodon = ant.properties["mastodon"]
+        def xtwitter = ant.properties["xtwitter"]
+        def github = ant.properties["github"]
+
+        // Display the entered information
+        println("\nEntered Information:")
+        println("Firstname: $firstname")
+        println("Lastname: $lastname")
+        println("LinkedIn: $linkedin")
+        println("Mastodon: $mastodon")
+        println("X (Twitter): $xtwitter")
+        println("Github: $github")
+
+        // Set the template file path
+        def templateFilePath = new File(docDir, "src/docs/blog/profiles/_template.adoc")
+
+        // Set the output file path
+        def out = "src/docs/blog/profiles/${firstname}-${lastname}.adoc"
+        def outputFilePath = new File(docDir, out)
+
+        // Read the template file
+        def templateContent = file(templateFilePath).text
+
+        // Perform variable replacement
+        templateContent = templateContent.replaceAll('FIRSTNAME', firstname)
+        templateContent = templateContent.replaceAll('LASTNAME', lastname)
+        templateContent = templateContent.replaceAll('LINKEDIN', linkedin)
+        templateContent = templateContent.replaceAll('MASTODON', mastodon)
+        templateContent = templateContent.replaceAll('XTWITTER', xtwitter)
+        templateContent = templateContent.replaceAll('GITHUB', github)
+
+        templateContent = templateContent.replaceAll(':jbake-status: draft', ':jbake-status: published')
+
+        // Write the updated content to the output file
+        file(outputFilePath).text = templateContent
+
+        println("Created Profile: $out")
+        println("Please review and add some sentences about you.")
+        def imagePath = "src/docs/images/profiles/${firstname}-${lastname}.png"
+        println("Please provide also an image of you in ${imagePath}.")
+        println("Run: ./dtcw createStory to create your first Tech Story!")
+    }
+}

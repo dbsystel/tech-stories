@@ -5,3 +5,46 @@ This repository contains the sources for the DB Systel https://www.dbsystel.de/d
 All code is licensed under link:LICENCE[Apache-2.0], Copyright 2023 by DB Systel GmbH.
 
 For any usage outside of Deutsche Bahn websites and applications you must remove or replace any Deutsche Bahn brand and design assets as well as protected characteristics and trademarks.
+
+== Get Started: Write an article
+
+=== Create / Update your author profile
+
+When writing an article, the first thing you need is an author profile (if not already exist).
+You will find the profiles in `/src/docs/blog/profiles`.
+If you already have a profile, be sure it's up-to-date and probably refresh the information in it.
+If you don't have a profile, you can scaffold a new profile using the generator which prompts you for some base information needed.
+
+[source,bash]
+----
+./dtcw local createAuthor
+----
+
+After you answered all questions, a new profile `.adoc` is created.
+Please check the content and add some additional information about you.
+
+=== Create your Tech Story
+
+Once your profile created and is up-to-date (see section above), you can create the Tech Story with it's content.
+Therefore you can make use of the generator as well by running:
+
+[source,bash]
+----
+./dtcw local createStory
+----
+
+The generator will prompt you for the base information needed for a Tech Story.
+Once you filled out everything, the AsciiDoc File with all meta information is generated and you can directly start writing your content.
+Happy writing!
+
+=== Build locally
+
+To build the site locally, you can run:
+
+[source,bash]
+----
+./dtcw local generateSite
+----
+
+The artifacts for the static site are located in `./build/microsite/output`.
+You can open / serve the `index.html` file using you favorite webserver.
