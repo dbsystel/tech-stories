@@ -6,6 +6,39 @@ All code is licensed under link:LICENCE[Apache-2.0], Copyright 2023 by DB Systel
 
 For any usage outside of Deutsche Bahn websites and applications you must remove or replace any Deutsche Bahn brand and design assets as well as protected characteristics and trademarks.
 
+== Setup for local development
+
+.Prerequisites
+- Make sure you have `wget` installed.
+
+.Get compatible Java version
+
+To work with DocToolchain for building the Microsite, you need to have Java installed.
+The Following command load the latest compatible Java version and installs it locally in path that's accessible by DocToolchain.
+
+[source,bash]
+----
+./dtcw getJava
+----
+
+== Build and Run
+
+To quickly build the documentation with a docker container, use:
+
+[source,bash]
+----
+arch ./dtcw docker generateSite
+arch ./dtcw docker previewSite
+----
+
+You can also run a local build and preview:
+
+[source,bash]
+----
+arch ./dtcw docker generateSite
+arch ./dtcw docker previewSite
+----
+
 == Get Started: Write an article
 
 === Create / Update your author profile
