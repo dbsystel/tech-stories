@@ -1,0 +1,31 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Joachim Schirrmacher
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Joachim Schirrmacher
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+
+image:https://gravatar.com/userimage/42361042/9516d2c91d011242cacda6a20901230b.jpeg?size=256[float=right,role=profile]
+
+Joachim ist seit 2017 bei der DB Systel als Berater und Entwickler. Am liebsten programmiert er funktional mit TypeScript, notfalls aber auch mit Java und Spring Boot, mag REST APIs, aber auch Event Sourcing und Streams.
+
+=== Links
+
+* https://www.linkedin.com/in/joachimschirrmacher[LinkedIn Profile]
+* https://github.com/jschirrmacher[GitHub Profile]
+* https://hessen.social/deck/@joschi64[Mastodon]
+* https://stackoverflow.com/users/1950957/jschirrmacher[Stack Overflow]
