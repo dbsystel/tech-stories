@@ -1,0 +1,41 @@
+:jbake-title: Accessibility in Angular – Angulars features for a better and more inclusive web
+:jbake-card: Accessibility in Angular
+:jbake-date: 2024-01-16
+:jbake-type: post
+// enter tags comma separated
+:jbake-tags: Angular, JavaScript, HTML, a11y, Digitale Barrierefreiheit, digital accessibility
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+// multiple authors can be comma separated. Be sure the spelling matches with the Authors in the profiles
+:jbake-author: Danny Koppenhagen
+// cou can add a teaser image. The path to place the image is src/docs/images
+:jbake-teaser-image: topics/dev.png
+
+
+== Accessibility in Angular – Angulars features for a better and more inclusive web
+
+The Angular Framework brings us some built-in features to help use creating accessible components and applications by wrapping common best practices and techniques.
+In this talk at the Angular Berlin Meetup, Danny presented this concepts and features.
+
+++++
+<!-- teaser -->
+++++
+
+In this Talk at the https://www.meetup.com/de-DE/angular-meetup-berlin[Angular Berlin Meetup] on January 16th 2024, Danny talked about some basics when it comes to creating accessible web applications.
+He'd had a deeper look into the Angular Framework and the features it provides to us helping to improve the overall accessibility. Furthermore, he guided through the usage of the Angular CDK which provides additional tools helping us to improve the accessibility of our application.
+
+=== Slides
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/429de7064f324af1b55ed639b40ee517" title="Accessibility in Angular – Angulars features for a better and more inclusive web" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+
+|===
+
+=== Demos
+
+- https://github.com/d-koppenhagen/angular-a11y-demo[Angular a11y Demo Repository] with source code related to the slides
