@@ -10,7 +10,7 @@
 // multiple authors can be comma separated. Be sure the spelling matches with the Authors in the profiles
 :jbake-author: Danny Koppenhagen
 // cou can add a teaser image. The path to place the image is src/docs/images
-:jbake-teaser-image: topics/dev.png
+:jbake-teaser-image: 20240116-a11y-Angular/a11y-angular.png
 
 
 == Accessibility in Angular – Angulars features for a better and more inclusive web
