@@ -1,9 +1,9 @@
-:jbake-title: Accessibility in Angular – Angulars features for a better and more inclusive web
-:jbake-card: Accessibility in Angular
+:jbake-title: Accessibility in Angular
+:jbake-card: Accessibility in Angular – Angulars features for a better and more inclusive web
 :jbake-date: 2024-01-16
 :jbake-type: post
 // enter tags comma separated
-:jbake-tags: Angular, JavaScript, HTML, a11y, Digitale Barrierefreiheit, digital accessibility
+:jbake-tags: Angular, JavaScript, TypeScript, HTML, a11y, Digitale Barrierefreiheit, digital accessibility
 :jbake-status: published
 :jbake-menu: Blog
 :jbake-discussion: 1076
@@ -22,8 +22,8 @@ In this talk at the Angular Berlin Meetup, Danny presented this concepts and fea
 <!-- teaser -->
 ++++
 
-In this Talk at the https://www.meetup.com/de-DE/angular-meetup-berlin[Angular Berlin Meetup] on January 16th 2024, Danny talked about some basics when it comes to creating accessible web applications.
-He'd had a deeper look into the Angular Framework and the features it provides to us helping to improve the overall accessibility. Furthermore, he guided through the usage of the Angular CDK which provides additional tools helping us to improve the accessibility of our application.
+The https://www.meetup.com/de-DE/angular-meetup-berlin[Angular Berlin Meetup] takes place regularly at DB Systel in Berlin.
+On January 16th 2024, Danny had a deeper look into the https://angular.dev/[Angular] Framework and the features it provides to us helping to improve the overall accessibility. Furthermore, he guided through the usage of the https://material.angular.io/cdk/[Angular CDK] which provides additional tools helping us to improve the accessibility of our application.
 
 === Slides
 
