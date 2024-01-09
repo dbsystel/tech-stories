@@ -15,7 +15,7 @@
 
 == Accessibility in Angular – Angulars features for a better and more inclusive web
 
-The Angular Framework brings us some built-in features to help use creating accessible components and applications by wrapping common best practices and techniques.
+The Angular Framework brings us some built-in features to help creating accessible components and applications by wrapping common best practices and techniques.
 In this talk at the Angular Berlin Meetup, Danny presented this concepts and features.
 
 ++++
