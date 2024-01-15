@@ -7,7 +7,7 @@
 :jbake-status: published
 :jbake-menu: Blog
 :jbake-discussion: 1076
-// multiple authors can be comma separated. Be sure the spelling matches with the Authors in the profiles
+// multiple authors can be comma separated. Be sure the spelling matches with the authors in the profiles
 :jbake-author: Danny Koppenhagen
 // cou can add a teaser image. The path to place the image is src/docs/images
 :jbake-teaser-image: 20240116-a11y-Angular/a11y-angular.png
@@ -15,15 +15,15 @@
 
 == Accessibility in Angular – Angulars features for a better and more inclusive web
 
-The Angular Framework brings us some built-in features to help creating accessible components and applications by wrapping common best practices and techniques.
-In this talk at the Angular Berlin Meetup, Danny presented this concepts and features.
+The Angular Framework brings us some built-in features to help in creating accessible components and applications by wrapping common best practices and techniques.
+In this talk at the Angular Berlin Meetup, Danny presented these concepts and features.
 
 ++++
 <!-- teaser -->
 ++++
 
-The https://www.meetup.com/de-DE/angular-meetup-berlin[Angular Berlin Meetup] takes place regularly at DB Systel in Berlin.
-On January 16th 2024, Danny had a deeper look into the https://angular.dev/[Angular] Framework and the features it provides to us helping to improve the overall accessibility. Furthermore, he guided through the usage of the https://material.angular.io/cdk/[Angular CDK] which provides additional tools helping us to improve the accessibility of our application.
+The Agular Meetup Berlin, hosted at https://www.meetup.com/de-DE/angular-meetup-berlin[Angular Berlin Meetup] takes place regularly at DB Systel in Berlin.
+On January 16th 2024, Danny delved deeper into the https://angular.dev/[Angular] Framework and examining its features that aid in enhancing overall accessibility. Furthermore, he guided attendees through the use of the https://material.angular.io/cdk/[Angular CDK] which provides additional tools helping us to improve the accessibility of our application.
 
 === Slides
 
