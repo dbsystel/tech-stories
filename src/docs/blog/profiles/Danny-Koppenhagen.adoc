@@ -25,6 +25,7 @@ Danny is an experienced frontend architect at https://www.dbsystel.de/dbsystel-e
 
 === Links
 
+* https://www.linkedin.com/in/d-koppenhagen[LinkedIn Profile]
 * https://techhub.social/@k9n[Mastodon Profile]
 * https://twitter.com/d_koppenhagen[X (formerly known as Twitter) Profile]
 * https://github.com/d-koppenhagen[GitHub Profile]
