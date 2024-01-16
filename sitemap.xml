@@ -2,12 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>http://jbake.orgnull/</loc>
-        <lastmod>2023-11-28</lastmod>
+        <lastmod>2024-01-16</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/search.html</loc>
-        <lastmod>2023-11-28</lastmod>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/2024/2024-01-16-Accessibility-in-Angular.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html</loc>
+        <lastmod>2023-12-21</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/2023/2023-12-21-postgreSQL.html</loc>
+        <lastmod>2023-12-21</lastmod>
     </url>
     
     <url>
@@ -126,103 +141,128 @@
     </url>
     
     <url>
+        <loc>http://jbake.orgnull/blog/2020/2020-03-14-API-first-mit-TypeScript.html</loc>
+        <lastmod>2020-03-14</lastmod>
+    </url>
+    
+    <url>
         <loc>http://jbake.orgnull/blog/2019/2019-09-13-Spock-und-AsciiDoc.html</loc>
         <lastmod>2019-09-13</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/blog/index.html</loc>
-        <lastmod>2023-11-28</lastmod>
+        <lastmod>2024-01-16</lastmod>
     </url>
     
     <url>
-        <loc>http://jbake.orgnull/blog/profiles/Philippe-Rieffe.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Konrad-Winkler.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Danny-Koppenhagen.html</loc>
-        <lastmod>2023-11-28</lastmod>
+        <loc>http://jbake.orgnull/blog/profiles/Stefan+Gr%C3%BCndling.html</loc>
+        <lastmod>2024-01-16</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/blog/profiles/Christian-Fischer.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Ralf-D.-Mueller.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Marcus-Suemnick.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Johannes-Dienst.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Dr.-Martin-Strunk.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Carsten-Hoffmann.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/buildIT.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Tim-Engeleiter.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Sascha-Wolter.html</loc>
-        <lastmod>2023-11-28</lastmod>
-    </url>
-    
-    <url>
-        <loc>http://jbake.orgnull/blog/profiles/Carsten-Thurau.html</loc>
-        <lastmod>2023-11-28</lastmod>
+        <lastmod>2024-01-16</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/blog/profiles/Bertram-Fey.html</loc>
-        <lastmod>2023-11-28</lastmod>
+        <lastmod>2024-01-16</lastmod>
     </url>
     
     <url>
-        <loc>http://jbake.orgnull/blog/profiles/Sven-Hesse.html</loc>
-        <lastmod>2023-11-28</lastmod>
+        <loc>http://jbake.orgnull/blog/profiles/Sascha-Wolter.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Oliver+Hammer.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Jonas+Gassenmeyer.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Johannes-Dienst.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Dr.-Martin-Strunk.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Danny-Koppenhagen.html</loc>
+        <lastmod>2024-01-16</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/blog/profiles/Maximilian-Franzke.html</loc>
-        <lastmod>2023-11-28</lastmod>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Marcus-Suemnick.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Joachim-Schirrmacher.html</loc>
+        <lastmod>2024-01-16</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/blog/profiles/Gualter-Barbas-Baptista.html</loc>
-        <lastmod>2023-11-28</lastmod>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Carsten-Thurau.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Carsten-Hoffmann.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/buildIT.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Tim-Engeleiter.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Sven-Hesse.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Ralf-D.-Mueller.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Philippe-Rieffe.html</loc>
+        <lastmod>2024-01-16</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://jbake.orgnull/blog/profiles/Konrad-Winkler.html</loc>
+        <lastmod>2024-01-16</lastmod>
     </url>
     
     <url>
         <loc>http://jbake.orgnull/lunrjsindex.html</loc>
-        <lastmod>2023-11-28</lastmod>
+        <lastmod>2024-01-16</lastmod>
     </url>
     
 </urlset>

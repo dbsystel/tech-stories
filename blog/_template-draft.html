@@ -65,6 +65,23 @@ a[href^="https://"]:after {
 
 
     <link rel="stylesheet" href="../css/micrositemaster.db-ui-core.css" rel="stylesheet">
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setExcludedQueryParams", ["hl","start","itemsPerPage"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://dbwas.service.deutschebahn.com/piwik/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1002']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://dbwas.service.deutschebahn.com/piwik/matomo.php?idsite=1002&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
 
 </head>
 
@@ -119,8 +136,24 @@ a[href^="https://"]:after {
                                 <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
                                    href="../blog/index.html">Übersicht</a>
                             </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2024</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../blog/2024/2024-01-16-Accessibility-in-Angular.html">Accessibility in Angular</a>
+                            </li>
+                        </ul>
+                            </li>
                             <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2023</span>
                         <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html">PostgreSQL</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../blog/2023/2023-12-21-postgreSQL.html">PostgreSQL</a>
+                            </li>
                             <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
                                 <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
                                    href="../blog/2023/2023-11-29-AI-in-Software-Design.html">AI in Software Design</a>
@@ -225,6 +258,10 @@ a[href^="https://"]:after {
                                 <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
                                    href="../blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html">OOP: Guter Code</a>
                             </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../blog/2020/2020-03-14-API-first-mit-TypeScript.html">API first mit TS</a>
+                            </li>
                         </ul>
                             </li>
                             <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2019</span>
@@ -320,7 +357,7 @@ a[href^="https://"]:after {
       <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
         <!-- Date, Author -->
         <p class="increase-zindex">
-          <em>28 November 2023,
+          <em>16 January 2024,
           
           <a href="../blog/profiles/AUTHOR.html">AUTHOR</a></em>
           

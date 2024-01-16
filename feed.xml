@@ -6,9 +6,164 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 28 Nov 2023 13:46:11 +0000</pubDate>
-    <lastBuildDate>Tue, 28 Nov 2023 13:46:11 +0000</lastBuildDate>
+    <pubDate>Tue, 16 Jan 2024 10:31:58 +0000</pubDate>
+    <lastBuildDate>Tue, 16 Jan 2024 10:31:58 +0000</lastBuildDate>
 
+    
+    <item>
+      <title>Accessibility in Angular</title>
+      <link>http://jbake.org/blog/2024/2024-01-16-Accessibility-in-Angular.html</link>
+      <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2024/2024-01-16-Accessibility-in-Angular.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_accessibility_in_angular_angulars_features_for_a_better_and_more_inclusive_web&quot;&gt;Accessibility in Angular – Angulars features for a better and more inclusive web&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_demos&quot;&gt;Demos&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_accessibility_in_angular_angulars_features_for_a_better_and_more_inclusive_web&quot;&gt;Accessibility in Angular – Angulars features for a better and more inclusive web&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Angular Framework brings us some built-in features to help in creating accessible components and applications by wrapping common best practices and techniques.
+In this talk at the Angular Berlin Meetup, Danny presented these concepts and features.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Agular Meetup Berlin, hosted at &lt;a href=&quot;https://www.meetup.com/de-DE/angular-meetup-berlin&quot;&gt;Angular Berlin Meetup&lt;/a&gt; takes place regularly at DB Systel in Berlin.
+On January 16th 2024, Danny delved deeper into the &lt;a href=&quot;https://angular.dev/&quot;&gt;Angular&lt;/a&gt; Framework and examining its features that aid in enhancing overall accessibility. Furthermore, he guided attendees through the use of the &lt;a href=&quot;https://material.angular.io/cdk/&quot;&gt;Angular CDK&lt;/a&gt; which provides additional tools helping us to improve the accessibility of our application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/429de7064f324af1b55ed639b40ee517&quot; title=&quot;Accessibility in Angular – Angulars features for a better and more inclusive web&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_demos&quot;&gt;Demos&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/d-koppenhagen/angular-a11y-demo&quot;&gt;Angular a11y Demo Repository&lt;/a&gt; with source code related to the slides&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>http://jbake.org/blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html</link>
+      <pubDate>Thu, 21 Dec 2023 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_von_der_vision_eines_vollautomatisch_konstruierten_fahrplans&quot;&gt;Von der Vision eines vollautomatisch konstruierten Fahrplans&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_von_der_vision_eines_vollautomatisch_konstruierten_fahrplans&quot;&gt;Von der Vision eines vollautomatisch konstruierten Fahrplans&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wie mit Digitalisierung der Prozesse und agiler Software-Entwicklung der Fahrplan unter dem &quot;rollenden Rad&quot; sukzessive auf die Digitale Schiene gesetzt und gleichzeitig eine Kapazitätssteigerung erreicht wird.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Jede Zugfahrt in Deutschland braucht einen Fahrplan.
+Das sind bis zu 50.000 Zugfahrten mit Fahrplänen pro Tag.
+Doch wo kommen diese her? Die steigende Verkehrsnachfrage führt auf der einen Seite zu höheren Kapazitätsbedarfen und Auslastung der Schieneninfrastruktur.
+Auf der anderen Seite wird die verfügbare Kapazität während der Bau- und Modernisierungsaktivitäten der Schieneninfrastruktur und der Leit- und Sicherungstechnik während der Maßnahmen reduziert.
+Zur frühzeitigen Identifikation, Vermeidung und Handhabung von möglichen Kapazitätsengpässen sind die IT und die weitere Digitalisierung der Prozesse gefordert.
+Durch die Einführung digitaler Prozesse entwickeln wir uns weg von der einer manuellen Fahrplankonstruktion hin zu einer weitestgehend vollständig automatisierten Fahrplankonstruktion und Kapazitätsmanagement,
+so dass die zukünftig steigenden Verkehrsbedarfe auf der Schiene weiterhin bedient werden können. Hierzu sind wir vor 3 Jahren gestartet, die monolithischen Bestandssysteme sukzessive durch modulare Services mit einer flexiblen, integrierten Plattform abzulösen und zu automatisieren.
+Damit verbunden ist die Neugestaltung und Automatisierung von Abläufen und Prozessschritten, sowie eine Konsolidierung der Datenhaltung und Informationsflüsse.
+Die agile Software-Entwicklung bietet eine höhere Flexibilität und Reaktionsschnelligkeit auf Kundenwünsche und neue Anforderungen.
+Wir arbeiten iterativ und sind im ständigen Austausch zu unseren Stakeholdern. Dadurch werden Teillieferungen in regelmäßigen Abständen gewährleistet, um so der großen Vision stückweise näher zu kommen.
+Die Herausforderung ist, mit über 600 Experten in crossfunktionalen, agilen Teams synchronisiert neue Abläufen, automatisierte Prozessschritte und flexibel kombinierbaren und modularen Services zu konzipieren, entwickeln und unter dem &quot;rollenden Rad&quot; sukzessive in Produktion zu bringen.
+Als DB Netz sind wir in Deutschland eines der größten Unternehmen, die einen signifikanten Anteil der IT-Entwicklung nach SAFe® 6.0 gestalten.
+Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine sehr hohe Automatisierung im Lebenszyklus der Softwareentwicklung und übernehmen eine Ende-zu-Ende Verantwortung für ihre entwickelten Artefakte.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.dbsystel.de/resource/blob/12597952/7bb044041329258cda34e653b2425adb/Von-der-Vision-eines-vollautomatisch-konstruierten-Fahrplans-data.pdf&quot;&gt;download&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>http://jbake.org/blog/2023/2023-12-21-postgreSQL.html</link>
+      <pubDate>Thu, 21 Dec 2023 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2023/2023-12-21-postgreSQL.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_ein_jahr_postgresql_das_leben_danach&quot;&gt;Ein Jahr PostgreSQL – Das Leben danach&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_ein_jahr_postgresql_das_leben_danach&quot;&gt;Ein Jahr PostgreSQL – Das Leben danach&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dieser Vortrag ist ein Jahr nach dem Entschluss entstanden, einen neuen Job anzunehmen und mich raus aus meiner Oracle-Blase und rein in die &quot;neue&quot; Welt der PostgreSQL-Datenbankentwicklung zu begeben.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Der Gedanke damals war: &quot;SQL ist SQL und ich werde mich schon schnell zurechtfinden. Es bleibt ja eine Relationale Datenbank&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Dieser Vortrag soll eine kleine Zusammenfassung sein über:
+•	Einige WTF-Momente: Der Teufel liegt im Detail und welche Unterschiede da wirklich auf einen Oracle-Datenbankentwickler warten, war mir vorher nicht bewusst.
+•	Das schöne aus beiden Welten: Sowohl Oracle als auch PostgreSQL haben schöne Seiten. Es ist von Vorteil, beide Systeme ein bisschen genauer zu kennen.
+•	Sonstige Erfahrungen und Eindrücke, die ich nach einem Jahr im PostgreSQL-Ökosystem so beobachtet habe. Ich konzentriere mich dabei auf den Bereich SQL (z. B. analytic functions oder die Behandlung von NULL values) und habe aber auch ein paar &quot;admin-nahe&quot; bzw. theoretische Unterschiede, die ich aufzeigen möchte (z. B. Tuning-Werkzeuge und MVCC).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Nach dem Vortrag sollte klarer sein, mit welchen Fallstricken man beim Umstieg von Oracle auf PostgreSQL rechnen sollte.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.dbsystel.de/resource/blob/12597872/776fc8f4ab1b2bb699d72ceb3f157538/IT-Tage-Ein-Jahr-PostgreSQL-Das-Leben-danach-data.pdf&quot;&gt;download&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
     
     <item>
       <title>AI in Software Design</title>
@@ -2327,6 +2482,40 @@ Fazit: Entwickelt qualitativ hochwertigen Code und seid stolz auf Euer Werk!&lt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>API first mit TS</title>
+      <link>http://jbake.org/blog/2020/2020-03-14-API-first-mit-TypeScript.html</link>
+      <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2020/2020-03-14-API-first-mit-TypeScript.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_api_first_mit_typescript&quot;&gt;API first mit TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_api_first_mit_typescript&quot;&gt;API first mit TypeScript&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Mit API first kann man sehr schön REST APIs bauen. Verwendet man TypeScript, kann man mittels der Bibliothek &lt;code&gt;express-openapi&lt;/code&gt; nicht nur einmalig einmalig ein Interface generieren, sondern auch bei späteren Änderungen API first beibehalten.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Im Video zeige ich anhand eines praktischen Beispiels, wie man ein solches Projekt aufsetzt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In 6 Schritten setzen wir ein TypeScript Projekt mit express.js und express-openapi auf. Es bringt ein Swagger UI und Unit-Tests mit und lässt sich - natürlich ebenso API first wie am Anfang - leicht weiter entwickeln.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Commits im &lt;a href=&quot;https://github.com/jschirrmacher/api-first-with-typescript/commits/main/STEPS.md&quot;&gt;Repository&lt;/a&gt; erklären, wie man schrittweise einen solchen REST Service aufbaut.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
