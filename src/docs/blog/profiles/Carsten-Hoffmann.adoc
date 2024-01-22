@@ -19,5 +19,13 @@ max-width: 100px;
 ++++
 
 
-image:profiles/Carsten-Hoffmann.jpg[float=right,role=profile]
+image:profiles/Carsten-Hoffmann.png[float=right,role=profile]
+
+Carsten is an experienced software architect at https://www.dbsystel.de/dbsystel-en[DB Systel GmbH] which is the digital partner of the biggest German railway company https://www.deutschebahn.com/[Deutsche Bahn]. As a member of a DevOps-Team he is a strong believer, that an architect should be close to the development team in order to create and evolve a software architecture, that meets the business needs. He is a conference speaker and held talks at internal and external conferences, like the DB TechCon and the https://www.ittage.informatik-aktuell.de/[IT-Tage]. He is an Open-Source enthusiast and maintainer of the https://github.com/dbsystel/trivy-vulnerability-explorer[Trivy Vulnerability Explorer].
+
+=== Links
+
+* https://de.linkedin.com/in/carsten-hoffmann-223a2999[LinkedIn Profile]
+* https://hessen.social/@Morl99[Mastodon Profile]
+* https://github.com/Morl99[GitHub Profile]
 
