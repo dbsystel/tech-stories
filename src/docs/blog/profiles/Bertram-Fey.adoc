@@ -18,6 +18,22 @@ max-width: 100px;
 </style>
 ++++
 
-
 image:profiles/Bertram-Fey.jpeg[float=right,role=profile]
 
+Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche.
+
+Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design.
+
+=== Lieblings-OpenSource
+
+* https://plantuml.com/[PlantUML]
+* https://github.com/flybywiresim[Fly By Wire Simulation]
+* https://github.com/emikulic/darkhttpd[Dark HTTPd]
+* https://mediathekview.de/[Mediathek View]
+
+=== Eigene Open Source
+
+Bertrams eigene OpenSource-Projekte sind zum Beispiel
+
+* https://github.com/n0y/degen-trainingsbuch[Fintenfisch - das Degen Trainingsbuch]
+* https://github.com/n0y/mediatheken-dlna-bridge[Mediatheken DLNA Bridge]
