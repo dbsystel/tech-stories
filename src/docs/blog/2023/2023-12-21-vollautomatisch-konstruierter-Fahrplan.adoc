@@ -1,4 +1,4 @@
-:jbake-title: PostgreSQL
+:jbake-title: Fahrplankonstruktion
 :jbake-card: Von der Vision eines vollautomatisch konstruierten Fahrplans
 :jbake-date: 2023-12-21
 :jbake-type: post
@@ -6,8 +6,8 @@
 :jbake-menu: Blog
 :jbake-discussion: 1076
 :jbake-author: Stefan Gründling, Oliver Hammer
-:jbake-teaser-image: topics/devops.png
-:jbake-tags: SQL, Oracle
+:jbake-teaser-image: topics/arc.png
+:jbake-tags: netz, konstruktion, fahrplan
 
 
 == Von der Vision eines vollautomatisch konstruierten Fahrplans
