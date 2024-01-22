@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 16 Jan 2024 10:31:58 +0000</pubDate>
-    <lastBuildDate>Tue, 16 Jan 2024 10:31:58 +0000</lastBuildDate>
+    <pubDate>Mon, 22 Jan 2024 09:43:36 +0000</pubDate>
+    <lastBuildDate>Mon, 22 Jan 2024 09:43:36 +0000</lastBuildDate>
 
     
     <item>
@@ -69,7 +69,7 @@ On January 16th 2024, Danny delved deeper into the &lt;a href=&quot;https://angu
     </item>
     
     <item>
-      <title>PostgreSQL</title>
+      <title>Fahrplankonstruktion</title>
       <link>http://jbake.org/blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html</link>
       <pubDate>Thu, 21 Dec 2023 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html</guid>

@@ -20,7 +20,7 @@ var documents = [
     "id": 2,
     "uri": "blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html",
     "menu": "Blog",
-    "title": "PostgreSQL",
+    "title": "Fahrplankonstruktion",
     "text": " Table of Contents Von der Vision eines vollautomatisch konstruierten Fahrplans Slides Von der Vision eines vollautomatisch konstruierten Fahrplans Wie mit Digitalisierung der Prozesse und agiler Software-Entwicklung der Fahrplan unter dem \"rollenden Rad\" sukzessive auf die Digitale Schiene gesetzt und gleichzeitig eine Kapazitätssteigerung erreicht wird. Jede Zugfahrt in Deutschland braucht einen Fahrplan. Das sind bis zu 50.000 Zugfahrten mit Fahrplänen pro Tag. Doch wo kommen diese her? Die steigende Verkehrsnachfrage führt auf der einen Seite zu höheren Kapazitätsbedarfen und Auslastung der Schieneninfrastruktur. Auf der anderen Seite wird die verfügbare Kapazität während der Bau- und Modernisierungsaktivitäten der Schieneninfrastruktur und der Leit- und Sicherungstechnik während der Maßnahmen reduziert. Zur frühzeitigen Identifikation, Vermeidung und Handhabung von möglichen Kapazitätsengpässen sind die IT und die weitere Digitalisierung der Prozesse gefordert. Durch die Einführung digitaler Prozesse entwickeln wir uns weg von der einer manuellen Fahrplankonstruktion hin zu einer weitestgehend vollständig automatisierten Fahrplankonstruktion und Kapazitätsmanagement, so dass die zukünftig steigenden Verkehrsbedarfe auf der Schiene weiterhin bedient werden können. Hierzu sind wir vor 3 Jahren gestartet, die monolithischen Bestandssysteme sukzessive durch modulare Services mit einer flexiblen, integrierten Plattform abzulösen und zu automatisieren. Damit verbunden ist die Neugestaltung und Automatisierung von Abläufen und Prozessschritten, sowie eine Konsolidierung der Datenhaltung und Informationsflüsse. Die agile Software-Entwicklung bietet eine höhere Flexibilität und Reaktionsschnelligkeit auf Kundenwünsche und neue Anforderungen. Wir arbeiten iterativ und sind im ständigen Austausch zu unseren Stakeholdern. Dadurch werden Teillieferungen in regelmäßigen Abständen gewährleistet, um so der großen Vision stückweise näher zu kommen. Die Herausforderung ist, mit über 600 Experten in crossfunktionalen, agilen Teams synchronisiert neue Abläufen, automatisierte Prozessschritte und flexibel kombinierbaren und modularen Services zu konzipieren, entwickeln und unter dem \"rollenden Rad\" sukzessive in Produktion zu bringen. Als DB Netz sind wir in Deutschland eines der größten Unternehmen, die einen signifikanten Anteil der IT-Entwicklung nach SAFe® 6.0 gestalten. Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine sehr hohe Automatisierung im Lebenszyklus der Softwareentwicklung und übernehmen eine Ende-zu-Ende Verantwortung für ihre entwickelten Artefakte. Slides download "
 },
 
@@ -242,14 +242,6 @@ var documents = [
 
 {
     "id": 30,
-    "uri": "blog/profiles/Stefan+Gr%C3%BCndling.html",
-    "menu": "Autoren",
-    "title": "Stefan Gründling",
-    "text": " Table of Contents Stefan Gründling Stefan Gründling span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 31,
     "uri": "blog/profiles/Christian-Fischer.html",
     "menu": "Autoren",
     "title": "Christian Fischer",
@@ -257,11 +249,19 @@ var documents = [
 },
 
 {
-    "id": 32,
+    "id": 31,
     "uri": "blog/profiles/Bertram-Fey.html",
     "menu": "Autoren",
     "title": "Bertram Fey",
     "text": " Table of Contents Bertram Fey Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 32,
+    "uri": "blog/profiles/Stefan+Gr%C3%BCndling.html",
+    "menu": "Autoren",
+    "title": "Stefan Gründling",
+    "text": " Table of Contents Stefan Gründling Stefan Gründling span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
@@ -274,14 +274,6 @@ var documents = [
 
 {
     "id": 34,
-    "uri": "blog/profiles/Oliver+Hammer.html",
-    "menu": "Autoren",
-    "title": "Oliver Hammer",
-    "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 35,
     "uri": "blog/profiles/Jonas+Gassenmeyer.html",
     "menu": "Autoren",
     "title": "Jonas Gassenmeyer",
@@ -289,7 +281,7 @@ var documents = [
 },
 
 {
-    "id": 36,
+    "id": 35,
     "uri": "blog/profiles/Johannes-Dienst.html",
     "menu": "Autoren",
     "title": "Johannes Dienst",
@@ -297,7 +289,7 @@ var documents = [
 },
 
 {
-    "id": 37,
+    "id": 36,
     "uri": "blog/profiles/Dr.-Martin-Strunk.html",
     "menu": "Autoren",
     "title": "Dr. Martin Strunk",
@@ -305,11 +297,19 @@ var documents = [
 },
 
 {
-    "id": 38,
+    "id": 37,
     "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
     "title": "Danny Koppenhagen",
     "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+},
+
+{
+    "id": 38,
+    "uri": "blog/profiles/Oliver+Hammer.html",
+    "menu": "Autoren",
+    "title": "Oliver Hammer",
+    "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
