@@ -1,0 +1,27 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Bernd Schimmer
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Bernd Schimmer
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+
+image:profiles/Bernd-Schimmer.jpg[float=right,role=profile]
+
+Bernd is an experienced frontend developer and Agility Master at https://www.dbsystel.de/dbsystel[DB Systel GmbH] which is the digital partner of the biggest German railway company https://www.deutschebahn.com/[Deutsche Bahn]. 
+
+
+
