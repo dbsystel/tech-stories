@@ -7,7 +7,7 @@
 :jbake-discussion: 1076
 :jbake-author: Jonas Gassenmeyer
 :jbake-teaser-image: topics/devops.png
-:jbake-tags: SQL, Oracle
+:jbake-tags: PostgreSQL
 
 
 == Ein Jahr PostgreSQL – Das Leben danach
@@ -20,6 +20,7 @@ Dieser Vortrag ist ein Jahr nach dem Entschluss entstanden, einen neuen Job anzu
 Der Gedanke damals war: "SQL ist SQL und ich werde mich schon schnell zurechtfinden. Es bleibt ja eine Relationale Datenbank".
 
 Dieser Vortrag soll eine kleine Zusammenfassung sein über:
+
 •	Einige WTF-Momente: Der Teufel liegt im Detail und welche Unterschiede da wirklich auf einen Oracle-Datenbankentwickler warten, war mir vorher nicht bewusst.
 •	Das schöne aus beiden Welten: Sowohl Oracle als auch PostgreSQL haben schöne Seiten. Es ist von Vorteil, beide Systeme ein bisschen genauer zu kennen.
 •	Sonstige Erfahrungen und Eindrücke, die ich nach einem Jahr im PostgreSQL-Ökosystem so beobachtet habe. Ich konzentriere mich dabei auf den Bereich SQL (z. B. analytic functions oder die Behandlung von NULL values) und habe aber auch ein paar "admin-nahe" bzw. theoretische Unterschiede, die ich aufzeigen möchte (z. B. Tuning-Werkzeuge und MVCC).

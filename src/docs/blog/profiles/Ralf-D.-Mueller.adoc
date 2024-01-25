@@ -20,8 +20,17 @@ max-width: 100px;
 
 image:profiles/Ralf-D.-Mueller.png[float=right,role=profile]
 
-Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach.
+Ralf D. Müller arbeitet seit über 25 Jahren in der Softwarebranche, zunächst als Entwickler und später als Softwarearchitekt.
+Da er großen Wert auf die klare Kommunikation und Dokumentation seiner Ideen legt, hat er das Open-Source-Projekt https://doctoolchain.org[docToolchain] gestartet, das sich der effektiven Dokumentation von Softwarearchitekturen widmet und das https://arc42.org[arc42] Template als Grundlage nutzt.
 
-You can follow him on mastodon rdmueller@mastodontech.de.
+Zunehmend beschäftigt ihn aber der Einsatz von KI für das Softwaredesign. 
+In diesem Zusammenhang hat Ralf bereits Erfahrungen mit ChatGPT gesammelt, etwa als Werkzeug zum Lösen spezifischer Teilprobleme in der "iSAQB Advanced Level"-Beispielprüfung.
 
+=== Links
+
+* https://www.linkedin.com/in/rdmueller/[LinkedIn Profile]
+* https://mastodontech.de/@rdmueller[Mastodon Profile]
+* https://twitter.com/ralfdmueller[X (formerly known as Twitter) Profile]
+* https://github.com/rdmueller[GitHub Profile]
+* https://fiveandahalfstars.ninja/rdmueller[Personal Website]
 

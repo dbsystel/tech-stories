@@ -1,0 +1,26 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Stefan Gruendling
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Stefan Gründling
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+image:profiles/Stefan-Gruendling.jpg[float=right,role=profile]
+
+Stefan Gründling ist SAFe® Solution Architect bei der DB Netz AG, dem größten Betreiber von Schieneninfrastruktur in Deutschland. 
+Er arbeitet seit mehr als 10 Jahren in der Beratung und Softwareentwicklung. 
+Als Architekt war er verantwortlich für die Entwicklung der Click&Ride App und die automatische Fahrplankonstruktion 
+mit welchen die DB Netz AG als weltweit erstes Unternehmen über eine App vollständig automatisiert Fahrpläne erstellen konnte. 

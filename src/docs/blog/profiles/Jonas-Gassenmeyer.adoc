@@ -1,0 +1,26 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Jonas Gassenmeyer
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Jonas Gassenmeyer
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+image:profiles/Jonas-Gassenmeyer.jpg[float=right,role=profile]
+
+Jonas könnte den ganzen Tag über relationale Datenbanken reden.
+Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte.
+Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel.
+Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten.

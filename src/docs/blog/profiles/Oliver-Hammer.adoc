@@ -1,0 +1,27 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Oliver Hammer
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Oliver Hammer
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+image:profiles/Oliver-Hammer.jpg[float=right,role=profile]
+
+Oliver Hammer ist Product Owner einer Einheit mit 32 Teams und 300 Mitarbeitern bei der DB Systel, dem Digitalpartner der DB AG.
+Er arbeitet seit über 25 Jahren in der Beratung und Software-Entwicklung.
+In den unterschiedlichsten Rollen vom Entwickler über Architekten, fachlichem Berater und Projektleiter
+hat er viel Erfahrungen an der Schnittstelle zwischen Business und Technologie in großen Projekten
+und der Zusammenarbeit in Teams und Organisationen und Vorgehensmodellen gesammelt.
