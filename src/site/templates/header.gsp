@@ -99,7 +99,8 @@ metakeys.each { key ->
     <meta name="msapplication-TileImage" content="${content.rootpath}ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <script src="${content.rootpath}js/jquery-3.5.1.min.js"></script>
+  <script src="${content.rootpath}js/jquery-3.5.1.min.js"></script>
+  <script src="${content.rootpath}js/openseadragon-4.1.0/openseadragon.js"></script>
 
 
     <link rel="stylesheet" href="${content.rootpath}css/micrositemaster.db-ui-core.css" rel="stylesheet">

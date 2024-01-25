@@ -7,7 +7,7 @@ set -u
 set -o pipefail
 
 #here you can specify the URL of a theme to use with generateSite-task
-: "${DTC_SITETHEME:=https://github.com/db-ui/community-themes/releases/download/v2.4.7/siteTheme-Bahn-ng-v2.4.7.zip}"
+: "${DTC_SITETHEME:=https://github.com/db-ui/community-themes/releases/download/v2.4.13/siteTheme-Bahn-ng-v2.4.13.zip}"
 export DTC_SITETHEME
 #here you can specify the location of additional templates
 #export DTC_TEMPLATE1=https://....zip
