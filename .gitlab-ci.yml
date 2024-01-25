@@ -2,7 +2,7 @@ image: ${dockerHub}doctoolchain/doctoolchain:v2.2.1
 
 pages:
   tags:
-    - $gitlabRunner
+    - cdaas-shared-agent
   stage: build
   script:
     - export DTC_HEADLESS=true
