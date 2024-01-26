@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="de">
+<head>
+<style>
+a[href^="//"]:after,
+a[href^="http://"]:after,
+a[href^="https://"]:after {
+    content: "" !important;
+    margin: 0 0 0 0;
+}
+
+</style>
+
+    
+    
+    <script>var toRoot = '../../';</script>
+    <!-- blog/2024/2024-01-25-Evolution-der-Webentwicklung.html -->
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="jbake" name="generator">
+    <meta content="INDEX, FOLLOW" name="ROBOTS">
+
+    <title>Meine Reise durch die Evolution der Webentwicklung</title>
+    <meta content="Vom Code zum Klick - Meine Reise durch die Evolution der Webentwicklung" property="og:title">
+    <meta content="" property="og:description">
+    <meta content="website" property="og:type">
+    <meta content="Tech Stories" property="og:site_name">
+    <meta content="https://dbsystel.github.io/tech-stories/images/home.png" property="og:image">
+    <meta content="Vom Code zum Klick - Meine Reise durch die Evolution der Webentwicklung" itemprop="name">
+    <meta content="" itemprop="description">
+    <meta content="summary" name="twitter:card">
+    <meta content="Vom Code zum Klick - Meine Reise durch die Evolution der Webentwicklung" name="twitter:title">
+    <meta content="" name="twitter:description">
+
+    <link as="style" href="../../css/main.min.docsy.css" rel="preload">
+    <link href="../../css/main.min.docsy.css" integrity="" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+    <link href="../../css/bahn-ng-theme.css" rel="stylesheet">
+    <link href="../../css/tabbed-blocks.css" rel="stylesheet">
+    <link href="../../css/tech-stories.css" rel="stylesheet">
+
+    <!-- favicon generated with https://www.favicon-generator.org/ -->
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="../../apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/openseadragon-4.1.0/openseadragon.js"></script>
+
+
+    <link rel="stylesheet" href="../../css/micrositemaster.db-ui-core.css" rel="stylesheet">
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setExcludedQueryParams", ["hl","start","itemsPerPage"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://dbwas.service.deutschebahn.com/piwik/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1002']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://dbwas.service.deutschebahn.com/piwik/matomo.php?idsite=1002&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+
+</head>
+
+<body onload="prettyPrint()" class="td-section bahn ng">
+<header>
+  
+<nav aria-label="main navigation" class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="../../index.html">
+      <span class="navbar-logo"></span><span
+          class="font-weight-bold">Tech Stories</span>
+  </a>
+  <div class="td-navbar-nav-scroll ml-auto mx-lg-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      
+    </ul>
+  </div>
+  <div class="navbar-nav d-none d-lg-block" >
+    
+  </div>
+</nav>
+
+</header>
+<div class="container-fluid">
+  <div class="td-main">
+    <div class="row flex-xl-nowrap">
+      <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+        <div class="td-sidebar__inner" id="td-sidebar-menu">
+          
+        <form class="td-sidebar__search d-flex align-items-center d-lg-none" action="../../search.html">
+
+            <input aria-label="Suchen" name="q" autocomplete="off" class="form-control td-search-input"
+                   placeholder="Suchen" type="search">
+
+
+            <button aria-controls="td-docs-nav" aria-expanded="false"
+                    aria-label="Toggle section navigation" class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" data-target="#td-section-nav"
+                    data-toggle="collapse" type="button">
+            </button>
+        </form>
+
+        <nav aria-label="Submenu" class="collapse td-sidebar-nav" id="td-section-nav" >
+
+            <ul class="td-sidebar-nav__section">
+                <li class="td-sidebar-nav__section-title">
+                    <span class="align-left pl-0 pr-2 pt-2 active td-sidebar-link td-sidebar-link__section">-</span>
+                </li>
+                <li>
+                  <ul>
+                      <li class="collapse show" id="docs">
+                          
+                        <ul class="td-sidebar-nav__section ul-0">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/index.html">Übersicht</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2024</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section active"
+                                   href="../../blog/2024/2024-01-25-Evolution-der-Webentwicklung.html">Meine Reise durch die Evolution der Webentwicklung</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2024/2024-01-16-Accessibility-in-Angular.html">Accessibility in Angular</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2023</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html">Fahrplankonstruktion</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-12-21-postgreSQL.html">PostgreSQL</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-29-AI-in-Software-Design.html">AI in Software Design</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-20-einfuehrung-barrierefreiheit-web.html">A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-20-conways-law.html">Conway’s Law</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-08-prompt-engineering.html">Prompt-Engineering</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-08-21-vue2-vue3-migration.html">Migrate Vue 2 to Vue 3</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-05-15-developer-experience-platform-fuer-entwicklerinnen.html">Developer Experience Platform</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-05-05-loom-threading.html">Projekt Loom ist da</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-04-01-Indoor-GIS-zur-Rationalisierung-von-Wartungsarbeiten.html">Indoor-GIS</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-04-09-vortrag-auf-der-javaland.html">JavaLand 2023</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-03-28-ChatGPT-Einblicke-und-mehr-Generative-Sprachmodelle-Herausforderungen-und-Chancen.html">ChatGPT</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-03-08-Re-Platforming-Mainframe-Mehr-als-nur-Lift-Shift.html">Re-Platforming Mainframe</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2022</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-15-03-good-practices-api.html">Good Practices im API-Umfeld</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-11-24-the-journey-towards-K8s-at-Deutsche-Bahn.html">K8s at Deutsche Bahn</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-11-04-Produkt-statt-Projekmanagement.html">Produkt- statt Projektmanagement</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html">Deine Diagramme sind Legende?</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-03-23-Vielfalt-bei-der-Bahn-Computerlinguistinnen-treiben-Digitalisierung-voran.html">Vielfalt bei der Bahn</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2021</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-11-02-KITT-das-Kuenstliche-Intelligenz-Translation-Tool.html">KITT Tool</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-06-08-Bad-bots-Chancen-und-Herausforderungen-fuer-KI-und-Sprache.html">Bad Bots</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-04-12-Computer-Vision-Use-Cases-at-Deutsche-Bahn.html">Computer Vision Use Cases</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-03-20-Die-C4-Testpyramide-eine-architekturgetriebene-Teststrategie.html">Die C4-Testpyramide</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2020</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-12-07-devops-mehr-geschwindigkeit-auf-der-schiene.html">DevOps Geschwindigkeit</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html">Vue.js vs. Angular</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html">OOP: Guter Code</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-03-14-API-first-mit-TypeScript.html">API first mit TS</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2019</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2019/2019-09-13-Spock-und-AsciiDoc.html">Spock und AsciiDoc</a>
+                            </li>
+                        </ul>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+	   </ul>
+        </nav>
+
+        </div>
+      </div>
+      <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+        <div class="td-page-meta ml-2 pb-1 pt-2 mb-0" role="navigation" aria-label="page content navigation">
+          
+
+        <a href="https://github.com/dbsystel/tech-stories/edit/main/src/docs/blog/2024/2024-01-25-Evolution-der-Webentwicklung.adoc"
+           target="_blank"><i class="fa fa-edit fa-fw"></i> Improve this doc</a>
+
+
+
+            <a href="https://github.com/dbsystel/tech-stories/issues/new?title=Docs%3A+Feedback+for+%27Meine+Reise+durch+die+Evolution+der+Webentwicklung%27&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page: https://github.com/dbsystel/tech-stories/edit/main/src/docs/blog/2024/2024-01-25-Evolution-der-Webentwicklung.adoc%0A%23branch: main" target="_blank"><i
+                class="fab fa-github fa-fw"></i> Create an issue</a>
+        
+        
+        <hr />
+
+<!--script>
+    var discussionId = 1076;
+    alert(discussionId);
+</script>
+
+
+<script>
+
+    function showNumberOfComments() {
+        console.log("DiscussionId: 1076");
+
+        const query = `
+            query {
+                repository(owner: "docToolchain", name: "docToolchain") {
+                    discussion(number: 1076) {
+                        comments {
+                            totalCount
+                        }
+                    }
+                }
+            }
+        `;
+
+        fetch('https://api.github.com/graphql', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer GITHUB_TOKEN',
+        },
+        body: JSON.stringify({ query }),
+        })
+        .then((response) => response.json())
+        .then((data) => document.getElementById("noOfComments").innerHTML = data.data.repository.discussion.comments.totalCount);
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        showNumberOfComments();
+    });
+
+</script-->
+<div id="noOfComments" style="border: solid 0px red; font-size: 16pt;"></div>
+
+
+
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_vom_code_zum_klick_meine_reise_durch_die_evolution_der_webentwicklung">Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung</a></li>
+<li><a href="#_zuerst_ein_paar_meilensteine_der_webentwicklung_tabellarisch_zusammengefasst">Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst:</a></li>
+<li><a href="#_meine_ersten_erfahrungen_mit_dem_internet">Meine ersten Erfahrungen mit dem Internet</a></li>
+<li><a href="#_wie_wurden_webseiten_2014_gebaut">Wie wurden Webseiten 2014 gebaut?</a></li>
+<li><a href="#_wie_ist_der_stand_heute">Wie ist der Stand heute?</a></li>
+<li><a href="#_wie_helfen_moderne_frontends_bei_der_performance">Wie helfen moderne Frontends bei der Performance?</a></li>
+<li><a href="#_hier_der_aufbau_eines_modernen_frontends_mit_bff_backend_for_frontend">Hier der Aufbau eines modernen Frontends mit BFF (Backend for Frontend):</a></li>
+<li><a href="#_wie_baue_ich_frontends">Wie baue ich Frontends?</a></li>
+<li><a href="#_bevor_ich_mit_einem_neuen_projekt_anfange">Bevor ich mit einem neuen Projekt anfange</a></li>
+<li><a href="#_abschließend_ein_paar_wünsche_an_das_frontend_welches_ihr_baut">Abschließend ein paar Wünsche an das Frontend, welches ihr baut:</a></li>
+</ul>
+</div>
+
+
+
+
+        </div>
+      </div>
+      <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+        <!-- Date, Author -->
+        <p class="increase-zindex">
+          <em>25 January 2024,
+          
+          <a href="../../blog/profiles/Bernd-Schimmer.html">Bernd Schimmer</a></em>
+          
+        </p>
+        <!-- Share buttons above headline -->
+        
+<div class="increase-zindex">
+    <span style="font-size: x-large;">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-01-25-Evolution-der-Webentwicklung.html&text=Vom+Code+zum+Klick+-+Meine+Reise+durch+die+Evolution+der+Webentwicklung" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-01-25-Evolution-der-Webentwicklung.html" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-01-25-Evolution-der-Webentwicklung.html" target="_blank"><i class="fab fa-facebook"></i></a>
+    </span>
+</div>
+
+        <!-- Content -->
+        <h1 class='sr-only'>Meine Reise durch die Evolution der Webentwicklung</h1>
+<div class="sect1">
+<h2 id="_vom_code_zum_klick_meine_reise_durch_die_evolution_der_webentwicklung">Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>In diesem persönlichen Rückblick tauchen wir ein in die faszinierende Welt der Webentwicklung – von den frühen Tagen des manuellen Codings bis hin zu den modernen Technologien, die heute den Standard setzen. Begleitet mich auf meiner Reise durch die Zeit, in der sich HTML, CSS und JavaScript von Grund auf verändert haben und entdeckt, wie sich die Herausforderungen und Lösungen in der Webentwicklung im Laufe der Jahre gewandelt haben. Von den ersten Schritten mit einfachen Tools bis hin zu den komplexen Frameworks und Methoden von heute – dies ist eine Geschichte von Innovation, Lernen und ständiger Weiterentwicklung.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_zuerst_ein_paar_meilensteine_der_webentwicklung_tabellarisch_zusammengefasst">Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst:</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>1991 erste Webseite mit HTML</p>
+</li>
+<li>
+<p>1995 PHP und JavaScript</p>
+</li>
+<li>
+<p>1996 CSS
+------------- bis hierhin kaum automatisiertes Deployment möglich (z. B. über FTP)</p>
+</li>
+<li>
+<p>2000 SVN</p>
+</li>
+<li>
+<p>2003 Wordpress (Joomla/Typo3 etc.)</p>
+</li>
+<li>
+<p>2005 GIT
+------------- Versionierung</p>
+</li>
+<li>
+<p>2006 jQuery und AWS</p>
+</li>
+<li>
+<p>2008 Static Site Generators (SSG)</p>
+</li>
+<li>
+<p>2009 Node.js</p>
+</li>
+<li>
+<p>2010 NPM und AngularJS</p>
+</li>
+<li>
+<p>2011 Bootstrap CSS</p>
+</li>
+<li>
+<p>2012 Webpack, TypeScript</p>
+</li>
+<li>
+<p>2013 Docker, <a href="https://react.dev">React</a> und Server Side Rendering
+------------- automatisierte und idempotente Deployments möglich</p>
+</li>
+<li>
+<p>2014 Vue.js, CSS-in-JS</p>
+</li>
+<li>
+<p>2015 PWAs (100% seit 2022)</p>
+</li>
+<li>
+<p>2016 <a href="https://nextjs.org">Next.js</a>, Angular (4+)</p>
+</li>
+<li>
+<p>2020 <a href="https://vitejs.dev">Vite</a></p>
+</li>
+<li>
+<p>2022 Generatoren für Frontend/Backend Kombinationen <a href="https://refine.new">refine.new</a>, <a href="https://redwoodjs.com">RedwoodJS</a>, <a href="https://blitzjs.com">Blitz.js</a></p>
+</li>
+<li>
+<p>2023 Ende des Internet Explorers</p>
+</li>
+<li>
+<p>2023 React Server Components</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Mehr Details und ausführlichere Infos gibt es unter anderem auf:
+- <a href="https://designmodo.com/history-website-building/">designmodo.com: The Short History of Website Building</a>
+- <a href="https://dev.to/snickdx/a-brief-history-of-the-web-part-4-194b">Nicholas Mendez: A "Brief" History of the Web Part 4</a>
+- <a href="https://www.viget.com/articles/what-even-are-react-server-components/?token=PFnI6MT715nmYK0BZzQEiRsYQ7w_x5SP">Nick Telsan: What Even Are React Server Components</a>
+- <a href="https://jessedit.tech/articles/react-server-components/1-background/?ck_subscriber_id=1652261910">Jesse Pence: React Server Components</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_meine_ersten_erfahrungen_mit_dem_internet">Meine ersten Erfahrungen mit dem Internet</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wenn ich mich an die Anfänge meiner Tätigkeit erinnere, haben wir HTML, CSS, PHP und jQuery mit BBedit selbst geschrieben, gespeichert und manuell per FTP auf Server hochgeladen. Das Beste, was es damals gab, war das Programm Transmit, mit dem einzelne Ordner synchronisiert werden konnten. Alles war sehr fehleranfällig, ohne Versionierung und daher schwer bis gar nicht testbar – nur manuell. jQuery-Plugins wurden mit Abhängigkeiten zu unterschiedlichen jQuery-Versionen benutzt, die nicht unbedingt kompatibel waren. Man musste jedes Mal hoffen, dass die Webseite noch funktionierte, nachdem man Code hinzugefügt hatte. Was mich immer am meisten geärgert hat, war ein Flackern, sobald das JavaScript geladen wurde und über das PHP-gerenderte HTML noch extra DOM-Elemente legte.
+Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch gerenderten Web: Wann ist der DOM fertig, wann ist das JS geladen und wird ausgeführt, wer hat bei intensiven Seiten „das Sagen“ – das Frontend oder das Backend (Routing, Views)?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_wurden_webseiten_2014_gebaut">Wie wurden Webseiten 2014 gebaut?</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nach meinem Studium habe ich in Hamburg bei AboutYou in einer IT-Agentur gearbeitet, die nach Scrum ihren Arbeitszyklus gestaltet und schon damals diverse Tools zum Bauen des Frontends benutzt hat. Da die Tools alle am Anfang ihres Lebenszyklus waren, mussten mindestens drei Package-Manager und Erweiterungen installiert werden, bevor die Webseite gebaut werden konnte. Gebaut? Ja, das war die Zeit, in der Grunt und Webpack eine moderne und strukturierte Frontendentwicklung ermöglicht haben. Vorbei waren die Zeiten mit unterschiedlichen Encodings und Zeilenumbrüchen. Was für ein Gefühl es war, lokal einen Befehl in der Kommandozeile aufzurufen und die zu entwickelnde Webseite auf dem eigenen Gerät zu sehen – heute Standard. Hier lernte ich zum ersten Mal Package-Manager und Versionierung kennen. Und noch ein Thema kam auf: IDEs für Webentwicklung. Bisher war der beste Freund der Inspektor im Browser, eine lokale, beim Entwickler stattfindende Überprüfung oder Unterstützung konnten bis dahin nur die „richtigen“ Programmiersprachen und die dazugehörigen teuren IDEs (z. B. IntelliJ) bieten. Mit Atom gab es eine IDE, die schnell startete, sich nur um Websprachen kümmerte und über Plugins erweiterbar war. Jetzt gab es Autovervollständigung für HTML/JS/CSS und über Webpack konnten alle Dateien optimiert, komprimiert und kombiniert werden.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_ist_der_stand_heute">Wie ist der Stand heute?</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sehr gut! Viele Probleme der Vergangenheit sind verschwunden (Internet Explorer existiert nicht mehr, schlechte Kompatibilität der Browser) und es gibt eine Reihe von Möglichkeiten, Frontends mit Frameworks zu bauen, die alle ihre Vor- und kleinen Nachteile haben. Z. B. hat sich Visual Studio Code als Nachfolger von Atom zum (kostenlosen) Standard für Webentwicklung mit noch mehr Möglichkeiten zur generellen Verbesserung gemausert. Frontend-Frameworks gibt es viele (und es kommen immer mehr dazu) – durchgesetzt haben sich aktuell React, Angular, Vue.js und Svelte.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_helfen_moderne_frontends_bei_der_performance">Wie helfen moderne Frontends bei der Performance?</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>Schauen wir uns hierzu den Ablauf einer klassischen Webseite an: Ein Endgerät ruft die URL unserer Seite auf. Der Server antwortet je nach Session/Cookie/Authentication mit einer Login-Seite oder dem gerendertem HTML eines PHP-Skripts. Evtl. wurde der Client auf eine andere URL umgeleitet. Das HTML wird vom Browser interpretiert und JS/CSS/Bilder werden nachgeladen. Das CSS sorgt für das Styling der Seite. Das ausgelieferte JavaScript wird interpretiert, verändert das DOM und lädt neue Daten nach, und das wiederholt sich, wie hier beschrieben. Alle Schritte benötigen Zeit und führen zu einer mehrsekündigen Wartezeit, bis die Webseite benutzt werden kann.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hier_der_aufbau_eines_modernen_frontends_mit_bff_backend_for_frontend">Hier der Aufbau eines modernen Frontends mit BFF (Backend for Frontend):</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der Client fragt den Server an und erhält HTML, JS und CSS sowie den Login-Status vom Backend, und zwar so aufbereitet, dass der Browser es direkt darstellen kann, ohne weitere Schleifen zu drehen. Weitere Inhalte werden z. B. als JSON nachgeladen und im Browser mit JavaScript gerendert. Zusätzlich gibt es für alle JS-Frameworks Bundler, die beim Bauen der auszuliefernden Dateien diese optimal aufbereiten, sodass der User innerhalb kürzester Zeit mit dem Frontend interagieren kann.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wie_baue_ich_frontends">Wie baue ich Frontends?</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mein Lieblings-Javascript-Framework ist React. Eine gute Übersicht über andere JS-Frameworks und was sie unterscheidet, findet ihr z. B. auf themer.dev[<a href="https://themer.dev/blog/the-single-most-important-factor-that-differentiates-front-end-frameworks" class="bare">https://themer.dev/blog/the-single-most-important-factor-that-differentiates-front-end-frameworks</a>].
+Von dieser Seite kommt folgendes Zitat: „Reacts change detection paradigm is straightforward: the application state is maintained inside the framework (with APIs exposed to the developer for updating it) so that React knows when to re-render.“ Und was heißt das jetzt? Nicht mehr der Browser oder das Backend entscheiden, auf welcher URL was passiert, sondern das Frontend. Und wenn im Frontend eine Aktion ausgelöst wird, entscheidet auch das Frontend, was passiert. Das heißt nicht, dass es kein Backend gibt oder dass z. B. Validierung nur auf der Frontendseite passiert. Sicherheit im Web sollte der wichtigste Aspekt sein.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bevor_ich_mit_einem_neuen_projekt_anfange">Bevor ich mit einem neuen Projekt anfange</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>Was sich für mich als Erfolgsrezept herausgestellt hat: Sich am Anfang eines Neu- oder Umbaus einer Seite viel Zeit nehmen, um passende Libraries/Frameworks zu finden, die einem das Leben erleichtern und diese zu benutzen (UI Components, Accessibility, Icons, etc.). Am besten auf bekannte Frameworks setzen, die regelmäßig aktualisiert/gewartet werden.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_abschließend_ein_paar_wünsche_an_das_frontend_welches_ihr_baut">Abschließend ein paar Wünsche an das Frontend, welches ihr baut:</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Macht die Webseite responsive (Probiert eure Webseite mit unterschiedlichen Geräten in unterschiedlichen Auflösungen aus)</p>
+</li>
+<li>
+<p>Räumt euren Header-Bereich auf und nutzt z. B. <a href="https://realfavicongenerator.net">ealfavicongenerator.net</a>, um für alle ein schönes Favicon zu zaubern</p>
+</li>
+<li>
+<p>Nutzt Komponenten die Accessability mit eingebaut haben (z. B. <a href="https://blueprintjs.com">Blueprint</a>, <a href="https://mantine.dev">Mantine</a> oder <a href="https://rsuitejs.com">React Suite</a>)</p>
+</li>
+<li>
+<p>Macht den Google Lighthouse Test und behebt die wichtigsten Probleme</p>
+</li>
+<li>
+<p>Macht nur eine PWA, wenn offline-Inhalte essenziell sind oder ihr eine richtige App ausliefert</p>
+</li>
+<li>
+<p>Erlaubt das Zoomen eurer Seiten, sowie das Kopieren und Einfügen von Text</p>
+</li>
+<li>
+<p>Wenn etwas sich wie ein link verhält, dann lasst die User Link-Aktionen machen (z. B. speichern unter)</p>
+</li>
+<li>
+<p>Macht Hover-Styles für Links</p>
+</li>
+<li>
+<p>Wenn sich die Gui geändert hat, nachdem geklickt wurde, ändert die URL</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Das war die Reise durch 20 Jahre Webentwicklung – ich bin sehr gespannt, was in 20 Jahren im Web alles möglich ist.</p>
+</div>
+</div>
+</div>
+        <!-- tags -->
+        <p>
+        <a class='tag' href='../../tags/HTML.html'>HTML</a> <a class='tag' href='../../tags/JavaScript.html'>JavaScript</a> <a class='tag' href='../../tags/CSS.html'>CSS</a>
+        </p>
+        <!-- Share buttons below content -->
+        
+<div class="increase-zindex">
+    <span style="font-size: x-large;">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-01-25-Evolution-der-Webentwicklung.html&text=Vom+Code+zum+Klick+-+Meine+Reise+durch+die+Evolution+der+Webentwicklung" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-01-25-Evolution-der-Webentwicklung.html" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-01-25-Evolution-der-Webentwicklung.html" target="_blank"><i class="fab fa-facebook"></i></a>
+    </span>
+</div>
+
+        
+        <style>
+.feedback--answer {
+    display: inline-block;
+}
+
+.feedback--answer-no {
+    margin-left: 1em;
+}
+
+.feedback--response {
+    display: none;
+    margin-top: 1em;
+}
+
+.feedback--response__visible {
+    display: block;
+}
+</style>
+
+<div class="d-print-none">
+    <h2 class="feedback--title">Feedback</h2>
+    <p class="feedback--question">Was this page helpful?</p>
+    <button class="feedback--answer feedback--answer-yes">Yes</button>
+    <button class="feedback--answer feedback--answer-no">No</button>
+    <p class="feedback--response feedback--response-yes">
+        Glad to hear it! Please <a href="https://github.com/dbsystel/tech-stories/issues/new?issue%5Btitle%5D=Docs%3A+Feedback+for+%27Meine+Reise+durch+die+Evolution+der+Webentwicklung%27%20%F0%9F%91%8D&issue%5Bdescription%5D=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:blog/2024/2024-01-25-Evolution-der-Webentwicklung.adoc">tell us
+    how we can improve</a>.
+    </p>
+    <p class="feedback--response feedback--response-no">
+        Sorry to hear that. Please <a href="https://github.com/dbsystel/tech-stories/issues/new?issue%5Btitle%5D=Docs%3A+Feedback+for+%27Meine+Reise+durch+die+Evolution+der+Webentwicklung%27%20%F0%9F%91%8E&issue%5Bdescription%5D=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:blog/2024/2024-01-25-Evolution-der-Webentwicklung.adoc">tell
+    us how we can improve</a>.
+    </p>
+</div>
+<script>
+    const yesButton = document.querySelector('.feedback--answer-yes');
+    const noButton = document.querySelector('.feedback--answer-no');
+    const yesResponse = document.querySelector('.feedback--response-yes');
+    const noResponse = document.querySelector('.feedback--response-no');
+    const disableButtons = () => {
+        yesButton.disabled = true;
+        noButton.disabled = true;
+    };
+    const sendFeedback = (value) => {
+        if (typeof ga !== 'function') return;
+        const args = {
+            command: 'send',
+            hitType: 'event',
+            category: 'Helpful',
+            action: 'click',
+            label: window.location.pathname,
+            value: value
+        };
+        ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+    };
+    yesButton.addEventListener('click', () => {
+        yesResponse.classList.add('feedback--response__visible');
+        disableButtons();
+        sendFeedback(1);
+    });
+    noButton.addEventListener('click', () => {
+        noResponse.classList.add('feedback--response__visible');
+        disableButtons();
+        sendFeedback(0);
+    });
+</script>
+
+        
+
+      </main>
+    </div>
+  </div>
+  
+    <!--footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">&copy; 2020 | based on <a href="https://arc42.org">arc42 7.0</a> | mixed with <a href="http://getbootstrap.com/">Bootstrap v5.0.0-beta</a> | Baked with <a href="http://jbake.org">JBake v2.6.7</a></span>
+        </div>
+    </footer-->
+
+    <footer class="bg-dark py-2 row d-print-none">
+        <div class="container-fluid mx-sm-5">
+            <div class="row">
+                <div class="col-3 col-sm-2 text-xs-center order-sm-2">
+
+
+                    <ul class="list-inline mb-0">
+                        
+                        
+                        <li class="list-inline-item mx-2 h3" data-original-title="Contact on Twitter" data-placement="top"
+                            data-toggle="tooltip" title="">
+                            <a aria-label="Contact on Twitter" title="Contact on Twitter" class="text-white" href="https://twitter.com/dbsystel" rel="noopener noreferrer"
+                               target="_blank" style="text-decoration: none;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                    </ul>
+
+
+                </div>
+                <div class="col-3 col-sm-2 text-right text-xs-center order-sm-3">
+
+
+                    <ul class="list-inline mb-0">
+
+                        
+                        <li class="list-inline-item mx-2 h3" data-original-title="Checkout on GitHub" data-placement="top"
+                            data-toggle="tooltip" title="">
+                            <a aria-label="Checkout on GitHub" title="Checkout on GitHub" class="text-white" href="https://github.com/dbsystel" rel="noopener noreferrer"
+                               target="_blank" style="text-decoration: none;">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        
+
+                        
+
+
+                    </ul>
+
+
+                </div>
+                <div class="col-18 col-sm-8 text-center py-2 order-sm-2">
+
+                        [<small class="text-white">built with <a href="https://doctoolchain.org">docToolchain</a> and <a href="https://jbake.org">jBake</a>, <br />
+styling supported by <a href="https://db-ui.github.io/">DB UI Core</a>, theme based on <a href="https://www.docsy.dev/">Docsy</a><br />
+<a href="https://db-ui.github.io/datenschutzerklaerung.html">Datenschutzerklärung / Data Privacy</a> |
+<a href="https://www.dbsystel.de/dbsystel-en/legal-3715942">Imprint</a> |
+<a href="https://www.dbsystel.de/">DB Systel GmbH</a></small>]
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script crossorigin="anonymous"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            src="../../js/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            src="../../js/bootstrap.min.js"></script>
+
+
+    <script crossorigin="anonymous"
+            integrity="sha256-tfwbKdJGWDWEQlS9TYBHOOryTAzsUwCbTGiZmJvlWkc=" src="../..//js/main.min.b5fc1b29d2465835844254bd4d804738eaf24c0cec53009b4c6899989be55a47.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/blocks.js" ></script>
+    <script src="../../js/prettify.js"></script>
+    <script src="../../js/adoc-scrollspy.js"></script>
+    <script src="../../js/lightbox.js"></script>
+    <script src="../../js/copy-n-paste.js"></script>
+    <script src="../../js/openseadragon.js"></script>
+
+    
+
+</body>
+</html>

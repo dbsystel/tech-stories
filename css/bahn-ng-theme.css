@@ -71,8 +71,8 @@
   position: relative;
   margin-bottom: 55px;
 }
-.bahn.ng h2::after,
-.bahn.ng h1::after {
+.bahn.ng h1:not(.card-title)::after,
+.bahn.ng h2:not(.card-title)::after {
   position: absolute;
   bottom: -30px;
   width: 80px;
@@ -322,6 +322,8 @@ div.toc-menu {
 }
 .bahn.ng span.label {
   margin-left: 1em;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
 }
 .bahn.ng ul > li.with-child a.td-sidebar-link.td-sidebar-link__section {
   padding-left: 1em !important;
@@ -334,11 +336,13 @@ div.toc-menu {
   overflow-wrap: break-word;
 }
 #td-section-nav {
-  max-height: calc(100vh - 64px);
   position: sticky;
   top: 64px;
 }
 @media (min-width: 768px) {
+  #td-section-nav {
+    max-height: calc(100vh - 64px);
+  }
   .td-sidebar-nav {
     max-height: 100%;
     overflow-y: auto;
@@ -474,8 +478,8 @@ div.toc-menu {
 .bahn.ng h3 {
   font-weight: 900;
 }
-.bahn.ng h1,
-.bahn.ng h2 {
+.bahn.ng h1:not(.card-title),
+.bahn.ng h2:not(.card-title) {
   margin-bottom: 3.5rem;
 }
 .bahn.ng h1 {
@@ -578,6 +582,10 @@ div.toc-menu {
 .bahn.ng main code {
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
 }
+/* be sure color contrast is high enough */
+.bahn.ng main code .str {
+  color: #0b810b;
+}
 .bahn.ng .td-content .highlight {
   margin-top: 0;
 }
@@ -642,7 +650,7 @@ div.toc-menu {
 .bahn.ng main .admonitionblock.warning > table .title {
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--color-yellow-700);
+  color: var(--color-orange-800);
 }
 .bahn.ng main .admonitionblock.important > table .title {
   font-weight: bold;
@@ -657,7 +665,7 @@ div.toc-menu {
 .bahn.ng main .admonitionblock.note > table .title {
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--color-cyan-600);
+  color: var(--color-cyan-700);
 }
 
 /* Text anchor */
@@ -707,9 +715,9 @@ div.toc-menu {
 
 /* fix footer base style */
 .bahn.ng #footnotes .footnote {
-    padding: 0;
-    margin-left: 0;
-    text-indent: 0;
+  padding: 0;
+  margin-left: 0;
+  text-indent: 0;
 }
 
 
@@ -843,9 +851,12 @@ div.toc-menu {
   }
 }
 
-h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before {
+h2[id]:before,
+h3[id]:before,
+h4[id]:before,
+h5[id]:before {
   display: block;
-  content: " ";
+  content: ' ';
   visibility: hidden;
 }
 a[href^="//"]:after,
@@ -853,4 +864,53 @@ a[href^="http://"]:after,
 a[href^="https://"]:after {
   content: url(../images/ic-db_link-external_20.svg);
   margin: 0 0 0 0;
+}
+div.listingblock,
+table.tableblock {
+  position: relative;
+}
+div.listingblock > copybutton,
+table.tableblock > copybutton {
+  visibility: hidden;
+  position: absolute;
+  right: 0px;
+  top: 2em;
+  top: 0;
+  z-index: 2;
+  padding: 12px 12px;
+
+  background: url('../db-ui-icons/db_ic_copy_32.svg') left no-repeat;
+  background-size: 22px 22px;
+}
+
+/* Show the button on hover of the parent div */
+div.listingblock:hover > copybutton,
+table.tableblock:hover > copybutton {
+  visibility: visible;
+  cursor: pointer;
+}
+
+.imageblock.lb-active {
+  width: 100vw;
+  position: fixed;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+.imageblock.lb-active img {
+  display: block;
+  height: 90vh;
+  width: auto;
+  margin-top: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+.openseadragon-container {
+  border: 1px solid black !important;
 }

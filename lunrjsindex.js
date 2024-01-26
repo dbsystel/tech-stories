@@ -10,6 +10,14 @@ var documents = [
 
 {
     "id": 1,
+    "uri": "blog/2024/2024-01-25-Evolution-der-Webentwicklung.html",
+    "menu": "Blog",
+    "title": "Meine Reise durch die Evolution der Webentwicklung",
+    "text": " Table of Contents Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst: Meine ersten Erfahrungen mit dem Internet Wie wurden Webseiten 2014 gebaut? Wie ist der Stand heute? Wie helfen moderne Frontends bei der Performance? Hier der Aufbau eines modernen Frontends mit BFF (Backend for Frontend): Wie baue ich Frontends? Bevor ich mit einem neuen Projekt anfange Abschließend ein paar Wünsche an das Frontend, welches ihr baut: Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung In diesem persönlichen Rückblick tauchen wir ein in die faszinierende Welt der Webentwicklung – von den frühen Tagen des manuellen Codings bis hin zu den modernen Technologien, die heute den Standard setzen. Begleitet mich auf meiner Reise durch die Zeit, in der sich HTML, CSS und JavaScript von Grund auf verändert haben und entdeckt, wie sich die Herausforderungen und Lösungen in der Webentwicklung im Laufe der Jahre gewandelt haben. Von den ersten Schritten mit einfachen Tools bis hin zu den komplexen Frameworks und Methoden von heute – dies ist eine Geschichte von Innovation, Lernen und ständiger Weiterentwicklung. Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst: 1991 erste Webseite mit HTML 1995 PHP und JavaScript 1996 CSS ------------- bis hierhin kaum automatisiertes Deployment möglich (z. B. über FTP) 2000 SVN 2003 Wordpress (Joomla/Typo3 etc.) 2005 GIT ------------- Versionierung 2006 jQuery und AWS 2008 Static Site Generators (SSG) 2009 Node.js 2010 NPM und AngularJS 2011 Bootstrap CSS 2012 Webpack, TypeScript 2013 Docker, React und Server Side Rendering ------------- automatisierte und idempotente Deployments möglich 2014 Vue.js, CSS-in-JS 2015 PWAs (100% seit 2022) 2016 Next.js , Angular (4+) 2020 Vite 2022 Generatoren für Frontend/Backend Kombinationen refine.new , RedwoodJS , Blitz.js 2023 Ende des Internet Explorers 2023 React Server Components Mehr Details und ausführlichere Infos gibt es unter anderem auf: - designmodo.com: The Short History of Website Building - Nicholas Mendez: A \"Brief\" History of the Web Part 4 - Nick Telsan: What Even Are React Server Components - Jesse Pence: React Server Components Meine ersten Erfahrungen mit dem Internet Wenn ich mich an die Anfänge meiner Tätigkeit erinnere, haben wir HTML, CSS, PHP und jQuery mit BBedit selbst geschrieben, gespeichert und manuell per FTP auf Server hochgeladen. Das Beste, was es damals gab, war das Programm Transmit, mit dem einzelne Ordner synchronisiert werden konnten. Alles war sehr fehleranfällig, ohne Versionierung und daher schwer bis gar nicht testbar – nur manuell. jQuery-Plugins wurden mit Abhängigkeiten zu unterschiedlichen jQuery-Versionen benutzt, die nicht unbedingt kompatibel waren. Man musste jedes Mal hoffen, dass die Webseite noch funktionierte, nachdem man Code hinzugefügt hatte. Was mich immer am meisten geärgert hat, war ein Flackern, sobald das JavaScript geladen wurde und über das PHP-gerenderte HTML noch extra DOM-Elemente legte. Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch gerenderten Web: Wann ist der DOM fertig, wann ist das JS geladen und wird ausgeführt, wer hat bei intensiven Seiten „das Sagen“ – das Frontend oder das Backend (Routing, Views)? Wie wurden Webseiten 2014 gebaut? Nach meinem Studium habe ich in Hamburg bei AboutYou in einer IT-Agentur gearbeitet, die nach Scrum ihren Arbeitszyklus gestaltet und schon damals diverse Tools zum Bauen des Frontends benutzt hat. Da die Tools alle am Anfang ihres Lebenszyklus waren, mussten mindestens drei Package-Manager und Erweiterungen installiert werden, bevor die Webseite gebaut werden konnte. Gebaut? Ja, das war die Zeit, in der Grunt und Webpack eine moderne und strukturierte Frontendentwicklung ermöglicht haben. Vorbei waren die Zeiten mit unterschiedlichen Encodings und Zeilenumbrüchen. Was für ein Gefühl es war, lokal einen Befehl in der Kommandozeile aufzurufen und die zu entwickelnde Webseite auf dem eigenen Gerät zu sehen – heute Standard. Hier lernte ich zum ersten Mal Package-Manager und Versionierung kennen. Und noch ein Thema kam auf: IDEs für Webentwicklung. Bisher war der beste Freund der Inspektor im Browser, eine lokale, beim Entwickler stattfindende Überprüfung oder Unterstützung konnten bis dahin nur die „richtigen“ Programmiersprachen und die dazugehörigen teuren IDEs (z. B. IntelliJ) bieten. Mit Atom gab es eine IDE, die schnell startete, sich nur um Websprachen kümmerte und über Plugins erweiterbar war. Jetzt gab es Autovervollständigung für HTML/JS/CSS und über Webpack konnten alle Dateien optimiert, komprimiert und kombiniert werden. Wie ist der Stand heute? Sehr gut! Viele Probleme der Vergangenheit sind verschwunden (Internet Explorer existiert nicht mehr, schlechte Kompatibilität der Browser) und es gibt eine Reihe von Möglichkeiten, Frontends mit Frameworks zu bauen, die alle ihre Vor- und kleinen Nachteile haben. Z. B. hat sich Visual Studio Code als Nachfolger von Atom zum (kostenlosen) Standard für Webentwicklung mit noch mehr Möglichkeiten zur generellen Verbesserung gemausert. Frontend-Frameworks gibt es viele (und es kommen immer mehr dazu) – durchgesetzt haben sich aktuell React, Angular, Vue.js und Svelte. Wie helfen moderne Frontends bei der Performance? Schauen wir uns hierzu den Ablauf einer klassischen Webseite an: Ein Endgerät ruft die URL unserer Seite auf. Der Server antwortet je nach Session/Cookie/Authentication mit einer Login-Seite oder dem gerendertem HTML eines PHP-Skripts. Evtl. wurde der Client auf eine andere URL umgeleitet. Das HTML wird vom Browser interpretiert und JS/CSS/Bilder werden nachgeladen. Das CSS sorgt für das Styling der Seite. Das ausgelieferte JavaScript wird interpretiert, verändert das DOM und lädt neue Daten nach, und das wiederholt sich, wie hier beschrieben. Alle Schritte benötigen Zeit und führen zu einer mehrsekündigen Wartezeit, bis die Webseite benutzt werden kann. Hier der Aufbau eines modernen Frontends mit BFF (Backend for Frontend): Der Client fragt den Server an und erhält HTML, JS und CSS sowie den Login-Status vom Backend, und zwar so aufbereitet, dass der Browser es direkt darstellen kann, ohne weitere Schleifen zu drehen. Weitere Inhalte werden z. B. als JSON nachgeladen und im Browser mit JavaScript gerendert. Zusätzlich gibt es für alle JS-Frameworks Bundler, die beim Bauen der auszuliefernden Dateien diese optimal aufbereiten, sodass der User innerhalb kürzester Zeit mit dem Frontend interagieren kann. Wie baue ich Frontends? Mein Lieblings-Javascript-Framework ist React. Eine gute Übersicht über andere JS-Frameworks und was sie unterscheidet, findet ihr z. B. auf themer.dev[ https://themer.dev/blog/the-single-most-important-factor-that-differentiates-front-end-frameworks ]. Von dieser Seite kommt folgendes Zitat: „Reacts change detection paradigm is straightforward: the application state is maintained inside the framework (with APIs exposed to the developer for updating it) so that React knows when to re-render.“ Und was heißt das jetzt? Nicht mehr der Browser oder das Backend entscheiden, auf welcher URL was passiert, sondern das Frontend. Und wenn im Frontend eine Aktion ausgelöst wird, entscheidet auch das Frontend, was passiert. Das heißt nicht, dass es kein Backend gibt oder dass z. B. Validierung nur auf der Frontendseite passiert. Sicherheit im Web sollte der wichtigste Aspekt sein. Bevor ich mit einem neuen Projekt anfange Was sich für mich als Erfolgsrezept herausgestellt hat: Sich am Anfang eines Neu- oder Umbaus einer Seite viel Zeit nehmen, um passende Libraries/Frameworks zu finden, die einem das Leben erleichtern und diese zu benutzen (UI Components, Accessibility, Icons, etc.). Am besten auf bekannte Frameworks setzen, die regelmäßig aktualisiert/gewartet werden. Abschließend ein paar Wünsche an das Frontend, welches ihr baut: Macht die Webseite responsive (Probiert eure Webseite mit unterschiedlichen Geräten in unterschiedlichen Auflösungen aus) Räumt euren Header-Bereich auf und nutzt z. B. ealfavicongenerator.net , um für alle ein schönes Favicon zu zaubern Nutzt Komponenten die Accessability mit eingebaut haben (z. B. Blueprint , Mantine oder React Suite ) Macht den Google Lighthouse Test und behebt die wichtigsten Probleme Macht nur eine PWA, wenn offline-Inhalte essenziell sind oder ihr eine richtige App ausliefert Erlaubt das Zoomen eurer Seiten, sowie das Kopieren und Einfügen von Text Wenn etwas sich wie ein link verhält, dann lasst die User Link-Aktionen machen (z. B. speichern unter) Macht Hover-Styles für Links Wenn sich die Gui geändert hat, nachdem geklickt wurde, ändert die URL Das war die Reise durch 20 Jahre Webentwicklung – ich bin sehr gespannt, was in 20 Jahren im Web alles möglich ist. "
+},
+
+{
+    "id": 2,
     "uri": "blog/2024/2024-01-16-Accessibility-in-Angular.html",
     "menu": "Blog",
     "title": "Accessibility in Angular",
@@ -17,7 +25,7 @@ var documents = [
 },
 
 {
-    "id": 2,
+    "id": 3,
     "uri": "blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html",
     "menu": "Blog",
     "title": "Fahrplankonstruktion",
@@ -25,15 +33,15 @@ var documents = [
 },
 
 {
-    "id": 3,
+    "id": 4,
     "uri": "blog/2023/2023-12-21-postgreSQL.html",
     "menu": "Blog",
     "title": "PostgreSQL",
-    "text": " Table of Contents Ein Jahr PostgreSQL – Das Leben danach Slides Ein Jahr PostgreSQL – Das Leben danach Dieser Vortrag ist ein Jahr nach dem Entschluss entstanden, einen neuen Job anzunehmen und mich raus aus meiner Oracle-Blase und rein in die \"neue\" Welt der PostgreSQL-Datenbankentwicklung zu begeben. Der Gedanke damals war: \"SQL ist SQL und ich werde mich schon schnell zurechtfinden. Es bleibt ja eine Relationale Datenbank\". Dieser Vortrag soll eine kleine Zusammenfassung sein über: • Einige WTF-Momente: Der Teufel liegt im Detail und welche Unterschiede da wirklich auf einen Oracle-Datenbankentwickler warten, war mir vorher nicht bewusst. • Das schöne aus beiden Welten: Sowohl Oracle als auch PostgreSQL haben schöne Seiten. Es ist von Vorteil, beide Systeme ein bisschen genauer zu kennen. • Sonstige Erfahrungen und Eindrücke, die ich nach einem Jahr im PostgreSQL-Ökosystem so beobachtet habe. Ich konzentriere mich dabei auf den Bereich SQL (z. B. analytic functions oder die Behandlung von NULL values) und habe aber auch ein paar \"admin-nahe\" bzw. theoretische Unterschiede, die ich aufzeigen möchte (z. B. Tuning-Werkzeuge und MVCC). Nach dem Vortrag sollte klarer sein, mit welchen Fallstricken man beim Umstieg von Oracle auf PostgreSQL rechnen sollte. Slides download "
+    "text": " Table of Contents Ein Jahr PostgreSQL – Das Leben danach Slides Ein Jahr PostgreSQL – Das Leben danach Dieser Vortrag ist ein Jahr nach dem Entschluss entstanden, einen neuen Job anzunehmen und mich raus aus meiner Oracle-Blase und rein in die \"neue\" Welt der PostgreSQL-Datenbankentwicklung zu begeben. Der Gedanke damals war: \"SQL ist SQL und ich werde mich schon schnell zurechtfinden. Es bleibt ja eine Relationale Datenbank\". Dieser Vortrag soll eine kleine Zusammenfassung sein über: Einige WTF-Momente: Der Teufel liegt im Detail und welche Unterschiede da wirklich auf einen Oracle-Datenbankentwickler warten, war mir vorher nicht bewusst. Das schöne aus beiden Welten: Sowohl Oracle als auch PostgreSQL haben schöne Seiten. Es ist von Vorteil, beide Systeme ein bisschen genauer zu kennen. Sonstige Erfahrungen und Eindrücke, die ich nach einem Jahr im PostgreSQL-Ökosystem so beobachtet habe. Ich konzentriere mich dabei auf den Bereich SQL (z. B. analytic functions oder die Behandlung von NULL values) und habe aber auch ein paar \"admin-nahe\" bzw. theoretische Unterschiede, die ich aufzeigen möchte (z. B. Tuning-Werkzeuge und MVCC). Nach dem Vortrag sollte klarer sein, mit welchen Fallstricken man beim Umstieg von Oracle auf PostgreSQL rechnen sollte. Slides download "
 },
 
 {
-    "id": 4,
+    "id": 5,
     "uri": "blog/2023/2023-11-29-AI-in-Software-Design.html",
     "menu": "Blog",
     "title": "AI in Software Design",
@@ -41,7 +49,7 @@ var documents = [
 },
 
 {
-    "id": 5,
+    "id": 6,
     "uri": "blog/2023/2023-11-20-einfuehrung-barrierefreiheit-web.html",
     "menu": "Blog",
     "title": "A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!",
@@ -49,7 +57,7 @@ var documents = [
 },
 
 {
-    "id": 6,
+    "id": 7,
     "uri": "blog/2023/2023-11-20-conways-law.html",
     "menu": "Blog",
     "title": "Conway’s Law",
@@ -57,7 +65,7 @@ var documents = [
 },
 
 {
-    "id": 7,
+    "id": 8,
     "uri": "blog/2023/2023-11-08-prompt-engineering.html",
     "menu": "Blog",
     "title": "Prompt-Engineering",
@@ -65,7 +73,7 @@ var documents = [
 },
 
 {
-    "id": 8,
+    "id": 9,
     "uri": "blog/2023/2023-08-21-vue2-vue3-migration.html",
     "menu": "Blog",
     "title": "Migrate Vue 2 to Vue 3",
@@ -73,7 +81,7 @@ var documents = [
 },
 
 {
-    "id": 9,
+    "id": 10,
     "uri": "blog/2023/2023-05-15-developer-experience-platform-fuer-entwicklerinnen.html",
     "menu": "Blog",
     "title": "Developer Experience Platform",
@@ -81,7 +89,7 @@ var documents = [
 },
 
 {
-    "id": 10,
+    "id": 11,
     "uri": "blog/2023/2023-05-05-loom-threading.html",
     "menu": "Blog",
     "title": "Projekt Loom ist da",
@@ -89,7 +97,7 @@ var documents = [
 },
 
 {
-    "id": 11,
+    "id": 12,
     "uri": "blog/2023/2023-04-09-vortrag-auf-der-javaland.html",
     "menu": "Blog",
     "title": "JavaLand 2023",
@@ -97,7 +105,7 @@ var documents = [
 },
 
 {
-    "id": 12,
+    "id": 13,
     "uri": "blog/2023/2023-04-01-Indoor-GIS-zur-Rationalisierung-von-Wartungsarbeiten.html",
     "menu": "Blog",
     "title": "Indoor-GIS",
@@ -105,7 +113,7 @@ var documents = [
 },
 
 {
-    "id": 13,
+    "id": 14,
     "uri": "blog/2023/2023-03-28-ChatGPT-Einblicke-und-mehr-Generative-Sprachmodelle-Herausforderungen-und-Chancen.html",
     "menu": "Blog",
     "title": "ChatGPT",
@@ -113,7 +121,7 @@ var documents = [
 },
 
 {
-    "id": 14,
+    "id": 15,
     "uri": "blog/2023/2023-03-08-Re-Platforming-Mainframe-Mehr-als-nur-Lift-Shift.html",
     "menu": "Blog",
     "title": "Re-Platforming Mainframe",
@@ -121,7 +129,7 @@ var documents = [
 },
 
 {
-    "id": 15,
+    "id": 16,
     "uri": "blog/2022/2022-15-03-good-practices-api.html",
     "menu": "Blog",
     "title": "Good Practices im API-Umfeld",
@@ -129,7 +137,7 @@ var documents = [
 },
 
 {
-    "id": 16,
+    "id": 17,
     "uri": "blog/2022/2022-11-24-the-journey-towards-K8s-at-Deutsche-Bahn.html",
     "menu": "Blog",
     "title": "K8s at Deutsche Bahn",
@@ -137,7 +145,7 @@ var documents = [
 },
 
 {
-    "id": 17,
+    "id": 18,
     "uri": "blog/2022/2022-11-04-Produkt-statt-Projekmanagement.html",
     "menu": "Blog",
     "title": "Produkt- statt Projektmanagement",
@@ -145,7 +153,7 @@ var documents = [
 },
 
 {
-    "id": 18,
+    "id": 19,
     "uri": "blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html",
     "menu": "Blog",
     "title": "Deine Diagramme sind Legende?",
@@ -153,7 +161,7 @@ var documents = [
 },
 
 {
-    "id": 19,
+    "id": 20,
     "uri": "blog/2022/2022-03-23-Vielfalt-bei-der-Bahn-Computerlinguistinnen-treiben-Digitalisierung-voran.html",
     "menu": "Blog",
     "title": "Vielfalt bei der Bahn",
@@ -161,7 +169,7 @@ var documents = [
 },
 
 {
-    "id": 20,
+    "id": 21,
     "uri": "blog/2021/2021-11-02-KITT-das-Kuenstliche-Intelligenz-Translation-Tool.html",
     "menu": "Blog",
     "title": "KITT Tool",
@@ -169,7 +177,7 @@ var documents = [
 },
 
 {
-    "id": 21,
+    "id": 22,
     "uri": "blog/2021/2021-06-08-Bad-bots-Chancen-und-Herausforderungen-fuer-KI-und-Sprache.html",
     "menu": "Blog",
     "title": "Bad Bots",
@@ -177,7 +185,7 @@ var documents = [
 },
 
 {
-    "id": 22,
+    "id": 23,
     "uri": "blog/2021/2021-04-12-Computer-Vision-Use-Cases-at-Deutsche-Bahn.html",
     "menu": "Blog",
     "title": "Computer Vision Use Cases",
@@ -185,7 +193,7 @@ var documents = [
 },
 
 {
-    "id": 23,
+    "id": 24,
     "uri": "blog/2021/2021-03-20-Die-C4-Testpyramide-eine-architekturgetriebene-Teststrategie.html",
     "menu": "Blog",
     "title": "Die C4-Testpyramide",
@@ -193,7 +201,7 @@ var documents = [
 },
 
 {
-    "id": 24,
+    "id": 25,
     "uri": "blog/2020/2020-12-07-devops-mehr-geschwindigkeit-auf-der-schiene.html",
     "menu": "Blog",
     "title": "DevOps Geschwindigkeit",
@@ -201,7 +209,7 @@ var documents = [
 },
 
 {
-    "id": 25,
+    "id": 26,
     "uri": "blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html",
     "menu": "Blog",
     "title": "Vue.js vs. Angular",
@@ -209,7 +217,7 @@ var documents = [
 },
 
 {
-    "id": 26,
+    "id": 27,
     "uri": "blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html",
     "menu": "Blog",
     "title": "OOP: Guter Code",
@@ -217,7 +225,7 @@ var documents = [
 },
 
 {
-    "id": 27,
+    "id": 28,
     "uri": "blog/2020/2020-03-14-API-first-mit-TypeScript.html",
     "menu": "Blog",
     "title": "API first mit TS",
@@ -225,7 +233,7 @@ var documents = [
 },
 
 {
-    "id": 28,
+    "id": 29,
     "uri": "blog/2019/2019-09-13-Spock-und-AsciiDoc.html",
     "menu": "Blog",
     "title": "Spock und AsciiDoc",
@@ -233,19 +241,11 @@ var documents = [
 },
 
 {
-    "id": 29,
+    "id": 30,
     "uri": "blog/index.html",
     "menu": "Blog",
     "title": "Übersicht",
     "text": " Table of Contents Übersicht Übersicht Willkommen auf dem Tech Blog der DB Systel. "
-},
-
-{
-    "id": 30,
-    "uri": "blog/profiles/Stefan+Gr%C3%BCndling.html",
-    "menu": "Autoren",
-    "title": "Stefan Gründling",
-    "text": " Table of Contents Stefan Gründling Stefan Gründling span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
@@ -258,30 +258,14 @@ var documents = [
 
 {
     "id": 32,
-    "uri": "blog/profiles/Jonas+Gassenmeyer.html",
+    "uri": "blog/profiles/Jonas-Gassenmeyer.html",
     "menu": "Autoren",
     "title": "Jonas Gassenmeyer",
-    "text": " Table of Contents Jonas Gassenmeyer Jonas Gassenmeyer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "text": " Table of Contents Jonas Gassenmeyer Jonas Gassenmeyer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Jonas könnte den ganzen Tag über relationale Datenbanken reden. Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte. Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel. Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten. "
 },
 
 {
     "id": 33,
-    "uri": "blog/profiles/Johannes-Dienst.html",
-    "menu": "Autoren",
-    "title": "Johannes Dienst",
-    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 34,
-    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
-    "menu": "Autoren",
-    "title": "Dr. Martin Strunk",
-    "text": " Table of Contents Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Dr. Martin Strunk Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created. Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm. LinkedIn Xing "
-},
-
-{
-    "id": 35,
     "uri": "blog/profiles/Christian-Fischer.html",
     "menu": "Autoren",
     "title": "Christian Fischer",
@@ -289,31 +273,15 @@ var documents = [
 },
 
 {
-    "id": 36,
-    "uri": "blog/profiles/Bertram-Fey.html",
+    "id": 34,
+    "uri": "blog/profiles/Stefan-Gruendling.html",
     "menu": "Autoren",
-    "title": "Bertram Fey",
-    "text": " Table of Contents Bertram Fey Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Stefan Gründling",
+    "text": " Table of Contents Stefan Gründling Stefan Gründling span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Stefan Gründling ist SAFe® Solution Architect bei der DB Netz AG, dem größten Betreiber von Schieneninfrastruktur in Deutschland. Er arbeitet seit mehr als 10 Jahren in der Beratung und Softwareentwicklung. Als Architekt war er verantwortlich für die Entwicklung der Click&amp;Ride App und die automatische Fahrplankonstruktion mit welchen die DB Netz AG als weltweit erstes Unternehmen über eine App vollständig automatisiert Fahrpläne erstellen konnte. "
 },
 
 {
-    "id": 37,
-    "uri": "blog/profiles/Oliver+Hammer.html",
-    "menu": "Autoren",
-    "title": "Oliver Hammer",
-    "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 38,
-    "uri": "blog/profiles/Maximilian-Franzke.html",
-    "menu": "Autoren",
-    "title": "Maximilian Franzke",
-    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
-},
-
-{
-    "id": 39,
+    "id": 35,
     "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
     "title": "Marcus Sümnick",
@@ -321,15 +289,23 @@ var documents = [
 },
 
 {
-    "id": 40,
-    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
+    "id": 36,
+    "uri": "blog/profiles/Johannes-Dienst.html",
     "menu": "Autoren",
-    "title": "Gualter Barbas Baptista",
-    "text": " Table of Contents Gualter Barbas Baptista Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Johannes Dienst",
+    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
-    "id": 41,
+    "id": 37,
+    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
+    "menu": "Autoren",
+    "title": "Dr. Martin Strunk",
+    "text": " Table of Contents Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Dr. Martin Strunk Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created. Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm. LinkedIn Xing "
+},
+
+{
+    "id": 38,
     "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
     "title": "Danny Koppenhagen",
@@ -337,31 +313,31 @@ var documents = [
 },
 
 {
+    "id": 39,
+    "uri": "blog/profiles/Bertram-Fey.html",
+    "menu": "Autoren",
+    "title": "Bertram Fey",
+    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
+},
+
+{
+    "id": 40,
+    "uri": "blog/profiles/Bernd-Schimmer.html",
+    "menu": "Autoren",
+    "title": "Bernd Schimmer",
+    "text": " Table of Contents Bernd Schimmer Bernd Schimmer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bernd is an experienced frontend developer and Agility Master at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . "
+},
+
+{
+    "id": 41,
+    "uri": "blog/profiles/Maximilian-Franzke.html",
+    "menu": "Autoren",
+    "title": "Maximilian Franzke",
+    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
+},
+
+{
     "id": 42,
-    "uri": "blog/profiles/Tim-Engeleiter.html",
-    "menu": "Autoren",
-    "title": "Tim Engeleiter",
-    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
-},
-
-{
-    "id": 43,
-    "uri": "blog/profiles/Sven-Hesse.html",
-    "menu": "Autoren",
-    "title": "Sven Hesse",
-    "text": " Table of Contents Sven Hesse Links Sven Hesse span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH. Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility. Links Persönliche Website "
-},
-
-{
-    "id": 44,
-    "uri": "blog/profiles/Ralf-D.-Mueller.html",
-    "menu": "Autoren",
-    "title": "Ralf D. Müller",
-    "text": " Table of Contents Ralf D. Müller Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf is a Software Engineering Advocate at DB Systel GmbH during the day and after sunset he loves everything with bits and bytes. The last few years of his career, he focused on the documentation of software systems with arc42 and the Docs-as-Code approach. You can follow him on mastodon rdmueller@mastodontech.de . "
-},
-
-{
-    "id": 45,
     "uri": "blog/profiles/Joachim-Schirrmacher.html",
     "menu": "Autoren",
     "title": "Joachim Schirrmacher",
@@ -369,7 +345,15 @@ var documents = [
 },
 
 {
-    "id": 46,
+    "id": 43,
+    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
+    "menu": "Autoren",
+    "title": "Gualter Barbas Baptista",
+    "text": " Table of Contents Gualter Barbas Baptista Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 44,
     "uri": "blog/profiles/Carsten-Thurau.html",
     "menu": "Autoren",
     "title": "Carsten Thurau",
@@ -377,7 +361,7 @@ var documents = [
 },
 
 {
-    "id": 47,
+    "id": 45,
     "uri": "blog/profiles/Carsten-Hoffmann.html",
     "menu": "Autoren",
     "title": "Carsten Hoffmann",
@@ -385,7 +369,7 @@ var documents = [
 },
 
 {
-    "id": 48,
+    "id": 46,
     "uri": "blog/profiles/buildIT.html",
     "menu": "Autoren",
     "title": "BuildIT",
@@ -393,7 +377,31 @@ var documents = [
 },
 
 {
+    "id": 47,
+    "uri": "blog/profiles/Tim-Engeleiter.html",
+    "menu": "Autoren",
+    "title": "Tim Engeleiter",
+    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
+},
+
+{
+    "id": 48,
+    "uri": "blog/profiles/Sven-Hesse.html",
+    "menu": "Autoren",
+    "title": "Sven Hesse",
+    "text": " Table of Contents Sven Hesse Links Sven Hesse span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH. Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility. Links Persönliche Website "
+},
+
+{
     "id": 49,
+    "uri": "blog/profiles/Ralf-D.-Mueller.html",
+    "menu": "Autoren",
+    "title": "Ralf D. Müller",
+    "text": " Table of Contents Ralf D. Müller Links Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf D. Müller arbeitet seit über 25 Jahren in der Softwarebranche, zunächst als Entwickler und später als Softwarearchitekt. Da er großen Wert auf die klare Kommunikation und Dokumentation seiner Ideen legt, hat er das Open-Source-Projekt docToolchain gestartet, das sich der effektiven Dokumentation von Softwarearchitekturen widmet und das arc42 Template als Grundlage nutzt. Zunehmend beschäftigt ihn aber der Einsatz von KI für das Softwaredesign. In diesem Zusammenhang hat Ralf bereits Erfahrungen mit ChatGPT gesammelt, etwa als Werkzeug zum Lösen spezifischer Teilprobleme in der \"iSAQB Advanced Level\"-Beispielprüfung. Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+},
+
+{
+    "id": 50,
     "uri": "blog/profiles/Philippe-Rieffe.html",
     "menu": "Autoren",
     "title": "Philippe Rieffe",
@@ -401,7 +409,15 @@ var documents = [
 },
 
 {
-    "id": 50,
+    "id": 51,
+    "uri": "blog/profiles/Oliver-Hammer.html",
+    "menu": "Autoren",
+    "title": "Oliver Hammer",
+    "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Oliver Hammer ist Product Owner einer Einheit mit 32 Teams und 300 Mitarbeitern bei der DB Systel, dem Digitalpartner der DB AG. Er arbeitet seit über 25 Jahren in der Beratung und Software-Entwicklung. In den unterschiedlichsten Rollen vom Entwickler über Architekten, fachlichem Berater und Projektleiter hat er viel Erfahrungen an der Schnittstelle zwischen Business und Technologie in großen Projekten und der Zusammenarbeit in Teams und Organisationen und Vorgehensmodellen gesammelt. "
+},
+
+{
+    "id": 52,
     "uri": "blog/profiles/Konrad-Winkler.html",
     "menu": "Autoren",
     "title": "Konrad Winkler",
@@ -409,7 +425,7 @@ var documents = [
 },
 
 {
-    "id": 51,
+    "id": 53,
     "uri": "lunrjsindex.html",
     "menu": "null",
     "title": "null",
