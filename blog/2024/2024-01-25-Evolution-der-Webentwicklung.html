@@ -350,7 +350,8 @@ a[href^="https://"]:after {
     <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_vom_code_zum_klick_meine_reise_durch_die_evolution_der_webentwicklung">Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung</a></li>
+<li><a href="#_vom_code_zum_klick_meine_reise_durch_die_evolution_der_webentwicklung">Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung</a>
+<ul class="sectlevel2">
 <li><a href="#_zuerst_ein_paar_meilensteine_der_webentwicklung_tabellarisch_zusammengefasst">Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst:</a></li>
 <li><a href="#_meine_ersten_erfahrungen_mit_dem_internet">Meine ersten Erfahrungen mit dem Internet</a></li>
 <li><a href="#_wie_wurden_webseiten_2014_gebaut">Wie wurden Webseiten 2014 gebaut?</a></li>
@@ -360,6 +361,8 @@ a[href^="https://"]:after {
 <li><a href="#_wie_baue_ich_frontends">Wie baue ich Frontends?</a></li>
 <li><a href="#_bevor_ich_mit_einem_neuen_projekt_anfange">Bevor ich mit einem neuen Projekt anfange</a></li>
 <li><a href="#_abschließend_ein_paar_wünsche_an_das_frontend_welches_ihr_baut">Abschließend ein paar Wünsche an das Frontend, welches ihr baut:</a></li>
+</ul>
+</li>
 </ul>
 </div>
 
@@ -394,11 +397,8 @@ a[href^="https://"]:after {
 <div class="paragraph">
 <p>In diesem persönlichen Rückblick tauchen wir ein in die faszinierende Welt der Webentwicklung – von den frühen Tagen des manuellen Codings bis hin zu den modernen Technologien, die heute den Standard setzen. Begleitet mich auf meiner Reise durch die Zeit, in der sich HTML, CSS und JavaScript von Grund auf verändert haben und entdeckt, wie sich die Herausforderungen und Lösungen in der Webentwicklung im Laufe der Jahre gewandelt haben. Von den ersten Schritten mit einfachen Tools bis hin zu den komplexen Frameworks und Methoden von heute – dies ist eine Geschichte von Innovation, Lernen und ständiger Weiterentwicklung.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_zuerst_ein_paar_meilensteine_der_webentwicklung_tabellarisch_zusammengefasst">Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst:</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_zuerst_ein_paar_meilensteine_der_webentwicklung_tabellarisch_zusammengefasst">Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst:</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -474,68 +474,52 @@ a[href^="https://"]:after {
 - <a href="https://jessedit.tech/articles/react-server-components/1-background/?ck_subscriber_id=1652261910">Jesse Pence: React Server Components</a></p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_meine_ersten_erfahrungen_mit_dem_internet">Meine ersten Erfahrungen mit dem Internet</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_meine_ersten_erfahrungen_mit_dem_internet">Meine ersten Erfahrungen mit dem Internet</h3>
 <div class="paragraph">
 <p>Wenn ich mich an die Anfänge meiner Tätigkeit erinnere, haben wir HTML, CSS, PHP und jQuery mit BBedit selbst geschrieben, gespeichert und manuell per FTP auf Server hochgeladen. Das Beste, was es damals gab, war das Programm Transmit, mit dem einzelne Ordner synchronisiert werden konnten. Alles war sehr fehleranfällig, ohne Versionierung und daher schwer bis gar nicht testbar – nur manuell. jQuery-Plugins wurden mit Abhängigkeiten zu unterschiedlichen jQuery-Versionen benutzt, die nicht unbedingt kompatibel waren. Man musste jedes Mal hoffen, dass die Webseite noch funktionierte, nachdem man Code hinzugefügt hatte. Was mich immer am meisten geärgert hat, war ein Flackern, sobald das JavaScript geladen wurde und über das PHP-gerenderte HTML noch extra DOM-Elemente legte.
 Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch gerenderten Web: Wann ist der DOM fertig, wann ist das JS geladen und wird ausgeführt, wer hat bei intensiven Seiten „das Sagen“ – das Frontend oder das Backend (Routing, Views)?</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_wie_wurden_webseiten_2014_gebaut">Wie wurden Webseiten 2014 gebaut?</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_wie_wurden_webseiten_2014_gebaut">Wie wurden Webseiten 2014 gebaut?</h3>
 <div class="paragraph">
 <p>Nach meinem Studium habe ich in Hamburg bei AboutYou in einer IT-Agentur gearbeitet, die nach Scrum ihren Arbeitszyklus gestaltet und schon damals diverse Tools zum Bauen des Frontends benutzt hat. Da die Tools alle am Anfang ihres Lebenszyklus waren, mussten mindestens drei Package-Manager und Erweiterungen installiert werden, bevor die Webseite gebaut werden konnte. Gebaut? Ja, das war die Zeit, in der Grunt und Webpack eine moderne und strukturierte Frontendentwicklung ermöglicht haben. Vorbei waren die Zeiten mit unterschiedlichen Encodings und Zeilenumbrüchen. Was für ein Gefühl es war, lokal einen Befehl in der Kommandozeile aufzurufen und die zu entwickelnde Webseite auf dem eigenen Gerät zu sehen – heute Standard. Hier lernte ich zum ersten Mal Package-Manager und Versionierung kennen. Und noch ein Thema kam auf: IDEs für Webentwicklung. Bisher war der beste Freund der Inspektor im Browser, eine lokale, beim Entwickler stattfindende Überprüfung oder Unterstützung konnten bis dahin nur die „richtigen“ Programmiersprachen und die dazugehörigen teuren IDEs (z. B. IntelliJ) bieten. Mit Atom gab es eine IDE, die schnell startete, sich nur um Websprachen kümmerte und über Plugins erweiterbar war. Jetzt gab es Autovervollständigung für HTML/JS/CSS und über Webpack konnten alle Dateien optimiert, komprimiert und kombiniert werden.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_wie_ist_der_stand_heute">Wie ist der Stand heute?</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_wie_ist_der_stand_heute">Wie ist der Stand heute?</h3>
 <div class="paragraph">
 <p>Sehr gut! Viele Probleme der Vergangenheit sind verschwunden (Internet Explorer existiert nicht mehr, schlechte Kompatibilität der Browser) und es gibt eine Reihe von Möglichkeiten, Frontends mit Frameworks zu bauen, die alle ihre Vor- und kleinen Nachteile haben. Z. B. hat sich Visual Studio Code als Nachfolger von Atom zum (kostenlosen) Standard für Webentwicklung mit noch mehr Möglichkeiten zur generellen Verbesserung gemausert. Frontend-Frameworks gibt es viele (und es kommen immer mehr dazu) – durchgesetzt haben sich aktuell React, Angular, Vue.js und Svelte.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_wie_helfen_moderne_frontends_bei_der_performance">Wie helfen moderne Frontends bei der Performance?</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_wie_helfen_moderne_frontends_bei_der_performance">Wie helfen moderne Frontends bei der Performance?</h3>
 <div class="paragraph">
 <p>Schauen wir uns hierzu den Ablauf einer klassischen Webseite an: Ein Endgerät ruft die URL unserer Seite auf. Der Server antwortet je nach Session/Cookie/Authentication mit einer Login-Seite oder dem gerendertem HTML eines PHP-Skripts. Evtl. wurde der Client auf eine andere URL umgeleitet. Das HTML wird vom Browser interpretiert und JS/CSS/Bilder werden nachgeladen. Das CSS sorgt für das Styling der Seite. Das ausgelieferte JavaScript wird interpretiert, verändert das DOM und lädt neue Daten nach, und das wiederholt sich, wie hier beschrieben. Alle Schritte benötigen Zeit und führen zu einer mehrsekündigen Wartezeit, bis die Webseite benutzt werden kann.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_hier_der_aufbau_eines_modernen_frontends_mit_bff_backend_for_frontend">Hier der Aufbau eines modernen Frontends mit BFF (Backend for Frontend):</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_hier_der_aufbau_eines_modernen_frontends_mit_bff_backend_for_frontend">Hier der Aufbau eines modernen Frontends mit BFF (Backend for Frontend):</h3>
 <div class="paragraph">
 <p>Der Client fragt den Server an und erhält HTML, JS und CSS sowie den Login-Status vom Backend, und zwar so aufbereitet, dass der Browser es direkt darstellen kann, ohne weitere Schleifen zu drehen. Weitere Inhalte werden z. B. als JSON nachgeladen und im Browser mit JavaScript gerendert. Zusätzlich gibt es für alle JS-Frameworks Bundler, die beim Bauen der auszuliefernden Dateien diese optimal aufbereiten, sodass der User innerhalb kürzester Zeit mit dem Frontend interagieren kann.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_wie_baue_ich_frontends">Wie baue ich Frontends?</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_wie_baue_ich_frontends">Wie baue ich Frontends?</h3>
 <div class="paragraph">
 <p>Mein Lieblings-Javascript-Framework ist React. Eine gute Übersicht über andere JS-Frameworks und was sie unterscheidet, findet ihr z. B. auf themer.dev[<a href="https://themer.dev/blog/the-single-most-important-factor-that-differentiates-front-end-frameworks" class="bare">https://themer.dev/blog/the-single-most-important-factor-that-differentiates-front-end-frameworks</a>].
 Von dieser Seite kommt folgendes Zitat: „Reacts change detection paradigm is straightforward: the application state is maintained inside the framework (with APIs exposed to the developer for updating it) so that React knows when to re-render.“ Und was heißt das jetzt? Nicht mehr der Browser oder das Backend entscheiden, auf welcher URL was passiert, sondern das Frontend. Und wenn im Frontend eine Aktion ausgelöst wird, entscheidet auch das Frontend, was passiert. Das heißt nicht, dass es kein Backend gibt oder dass z. B. Validierung nur auf der Frontendseite passiert. Sicherheit im Web sollte der wichtigste Aspekt sein.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_bevor_ich_mit_einem_neuen_projekt_anfange">Bevor ich mit einem neuen Projekt anfange</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bevor_ich_mit_einem_neuen_projekt_anfange">Bevor ich mit einem neuen Projekt anfange</h3>
 <div class="paragraph">
 <p>Was sich für mich als Erfolgsrezept herausgestellt hat: Sich am Anfang eines Neu- oder Umbaus einer Seite viel Zeit nehmen, um passende Libraries/Frameworks zu finden, die einem das Leben erleichtern und diese zu benutzen (UI Components, Accessibility, Icons, etc.). Am besten auf bekannte Frameworks setzen, die regelmäßig aktualisiert/gewartet werden.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_abschließend_ein_paar_wünsche_an_das_frontend_welches_ihr_baut">Abschließend ein paar Wünsche an das Frontend, welches ihr baut:</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_abschließend_ein_paar_wünsche_an_das_frontend_welches_ihr_baut">Abschließend ein paar Wünsche an das Frontend, welches ihr baut:</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -569,6 +553,7 @@ Von dieser Seite kommt folgendes Zitat: „Reacts change detection paradigm is s
 </div>
 <div class="paragraph">
 <p>Das war die Reise durch 20 Jahre Webentwicklung – ich bin sehr gespannt, was in 20 Jahren im Web alles möglich ist.</p>
+</div>
 </div>
 </div>
 </div>

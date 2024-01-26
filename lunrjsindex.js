@@ -266,30 +266,6 @@ var documents = [
 
 {
     "id": 33,
-    "uri": "blog/profiles/Christian-Fischer.html",
-    "menu": "Autoren",
-    "title": "Christian Fischer",
-    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 34,
-    "uri": "blog/profiles/Stefan-Gruendling.html",
-    "menu": "Autoren",
-    "title": "Stefan Gründling",
-    "text": " Table of Contents Stefan Gründling Stefan Gründling span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Stefan Gründling ist SAFe® Solution Architect bei der DB Netz AG, dem größten Betreiber von Schieneninfrastruktur in Deutschland. Er arbeitet seit mehr als 10 Jahren in der Beratung und Softwareentwicklung. Als Architekt war er verantwortlich für die Entwicklung der Click&amp;Ride App und die automatische Fahrplankonstruktion mit welchen die DB Netz AG als weltweit erstes Unternehmen über eine App vollständig automatisiert Fahrpläne erstellen konnte. "
-},
-
-{
-    "id": 35,
-    "uri": "blog/profiles/Marcus-Suemnick.html",
-    "menu": "Autoren",
-    "title": "Marcus Sümnick",
-    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 36,
     "uri": "blog/profiles/Johannes-Dienst.html",
     "menu": "Autoren",
     "title": "Johannes Dienst",
@@ -297,7 +273,7 @@ var documents = [
 },
 
 {
-    "id": 37,
+    "id": 34,
     "uri": "blog/profiles/Dr.-Martin-Strunk.html",
     "menu": "Autoren",
     "title": "Dr. Martin Strunk",
@@ -305,7 +281,7 @@ var documents = [
 },
 
 {
-    "id": 38,
+    "id": 35,
     "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
     "title": "Danny Koppenhagen",
@@ -313,7 +289,15 @@ var documents = [
 },
 
 {
-    "id": 39,
+    "id": 36,
+    "uri": "blog/profiles/Christian-Fischer.html",
+    "menu": "Autoren",
+    "title": "Christian Fischer",
+    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 37,
     "uri": "blog/profiles/Bertram-Fey.html",
     "menu": "Autoren",
     "title": "Bertram Fey",
@@ -321,7 +305,7 @@ var documents = [
 },
 
 {
-    "id": 40,
+    "id": 38,
     "uri": "blog/profiles/Bernd-Schimmer.html",
     "menu": "Autoren",
     "title": "Bernd Schimmer",
@@ -329,7 +313,15 @@ var documents = [
 },
 
 {
-    "id": 41,
+    "id": 39,
+    "uri": "blog/profiles/Stefan-Gruendling.html",
+    "menu": "Autoren",
+    "title": "Stefan Gründling",
+    "text": " Table of Contents Stefan Gründling Stefan Gründling span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Stefan Gründling ist SAFe® Solution Architect bei der DB Netz AG, dem größten Betreiber von Schieneninfrastruktur in Deutschland. Er arbeitet seit mehr als 10 Jahren in der Beratung und Softwareentwicklung. Als Architekt war er verantwortlich für die Entwicklung der Click&amp;Ride App und die automatische Fahrplankonstruktion mit welchen die DB Netz AG als weltweit erstes Unternehmen über eine App vollständig automatisiert Fahrpläne erstellen konnte. "
+},
+
+{
+    "id": 40,
     "uri": "blog/profiles/Maximilian-Franzke.html",
     "menu": "Autoren",
     "title": "Maximilian Franzke",
@@ -337,15 +329,15 @@ var documents = [
 },
 
 {
-    "id": 42,
-    "uri": "blog/profiles/Joachim-Schirrmacher.html",
+    "id": 41,
+    "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
-    "title": "Joachim Schirrmacher",
-    "text": " Table of Contents Joachim Schirrmacher Links Joachim Schirrmacher span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Joachim ist seit 2017 bei der DB Systel als Berater und Entwickler. Am liebsten programmiert er funktional mit TypeScript, notfalls aber auch mit Java und Spring Boot, mag REST APIs, aber auch Event Sourcing und Streams. Links LinkedIn Profile GitHub Profile Mastodon Stack Overflow "
+    "title": "Marcus Sümnick",
+    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
-    "id": 43,
+    "id": 42,
     "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
     "menu": "Autoren",
     "title": "Gualter Barbas Baptista",
@@ -353,7 +345,7 @@ var documents = [
 },
 
 {
-    "id": 44,
+    "id": 43,
     "uri": "blog/profiles/Carsten-Thurau.html",
     "menu": "Autoren",
     "title": "Carsten Thurau",
@@ -361,23 +353,7 @@ var documents = [
 },
 
 {
-    "id": 45,
-    "uri": "blog/profiles/Carsten-Hoffmann.html",
-    "menu": "Autoren",
-    "title": "Carsten Hoffmann",
-    "text": " Table of Contents Carsten Hoffmann Links Carsten Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Carsten is an experienced software architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . As a member of a DevOps-Team he is a strong believer, that an architect should be close to the development team in order to create and evolve a software architecture, that meets the business needs. He is a conference speaker and held talks at internal and external conferences, like the DB TechCon and the IT-Tage . He is an Open-Source enthusiast and maintainer of the Trivy Vulnerability Explorer . Links LinkedIn Profile Mastodon Profile GitHub Profile "
-},
-
-{
-    "id": 46,
-    "uri": "blog/profiles/buildIT.html",
-    "menu": "Autoren",
-    "title": "BuildIT",
-    "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 47,
+    "id": 44,
     "uri": "blog/profiles/Tim-Engeleiter.html",
     "menu": "Autoren",
     "title": "Tim Engeleiter",
@@ -385,7 +361,7 @@ var documents = [
 },
 
 {
-    "id": 48,
+    "id": 45,
     "uri": "blog/profiles/Sven-Hesse.html",
     "menu": "Autoren",
     "title": "Sven Hesse",
@@ -393,7 +369,7 @@ var documents = [
 },
 
 {
-    "id": 49,
+    "id": 46,
     "uri": "blog/profiles/Ralf-D.-Mueller.html",
     "menu": "Autoren",
     "title": "Ralf D. Müller",
@@ -401,19 +377,43 @@ var documents = [
 },
 
 {
-    "id": 50,
-    "uri": "blog/profiles/Philippe-Rieffe.html",
-    "menu": "Autoren",
-    "title": "Philippe Rieffe",
-    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 51,
+    "id": 47,
     "uri": "blog/profiles/Oliver-Hammer.html",
     "menu": "Autoren",
     "title": "Oliver Hammer",
     "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Oliver Hammer ist Product Owner einer Einheit mit 32 Teams und 300 Mitarbeitern bei der DB Systel, dem Digitalpartner der DB AG. Er arbeitet seit über 25 Jahren in der Beratung und Software-Entwicklung. In den unterschiedlichsten Rollen vom Entwickler über Architekten, fachlichem Berater und Projektleiter hat er viel Erfahrungen an der Schnittstelle zwischen Business und Technologie in großen Projekten und der Zusammenarbeit in Teams und Organisationen und Vorgehensmodellen gesammelt. "
+},
+
+{
+    "id": 48,
+    "uri": "blog/profiles/Joachim-Schirrmacher.html",
+    "menu": "Autoren",
+    "title": "Joachim Schirrmacher",
+    "text": " Table of Contents Joachim Schirrmacher Links Joachim Schirrmacher span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Joachim ist seit 2017 bei der DB Systel als Berater und Entwickler. Am liebsten programmiert er funktional mit TypeScript, notfalls aber auch mit Java und Spring Boot, mag REST APIs, aber auch Event Sourcing und Streams. Links LinkedIn Profile GitHub Profile Mastodon Stack Overflow "
+},
+
+{
+    "id": 49,
+    "uri": "blog/profiles/Carsten-Hoffmann.html",
+    "menu": "Autoren",
+    "title": "Carsten Hoffmann",
+    "text": " Table of Contents Carsten Hoffmann Links Carsten Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Carsten is an experienced software architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . As a member of a DevOps-Team he is a strong believer, that an architect should be close to the development team in order to create and evolve a software architecture, that meets the business needs. He is a conference speaker and held talks at internal and external conferences, like the DB TechCon and the IT-Tage . He is an Open-Source enthusiast and maintainer of the Trivy Vulnerability Explorer . Links LinkedIn Profile Mastodon Profile GitHub Profile "
+},
+
+{
+    "id": 50,
+    "uri": "blog/profiles/buildIT.html",
+    "menu": "Autoren",
+    "title": "BuildIT",
+    "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 51,
+    "uri": "blog/profiles/Philippe-Rieffe.html",
+    "menu": "Autoren",
+    "title": "Philippe Rieffe",
+    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
