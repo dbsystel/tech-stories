@@ -46,8 +46,13 @@ customTasks = [
 
 //*****************************************************************************************
 
+def kroki = System.getenv("diagram_server_url")?:'https://kroki.io/@'
+jbake.asciidoctorAttributes = [
+        "diagram-server-url="+kroki,
+        "diagram-server-type=kroki_io@"
+]
+System.out.println "using "+kroki
 //Configuration for microsite: generateSite + previewSite
-
 microsite = [:]
 
 // these properties will be set as jBake properties

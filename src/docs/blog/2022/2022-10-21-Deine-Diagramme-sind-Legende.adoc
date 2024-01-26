@@ -21,9 +21,6 @@ td.tableblock {overflow: auto; width: 50%;}
 
 ifndef::imagesdir[:imagesdir: ../../images]
 
-:diagram-server-url: https://kroki.io/
-:diagram-server-type: kroki_io
-
 == Deine PlantUML-Diagramme sind Legende?
 
 ...dann verpasse ihnen eine Legende! Ein Diagramm soll nicht nur für Insider lesbar sein. Mit einer Legende erklärst du die verwendeten Symbole und Farben. In diesem Artikel zeige ich dir, wie es geht.
