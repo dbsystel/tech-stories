@@ -1,0 +1,16 @@
+def artifactoryGradlePlugins = System.getenv("artifactoryGradlePlugins")
+def artifactoryMaven = System.getenv("artifactoryMaven")
+
+if (artifactoryGradlePlugins) {
+    allprojects {
+        buildscript {
+            repositories {
+                maven { url = artifactoryGradlePlugins }
+            }
+        }
+        repositories {
+            maven { url = artifactoryMaven }
+        }
+    }
+    println ">>> repository locations initialized via init.gradle"
+}
