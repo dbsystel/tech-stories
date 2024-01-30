@@ -13,7 +13,7 @@ var documents = [
     "uri": "blog/2024/2024-01-25-Evolution-der-Webentwicklung.html",
     "menu": "Blog",
     "title": "Meine Reise durch die Evolution der Webentwicklung",
-    "text": " Table of Contents Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst: Meine ersten Erfahrungen mit dem Internet Wie wurden Webseiten 2014 gebaut? Wie ist der Stand heute? Wie helfen moderne Frontends bei der Performance? Hier der Aufbau eines modernen Frontends mit BFF (Backend for Frontend): Wie baue ich Frontends? Bevor ich mit einem neuen Projekt anfange Abschließend ein paar Wünsche an das Frontend, welches ihr baut: Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung In diesem persönlichen Rückblick tauchen wir ein in die faszinierende Welt der Webentwicklung – von den frühen Tagen des manuellen Codings bis hin zu den modernen Technologien, die heute den Standard setzen. Begleitet mich auf meiner Reise durch die Zeit, in der sich HTML, CSS und JavaScript von Grund auf verändert haben und entdeckt, wie sich die Herausforderungen und Lösungen in der Webentwicklung im Laufe der Jahre gewandelt haben. Von den ersten Schritten mit einfachen Tools bis hin zu den komplexen Frameworks und Methoden von heute – dies ist eine Geschichte von Innovation, Lernen und ständiger Weiterentwicklung. Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst: 1991 erste Webseite mit HTML 1995 PHP und JavaScript 1996 CSS ------------- bis hierhin kaum automatisiertes Deployment möglich (z. B. über FTP) 2000 SVN 2003 Wordpress (Joomla/Typo3 etc.) 2005 GIT ------------- Versionierung 2006 jQuery und AWS 2008 Static Site Generators (SSG) 2009 Node.js 2010 NPM und AngularJS 2011 Bootstrap CSS 2012 Webpack, TypeScript 2013 Docker, React und Server Side Rendering ------------- automatisierte und idempotente Deployments möglich 2014 Vue.js, CSS-in-JS 2015 PWAs (100% seit 2022) 2016 Next.js , Angular (4+) 2020 Vite 2022 Generatoren für Frontend/Backend Kombinationen refine.new , RedwoodJS , Blitz.js 2023 Ende des Internet Explorers 2023 React Server Components Mehr Details und ausführlichere Infos gibt es unter anderem auf: - designmodo.com: The Short History of Website Building - Nicholas Mendez: A \"Brief\" History of the Web Part 4 - Nick Telsan: What Even Are React Server Components - Jesse Pence: React Server Components Meine ersten Erfahrungen mit dem Internet Wenn ich mich an die Anfänge meiner Tätigkeit erinnere, haben wir HTML, CSS, PHP und jQuery mit BBedit selbst geschrieben, gespeichert und manuell per FTP auf Server hochgeladen. Das Beste, was es damals gab, war das Programm Transmit, mit dem einzelne Ordner synchronisiert werden konnten. Alles war sehr fehleranfällig, ohne Versionierung und daher schwer bis gar nicht testbar – nur manuell. jQuery-Plugins wurden mit Abhängigkeiten zu unterschiedlichen jQuery-Versionen benutzt, die nicht unbedingt kompatibel waren. Man musste jedes Mal hoffen, dass die Webseite noch funktionierte, nachdem man Code hinzugefügt hatte. Was mich immer am meisten geärgert hat, war ein Flackern, sobald das JavaScript geladen wurde und über das PHP-gerenderte HTML noch extra DOM-Elemente legte. Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch gerenderten Web: Wann ist der DOM fertig, wann ist das JS geladen und wird ausgeführt, wer hat bei intensiven Seiten „das Sagen“ – das Frontend oder das Backend (Routing, Views)? Wie wurden Webseiten 2014 gebaut? Nach meinem Studium habe ich in Hamburg bei AboutYou in einer IT-Agentur gearbeitet, die nach Scrum ihren Arbeitszyklus gestaltet und schon damals diverse Tools zum Bauen des Frontends benutzt hat. Da die Tools alle am Anfang ihres Lebenszyklus waren, mussten mindestens drei Package-Manager und Erweiterungen installiert werden, bevor die Webseite gebaut werden konnte. Gebaut? Ja, das war die Zeit, in der Grunt und Webpack eine moderne und strukturierte Frontendentwicklung ermöglicht haben. Vorbei waren die Zeiten mit unterschiedlichen Encodings und Zeilenumbrüchen. Was für ein Gefühl es war, lokal einen Befehl in der Kommandozeile aufzurufen und die zu entwickelnde Webseite auf dem eigenen Gerät zu sehen – heute Standard. Hier lernte ich zum ersten Mal Package-Manager und Versionierung kennen. Und noch ein Thema kam auf: IDEs für Webentwicklung. Bisher war der beste Freund der Inspektor im Browser, eine lokale, beim Entwickler stattfindende Überprüfung oder Unterstützung konnten bis dahin nur die „richtigen“ Programmiersprachen und die dazugehörigen teuren IDEs (z. B. IntelliJ) bieten. Mit Atom gab es eine IDE, die schnell startete, sich nur um Websprachen kümmerte und über Plugins erweiterbar war. Jetzt gab es Autovervollständigung für HTML/JS/CSS und über Webpack konnten alle Dateien optimiert, komprimiert und kombiniert werden. Wie ist der Stand heute? Sehr gut! Viele Probleme der Vergangenheit sind verschwunden (Internet Explorer existiert nicht mehr, schlechte Kompatibilität der Browser) und es gibt eine Reihe von Möglichkeiten, Frontends mit Frameworks zu bauen, die alle ihre Vor- und kleinen Nachteile haben. Z. B. hat sich Visual Studio Code als Nachfolger von Atom zum (kostenlosen) Standard für Webentwicklung mit noch mehr Möglichkeiten zur generellen Verbesserung gemausert. Frontend-Frameworks gibt es viele (und es kommen immer mehr dazu) – durchgesetzt haben sich aktuell React, Angular, Vue.js und Svelte. Wie helfen moderne Frontends bei der Performance? Schauen wir uns hierzu den Ablauf einer klassischen Webseite an: Ein Endgerät ruft die URL unserer Seite auf. Der Server antwortet je nach Session/Cookie/Authentication mit einer Login-Seite oder dem gerendertem HTML eines PHP-Skripts. Evtl. wurde der Client auf eine andere URL umgeleitet. Das HTML wird vom Browser interpretiert und JS/CSS/Bilder werden nachgeladen. Das CSS sorgt für das Styling der Seite. Das ausgelieferte JavaScript wird interpretiert, verändert das DOM und lädt neue Daten nach, und das wiederholt sich, wie hier beschrieben. Alle Schritte benötigen Zeit und führen zu einer mehrsekündigen Wartezeit, bis die Webseite benutzt werden kann. Hier der Aufbau eines modernen Frontends mit BFF (Backend for Frontend): Der Client fragt den Server an und erhält HTML, JS und CSS sowie den Login-Status vom Backend, und zwar so aufbereitet, dass der Browser es direkt darstellen kann, ohne weitere Schleifen zu drehen. Weitere Inhalte werden z. B. als JSON nachgeladen und im Browser mit JavaScript gerendert. Zusätzlich gibt es für alle JS-Frameworks Bundler, die beim Bauen der auszuliefernden Dateien diese optimal aufbereiten, sodass der User innerhalb kürzester Zeit mit dem Frontend interagieren kann. Wie baue ich Frontends? Mein Lieblings-Javascript-Framework ist React. Eine gute Übersicht über andere JS-Frameworks und was sie unterscheidet, findet ihr z. B. auf themer.dev[ https://themer.dev/blog/the-single-most-important-factor-that-differentiates-front-end-frameworks ]. Von dieser Seite kommt folgendes Zitat: „Reacts change detection paradigm is straightforward: the application state is maintained inside the framework (with APIs exposed to the developer for updating it) so that React knows when to re-render.“ Und was heißt das jetzt? Nicht mehr der Browser oder das Backend entscheiden, auf welcher URL was passiert, sondern das Frontend. Und wenn im Frontend eine Aktion ausgelöst wird, entscheidet auch das Frontend, was passiert. Das heißt nicht, dass es kein Backend gibt oder dass z. B. Validierung nur auf der Frontendseite passiert. Sicherheit im Web sollte der wichtigste Aspekt sein. Bevor ich mit einem neuen Projekt anfange Was sich für mich als Erfolgsrezept herausgestellt hat: Sich am Anfang eines Neu- oder Umbaus einer Seite viel Zeit nehmen, um passende Libraries/Frameworks zu finden, die einem das Leben erleichtern und diese zu benutzen (UI Components, Accessibility, Icons, etc.). Am besten auf bekannte Frameworks setzen, die regelmäßig aktualisiert/gewartet werden. Abschließend ein paar Wünsche an das Frontend, welches ihr baut: Macht die Webseite responsive (Probiert eure Webseite mit unterschiedlichen Geräten in unterschiedlichen Auflösungen aus) Räumt euren Header-Bereich auf und nutzt z. B. ealfavicongenerator.net , um für alle ein schönes Favicon zu zaubern Nutzt Komponenten die Accessability mit eingebaut haben (z. B. Blueprint , Mantine oder React Suite ) Macht den Google Lighthouse Test und behebt die wichtigsten Probleme Macht nur eine PWA, wenn offline-Inhalte essenziell sind oder ihr eine richtige App ausliefert Erlaubt das Zoomen eurer Seiten, sowie das Kopieren und Einfügen von Text Wenn etwas sich wie ein link verhält, dann lasst die User Link-Aktionen machen (z. B. speichern unter) Macht Hover-Styles für Links Wenn sich die Gui geändert hat, nachdem geklickt wurde, ändert die URL Das war die Reise durch 20 Jahre Webentwicklung – ich bin sehr gespannt, was in 20 Jahren im Web alles möglich ist. "
+    "text": " Table of Contents Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst: Meine ersten Erfahrungen mit dem Internet Wie wurden Webseiten 2014 gebaut? Wie ist der Stand heute? Wie helfen moderne Frontends bei der Performance? Hier der Aufbau eines modernen Frontends mit BFF (Backend for Frontend): Wie baue ich Frontends? Bevor ich mit einem neuen Projekt anfange Abschließend ein paar Wünsche an das Frontend, welches ihr baut: Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung In diesem persönlichen Rückblick tauchen wir ein in die faszinierende Welt der Webentwicklung – von den frühen Tagen des manuellen Codings bis hin zu den modernen Technologien, die heute den Standard setzen. Begleitet mich auf meiner Reise durch die Zeit, in der sich HTML, CSS und JavaScript von Grund auf verändert haben und entdeckt, wie sich die Herausforderungen und Lösungen in der Webentwicklung im Laufe der Jahre gewandelt haben. Von den ersten Schritten mit einfachen Tools bis hin zu den komplexen Frameworks und Methoden von heute – dies ist eine Geschichte von Innovation, Lernen und ständiger Weiterentwicklung. Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst: 1991 erste Webseite mit HTML 1995 PHP und JavaScript 1996 CSS ------------- bis hierhin kaum automatisiertes Deployment möglich (z. B. über FTP) 2000 SVN 2003 Wordpress (Joomla/Typo3 etc.) 2005 GIT ------------- Versionierung 2006 jQuery und AWS 2008 Static Site Generators (SSG) 2009 Node.js 2010 NPM und AngularJS 2011 Bootstrap CSS 2012 Webpack, TypeScript 2013 Docker, React und Server Side Rendering ------------- automatisierte und idempotente Deployments möglich 2014 Vue.js , CSS-in-JS 2015 PWAs (100% seit 2022) 2016 Next.js , Angular (4+) 2020 Vite 2022 Generatoren für Frontend/Backend Kombinationen refine.new , RedwoodJS , Blitz.js 2023 Ende des Internet Explorers 2023 React Server Components Mehr Details und ausführlichere Infos gibt es unter anderem auf: designmodo.com: The Short History of Website Building Nicholas Mendez: A \"Brief\" History of the Web Part 4 Nick Telsan: What Even Are React Server Components Jesse Pence: React Server Components Meine ersten Erfahrungen mit dem Internet Wenn ich mich an die Anfänge meiner Tätigkeit erinnere, haben wir HTML, CSS, PHP und jQuery mit BBedit selbst geschrieben, gespeichert und manuell per FTP auf Server hochgeladen. Das Beste, was es damals gab, war das Programm Transmit, mit dem einzelne Ordner synchronisiert werden konnten. Alles war sehr fehleranfällig, ohne Versionierung und daher schwer bis gar nicht testbar – nur manuell. jQuery-Plugins wurden mit Abhängigkeiten zu unterschiedlichen jQuery-Versionen benutzt, die nicht unbedingt kompatibel waren. Man musste jedes Mal hoffen, dass die Webseite noch funktionierte, nachdem man Code hinzugefügt hatte. Was mich immer am meisten geärgert hat, war ein Flackern, sobald das JavaScript geladen wurde und über das PHP-gerenderte HTML noch extra DOM-Elemente legte. Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch gerenderten Web: Wann ist der DOM fertig geladen? Wann ist das JS geladen und wird ausgeführt? Wer hat bei intensiven Seiten „das Sagen“ bzgl. Routing und Views – das Frontend oder das Backend? Wie wurden Webseiten 2014 gebaut? Nach meinem Studium habe ich in Hamburg bei AboutYou in einer IT-Agentur gearbeitet, die nach Scrum ihren Arbeitszyklus gestaltet und schon damals diverse Tools zum Bauen des Frontends benutzt hat. Da die Tools alle am Anfang ihres Lebenszyklus waren, mussten mindestens drei Package-Manager und Erweiterungen installiert werden, bevor die Webseite gebaut werden konnte. Gebaut? Ja, das war die Zeit, in der Grunt und Webpack eine moderne und strukturierte Frontendentwicklung ermöglicht haben. Vorbei waren die Zeiten mit unterschiedlichen Encodings und Zeilenumbrüchen. Was für ein Gefühl es war, lokal einen Befehl in der Kommandozeile aufzurufen und die zu entwickelnde Webseite auf dem eigenen Gerät zu sehen – heute Standard. Hier lernte ich zum ersten Mal Package-Manager und Versionierung kennen. Und noch ein Thema kam auf: IDEs für Webentwicklung. Bisher war der beste Freund der Inspektor im Browser, eine lokale, beim Entwickler stattfindende Überprüfung oder Unterstützung konnten bis dahin nur die „richtigen“ Programmiersprachen und die dazugehörigen teuren IDEs (z. B. IntelliJ) bieten. Mit Atom gab es eine IDE, die schnell startete, sich nur um Websprachen kümmerte und über Plugins erweiterbar war. Jetzt gab es Autovervollständigung für HTML/JS/CSS und über Webpack konnten alle Dateien optimiert, komprimiert und kombiniert werden. Wie ist der Stand heute? Sehr gut! Viele Probleme der Vergangenheit sind verschwunden (Internet Explorer existiert nicht mehr, schlechte Kompatibilität der Browser) und es gibt eine Reihe von Möglichkeiten, Frontends mit Frameworks zu bauen, die alle ihre Vor- und kleinen Nachteile haben. Z. B. hat sich Visual Studio Code zum kostenlosen Nachfolger von Atom für die Webentwicklung mit noch mehr Möglichkeiten zur generellen Verbesserung gemausert. Frontend-Frameworks gibt es viele (und es kommen immer mehr dazu) – durchgesetzt haben sich aktuell React, Angular, Vue.js und Svelte. Wie helfen moderne Frontends bei der Performance? Schauen wir uns hierzu den Ablauf einer klassischen Webseite an: Ein Endgerät ruft die URL unserer Seite auf. Der Server antwortet je nach Session/Cookie/Authentication mit einer Login-Seite oder dem gerendertem HTML eines PHP-Skripts. Evtl. wurde der Client auf eine andere URL umgeleitet. Das HTML wird vom Browser interpretiert und JS/CSS/Bilder werden nachgeladen. Das CSS sorgt für das Styling der Seite. Das ausgelieferte JavaScript wird interpretiert, verändert das DOM und lädt neue Daten nach, und das wiederholt sich, wie hier beschrieben. Alle Schritte benötigen Zeit und führen zu einer mehrsekündigen Wartezeit, bis die Webseite benutzt werden kann. Hier der Aufbau eines modernen Frontends mit BFF (Backend for Frontend): Der Client fragt den Server an und erhält HTML, JS und CSS sowie den Login-Status vom Backend, und zwar so aufbereitet, dass der Browser es direkt darstellen kann, ohne weitere Schleifen zu drehen. Weitere Inhalte werden z. B. als JSON nachgeladen und im Browser mit JavaScript gerendert. Zusätzlich gibt es für alle JS-Frameworks Bundler, die beim Bauen der auszuliefernden Dateien diese optimal aufbereiten, sodass der User innerhalb kürzester Zeit mit dem Frontend interagieren kann. Wie baue ich Frontends? Mein Lieblings-Javascript-Framework ist React. Eine gute Übersicht über andere JS-Frameworks und was sie unterscheidet, findet ihr z. B. auf themer.dev . Von dieser Seite kommt folgendes Zitat: „Reacts change detection paradigm is straightforward: the application state is maintained inside the framework (with APIs exposed to the developer for updating it) so that React knows when to re-render.“ Und was heißt das jetzt? Nicht mehr der Browser oder das Backend entscheiden, auf welcher URL was passiert, sondern das Frontend. Und wenn im Frontend eine Aktion ausgelöst wird, entscheidet auch das Frontend, was passiert. Das heißt nicht, dass es kein Backend gibt oder dass z. B. Validierung nur auf der Frontendseite passiert. Sicherheit im Web sollte der wichtigste Aspekt sein. Bevor ich mit einem neuen Projekt anfange Was sich für mich als Erfolgsrezept herausgestellt hat: Sich am Anfang eines Neu- oder Umbaus einer Seite viel Zeit nehmen, um passende Libraries/Frameworks zu finden, die einem das Leben erleichtern und diese zu benutzen (UI Components, Accessibility, Icons, etc.). Am besten auf bekannte Frameworks setzen, die regelmäßig aktualisiert/gewartet werden. Abschließend ein paar Wünsche an das Frontend, welches ihr baut: Macht die Webseite responsive (Probiert eure Webseite mit unterschiedlichen Geräten in unterschiedlichen Auflösungen aus) Räumt euren Header-Bereich auf und nutzt z. B. realfavicongenerator.net , um für alle ein schönes Favicon zu zaubern Nutzt Komponenten die Accessability mit eingebaut haben (z. B. Blueprint , Mantine oder React Suite ) Macht den Google Lighthouse Test und behebt die wichtigsten Probleme Macht nur eine PWA, wenn offline-Inhalte essenziell sind oder ihr eine richtige App ausliefert Erlaubt das Zoomen eurer Seiten, sowie das Kopieren und Einfügen von Text Wenn etwas sich wie ein link verhält, dann lasst die User Link-Aktionen machen (z. B. speichern unter) Macht Hover-Styles für Links Wenn sich die Gui geändert hat, nachdem geklickt wurde, ändert die URL Das war die Reise durch 20 Jahre Webentwicklung – ich bin sehr gespannt, was in 20 Jahren im Web alles möglich ist. "
 },
 
 {
@@ -282,14 +282,6 @@ var documents = [
 
 {
     "id": 35,
-    "uri": "blog/profiles/Danny-Koppenhagen.html",
-    "menu": "Autoren",
-    "title": "Danny Koppenhagen",
-    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
-},
-
-{
-    "id": 36,
     "uri": "blog/profiles/Christian-Fischer.html",
     "menu": "Autoren",
     "title": "Christian Fischer",
@@ -297,15 +289,7 @@ var documents = [
 },
 
 {
-    "id": 37,
-    "uri": "blog/profiles/Bertram-Fey.html",
-    "menu": "Autoren",
-    "title": "Bertram Fey",
-    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
-},
-
-{
-    "id": 38,
+    "id": 36,
     "uri": "blog/profiles/Bernd-Schimmer.html",
     "menu": "Autoren",
     "title": "Bernd Schimmer",
@@ -313,7 +297,7 @@ var documents = [
 },
 
 {
-    "id": 39,
+    "id": 37,
     "uri": "blog/profiles/Stefan-Gruendling.html",
     "menu": "Autoren",
     "title": "Stefan Gründling",
@@ -321,15 +305,7 @@ var documents = [
 },
 
 {
-    "id": 40,
-    "uri": "blog/profiles/Maximilian-Franzke.html",
-    "menu": "Autoren",
-    "title": "Maximilian Franzke",
-    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
-},
-
-{
-    "id": 41,
+    "id": 38,
     "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
     "title": "Marcus Sümnick",
@@ -337,7 +313,7 @@ var documents = [
 },
 
 {
-    "id": 42,
+    "id": 39,
     "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
     "menu": "Autoren",
     "title": "Gualter Barbas Baptista",
@@ -345,15 +321,23 @@ var documents = [
 },
 
 {
-    "id": 43,
-    "uri": "blog/profiles/Carsten-Thurau.html",
+    "id": 40,
+    "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
-    "title": "Carsten Thurau",
-    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Danny Koppenhagen",
+    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
 },
 
 {
-    "id": 44,
+    "id": 41,
+    "uri": "blog/profiles/Bertram-Fey.html",
+    "menu": "Autoren",
+    "title": "Bertram Fey",
+    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
+},
+
+{
+    "id": 42,
     "uri": "blog/profiles/Tim-Engeleiter.html",
     "menu": "Autoren",
     "title": "Tim Engeleiter",
@@ -361,15 +345,7 @@ var documents = [
 },
 
 {
-    "id": 45,
-    "uri": "blog/profiles/Sven-Hesse.html",
-    "menu": "Autoren",
-    "title": "Sven Hesse",
-    "text": " Table of Contents Sven Hesse Links Sven Hesse span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH. Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility. Links Persönliche Website "
-},
-
-{
-    "id": 46,
+    "id": 43,
     "uri": "blog/profiles/Ralf-D.-Mueller.html",
     "menu": "Autoren",
     "title": "Ralf D. Müller",
@@ -377,7 +353,7 @@ var documents = [
 },
 
 {
-    "id": 47,
+    "id": 44,
     "uri": "blog/profiles/Oliver-Hammer.html",
     "menu": "Autoren",
     "title": "Oliver Hammer",
@@ -385,7 +361,15 @@ var documents = [
 },
 
 {
-    "id": 48,
+    "id": 45,
+    "uri": "blog/profiles/Maximilian-Franzke.html",
+    "menu": "Autoren",
+    "title": "Maximilian Franzke",
+    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
+},
+
+{
+    "id": 46,
     "uri": "blog/profiles/Joachim-Schirrmacher.html",
     "menu": "Autoren",
     "title": "Joachim Schirrmacher",
@@ -393,7 +377,15 @@ var documents = [
 },
 
 {
-    "id": 49,
+    "id": 47,
+    "uri": "blog/profiles/Carsten-Thurau.html",
+    "menu": "Autoren",
+    "title": "Carsten Thurau",
+    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 48,
     "uri": "blog/profiles/Carsten-Hoffmann.html",
     "menu": "Autoren",
     "title": "Carsten Hoffmann",
@@ -401,11 +393,19 @@ var documents = [
 },
 
 {
-    "id": 50,
+    "id": 49,
     "uri": "blog/profiles/buildIT.html",
     "menu": "Autoren",
     "title": "BuildIT",
     "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 50,
+    "uri": "blog/profiles/Sven-Hesse.html",
+    "menu": "Autoren",
+    "title": "Sven Hesse",
+    "text": " Table of Contents Sven Hesse Links Sven Hesse span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH. Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility. Links Persönliche Website "
 },
 
 {

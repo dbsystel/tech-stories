@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Fri, 26 Jan 2024 09:14:13 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Jan 2024 09:14:13 +0000</lastBuildDate>
+    <pubDate>Tue, 30 Jan 2024 10:19:39 +0000</pubDate>
+    <lastBuildDate>Tue, 30 Jan 2024 10:19:39 +0000</lastBuildDate>
 
     
     <item>
@@ -39,7 +39,11 @@
 &lt;h2 id=&quot;_vom_code_zum_klick_meine_reise_durch_die_evolution_der_webentwicklung&quot;&gt;Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;In diesem persönlichen Rückblick tauchen wir ein in die faszinierende Welt der Webentwicklung – von den frühen Tagen des manuellen Codings bis hin zu den modernen Technologien, die heute den Standard setzen. Begleitet mich auf meiner Reise durch die Zeit, in der sich HTML, CSS und JavaScript von Grund auf verändert haben und entdeckt, wie sich die Herausforderungen und Lösungen in der Webentwicklung im Laufe der Jahre gewandelt haben. Von den ersten Schritten mit einfachen Tools bis hin zu den komplexen Frameworks und Methoden von heute – dies ist eine Geschichte von Innovation, Lernen und ständiger Weiterentwicklung.&lt;/p&gt;
+&lt;p&gt;In diesem persönlichen Rückblick tauchen wir ein in die faszinierende Welt der Webentwicklung – von den frühen Tagen des manuellen Codings bis hin zu den modernen Technologien, die heute den Standard setzen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Begleitet mich auf meiner Reise durch die Zeit, in der sich HTML, CSS und JavaScript von Grund auf verändert haben und entdeckt, wie sich die Herausforderungen und Lösungen in der Webentwicklung im Laufe der Jahre gewandelt haben. Von den ersten Schritten mit einfachen Tools bis hin zu den komplexen Frameworks und Methoden von heute – dies ist eine Geschichte von Innovation, Lernen und ständiger Weiterentwicklung.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_zuerst_ein_paar_meilensteine_der_webentwicklung_tabellarisch_zusammengefasst&quot;&gt;Zuerst ein paar Meilensteine der Webentwicklung tabellarisch zusammengefasst:&lt;/h3&gt;
@@ -52,9 +56,15 @@
 &lt;p&gt;1995 PHP und JavaScript&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;1996 CSS
-------------- bis hierhin kaum automatisiertes Deployment möglich (z. B. über FTP)&lt;/p&gt;
+&lt;p&gt;1996 CSS&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;------------- bis hierhin kaum automatisiertes Deployment möglich (z. B. über FTP)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot; start=&quot;4&quot;&gt;
 &lt;li&gt;
 &lt;p&gt;2000 SVN&lt;/p&gt;
 &lt;/li&gt;
@@ -62,9 +72,15 @@
 &lt;p&gt;2003 Wordpress (Joomla/Typo3 etc.)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;2005 GIT
-------------- Versionierung&lt;/p&gt;
+&lt;p&gt;2005 GIT&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;------------- Versionierung&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot; start=&quot;7&quot;&gt;
 &lt;li&gt;
 &lt;p&gt;2006 jQuery und AWS&lt;/p&gt;
 &lt;/li&gt;
@@ -84,17 +100,23 @@
 &lt;p&gt;2012 Webpack, TypeScript&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;2013 Docker, &lt;a href=&quot;https://react.dev&quot;&gt;React&lt;/a&gt; und Server Side Rendering
-------------- automatisierte und idempotente Deployments möglich&lt;/p&gt;
+&lt;p&gt;2013 Docker, &lt;a href=&quot;https://react.dev&quot;&gt;React&lt;/a&gt; und Server Side Rendering&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;------------- automatisierte und idempotente Deployments möglich&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;olist arabic&quot;&gt;
+&lt;ol class=&quot;arabic&quot; start=&quot;14&quot;&gt;
 &lt;li&gt;
-&lt;p&gt;2014 Vue.js, CSS-in-JS&lt;/p&gt;
+&lt;p&gt;2014 &lt;a href=&quot;https://vuejs.org&quot;&gt;Vue.js&lt;/a&gt;, CSS-in-JS&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;2015 PWAs (100% seit 2022)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;2016 &lt;a href=&quot;https://nextjs.org&quot;&gt;Next.js&lt;/a&gt;, Angular (4+)&lt;/p&gt;
+&lt;p&gt;2016 &lt;a href=&quot;https://nextjs.org&quot;&gt;Next.js&lt;/a&gt;, &lt;a href=&quot;https://angular.io&quot;&gt;Angular&lt;/a&gt; (4+)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;2020 &lt;a href=&quot;https://vitejs.dev&quot;&gt;Vite&lt;/a&gt;&lt;/p&gt;
@@ -111,18 +133,45 @@
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Mehr Details und ausführlichere Infos gibt es unter anderem auf:
-- &lt;a href=&quot;https://designmodo.com/history-website-building/&quot;&gt;designmodo.com: The Short History of Website Building&lt;/a&gt;
-- &lt;a href=&quot;https://dev.to/snickdx/a-brief-history-of-the-web-part-4-194b&quot;&gt;Nicholas Mendez: A &quot;Brief&quot; History of the Web Part 4&lt;/a&gt;
-- &lt;a href=&quot;https://www.viget.com/articles/what-even-are-react-server-components/?token=PFnI6MT715nmYK0BZzQEiRsYQ7w_x5SP&quot;&gt;Nick Telsan: What Even Are React Server Components&lt;/a&gt;
-- &lt;a href=&quot;https://jessedit.tech/articles/react-server-components/1-background/?ck_subscriber_id=1652261910&quot;&gt;Jesse Pence: React Server Components&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Mehr Details und ausführlichere Infos gibt es unter anderem auf:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://designmodo.com/history-website-building/&quot;&gt;designmodo.com: The Short History of Website Building&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://dev.to/snickdx/a-brief-history-of-the-web-part-4-194b&quot;&gt;Nicholas Mendez: A &quot;Brief&quot; History of the Web Part 4&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.viget.com/articles/what-even-are-react-server-components/?token=PFnI6MT715nmYK0BZzQEiRsYQ7w_x5SP&quot;&gt;Nick Telsan: What Even Are React Server Components&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://jessedit.tech/articles/react-server-components/1-background/?ck_subscriber_id=1652261910&quot;&gt;Jesse Pence: React Server Components&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_meine_ersten_erfahrungen_mit_dem_internet&quot;&gt;Meine ersten Erfahrungen mit dem Internet&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Wenn ich mich an die Anfänge meiner Tätigkeit erinnere, haben wir HTML, CSS, PHP und jQuery mit BBedit selbst geschrieben, gespeichert und manuell per FTP auf Server hochgeladen. Das Beste, was es damals gab, war das Programm Transmit, mit dem einzelne Ordner synchronisiert werden konnten. Alles war sehr fehleranfällig, ohne Versionierung und daher schwer bis gar nicht testbar – nur manuell. jQuery-Plugins wurden mit Abhängigkeiten zu unterschiedlichen jQuery-Versionen benutzt, die nicht unbedingt kompatibel waren. Man musste jedes Mal hoffen, dass die Webseite noch funktionierte, nachdem man Code hinzugefügt hatte. Was mich immer am meisten geärgert hat, war ein Flackern, sobald das JavaScript geladen wurde und über das PHP-gerenderte HTML noch extra DOM-Elemente legte.
-Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch gerenderten Web: Wann ist der DOM fertig, wann ist das JS geladen und wird ausgeführt, wer hat bei intensiven Seiten „das Sagen“ – das Frontend oder das Backend (Routing, Views)?&lt;/p&gt;
+&lt;p&gt;Wenn ich mich an die Anfänge meiner Tätigkeit erinnere, haben wir HTML, CSS, PHP und jQuery mit BBedit selbst geschrieben, gespeichert und manuell per FTP auf Server hochgeladen. Das Beste, was es damals gab, war das Programm Transmit, mit dem einzelne Ordner synchronisiert werden konnten. Alles war sehr fehleranfällig, ohne Versionierung und daher schwer bis gar nicht testbar – nur manuell. jQuery-Plugins wurden mit Abhängigkeiten zu unterschiedlichen jQuery-Versionen benutzt, die nicht unbedingt kompatibel waren. Man musste jedes Mal hoffen, dass die Webseite noch funktionierte, nachdem man Code hinzugefügt hatte. Was mich immer am meisten geärgert hat, war ein Flackern, sobald das JavaScript geladen wurde und über das PHP-gerenderte HTML noch extra DOM-Elemente legte.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch gerenderten Web:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Wann ist der DOM fertig geladen?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Wann ist das JS geladen und wird ausgeführt?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Wer hat bei intensiven Seiten „das Sagen“ bzgl. Routing und Views – das Frontend oder das Backend?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
@@ -134,7 +183,7 @@ Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch ger
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_wie_ist_der_stand_heute&quot;&gt;Wie ist der Stand heute?&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Sehr gut! Viele Probleme der Vergangenheit sind verschwunden (Internet Explorer existiert nicht mehr, schlechte Kompatibilität der Browser) und es gibt eine Reihe von Möglichkeiten, Frontends mit Frameworks zu bauen, die alle ihre Vor- und kleinen Nachteile haben. Z. B. hat sich Visual Studio Code als Nachfolger von Atom zum (kostenlosen) Standard für Webentwicklung mit noch mehr Möglichkeiten zur generellen Verbesserung gemausert. Frontend-Frameworks gibt es viele (und es kommen immer mehr dazu) – durchgesetzt haben sich aktuell React, Angular, Vue.js und Svelte.&lt;/p&gt;
+&lt;p&gt;Sehr gut! Viele Probleme der Vergangenheit sind verschwunden (Internet Explorer existiert nicht mehr, schlechte Kompatibilität der Browser) und es gibt eine Reihe von Möglichkeiten, Frontends mit Frameworks zu bauen, die alle ihre Vor- und kleinen Nachteile haben. Z. B. hat sich Visual Studio Code zum kostenlosen Nachfolger von Atom für die Webentwicklung mit noch mehr Möglichkeiten zur generellen Verbesserung gemausert. Frontend-Frameworks gibt es viele (und es kommen immer mehr dazu) – durchgesetzt haben sich aktuell React, Angular, Vue.js und Svelte.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
@@ -152,8 +201,7 @@ Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch ger
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_wie_baue_ich_frontends&quot;&gt;Wie baue ich Frontends?&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Mein Lieblings-Javascript-Framework ist React. Eine gute Übersicht über andere JS-Frameworks und was sie unterscheidet, findet ihr z. B. auf themer.dev[&lt;a href=&quot;https://themer.dev/blog/the-single-most-important-factor-that-differentiates-front-end-frameworks&quot; class=&quot;bare&quot;&gt;https://themer.dev/blog/the-single-most-important-factor-that-differentiates-front-end-frameworks&lt;/a&gt;].
-Von dieser Seite kommt folgendes Zitat: „Reacts change detection paradigm is straightforward: the application state is maintained inside the framework (with APIs exposed to the developer for updating it) so that React knows when to re-render.“ Und was heißt das jetzt? Nicht mehr der Browser oder das Backend entscheiden, auf welcher URL was passiert, sondern das Frontend. Und wenn im Frontend eine Aktion ausgelöst wird, entscheidet auch das Frontend, was passiert. Das heißt nicht, dass es kein Backend gibt oder dass z. B. Validierung nur auf der Frontendseite passiert. Sicherheit im Web sollte der wichtigste Aspekt sein.&lt;/p&gt;
+&lt;p&gt;Mein Lieblings-Javascript-Framework ist React. Eine gute Übersicht über andere JS-Frameworks und was sie unterscheidet, findet ihr z. B. auf &lt;a href=&quot;https://themer.dev/blog/the-single-most-important-factor-that-differentiates-front-end-frameworks&quot;&gt;themer.dev&lt;/a&gt;. Von dieser Seite kommt folgendes Zitat: „Reacts change detection paradigm is straightforward: the application state is maintained inside the framework (with APIs exposed to the developer for updating it) so that React knows when to re-render.“ Und was heißt das jetzt? Nicht mehr der Browser oder das Backend entscheiden, auf welcher URL was passiert, sondern das Frontend. Und wenn im Frontend eine Aktion ausgelöst wird, entscheidet auch das Frontend, was passiert. Das heißt nicht, dass es kein Backend gibt oder dass z. B. Validierung nur auf der Frontendseite passiert. Sicherheit im Web sollte der wichtigste Aspekt sein.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
@@ -170,7 +218,7 @@ Von dieser Seite kommt folgendes Zitat: „Reacts change detection paradigm is s
 &lt;p&gt;Macht die Webseite responsive (Probiert eure Webseite mit unterschiedlichen Geräten in unterschiedlichen Auflösungen aus)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Räumt euren Header-Bereich auf und nutzt z. B. &lt;a href=&quot;https://realfavicongenerator.net&quot;&gt;ealfavicongenerator.net&lt;/a&gt;, um für alle ein schönes Favicon zu zaubern&lt;/p&gt;
+&lt;p&gt;Räumt euren Header-Bereich auf und nutzt z. B. &lt;a href=&quot;https://realfavicongenerator.net&quot;&gt;realfavicongenerator.net&lt;/a&gt;, um für alle ein schönes Favicon zu zaubern&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Nutzt Komponenten die Accessability mit eingebaut haben (z. B. &lt;a href=&quot;https://blueprintjs.com&quot;&gt;Blueprint&lt;/a&gt;, &lt;a href=&quot;https://mantine.dev&quot;&gt;Mantine&lt;/a&gt; oder &lt;a href=&quot;https://rsuitejs.com&quot;&gt;React Suite&lt;/a&gt;)&lt;/p&gt;
@@ -1266,7 +1314,7 @@ der Computer-Geschichte. Das Konzept war einfach: Threads sind kostengünstig un
 &lt;/div&gt;
 &lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;//images/20230505-loom-threading/bs-threads.svg&quot; alt=&quot;Threading wie die Urahnen - mit einer CPU&quot;&gt;
+&lt;img src=&quot;/images/20230505-loom-threading/bs-threads.svg&quot; alt=&quot;Threading wie die Urahnen - mit einer CPU&quot;&gt;
 &lt;/div&gt;
 &lt;div class=&quot;title&quot;&gt;Figure 1. Threading wie die Urahnen - mit einer CPU&lt;/div&gt;
 &lt;/div&gt;
@@ -1302,7 +1350,7 @@ Netty fällt in diese Kategorie.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;//images/20230505-loom-threading/ioloop.svg&quot; alt=&quot;IO-Thread und Worker-Thread bei der Arbeit&quot;&gt;
+&lt;img src=&quot;/images/20230505-loom-threading/ioloop.svg&quot; alt=&quot;IO-Thread und Worker-Thread bei der Arbeit&quot;&gt;
 &lt;/div&gt;
 &lt;div class=&quot;title&quot;&gt;Figure 2. IO-Thread und Worker-Thread bei der Arbeit&lt;/div&gt;
 &lt;/div&gt;
@@ -1980,7 +2028,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;//images/diag-f9c1a40657c8f5bf22f6862687071035.png&quot; alt=&quot;diag f9c1a40657c8f5bf22f6862687071035&quot; width=&quot;374&quot; height=&quot;161&quot;&gt;
+&lt;img src=&quot;/images/diag-f9c1a40657c8f5bf22f6862687071035.png&quot; alt=&quot;Diagram&quot; width=&quot;374&quot; height=&quot;161&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -2016,7 +2064,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;//images/diag-c3a8ead5c9df4992e1c834a5128bd7d6.png&quot; alt=&quot;diag c3a8ead5c9df4992e1c834a5128bd7d6&quot; width=&quot;374&quot; height=&quot;204&quot;&gt;
+&lt;img src=&quot;/images/diag-c3a8ead5c9df4992e1c834a5128bd7d6.png&quot; alt=&quot;Diagram&quot; width=&quot;374&quot; height=&quot;204&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -2055,7 +2103,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;//images/diag-238f8b73f33f13606ea63993a15e9fad.png&quot; alt=&quot;diag 238f8b73f33f13606ea63993a15e9fad&quot; width=&quot;374&quot; height=&quot;233&quot;&gt;
+&lt;img src=&quot;/images/diag-238f8b73f33f13606ea63993a15e9fad.png&quot; alt=&quot;Diagram&quot; width=&quot;374&quot; height=&quot;233&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -2121,7 +2169,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;//images/diag-69a88801b07d3f3a5533fe729f017f52.png&quot; alt=&quot;diag 69a88801b07d3f3a5533fe729f017f52&quot; width=&quot;374&quot; height=&quot;358&quot;&gt;
+&lt;img src=&quot;/images/diag-69a88801b07d3f3a5533fe729f017f52.png&quot; alt=&quot;Diagram&quot; width=&quot;374&quot; height=&quot;358&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -2174,7 +2222,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;//images/diag-1893f34850155c3870866563e0efca44.png&quot; alt=&quot;diag 1893f34850155c3870866563e0efca44&quot; width=&quot;374&quot; height=&quot;310&quot;&gt;
+&lt;img src=&quot;/images/diag-1893f34850155c3870866563e0efca44.png&quot; alt=&quot;Diagram&quot; width=&quot;374&quot; height=&quot;310&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -2243,7 +2291,7 @@ legende -[hidden]down-&amp;gt; a
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;//images/diag-138a71d715ccc25cdd84d12ec5d921a2.png&quot; alt=&quot;diag 138a71d715ccc25cdd84d12ec5d921a2&quot; width=&quot;431&quot; height=&quot;472&quot;&gt;
+&lt;img src=&quot;/images/diag-138a71d715ccc25cdd84d12ec5d921a2.png&quot; alt=&quot;Diagram&quot; width=&quot;431&quot; height=&quot;472&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
