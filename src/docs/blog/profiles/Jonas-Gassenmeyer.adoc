@@ -4,16 +4,20 @@
 :jbake-order: 1
 :sectanchors:
 :jbake-author: Jonas Gassenmeyer
-ifndef::imagesdir[:imagesdir: ../../images]
+:linkedin:
+:mastodon: https://darmstadt.social/@gassenmj
+:xtwitter: gassenmj
+:github:
+ifdef::imagesdir[:imagesdir: ../../images]
 
 == Jonas Gassenmeyer
 
 ++++
 <style>
 span.profile img {
-border: 5px solid #288ABF;
-border-radius: 10px;
-max-width: 100px;
+  border: 5px solid #288ABF;
+  border-radius: 10px;
+  max-width: 100px;
 }
 </style>
 ++++
@@ -24,3 +28,18 @@ Jonas könnte den ganzen Tag über relationale Datenbanken reden.
 Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte.
 Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel.
 Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten.
+
+=== Links
+
+ifeval::["{linkedin}" != ""]
+* https://www.linkedin.com/in/{linkedin}[LinkedIn Profile]
+endif::[]
+ifeval::["{mastodon}" != ""]
+* {mastodon}[Mastodon Profile]
+endif::[]
+ifeval::["{xtwitter}" != ""]
+* https://twitter.com/{xtwitter}[X (formerly known as Twitter) Profile]
+endif::[]
+ifeval::["{github}" != ""]
+* https://github.com/{github}[GitHub Profile]
+endif::[]
