@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="de">
+<head>
+<style>
+a[href^="//"]:after,
+a[href^="http://"]:after,
+a[href^="https://"]:after {
+    content: "" !important;
+    margin: 0 0 0 0;
+}
+
+</style>
+
+    
+    
+    <script>var toRoot = '../../';</script>
+    <!-- blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html -->
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="jbake" name="generator">
+    <meta content="INDEX, FOLLOW" name="ROBOTS">
+
+    <title>Ein Jahr PostgreSQL statt Oracle</title>
+    <meta content="Ein Jahr PostgreSQL statt Oracle – Das Leben danach" property="og:title">
+    <meta content="  .bahn.ng code {   color: var(--color-cool-gray-700); }      Vor etwas über einem Jahr hatte ich die Möglichkeit tiefer in die Welt der PostgreSQL Datenbankentwicklung einzutauchen. Ein treibender Gedanke war: 'SQL ist SQL - ich werde mich schon schnell zurechtfinden, SQL bleibt schließlich eine Relationale Datenbank'. Doch der Teufel steckt bekanntlich im Detail: Die Unterschiede und Herausforderungen, welche wirklich auf einen Oracle-Datenbankentwickler warten, waren mir vorher nicht bewusst. Sowohl Oracle als auch PostgreSQL haben schöne Seiten. Es ist durchaus von Vorteil, beide Systeme ein wenig genauer zu kennen. Dieser Artikel gibt meine Erfahrungen und Eindrücke wieder, die ich nach einem Jahr im PostgreSQL Ökosystem gemacht habe.  " property="og:description">
+    <meta content="website" property="og:type">
+    <meta content="Tech Stories" property="og:site_name">
+    <meta content="https://dbsystel.github.io/tech-stories/images/home.png" property="og:image">
+    <meta content="Ein Jahr PostgreSQL statt Oracle – Das Leben danach" itemprop="name">
+    <meta content="  .bahn.ng code {   color: var(--color-cool-gray-700); }      Vor etwas über einem Jahr hatte ich die Möglichkeit tiefer in die Welt der PostgreSQL Datenbankentwicklung einzutauchen. Ein treibender Gedanke war: 'SQL ist SQL - ich werde mich schon schnell zurechtfinden, SQL bleibt schließlich eine Relationale Datenbank'. Doch der Teufel steckt bekanntlich im Detail: Die Unterschiede und Herausforderungen, welche wirklich auf einen Oracle-Datenbankentwickler warten, waren mir vorher nicht bewusst. Sowohl Oracle als auch PostgreSQL haben schöne Seiten. Es ist durchaus von Vorteil, beide Systeme ein wenig genauer zu kennen. Dieser Artikel gibt meine Erfahrungen und Eindrücke wieder, die ich nach einem Jahr im PostgreSQL Ökosystem gemacht habe.  " itemprop="description">
+    <meta content="summary" name="twitter:card">
+    <meta content="Ein Jahr PostgreSQL statt Oracle – Das Leben danach" name="twitter:title">
+    <meta content="  .bahn.ng code {   color: var(--color-cool-gray-700); }      Vor etwas über einem Jahr hatte ich die Möglichkeit tiefer in die Welt der PostgreSQL Datenbankentwicklung einzutauchen. Ein treibender Gedanke war: 'SQL ist SQL - ich werde mich schon schnell zurechtfinden, SQL bleibt schließlich eine Relationale Datenbank'. Doch der Teufel steckt bekanntlich im Detail: Die Unterschiede und Herausforderungen, welche wirklich auf einen Oracle-Datenbankentwickler warten, waren mir vorher nicht bewusst. Sowohl Oracle als auch PostgreSQL haben schöne Seiten. Es ist durchaus von Vorteil, beide Systeme ein wenig genauer zu kennen. Dieser Artikel gibt meine Erfahrungen und Eindrücke wieder, die ich nach einem Jahr im PostgreSQL Ökosystem gemacht habe.  " name="twitter:description">
+
+    <link as="style" href="../../css/main.min.docsy.css" rel="preload">
+    <link href="../../css/main.min.docsy.css" integrity="" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+    <link href="../../css/bahn-ng-theme.css" rel="stylesheet">
+    <link href="../../css/tabbed-blocks.css" rel="stylesheet">
+    <link href="../../css/tech-stories.css" rel="stylesheet">
+
+    <!-- favicon generated with https://www.favicon-generator.org/ -->
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="../../apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/openseadragon-4.1.0/openseadragon.js"></script>
+
+
+    <link rel="stylesheet" href="../../css/micrositemaster.db-ui-core.css" rel="stylesheet">
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setExcludedQueryParams", ["hl","start","itemsPerPage"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://dbwas.service.deutschebahn.com/piwik/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1002']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://dbwas.service.deutschebahn.com/piwik/matomo.php?idsite=1002&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+
+</head>
+
+<body onload="prettyPrint()" class="td-section bahn ng">
+<header>
+  
+<nav aria-label="main navigation" class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="../../index.html">
+      <span class="navbar-logo"></span><span
+          class="font-weight-bold">Tech Stories</span>
+  </a>
+  <div class="td-navbar-nav-scroll ml-auto mx-lg-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      
+    </ul>
+  </div>
+  <div class="navbar-nav d-none d-lg-block" >
+    
+  </div>
+</nav>
+
+</header>
+<div class="container-fluid">
+  <div class="td-main">
+    <div class="row flex-xl-nowrap">
+      <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+        <div class="td-sidebar__inner" id="td-sidebar-menu">
+          
+        <form class="td-sidebar__search d-flex align-items-center d-lg-none" action="../../search.html">
+
+            <input aria-label="Suchen" name="q" autocomplete="off" class="form-control td-search-input"
+                   placeholder="Suchen" type="search">
+
+
+            <button aria-controls="td-docs-nav" aria-expanded="false"
+                    aria-label="Toggle section navigation" class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" data-target="#td-section-nav"
+                    data-toggle="collapse" type="button">
+            </button>
+        </form>
+
+        <nav aria-label="Submenu" class="collapse td-sidebar-nav" id="td-section-nav" >
+
+            <ul class="td-sidebar-nav__section">
+                <li class="td-sidebar-nav__section-title">
+                    <span class="align-left pl-0 pr-2 pt-2 active td-sidebar-link td-sidebar-link__section">-</span>
+                </li>
+                <li>
+                  <ul>
+                      <li class="collapse show" id="docs">
+                          
+                        <ul class="td-sidebar-nav__section ul-0">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/index.html">Übersicht</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2024</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section active"
+                                   href="../../blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html">Ein Jahr PostgreSQL statt Oracle</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2024/2024-01-25-Evolution-der-Webentwicklung.html">Meine Reise durch die Evolution der Webentwicklung</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2024/2024-01-16-Accessibility-in-Angular.html">Accessibility in Angular</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2023</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html">Fahrplankonstruktion</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-29-AI-in-Software-Design.html">AI in Software Design</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-20-einfuehrung-barrierefreiheit-web.html">A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-20-conways-law.html">Conway’s Law</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-08-prompt-engineering.html">Prompt-Engineering</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-08-21-vue2-vue3-migration.html">Migrate Vue 2 to Vue 3</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-05-15-developer-experience-platform-fuer-entwicklerinnen.html">Developer Experience Platform</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-05-05-loom-threading.html">Projekt Loom ist da</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-04-01-Indoor-GIS-zur-Rationalisierung-von-Wartungsarbeiten.html">Indoor-GIS</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-04-09-vortrag-auf-der-javaland.html">JavaLand 2023</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-03-28-ChatGPT-Einblicke-und-mehr-Generative-Sprachmodelle-Herausforderungen-und-Chancen.html">ChatGPT</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-03-08-Re-Platforming-Mainframe-Mehr-als-nur-Lift-Shift.html">Re-Platforming Mainframe</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2022</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-15-03-good-practices-api.html">Good Practices im API-Umfeld</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-11-24-the-journey-towards-K8s-at-Deutsche-Bahn.html">K8s at Deutsche Bahn</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-11-04-Produkt-statt-Projekmanagement.html">Produkt- statt Projektmanagement</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html">Deine Diagramme sind Legende?</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-03-23-Vielfalt-bei-der-Bahn-Computerlinguistinnen-treiben-Digitalisierung-voran.html">Vielfalt bei der Bahn</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2021</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-11-02-KITT-das-Kuenstliche-Intelligenz-Translation-Tool.html">KITT Tool</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-06-08-Bad-bots-Chancen-und-Herausforderungen-fuer-KI-und-Sprache.html">Bad Bots</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-04-12-Computer-Vision-Use-Cases-at-Deutsche-Bahn.html">Computer Vision Use Cases</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-03-20-Die-C4-Testpyramide-eine-architekturgetriebene-Teststrategie.html">Die C4-Testpyramide</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2020</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-12-07-devops-mehr-geschwindigkeit-auf-der-schiene.html">DevOps Geschwindigkeit</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html">Vue.js vs. Angular</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html">OOP: Guter Code</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-03-14-API-first-mit-TypeScript.html">API first mit TS</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2019</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2019/2019-09-13-Spock-und-AsciiDoc.html">Spock und AsciiDoc</a>
+                            </li>
+                        </ul>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+	   </ul>
+        </nav>
+
+        </div>
+      </div>
+      <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+        <div class="td-page-meta ml-2 pb-1 pt-2 mb-0" role="navigation" aria-label="page content navigation">
+          
+
+        <a href="https://github.com/dbsystel/tech-stories/edit/main/src/docs/blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.adoc"
+           target="_blank"><i class="fa fa-edit fa-fw"></i> Improve this doc</a>
+
+
+
+            <a href="https://github.com/dbsystel/tech-stories/issues/new?title=Docs%3A+Feedback+for+%27Ein+Jahr+PostgreSQL+statt+Oracle%27&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page: https://github.com/dbsystel/tech-stories/edit/main/src/docs/blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.adoc%0A%23branch: main" target="_blank"><i
+                class="fab fa-github fa-fw"></i> Create an issue</a>
+        
+        
+        <hr />
+
+<!--script>
+    var discussionId = 1076;
+    alert(discussionId);
+</script>
+
+
+<script>
+
+    function showNumberOfComments() {
+        console.log("DiscussionId: 1076");
+
+        const query = `
+            query {
+                repository(owner: "docToolchain", name: "docToolchain") {
+                    discussion(number: 1076) {
+                        comments {
+                            totalCount
+                        }
+                    }
+                }
+            }
+        `;
+
+        fetch('https://api.github.com/graphql', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer GITHUB_TOKEN',
+        },
+        body: JSON.stringify({ query }),
+        })
+        .then((response) => response.json())
+        .then((data) => document.getElementById("noOfComments").innerHTML = data.data.repository.discussion.comments.totalCount);
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        showNumberOfComments();
+    });
+
+</script-->
+<div id="noOfComments" style="border: solid 0px red; font-size: 16pt;"></div>
+
+
+
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_ein_jahr_postgresql_statt_oracle_das_leben_danach">Ein Jahr PostgreSQL statt Oracle – Das Leben danach</a>
+<ul class="sectlevel2">
+<li><a href="#_syntaktische_unterschiede">Syntaktische Unterschiede</a></li>
+<li><a href="#_architekturunterschiede">Architekturunterschiede</a></li>
+<li><a href="#_performance_troubleshooting">Performance Troubleshooting</a></li>
+<li><a href="#_fazit">Fazit</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+        </div>
+      </div>
+      <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+        <!-- Date, Author -->
+        <p class="increase-zindex">
+          <em>07 February 2024,
+          
+          <a href="../../blog/profiles/Jonas-Gassenmeyer.html">Jonas Gassenmeyer</a></em>
+          
+        </p>
+        <!-- Share buttons above headline -->
+        
+<div class="increase-zindex">
+    <span style="font-size: x-large;">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html&text=Ein+Jahr+PostgreSQL+statt+Oracle+%E2%80%93+Das+Leben+danach" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html" target="_blank"><i class="fab fa-facebook"></i></a>
+    </span>
+</div>
+
+        <!-- Content -->
+        <h1 class='sr-only'>Ein Jahr PostgreSQL statt Oracle</h1>
+<style>
+.bahn.ng code {
+  color: var(--color-cool-gray-700);
+}
+</style>
+<div class="sect1">
+<h2 id="_ein_jahr_postgresql_statt_oracle_das_leben_danach">Ein Jahr PostgreSQL statt Oracle – Das Leben danach</h2><img src='../../images/topics/dev.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vor etwas über einem Jahr hatte ich die Möglichkeit tiefer in die Welt der PostgreSQL Datenbankentwicklung einzutauchen.
+Ein treibender Gedanke war:
+"SQL ist SQL - ich werde mich schon schnell zurechtfinden, SQL bleibt schließlich eine Relationale Datenbank".
+Doch der Teufel steckt bekanntlich im Detail:
+Die Unterschiede und Herausforderungen, welche wirklich auf einen Oracle-Datenbankentwickler warten, waren mir vorher nicht bewusst.
+Sowohl Oracle als auch PostgreSQL haben schöne Seiten.
+Es ist durchaus von Vorteil, beide Systeme ein wenig genauer zu kennen.
+Dieser Artikel gibt meine Erfahrungen und Eindrücke wieder, die ich nach einem Jahr im PostgreSQL Ökosystem gemacht habe.</p>
+</div>
+<!-- teaser -->
+<div class="sect2">
+<h3 id="_syntaktische_unterschiede">Syntaktische Unterschiede</h3>
+<div class="paragraph">
+<p>Beginnen wir einfach mit einem <code>create table</code> Befehl.
+In meinem Oracle-Modus lege ich Textspalten mit dem Datentypen <code>varchar2</code> an.
+Wenn ich einen solchen Befehl in PostgreSQL absetze, dann erhalte ich die Fehlermeldung <code>SQL Error [42704]: ERROR: type "varchar2" does not exist</code>.</p>
+</div>
+<div class="paragraph">
+<p>Schon das weist darauf hin, dass man mit den Skripten nicht einfach in "Copy und Paste" Manier auf eine PostgreSQL Datenbank wechseln kann.
+Die korrekte Alternative ist in diesem Fall der Datentyp <code>text</code> (s. Listing 1).</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 1: <code>create table</code> in PostgreSQL</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="sql">create table demo (
+  descr text
+, col   text
+);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Entgegen der gängigen Praxis in Oracle, dass man die Zeichenketten-Länge möglichst einschränkt, ist das in PostgreSQL eher untypisch (vgl.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>).
+Möchte man anschließend die erstellte Tabelle im Data Dictionary überprüfen, stellt man den nächsten Unterschied fest:
+Die bewährte Struktur <code>dba|all|user_tables</code> gibt es so nicht.
+Stattdessen ist das Pendant im sogenannten <code>information_schema</code> Schema unter dem Namen <code>pg_class</code> zu finden.
+Objektnamen werden außerdem in Kleinbuchstaben hinterlegt (s. Listing 2).</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 2: Data Dictionary Abfrage in PostgreSQL</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="sql">select *
+from pg_class
+where relname = 'demo' ;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wie man sieht, ist die analoge Spalte zu <code>user_tables.table_name</code> hier <code>pg_class.relname</code>.
+Mir hat es geholfen an die relationale Theorie von Edgar F. Codd zu denken, wo ebenfalls von tupels(=row), relations(=table) und co. die Rede ist.
+Der Sprachgebrauch ist im Data Dictionary von PostgreSQL wiederzuerkennen.</p>
+</div>
+<div class="paragraph">
+<p>Als nächstes soll die Tabelle Demo mittels <code>Insert</code>-Befehl befüllt werden. Zunächst werden dazu zwei Zeilen eingefügt – s. Listing 3.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 3: <code>NULL</code> vs. leere Zeichenkette</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="sql">insert into demo (descr, col) values ('1 insert', '');
+insert into demo (descr, col) values ('2 insert', null);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Anzumerken ist, dass die Spalte <code>col</code> im ersten Befehl mittels leerem String und im zweiten explizit mit <code>NULL</code> befüllt wird.
+In Oracle hat das dieselbe Bedeutung, aber in PostgreSQL ist mit dem leeren String etwas anderes gemeint, sodass eine Abfrage mittels <code>where col is null</code> nur eine Zeile zurückgibt.</p>
+</div>
+<div class="paragraph">
+<p>Das muss man sich mal auf der Zunge zergehen lassen.
+Ich möchte nicht wissen, wie viele Applikationen eine explizite <code>NULL</code>-Wert-Behandlung implementiert haben.
+Um beide Zeilen im <code>select</code>-Befehl zu erhalten, könnte man die <code>where</code>-Bedingung in <code>where coalesce(col, '') = ''</code> umschreiben. Damit ist es aber nicht getan.
+Man muss sich dann auch mit den möglichen Operationen (z. B. String Konkatenation – s. Listing 4) befassen.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 4: Operation mit Zeichenkette und <code>NULL</code></div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="sql">select 'test'||null; --ergibt NULL!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In Listing 4 mag Ihnen aufgefallen sein, dass die Tabellenangabe <code>from dual</code> fehlt.
+Das ist in PostgreSQL valide Syntax – PostgreSQL kennt die Dummy Tabelle <code>dual</code> nicht.
+Doch zurück zum eigentlichen Thema: <code>NULL</code>-Werte.
+Wenn wir in Oracle einen <code>NULL</code>-Wert an eine Zeichenkette hängen, können wir sicher sein, dass die Zeichenkette wieder ausgegeben wird.
+Das ist in PostgreSQL nicht so.
+Der gesamte Ausdruck liefert <code>NULL</code> als Ergebnis.
+Tatsächlich bin ich mehrfach auf kleine Bugs in meinen Abfragen gestoßen, weil ich aus Gewohnheit falsche <code>NULL</code>-Logiken im Kopf hatte.
+Der Artikel von AWS "Handle empty Strings when migrating from Oracle to PostgreSQL" umfasst 13 Seiten und 3300 Worte.
+Das zeigt, wie komplex die Unterschiede zwischen beiden Datenbanken alleinig im Bereich <code>NULL</code>-Werte sind.</p>
+</div>
+<div class="paragraph">
+<p>Listing 5 verdeutlicht einen weiteren Unterschied (der sich in Oracle 23c in Luft auflösen wird):
+Der Boolean Datentyp existiert und kann in PostgreSQL ohne Einschränkungen in SQL verwendet werden.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 5: Booleans</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="sql">select '' = '' tst; -- liefert TRUE</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bisher ist auf der Demo Tabelle kein Primärschlüssel definiert.
+Wenn dieser ergänzt und anschließend zwei identische Werte eingefügt werden (s. Listing 6), kommt es zu einer Fehlermeldung.
+Im Gegensatz zur generischen Fehlerbeschreibung in Oracle (<code>SQL Error [1] [23000]: ORA-00001: unique constraint (SYSTEM.xyz) violated</code>), enthält die Fehlerbeschreibung in PostgreSQL den tatsächlichen Spaltenwert, der zur Verletzung des Constraints geführt hat (im Beispiel ist das <code>key1</code>).
+Gerade bei Bulk-Loads macht das die Suche nach der Nadel im Heuhaufen deutlich einfacher.
+Ein kleiner, aber feiner Unterschied.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 6: Primärschlüssel-Verletzung in PostgreSQL</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="sql">alter table demo add primary key (descr);
+insert into demo values ('key1', 'i repeat');
+insert into demo values ('key1', 'i repeat');
+
+SQL Error [23505]: ERROR: duplicate key value violates SQL
+Detail: Key (descr)=(key1) already exists.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Im Kontext von Bulk-Loads und Primärschlüssel-Verletzungen ist in Oracle der <code>merge</code>-Befehl hilfreich.
+Dieser ist seit 9i verfügbar und besitzt somit einen gewissen Reifegrad.
+In PostgreSQL wurde <code>merge</code> erst im Oktober 2022 mit Version 15 eingeführt.
+Damit ist der Befehl nicht ganz ausgereift und noch etwas limitiert.
+Genaueres ist dem Syntax Baum in der offiziellen Dokumentation zu entnehmen (<a href="https://www.postgresql.org/docs/15/sql-merge.html" class="bare">https://www.postgresql.org/docs/15/sql-merge.html</a>).
+Apropos Dokumentation.
+Sowohl Oracle als auch PostgreSQL weisen eine sehr gute Doku auf.
+PostgreSQL verzichtet dabei (absichtlich) auf Code-Beispiele, was manchmal weitere Google-Suchen erforderlich macht.
+Den Luxus, den <a href="https://oracle-base.com">Oracle-Base.com</a> bietet, hat man für PostgreSQL nicht.
+Wer noch nicht PostgreSQL Version 15 verwendet, dem sei die kleine Schwester des <code>merge</code>-Befehls empfohlen (s. Listing 7).
+Hier lässt sich zumindest eine Update-Aktion (oder "Fehler ignorieren") bestimmen, wenn eine entsprechende Constraint-Verletzung vorliegt.
+Nicht ganz so mächtig wie der <code>merge</code>-Befehl, aber ich habe häufig darauf zurückgegriffen und fand ihn auch sehr selbsterklärend.
+Wirklich vermisst habe ich merge nicht.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 7: <code>insert on conflict</code> in PostgreSQL</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="sql">insert into demo values ('key2', 'i repeat') on conflict (descr)
+do nothing;
+insert into demo values ('key2', 'i repeat')
+on conflict (descr) --pk or uk
+do update set col = 'i''ve been updated';</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Man ahnt es schon:
+An vielen Stellen wird man sich bei PostgreSQL an kleinere Syntax-Änderungen gewöhnen müssen, die mehr oder weniger einschränkende Funktionalität bedeuten.
+Sollte ich nach einem Jahr Vergleich die aktuell bedeutendste Einschränkung nennen, wären das die die Window-Functions.
+Diese sind zwar auch zahlreich in PostgreSQL vorhanden, allerdings hat mich Oracle in der Vergangenheit mit Details beeindruckt;
+z. B. wird ein <code>select count(distinct …) over(partition by …) </code> mit der Fehlermeldung <code>SQL Error [0A000]: ERROR: DISTINCT is not implemented for window functions</code> zurückgewiesen.</p>
+</div>
+<div class="paragraph">
+<p>Die Tabelle <em>Demo</em> war bis hierhin ein dankbarer Begleiter zum Aufzeigen der Unterschiede.
+An dieser Stelle möchte ich ein neues Beispiel einführen, um zu verdeutlichen, dass die Syntax-Differenzen zwischen Oracle und PostgreSQL an vielen Stellen deutlich spürbar sind.
+Man stelle sich folgenden Datensatz vor:
+Für eine Webanwendungen ist in einer Tabelle der jeweilige URL-Aufruf mit Dauer und Zeitstempel des Aufrufs getrackt.
+Ich habe mittels SQL zu Demonstrationszwecken einen solchen Datensatz künstlich erzeugt.
+Aus Platzgründen erkläre ich die Gegenüberstellung stichpunktartig und nenne die gravierendsten Unterschiede:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Common Table Expression (<code>with</code> Klausel in Kombination mit <code>create table</code>)</p>
+</li>
+<li>
+<p>Generierung mehrerer Zeilen (<code>connect by</code> level vs. <code>generate_series</code>)</p>
+</li>
+<li>
+<p>Teilen von Strings (<code>substr</code> vs. <code>substring</code> Funktion; siehe auch Parameter)</p>
+</li>
+<li>
+<p>Erzeugen von Zufallszahlen (<code>dbms</code> Package vs. <code>random()</code> Funktion)</p>
+</li>
+<li>
+<p>Literale beim Erzeugen von Zeitintervallen (<code>interval '1 minute'</code> vs. <code>interval '1' minute</code>. - Hochkommas beachten!)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/20240207-postgreSQL/testdata_oracle_postgres.png" alt="Gegenüberstellung einer beispielhaften Erzeugung von Testdaten im Vergleich: Oracle vs. PostgreSQL">
+</div>
+<div class="title">Figure 1. Erzeugen von Testdaten Oracle vs. PostgreSQL Syntax</div>
+</div>
+<div class="paragraph">
+<p>Bevor ich mich anderen Aspekten als den Syntax-Unterschieden widme, möchte ich noch erwähnen, dass auch syntaktisch gleiche Konstrukte zu unerwarteten Ergebnissen führen können:
+Ein <code>select 5/2</code> ergibt in PostgreSQL <code>2</code> (Zwei).
+Das ist auch so dokumentiert (vgl.<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>), allerdings finde ich den Default ("for integral types, the devision truncates the result towards zero") nach wie vor gewöhnungsbedürftig.
+Explizite Casts wie <code>select 5.0/2</code> oder <code>select 5::float/2</code> sind mögliche Lösungen, die dann zum Ergebnis <code>2,5</code> führen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_architekturunterschiede">Architekturunterschiede</h3>
+<div class="paragraph">
+<p>Im zweiten Teil möchte ich noch etwas ins Detail gehen und ein paar markante architektonische Entscheidungen in PostgreSQL beleuchten.
+Was eine Datenbank grundlegend ausmacht, ist das MVCC (Multi Version Concurrency Control) Prinzip, welches den konkurrierenden Zugriff auf Daten regelt.
+Wenn eine Transaktion liest, soll sie nicht von einer schreibenden Transaktion geblockt sein und umgekehrt.</p>
+</div>
+<div class="paragraph">
+<p>Hierzu ist es essenziell, dass Datenänderungen versioniert sind.
+Oracle ändert die Daten "inline" im Block.
+Es wird um jeden Preis vermieden, dass die physikalische Adresse einer Zeile im Block nochmal wandert.
+Das hat z. B. den Vorteil, dass ein Index stets unverändert den Zugriff auf den Block für diese Zeile kennt.
+Die eigentlichen Änderungen/Versionen sind im <code>UNDO</code> festgehalten.
+In PostgreSQL wird eine Zeile mehrfach kopiert und eine Transaktions-ID steuert, für welche Session die Zeile sichtbar bzw. unsichtbar ist.
+Je mehr parallele Transaktionen auf demselben Tupel (=Zeile) operieren, desto mehr Kopien derselben Zeile wird es geben.
+Das sorgt folglich für sogenannten Bloat:
+Die Tabelle plustert sich auf und verbraucht physikalisch mehr Speicherplatz.
+Wenn die älteren Versionen nicht mehr benötigt werden, bleiben überflüssige Versionen einer Zeile übrig.
+Ein Hintergrundprozess muss aktiv werden, um aufzuräumen.
+Dieser ist unter dem Begriff Vacuum ("Staubsauger") bekannt.
+Ich selbst musste diesen Prozess nie tunen.
+In OLTP-Systemen mit viel Last sollte man sich jedoch genauere Gedanken machen, wann und wie dieser Hintergrundprozess aktiv werden soll/muss.
+Hierzu werden in der zentralen Konfigurationsdatei <code>postgresql.conf</code> diverse Parameter angeboten (s. Abbildung 2).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/20240207-postgreSQL/postgresql_vacuum.png" alt="Screenshot der PostgreSQL-Konfiguration mit möglichen Parametern zum Tunen von Vacuum">
+</div>
+<div class="title">Figure 2. Mögliche Parameter zum Tunen von Vacuum</div>
+</div>
+<div class="paragraph">
+<p>Ein viel-gelesener Artikel<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>, der die Schwächen von PostgreSQL aufzeigt, behandelt diese "Copy on Write" Versionierung und es wird angemerkt, dass es ein Limit der zu vergebenen Transaktions-IDs gibt.
+Bevor ich jemals eine PostgreSQL Datenbank live und in Farbe verwendet hatte, hat mir der Artikel nicht unbedingt Mut gemacht. Allerdings hat sich das im echten "hands-on" OLTP-Betrieb nicht bewahrheitet.
+Laurenz Albe hat eine interessante Gegendarstellung zum Transaktions-ID Wraparound Problem verfasst (vgl.<sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>).
+Im Gegenteil – PostgreSQL hat im Bereich Transaktionen mein Herz gewonnen, weil DDL-Befehle (also z. B. <code>create table</code>) mittels Rollback rückgängig gemacht werden können.
+So macht Skripte-Schreiben wirklich Spaß!
+Man muss im Fehlerfall nicht aufräumen und komplizierte Workarounds schaffen.
+Die Objekt-Änderungen werden einfach nicht commited.
+Das Auto-Commit ist in allen gängigen Clients (DBeaver, psql, pgAdmin,…) Standard.
+Man muss mittels <code>begin</code> Befehl explizit eine Transaktion aufspannen, um ein implizites Commit zu verhindern.
+Das wiederum macht das Ausführen von DML, z. B. einem <code>delete</code>-Befehl, erst einmal ungewohnt riskant.
+Wenn man nicht aufpasst, sind die gelöschten Daten wirklich festgeschrieben.
+Ein Rollback ist nicht mehr möglich.</p>
+</div>
+<div class="paragraph">
+<p>In meinem Projekt musste ich intensiv mit Zeitstempeln und Zeitzonen hantieren.
+Vor allem, wenn Client und Server nicht mit der gleichen Zeitzone konfiguriert sind, muss es zwangsläufig zu einer Konvertierung kommen, sodass "hin- und zurückgerechnet" werden kann.
+Wenn in Oracle ein Zeitstempel im Datentyp <code>timestamptz</code> gespeichert wird, gibt es Bytes, die festhalten in welcher Zeitzone diese Uhrzeitangabe zu verstehen ist.
+Was Bit-genau gespeichert wird, hängt von den <code>NLS</code>-Settings von Client und Server ab.
+In PostgreSQL gibt es eine simple Regel:
+There is no such thing as a server time zone.
+Der Server nimmt den Zeitstempel so an, wie es vom Client angegeben wird (entweder indirekt über <code>set timezone</code> in der Session oder direkt am übertragenen String durch die Formatmaske) und konvertiert in jedem Fall in UTC.
+Ein lesender Prozess findet anschließend immer Bits auf Platte, die den Zeitstempel in UTC repräsentieren.
+Zur Konvertierung nutzt PostgreSQL eine zentrale Datenbank für Zeitzonen – die IANA.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/20240207-postgreSQL/timestamp.png" alt="PostgreSQL timestamp handling in UTC">
+</div>
+<div class="title">Figure 3. Zeitstempel werden stets in UTC gespeichert</div>
+</div>
+<div class="paragraph">
+<p>Ein wenig anders verhalten sich in PostgreSQL Client und Server übrigens auch beim Austausch des Zeichensatzes (z. B. Unicode). Aber da die NLS-Settings und UTF-8 Encoding in Oracle einen eigenen Artikel wert wären, möchte ich es lediglich erwähnen.
+Zum Thema Zeiten möchte ich außerdem noch knapp erwähnen:
+Wer viel mit Zeitstempel-Arithmetik zu kämpfen hat, sollte sich in PostgreSQL auf jeden Fall mit dem <code>tsrange()</code> Datentypen vertraut machen<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>.
+Ich würde mir ein Pendant in der Oracle Datenbank wünschen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_performance_troubleshooting">Performance Troubleshooting</h3>
+<div class="paragraph">
+<p>Im letzten Teil widme ich noch ein paar Zeilen einem Thema, welches mich im Oracle Kontext in den Bann gezogen hat.
+Performance Troubleshooting ist mit den Oracle Bordmitteln ein echter Zuckerschlecken.
+Die Art und Weise wie diese Software instrumentiert ist, ist einzigartig.
+Dabei gilt vor allem, dass das Logging per Default eingeschaltet ist;
+vornehmlich beziehe ich mich hier auf das Event Tracing und das <code>AWR=Active</code> Workload Repository, worauf dann auch die <code>ASH=Active</code> Session History basiert.
+Somit liegen die relevanten Informationen förmlich auf dem Tisch und man ist nur mit der eigentlichen "Detektiv-Arbeit" beschäftigt.
+Ich weiß nicht, bei wie viel Gigabyte eine Oracle-Installation inzwischen angekommen ist.
+Zwar ist eine PostgreSQL Vanilla-Version deutlich schlanker, das macht sich dann aber genau an solchen Features bemerkbar.
+Der Weg in der PostgreSQL-Welt führt dann über sogenannte Extensions.
+Diese sind nachträglich zu installieren.
+Somit ist zumindest eine Vanilla-Installation sorgfältiger zu planen.
+Ich habe sogar verstärkt wahrgenommen, dass bei Admins und Experten häufig noch der Performance-Nachteil ("Workloads laufen 2% langsamer") der Gesamtinstallation als Argument aufgeführt wird, weshalb man intensives Logging nicht per Default aktiviert.
+Hier halte ich es wie Tom Kyte<sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>. In allen Umgebungen, in denen ich aktiv war, wurden hilfreiche Instrumentations-Mechanismen nicht aktiviert, sodass die Suche bei erstmalig aufgetretenen Performance-Schwierigkeiten knifflig bis unmöglich war.
+Die Metriken für eine detaillierte Analyse waren schlichtweg nicht vorhanden.</p>
+</div>
+<div class="paragraph">
+<p>Nach meinem ersten Jahr kann ich folgenden Ansatz empfehlen:
+Um proaktiv und nachträglich Langläufer im SQL zu identifizieren, sollte die Extension <code>pg_stat_statements</code> installiert werden. Es handelt sich dann um eine View, die mittels SQL-Abfragen analysierbar ist.
+Diese hat einige Schwächen, z. B. dass statt dem echten SQL-Statement eine normalisierte Form gezeigt wird.
+Literale werden durch Bind-Variablen ersetzt und die Belegung der Binds kann nicht mehr nachvollzogen werden.
+Das lässt keine Einzelfallbetrachtung zu.
+Deswegen sollte zusätzlich auch <code>auto_explain</code> geladen werden.
+Damit werden in den Server-Logs mehr Infos rund um ein SQL (inklusive ermitteltem Ausführungsplan) weggeschrieben.
+Der Schwellenwert, ab welcher Laufzeit ein SQL geloggt wird, lässt sich konfigurieren (<code>auto_explain.log_min_duration</code>). Hat man mit der breiten Analyse den Langläufer identifiziert, kann man folglich auf die Server-Logs zurückgreifen, um mehr Infos zu erhalten.
+Wenn das Problem reproduzierbar ist, kann man in PostgreSQL leider kein echtes Tracing der Session aktivieren.
+Die Extension <code>pg_show_plans</code> erlaubt es, zumindest aus einer zweiten Session heraus, in eine Langläufer-Session reinzuspicken, um den Ausführungsplan der laufenden Abfrage zu sehen.
+Im Fall, dass das Problem reproduzierbar ist, gibt es auch kein Sampling, wie man es von der <code>ASH</code> kennt.
+Ich finde jedoch, dass die Extension <code>pg_sentinel</code> vielversprechende <code>ASH</code>-ähnliche Ansätze beinhaltet.
+Um dann ein Statement wirklich anzupacken und dem Optimizer unter die Arme zu greifen, kann man nur auf Hints zurückgreifen, wenn die Extension <code>pg_hint_plan</code> installiert wird.
+Diese hat auch eine Funktionalität ähnlich zu Baselines.</p>
+</div>
+<div class="paragraph">
+<p>Baselines werden in Oracle auf Basis der <code>SQL_ID</code> erstellt, welche auch im Library Cache abgelegt wird.
+PostgreSQL hat keine SGA und damit auch keinen Library Cache.
+Deshalb bringen Bind-Variablen auch nur Performance-Vorteile in der gleichen Session.
+Session-übergreifend können geparste SQL-Befehle nicht mit einem Softparse wiederverwendet werden.
+Es gibt die Möglichkeit von Prepared Statements, die das mehrfache Ausführen desselben SQLs innerhalb einer Session beschleunigen. In der Ausgabe 01-2021 des Red Stack Magzins hat Herve Schweitzer einen eigens diesem Thema gewidmeten Artikel geschrieben<sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup> - sehr empfehlenswert!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fazit">Fazit</h3>
+<div class="paragraph">
+<p>Der vorliegende Artikel kann nur begrenzt technische Feinheiten beschreiben, die dann für die wirklichen Unterschiede zwischen den beiden Datenbanken sorgen.
+Es wurden Syntax- und Architektur-Unterschiede betrachtet - das Wort Migration wurde von mir beispielsweise komplett ausgespart.
+Für mich ist klar, dass ich mich nach einem Jahr nicht für Oracle oder PostgreSQL entscheiden kann/will und für einen Umstieg plädiere!
+Für mich gilt:
+"Kenne beide Seiten und bleibe in Übung".
+Wenn jedoch keine Gründe dagegensprechen, starten Sie neue Projekte mit PostgreSQL und probieren Sie es aus.
+Ich freue mich auf Ihr Feedback.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://maximorlov.com/char-varchar-text-postgresql/" class="bare">https://maximorlov.com/char-varchar-text-postgresql/</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://www.postgresql.org/docs/14/functions-math.html" class="bare">https://www.postgresql.org/docs/14/functions-math.html</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://rbranson.medium.com/10-things-i-hate-about-postgresql-20dbab8c2791" class="bare">https://rbranson.medium.com/10-things-i-hate-about-postgresql-20dbab8c2791</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. <a href="https://www.cybertec-postgresql.com/en/transaction-id-wraparound-a-walk-on-the-wild-side/" class="bare">https://www.cybertec-postgresql.com/en/transaction-id-wraparound-a-walk-on-the-wild-side/</a>
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. <a href="https://www.cybertec-postgresql.com/en/multiranges-in-postgresql-14/" class="bare">https://www.cybertec-postgresql.com/en/multiranges-in-postgresql-14/</a>
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. <a href="https://carymillsap.blogspot.com/2009/02/on-usefulness-of-software.html" class="bare">https://carymillsap.blogspot.com/2009/02/on-usefulness-of-software.html</a>
+</div>
+<div class="footnote" id="_footnotedef_7">
+<a href="#_footnoteref_7">7</a>. <a href="https://www.doag.org/de/home/news/red-stack-012021-database-blockchain/" class="bare">https://www.doag.org/de/home/news/red-stack-012021-database-blockchain/</a>
+</div>
+</div>
+        <!-- tags -->
+        <p>
+        <a class='tag' href='../../tags/Oracle.html'>Oracle</a> <a class='tag' href='../../tags/PostgreSQL.html'>PostgreSQL</a> <a class='tag' href='../../tags/database.html'>database</a> <a class='tag' href='../../tags/SQL.html'>SQL</a> <a class='tag' href='../../tags/developer.html'>developer</a>
+        </p>
+        <!-- Share buttons below content -->
+        
+<div class="increase-zindex">
+    <span style="font-size: x-large;">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html&text=Ein+Jahr+PostgreSQL+statt+Oracle+%E2%80%93+Das+Leben+danach" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html" target="_blank"><i class="fab fa-facebook"></i></a>
+    </span>
+</div>
+
+        
+        <style>
+.feedback--answer {
+    display: inline-block;
+}
+
+.feedback--answer-no {
+    margin-left: 1em;
+}
+
+.feedback--response {
+    display: none;
+    margin-top: 1em;
+}
+
+.feedback--response__visible {
+    display: block;
+}
+</style>
+
+<div class="d-print-none">
+    <h2 class="feedback--title">Feedback</h2>
+    <p class="feedback--question">Was this page helpful?</p>
+    <button class="feedback--answer feedback--answer-yes">Yes</button>
+    <button class="feedback--answer feedback--answer-no">No</button>
+    <p class="feedback--response feedback--response-yes">
+        Glad to hear it! Please <a href="https://github.com/dbsystel/tech-stories/issues/new?issue%5Btitle%5D=Docs%3A+Feedback+for+%27Ein+Jahr+PostgreSQL+statt+Oracle%27%20%F0%9F%91%8D&issue%5Bdescription%5D=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.adoc">tell us
+    how we can improve</a>.
+    </p>
+    <p class="feedback--response feedback--response-no">
+        Sorry to hear that. Please <a href="https://github.com/dbsystel/tech-stories/issues/new?issue%5Btitle%5D=Docs%3A+Feedback+for+%27Ein+Jahr+PostgreSQL+statt+Oracle%27%20%F0%9F%91%8E&issue%5Bdescription%5D=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.adoc">tell
+    us how we can improve</a>.
+    </p>
+</div>
+<script>
+    const yesButton = document.querySelector('.feedback--answer-yes');
+    const noButton = document.querySelector('.feedback--answer-no');
+    const yesResponse = document.querySelector('.feedback--response-yes');
+    const noResponse = document.querySelector('.feedback--response-no');
+    const disableButtons = () => {
+        yesButton.disabled = true;
+        noButton.disabled = true;
+    };
+    const sendFeedback = (value) => {
+        if (typeof ga !== 'function') return;
+        const args = {
+            command: 'send',
+            hitType: 'event',
+            category: 'Helpful',
+            action: 'click',
+            label: window.location.pathname,
+            value: value
+        };
+        ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+    };
+    yesButton.addEventListener('click', () => {
+        yesResponse.classList.add('feedback--response__visible');
+        disableButtons();
+        sendFeedback(1);
+    });
+    noButton.addEventListener('click', () => {
+        noResponse.classList.add('feedback--response__visible');
+        disableButtons();
+        sendFeedback(0);
+    });
+</script>
+
+        
+
+      </main>
+    </div>
+  </div>
+  
+    <!--footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">&copy; 2020 | based on <a href="https://arc42.org">arc42 7.0</a> | mixed with <a href="http://getbootstrap.com/">Bootstrap v5.0.0-beta</a> | Baked with <a href="http://jbake.org">JBake v2.6.7</a></span>
+        </div>
+    </footer-->
+
+    <footer class="bg-dark py-2 row d-print-none">
+        <div class="container-fluid mx-sm-5">
+            <div class="row">
+                <div class="col-3 col-sm-2 text-xs-center order-sm-2">
+
+
+                    <ul class="list-inline mb-0">
+                        
+                        
+                        <li class="list-inline-item mx-2 h3" data-original-title="Contact on Twitter" data-placement="top"
+                            data-toggle="tooltip" title="">
+                            <a aria-label="Contact on Twitter" title="Contact on Twitter" class="text-white" href="https://twitter.com/dbsystel" rel="noopener noreferrer"
+                               target="_blank" style="text-decoration: none;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                    </ul>
+
+
+                </div>
+                <div class="col-3 col-sm-2 text-right text-xs-center order-sm-3">
+
+
+                    <ul class="list-inline mb-0">
+
+                        
+                        <li class="list-inline-item mx-2 h3" data-original-title="Checkout on GitHub" data-placement="top"
+                            data-toggle="tooltip" title="">
+                            <a aria-label="Checkout on GitHub" title="Checkout on GitHub" class="text-white" href="https://github.com/dbsystel" rel="noopener noreferrer"
+                               target="_blank" style="text-decoration: none;">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        
+
+                        
+
+
+                    </ul>
+
+
+                </div>
+                <div class="col-18 col-sm-8 text-center py-2 order-sm-2">
+
+                        [<small class="text-white">built with <a href="https://doctoolchain.org">docToolchain</a> and <a href="https://jbake.org">jBake</a>, <br />
+styling supported by <a href="https://db-ui.github.io/">DB UI Core</a>, theme based on <a href="https://www.docsy.dev/">Docsy</a><br />
+<a href="https://db-ui.github.io/datenschutzerklaerung.html">Datenschutzerklärung / Data Privacy</a> |
+<a href="https://www.dbsystel.de/dbsystel-en/legal-3715942">Imprint</a> |
+<a href="https://www.dbsystel.de/">DB Systel GmbH</a></small>]
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script crossorigin="anonymous"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            src="../../js/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            src="../../js/bootstrap.min.js"></script>
+
+
+    <script crossorigin="anonymous"
+            integrity="sha256-tfwbKdJGWDWEQlS9TYBHOOryTAzsUwCbTGiZmJvlWkc=" src="../..//js/main.min.b5fc1b29d2465835844254bd4d804738eaf24c0cec53009b4c6899989be55a47.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/blocks.js" ></script>
+    <script src="../../js/prettify.js"></script>
+    <script src="../../js/adoc-scrollspy.js"></script>
+    <script src="../../js/lightbox.js"></script>
+    <script src="../../js/copy-n-paste.js"></script>
+    <script src="../../js/openseadragon.js"></script>
+
+    
+
+</body>
+</html>

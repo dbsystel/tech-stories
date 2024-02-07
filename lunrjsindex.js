@@ -10,6 +10,14 @@ var documents = [
 
 {
     "id": 1,
+    "uri": "blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html",
+    "menu": "Blog",
+    "title": "Ein Jahr PostgreSQL statt Oracle",
+    "text": " Table of Contents Ein Jahr PostgreSQL statt Oracle – Das Leben danach Syntaktische Unterschiede Architekturunterschiede Performance Troubleshooting Fazit .bahn.ng code { color: var(--color-cool-gray-700); } Ein Jahr PostgreSQL statt Oracle – Das Leben danach Vor etwas über einem Jahr hatte ich die Möglichkeit tiefer in die Welt der PostgreSQL Datenbankentwicklung einzutauchen. Ein treibender Gedanke war: \"SQL ist SQL - ich werde mich schon schnell zurechtfinden, SQL bleibt schließlich eine Relationale Datenbank\". Doch der Teufel steckt bekanntlich im Detail: Die Unterschiede und Herausforderungen, welche wirklich auf einen Oracle-Datenbankentwickler warten, waren mir vorher nicht bewusst. Sowohl Oracle als auch PostgreSQL haben schöne Seiten. Es ist durchaus von Vorteil, beide Systeme ein wenig genauer zu kennen. Dieser Artikel gibt meine Erfahrungen und Eindrücke wieder, die ich nach einem Jahr im PostgreSQL Ökosystem gemacht habe. Syntaktische Unterschiede Beginnen wir einfach mit einem create table Befehl. In meinem Oracle-Modus lege ich Textspalten mit dem Datentypen varchar2 an. Wenn ich einen solchen Befehl in PostgreSQL absetze, dann erhalte ich die Fehlermeldung SQL Error [42704]: ERROR: type \"varchar2\" does not exist . Schon das weist darauf hin, dass man mit den Skripten nicht einfach in \"Copy und Paste\" Manier auf eine PostgreSQL Datenbank wechseln kann. Die korrekte Alternative ist in diesem Fall der Datentyp text (s. Listing 1). Listing 1: create table in PostgreSQL create table demo ( descr text , col text ); Entgegen der gängigen Praxis in Oracle, dass man die Zeichenketten-Länge möglichst einschränkt, ist das in PostgreSQL eher untypisch (vgl. [ 1 ] ). Möchte man anschließend die erstellte Tabelle im Data Dictionary überprüfen, stellt man den nächsten Unterschied fest: Die bewährte Struktur dba|all|user_tables gibt es so nicht. Stattdessen ist das Pendant im sogenannten information_schema Schema unter dem Namen pg_class zu finden. Objektnamen werden außerdem in Kleinbuchstaben hinterlegt (s. Listing 2). Listing 2: Data Dictionary Abfrage in PostgreSQL select * from pg_class where relname = 'demo' ; Wie man sieht, ist die analoge Spalte zu user_tables.table_name hier pg_class.relname . Mir hat es geholfen an die relationale Theorie von Edgar F. Codd zu denken, wo ebenfalls von tupels(=row), relations(=table) und co. die Rede ist. Der Sprachgebrauch ist im Data Dictionary von PostgreSQL wiederzuerkennen. Als nächstes soll die Tabelle Demo mittels Insert -Befehl befüllt werden. Zunächst werden dazu zwei Zeilen eingefügt – s. Listing 3. Listing 3: NULL vs. leere Zeichenkette insert into demo (descr, col) values ('1 insert', ''); insert into demo (descr, col) values ('2 insert', null); Anzumerken ist, dass die Spalte col im ersten Befehl mittels leerem String und im zweiten explizit mit NULL befüllt wird. In Oracle hat das dieselbe Bedeutung, aber in PostgreSQL ist mit dem leeren String etwas anderes gemeint, sodass eine Abfrage mittels where col is null nur eine Zeile zurückgibt. Das muss man sich mal auf der Zunge zergehen lassen. Ich möchte nicht wissen, wie viele Applikationen eine explizite NULL -Wert-Behandlung implementiert haben. Um beide Zeilen im select -Befehl zu erhalten, könnte man die where -Bedingung in where coalesce(col, '') = '' umschreiben. Damit ist es aber nicht getan. Man muss sich dann auch mit den möglichen Operationen (z. B. String Konkatenation – s. Listing 4) befassen. Listing 4: Operation mit Zeichenkette und NULL select 'test'||null; --ergibt NULL! In Listing 4 mag Ihnen aufgefallen sein, dass die Tabellenangabe from dual fehlt. Das ist in PostgreSQL valide Syntax – PostgreSQL kennt die Dummy Tabelle dual nicht. Doch zurück zum eigentlichen Thema: NULL -Werte. Wenn wir in Oracle einen NULL -Wert an eine Zeichenkette hängen, können wir sicher sein, dass die Zeichenkette wieder ausgegeben wird. Das ist in PostgreSQL nicht so. Der gesamte Ausdruck liefert NULL als Ergebnis. Tatsächlich bin ich mehrfach auf kleine Bugs in meinen Abfragen gestoßen, weil ich aus Gewohnheit falsche NULL -Logiken im Kopf hatte. Der Artikel von AWS \"Handle empty Strings when migrating from Oracle to PostgreSQL\" umfasst 13 Seiten und 3300 Worte. Das zeigt, wie komplex die Unterschiede zwischen beiden Datenbanken alleinig im Bereich NULL -Werte sind. Listing 5 verdeutlicht einen weiteren Unterschied (der sich in Oracle 23c in Luft auflösen wird): Der Boolean Datentyp existiert und kann in PostgreSQL ohne Einschränkungen in SQL verwendet werden. Listing 5: Booleans select '' = '' tst; -- liefert TRUE Bisher ist auf der Demo Tabelle kein Primärschlüssel definiert. Wenn dieser ergänzt und anschließend zwei identische Werte eingefügt werden (s. Listing 6), kommt es zu einer Fehlermeldung. Im Gegensatz zur generischen Fehlerbeschreibung in Oracle ( SQL Error [1] [23000]: ORA-00001: unique constraint (SYSTEM.xyz) violated ), enthält die Fehlerbeschreibung in PostgreSQL den tatsächlichen Spaltenwert, der zur Verletzung des Constraints geführt hat (im Beispiel ist das key1 ). Gerade bei Bulk-Loads macht das die Suche nach der Nadel im Heuhaufen deutlich einfacher. Ein kleiner, aber feiner Unterschied. Listing 6: Primärschlüssel-Verletzung in PostgreSQL alter table demo add primary key (descr); insert into demo values ('key1', 'i repeat'); insert into demo values ('key1', 'i repeat'); SQL Error [23505]: ERROR: duplicate key value violates SQL Detail: Key (descr)=(key1) already exists. Im Kontext von Bulk-Loads und Primärschlüssel-Verletzungen ist in Oracle der merge -Befehl hilfreich. Dieser ist seit 9i verfügbar und besitzt somit einen gewissen Reifegrad. In PostgreSQL wurde merge erst im Oktober 2022 mit Version 15 eingeführt. Damit ist der Befehl nicht ganz ausgereift und noch etwas limitiert. Genaueres ist dem Syntax Baum in der offiziellen Dokumentation zu entnehmen ( https://www.postgresql.org/docs/15/sql-merge.html ). Apropos Dokumentation. Sowohl Oracle als auch PostgreSQL weisen eine sehr gute Doku auf. PostgreSQL verzichtet dabei (absichtlich) auf Code-Beispiele, was manchmal weitere Google-Suchen erforderlich macht. Den Luxus, den Oracle-Base.com bietet, hat man für PostgreSQL nicht. Wer noch nicht PostgreSQL Version 15 verwendet, dem sei die kleine Schwester des merge -Befehls empfohlen (s. Listing 7). Hier lässt sich zumindest eine Update-Aktion (oder \"Fehler ignorieren\") bestimmen, wenn eine entsprechende Constraint-Verletzung vorliegt. Nicht ganz so mächtig wie der merge -Befehl, aber ich habe häufig darauf zurückgegriffen und fand ihn auch sehr selbsterklärend. Wirklich vermisst habe ich merge nicht. Listing 7: insert on conflict in PostgreSQL insert into demo values ('key2', 'i repeat') on conflict (descr) do nothing; insert into demo values ('key2', 'i repeat') on conflict (descr) --pk or uk do update set col = 'i''ve been updated'; Man ahnt es schon: An vielen Stellen wird man sich bei PostgreSQL an kleinere Syntax-Änderungen gewöhnen müssen, die mehr oder weniger einschränkende Funktionalität bedeuten. Sollte ich nach einem Jahr Vergleich die aktuell bedeutendste Einschränkung nennen, wären das die die Window-Functions. Diese sind zwar auch zahlreich in PostgreSQL vorhanden, allerdings hat mich Oracle in der Vergangenheit mit Details beeindruckt; z. B. wird ein select count(distinct …) over(partition by …) mit der Fehlermeldung SQL Error [0A000]: ERROR: DISTINCT is not implemented for window functions zurückgewiesen. Die Tabelle Demo war bis hierhin ein dankbarer Begleiter zum Aufzeigen der Unterschiede. An dieser Stelle möchte ich ein neues Beispiel einführen, um zu verdeutlichen, dass die Syntax-Differenzen zwischen Oracle und PostgreSQL an vielen Stellen deutlich spürbar sind. Man stelle sich folgenden Datensatz vor: Für eine Webanwendungen ist in einer Tabelle der jeweilige URL-Aufruf mit Dauer und Zeitstempel des Aufrufs getrackt. Ich habe mittels SQL zu Demonstrationszwecken einen solchen Datensatz künstlich erzeugt. Aus Platzgründen erkläre ich die Gegenüberstellung stichpunktartig und nenne die gravierendsten Unterschiede: Common Table Expression ( with Klausel in Kombination mit create table ) Generierung mehrerer Zeilen ( connect by level vs. generate_series ) Teilen von Strings ( substr vs. substring Funktion; siehe auch Parameter) Erzeugen von Zufallszahlen ( dbms Package vs. random() Funktion) Literale beim Erzeugen von Zeitintervallen ( interval '1 minute' vs. interval '1' minute . - Hochkommas beachten!) Figure 1. Erzeugen von Testdaten Oracle vs. PostgreSQL Syntax Bevor ich mich anderen Aspekten als den Syntax-Unterschieden widme, möchte ich noch erwähnen, dass auch syntaktisch gleiche Konstrukte zu unerwarteten Ergebnissen führen können: Ein select 5/2 ergibt in PostgreSQL 2 (Zwei). Das ist auch so dokumentiert (vgl. [ 2 ] ), allerdings finde ich den Default (\"for integral types, the devision truncates the result towards zero\") nach wie vor gewöhnungsbedürftig. Explizite Casts wie select 5.0/2 oder select 5::float/2 sind mögliche Lösungen, die dann zum Ergebnis 2,5 führen. Architekturunterschiede Im zweiten Teil möchte ich noch etwas ins Detail gehen und ein paar markante architektonische Entscheidungen in PostgreSQL beleuchten. Was eine Datenbank grundlegend ausmacht, ist das MVCC (Multi Version Concurrency Control) Prinzip, welches den konkurrierenden Zugriff auf Daten regelt. Wenn eine Transaktion liest, soll sie nicht von einer schreibenden Transaktion geblockt sein und umgekehrt. Hierzu ist es essenziell, dass Datenänderungen versioniert sind. Oracle ändert die Daten \"inline\" im Block. Es wird um jeden Preis vermieden, dass die physikalische Adresse einer Zeile im Block nochmal wandert. Das hat z. B. den Vorteil, dass ein Index stets unverändert den Zugriff auf den Block für diese Zeile kennt. Die eigentlichen Änderungen/Versionen sind im UNDO festgehalten. In PostgreSQL wird eine Zeile mehrfach kopiert und eine Transaktions-ID steuert, für welche Session die Zeile sichtbar bzw. unsichtbar ist. Je mehr parallele Transaktionen auf demselben Tupel (=Zeile) operieren, desto mehr Kopien derselben Zeile wird es geben. Das sorgt folglich für sogenannten Bloat: Die Tabelle plustert sich auf und verbraucht physikalisch mehr Speicherplatz. Wenn die älteren Versionen nicht mehr benötigt werden, bleiben überflüssige Versionen einer Zeile übrig. Ein Hintergrundprozess muss aktiv werden, um aufzuräumen. Dieser ist unter dem Begriff Vacuum (\"Staubsauger\") bekannt. Ich selbst musste diesen Prozess nie tunen. In OLTP-Systemen mit viel Last sollte man sich jedoch genauere Gedanken machen, wann und wie dieser Hintergrundprozess aktiv werden soll/muss. Hierzu werden in der zentralen Konfigurationsdatei postgresql.conf diverse Parameter angeboten (s. Abbildung 2). Figure 2. Mögliche Parameter zum Tunen von Vacuum Ein viel-gelesener Artikel [ 3 ] , der die Schwächen von PostgreSQL aufzeigt, behandelt diese \"Copy on Write\" Versionierung und es wird angemerkt, dass es ein Limit der zu vergebenen Transaktions-IDs gibt. Bevor ich jemals eine PostgreSQL Datenbank live und in Farbe verwendet hatte, hat mir der Artikel nicht unbedingt Mut gemacht. Allerdings hat sich das im echten \"hands-on\" OLTP-Betrieb nicht bewahrheitet. Laurenz Albe hat eine interessante Gegendarstellung zum Transaktions-ID Wraparound Problem verfasst (vgl. [ 4 ] ). Im Gegenteil – PostgreSQL hat im Bereich Transaktionen mein Herz gewonnen, weil DDL-Befehle (also z. B. create table ) mittels Rollback rückgängig gemacht werden können. So macht Skripte-Schreiben wirklich Spaß! Man muss im Fehlerfall nicht aufräumen und komplizierte Workarounds schaffen. Die Objekt-Änderungen werden einfach nicht commited. Das Auto-Commit ist in allen gängigen Clients (DBeaver, psql, pgAdmin,…) Standard. Man muss mittels begin Befehl explizit eine Transaktion aufspannen, um ein implizites Commit zu verhindern. Das wiederum macht das Ausführen von DML, z. B. einem delete -Befehl, erst einmal ungewohnt riskant. Wenn man nicht aufpasst, sind die gelöschten Daten wirklich festgeschrieben. Ein Rollback ist nicht mehr möglich. In meinem Projekt musste ich intensiv mit Zeitstempeln und Zeitzonen hantieren. Vor allem, wenn Client und Server nicht mit der gleichen Zeitzone konfiguriert sind, muss es zwangsläufig zu einer Konvertierung kommen, sodass \"hin- und zurückgerechnet\" werden kann. Wenn in Oracle ein Zeitstempel im Datentyp timestamptz gespeichert wird, gibt es Bytes, die festhalten in welcher Zeitzone diese Uhrzeitangabe zu verstehen ist. Was Bit-genau gespeichert wird, hängt von den NLS -Settings von Client und Server ab. In PostgreSQL gibt es eine simple Regel: There is no such thing as a server time zone. Der Server nimmt den Zeitstempel so an, wie es vom Client angegeben wird (entweder indirekt über set timezone in der Session oder direkt am übertragenen String durch die Formatmaske) und konvertiert in jedem Fall in UTC. Ein lesender Prozess findet anschließend immer Bits auf Platte, die den Zeitstempel in UTC repräsentieren. Zur Konvertierung nutzt PostgreSQL eine zentrale Datenbank für Zeitzonen – die IANA. Figure 3. Zeitstempel werden stets in UTC gespeichert Ein wenig anders verhalten sich in PostgreSQL Client und Server übrigens auch beim Austausch des Zeichensatzes (z. B. Unicode). Aber da die NLS-Settings und UTF-8 Encoding in Oracle einen eigenen Artikel wert wären, möchte ich es lediglich erwähnen. Zum Thema Zeiten möchte ich außerdem noch knapp erwähnen: Wer viel mit Zeitstempel-Arithmetik zu kämpfen hat, sollte sich in PostgreSQL auf jeden Fall mit dem tsrange() Datentypen vertraut machen [ 5 ] . Ich würde mir ein Pendant in der Oracle Datenbank wünschen. Performance Troubleshooting Im letzten Teil widme ich noch ein paar Zeilen einem Thema, welches mich im Oracle Kontext in den Bann gezogen hat. Performance Troubleshooting ist mit den Oracle Bordmitteln ein echter Zuckerschlecken. Die Art und Weise wie diese Software instrumentiert ist, ist einzigartig. Dabei gilt vor allem, dass das Logging per Default eingeschaltet ist; vornehmlich beziehe ich mich hier auf das Event Tracing und das AWR=Active Workload Repository, worauf dann auch die ASH=Active Session History basiert. Somit liegen die relevanten Informationen förmlich auf dem Tisch und man ist nur mit der eigentlichen \"Detektiv-Arbeit\" beschäftigt. Ich weiß nicht, bei wie viel Gigabyte eine Oracle-Installation inzwischen angekommen ist. Zwar ist eine PostgreSQL Vanilla-Version deutlich schlanker, das macht sich dann aber genau an solchen Features bemerkbar. Der Weg in der PostgreSQL-Welt führt dann über sogenannte Extensions. Diese sind nachträglich zu installieren. Somit ist zumindest eine Vanilla-Installation sorgfältiger zu planen. Ich habe sogar verstärkt wahrgenommen, dass bei Admins und Experten häufig noch der Performance-Nachteil (\"Workloads laufen 2% langsamer\") der Gesamtinstallation als Argument aufgeführt wird, weshalb man intensives Logging nicht per Default aktiviert. Hier halte ich es wie Tom Kyte [ 6 ] . In allen Umgebungen, in denen ich aktiv war, wurden hilfreiche Instrumentations-Mechanismen nicht aktiviert, sodass die Suche bei erstmalig aufgetretenen Performance-Schwierigkeiten knifflig bis unmöglich war. Die Metriken für eine detaillierte Analyse waren schlichtweg nicht vorhanden. Nach meinem ersten Jahr kann ich folgenden Ansatz empfehlen: Um proaktiv und nachträglich Langläufer im SQL zu identifizieren, sollte die Extension pg_stat_statements installiert werden. Es handelt sich dann um eine View, die mittels SQL-Abfragen analysierbar ist. Diese hat einige Schwächen, z. B. dass statt dem echten SQL-Statement eine normalisierte Form gezeigt wird. Literale werden durch Bind-Variablen ersetzt und die Belegung der Binds kann nicht mehr nachvollzogen werden. Das lässt keine Einzelfallbetrachtung zu. Deswegen sollte zusätzlich auch auto_explain geladen werden. Damit werden in den Server-Logs mehr Infos rund um ein SQL (inklusive ermitteltem Ausführungsplan) weggeschrieben. Der Schwellenwert, ab welcher Laufzeit ein SQL geloggt wird, lässt sich konfigurieren ( auto_explain.log_min_duration ). Hat man mit der breiten Analyse den Langläufer identifiziert, kann man folglich auf die Server-Logs zurückgreifen, um mehr Infos zu erhalten. Wenn das Problem reproduzierbar ist, kann man in PostgreSQL leider kein echtes Tracing der Session aktivieren. Die Extension pg_show_plans erlaubt es, zumindest aus einer zweiten Session heraus, in eine Langläufer-Session reinzuspicken, um den Ausführungsplan der laufenden Abfrage zu sehen. Im Fall, dass das Problem reproduzierbar ist, gibt es auch kein Sampling, wie man es von der ASH kennt. Ich finde jedoch, dass die Extension pg_sentinel vielversprechende ASH -ähnliche Ansätze beinhaltet. Um dann ein Statement wirklich anzupacken und dem Optimizer unter die Arme zu greifen, kann man nur auf Hints zurückgreifen, wenn die Extension pg_hint_plan installiert wird. Diese hat auch eine Funktionalität ähnlich zu Baselines. Baselines werden in Oracle auf Basis der SQL_ID erstellt, welche auch im Library Cache abgelegt wird. PostgreSQL hat keine SGA und damit auch keinen Library Cache. Deshalb bringen Bind-Variablen auch nur Performance-Vorteile in der gleichen Session. Session-übergreifend können geparste SQL-Befehle nicht mit einem Softparse wiederverwendet werden. Es gibt die Möglichkeit von Prepared Statements, die das mehrfache Ausführen desselben SQLs innerhalb einer Session beschleunigen. In der Ausgabe 01-2021 des Red Stack Magzins hat Herve Schweitzer einen eigens diesem Thema gewidmeten Artikel geschrieben [ 7 ] - sehr empfehlenswert! Fazit Der vorliegende Artikel kann nur begrenzt technische Feinheiten beschreiben, die dann für die wirklichen Unterschiede zwischen den beiden Datenbanken sorgen. Es wurden Syntax- und Architektur-Unterschiede betrachtet - das Wort Migration wurde von mir beispielsweise komplett ausgespart. Für mich ist klar, dass ich mich nach einem Jahr nicht für Oracle oder PostgreSQL entscheiden kann/will und für einen Umstieg plädiere! Für mich gilt: \"Kenne beide Seiten und bleibe in Übung\". Wenn jedoch keine Gründe dagegensprechen, starten Sie neue Projekte mit PostgreSQL und probieren Sie es aus. Ich freue mich auf Ihr Feedback. 1 . https://maximorlov.com/char-varchar-text-postgresql/ 2 . https://www.postgresql.org/docs/14/functions-math.html 3 . https://rbranson.medium.com/10-things-i-hate-about-postgresql-20dbab8c2791 4 . https://www.cybertec-postgresql.com/en/transaction-id-wraparound-a-walk-on-the-wild-side/ 5 . https://www.cybertec-postgresql.com/en/multiranges-in-postgresql-14/ 6 . https://carymillsap.blogspot.com/2009/02/on-usefulness-of-software.html 7 . https://www.doag.org/de/home/news/red-stack-012021-database-blockchain/ "
+},
+
+{
+    "id": 2,
     "uri": "blog/2024/2024-01-25-Evolution-der-Webentwicklung.html",
     "menu": "Blog",
     "title": "Meine Reise durch die Evolution der Webentwicklung",
@@ -17,7 +25,7 @@ var documents = [
 },
 
 {
-    "id": 2,
+    "id": 3,
     "uri": "blog/2024/2024-01-16-Accessibility-in-Angular.html",
     "menu": "Blog",
     "title": "Accessibility in Angular",
@@ -25,19 +33,11 @@ var documents = [
 },
 
 {
-    "id": 3,
+    "id": 4,
     "uri": "blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html",
     "menu": "Blog",
     "title": "Fahrplankonstruktion",
     "text": " Table of Contents Von der Vision eines vollautomatisch konstruierten Fahrplans Slides Von der Vision eines vollautomatisch konstruierten Fahrplans Wie mit Digitalisierung der Prozesse und agiler Software-Entwicklung der Fahrplan unter dem \"rollenden Rad\" sukzessive auf die Digitale Schiene gesetzt und gleichzeitig eine Kapazitätssteigerung erreicht wird. Jede Zugfahrt in Deutschland braucht einen Fahrplan. Das sind bis zu 50.000 Zugfahrten mit Fahrplänen pro Tag. Doch wo kommen diese her? Die steigende Verkehrsnachfrage führt auf der einen Seite zu höheren Kapazitätsbedarfen und Auslastung der Schieneninfrastruktur. Auf der anderen Seite wird die verfügbare Kapazität während der Bau- und Modernisierungsaktivitäten der Schieneninfrastruktur und der Leit- und Sicherungstechnik während der Maßnahmen reduziert. Zur frühzeitigen Identifikation, Vermeidung und Handhabung von möglichen Kapazitätsengpässen sind die IT und die weitere Digitalisierung der Prozesse gefordert. Durch die Einführung digitaler Prozesse entwickeln wir uns weg von der einer manuellen Fahrplankonstruktion hin zu einer weitestgehend vollständig automatisierten Fahrplankonstruktion und Kapazitätsmanagement, so dass die zukünftig steigenden Verkehrsbedarfe auf der Schiene weiterhin bedient werden können. Hierzu sind wir vor 3 Jahren gestartet, die monolithischen Bestandssysteme sukzessive durch modulare Services mit einer flexiblen, integrierten Plattform abzulösen und zu automatisieren. Damit verbunden ist die Neugestaltung und Automatisierung von Abläufen und Prozessschritten, sowie eine Konsolidierung der Datenhaltung und Informationsflüsse. Die agile Software-Entwicklung bietet eine höhere Flexibilität und Reaktionsschnelligkeit auf Kundenwünsche und neue Anforderungen. Wir arbeiten iterativ und sind im ständigen Austausch zu unseren Stakeholdern. Dadurch werden Teillieferungen in regelmäßigen Abständen gewährleistet, um so der großen Vision stückweise näher zu kommen. Die Herausforderung ist, mit über 600 Experten in crossfunktionalen, agilen Teams synchronisiert neue Abläufen, automatisierte Prozessschritte und flexibel kombinierbaren und modularen Services zu konzipieren, entwickeln und unter dem \"rollenden Rad\" sukzessive in Produktion zu bringen. Als DB Netz sind wir in Deutschland eines der größten Unternehmen, die einen signifikanten Anteil der IT-Entwicklung nach SAFe® 6.0 gestalten. Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine sehr hohe Automatisierung im Lebenszyklus der Softwareentwicklung und übernehmen eine Ende-zu-Ende Verantwortung für ihre entwickelten Artefakte. Slides download "
-},
-
-{
-    "id": 4,
-    "uri": "blog/2023/2023-12-21-postgreSQL.html",
-    "menu": "Blog",
-    "title": "PostgreSQL",
-    "text": " Table of Contents Ein Jahr PostgreSQL – Das Leben danach Slides Ein Jahr PostgreSQL – Das Leben danach Dieser Vortrag ist ein Jahr nach dem Entschluss entstanden, einen neuen Job anzunehmen und mich raus aus meiner Oracle-Blase und rein in die \"neue\" Welt der PostgreSQL-Datenbankentwicklung zu begeben. Der Gedanke damals war: \"SQL ist SQL und ich werde mich schon schnell zurechtfinden. Es bleibt ja eine Relationale Datenbank\". Dieser Vortrag soll eine kleine Zusammenfassung sein über: Einige WTF-Momente: Der Teufel liegt im Detail und welche Unterschiede da wirklich auf einen Oracle-Datenbankentwickler warten, war mir vorher nicht bewusst. Das schöne aus beiden Welten: Sowohl Oracle als auch PostgreSQL haben schöne Seiten. Es ist von Vorteil, beide Systeme ein bisschen genauer zu kennen. Sonstige Erfahrungen und Eindrücke, die ich nach einem Jahr im PostgreSQL-Ökosystem so beobachtet habe. Ich konzentriere mich dabei auf den Bereich SQL (z. B. analytic functions oder die Behandlung von NULL values) und habe aber auch ein paar \"admin-nahe\" bzw. theoretische Unterschiede, die ich aufzeigen möchte (z. B. Tuning-Werkzeuge und MVCC). Nach dem Vortrag sollte klarer sein, mit welchen Fallstricken man beim Umstieg von Oracle auf PostgreSQL rechnen sollte. Slides download "
 },
 
 {
@@ -250,34 +250,34 @@ var documents = [
 
 {
     "id": 31,
-    "uri": "blog/profiles/Sascha-Wolter.html",
+    "uri": "blog/profiles/Ralf-D.-Mueller.html",
     "menu": "Autoren",
-    "title": "Sascha Wolter",
-    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Persönliche Website "
+    "title": "Ralf D. Müller",
+    "text": " Table of Contents Ralf D. Müller Links Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf D. Müller arbeitet seit über 25 Jahren in der Softwarebranche, zunächst als Entwickler und später als Softwarearchitekt. Da er großen Wert auf die klare Kommunikation und Dokumentation seiner Ideen legt, hat er das Open-Source-Projekt docToolchain gestartet, das sich der effektiven Dokumentation von Softwarearchitekturen widmet und das arc42 Template als Grundlage nutzt. Zunehmend beschäftigt ihn aber der Einsatz von KI für das Softwaredesign. In diesem Zusammenhang hat Ralf bereits Erfahrungen mit ChatGPT gesammelt, etwa als Werkzeug zum Lösen spezifischer Teilprobleme in der \"iSAQB Advanced Level\"-Beispielprüfung. Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
 },
 
 {
     "id": 32,
-    "uri": "blog/profiles/Jonas-Gassenmeyer.html",
+    "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
-    "title": "Jonas Gassenmeyer",
-    "text": " Table of Contents Jonas Gassenmeyer Jonas Gassenmeyer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Jonas könnte den ganzen Tag über relationale Datenbanken reden. Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte. Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel. Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten. "
+    "title": "Marcus Sümnick",
+    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
     "id": 33,
-    "uri": "blog/profiles/Johannes-Dienst.html",
+    "uri": "blog/profiles/Joachim-Schirrmacher.html",
     "menu": "Autoren",
-    "title": "Johannes Dienst",
-    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Joachim Schirrmacher",
+    "text": " Table of Contents Joachim Schirrmacher Links Joachim Schirrmacher span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Joachim ist seit 2017 bei der DB Systel als Berater und Entwickler. Am liebsten programmiert er funktional mit TypeScript, notfalls aber auch mit Java und Spring Boot, mag REST APIs, aber auch Event Sourcing und Streams. Links LinkedIn Profile GitHub Profile Mastodon Stack Overflow "
 },
 
 {
     "id": 34,
-    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
+    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
     "menu": "Autoren",
-    "title": "Dr. Martin Strunk",
-    "text": " Table of Contents Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Dr. Martin Strunk Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created. Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm. LinkedIn Xing "
+    "title": "Gualter Barbas Baptista",
+    "text": " Table of Contents Gualter Barbas Baptista Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
@@ -290,102 +290,6 @@ var documents = [
 
 {
     "id": 36,
-    "uri": "blog/profiles/Bernd-Schimmer.html",
-    "menu": "Autoren",
-    "title": "Bernd Schimmer",
-    "text": " Table of Contents Bernd Schimmer Bernd Schimmer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bernd is an experienced frontend developer and Agility Master at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . "
-},
-
-{
-    "id": 37,
-    "uri": "blog/profiles/Stefan-Gruendling.html",
-    "menu": "Autoren",
-    "title": "Stefan Gründling",
-    "text": " Table of Contents Stefan Gründling Stefan Gründling span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Stefan Gründling ist SAFe® Solution Architect bei der DB Netz AG, dem größten Betreiber von Schieneninfrastruktur in Deutschland. Er arbeitet seit mehr als 10 Jahren in der Beratung und Softwareentwicklung. Als Architekt war er verantwortlich für die Entwicklung der Click&amp;Ride App und die automatische Fahrplankonstruktion mit welchen die DB Netz AG als weltweit erstes Unternehmen über eine App vollständig automatisiert Fahrpläne erstellen konnte. "
-},
-
-{
-    "id": 38,
-    "uri": "blog/profiles/Marcus-Suemnick.html",
-    "menu": "Autoren",
-    "title": "Marcus Sümnick",
-    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 39,
-    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
-    "menu": "Autoren",
-    "title": "Gualter Barbas Baptista",
-    "text": " Table of Contents Gualter Barbas Baptista Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 40,
-    "uri": "blog/profiles/Danny-Koppenhagen.html",
-    "menu": "Autoren",
-    "title": "Danny Koppenhagen",
-    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
-},
-
-{
-    "id": 41,
-    "uri": "blog/profiles/Bertram-Fey.html",
-    "menu": "Autoren",
-    "title": "Bertram Fey",
-    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
-},
-
-{
-    "id": 42,
-    "uri": "blog/profiles/Tim-Engeleiter.html",
-    "menu": "Autoren",
-    "title": "Tim Engeleiter",
-    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
-},
-
-{
-    "id": 43,
-    "uri": "blog/profiles/Ralf-D.-Mueller.html",
-    "menu": "Autoren",
-    "title": "Ralf D. Müller",
-    "text": " Table of Contents Ralf D. Müller Links Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf D. Müller arbeitet seit über 25 Jahren in der Softwarebranche, zunächst als Entwickler und später als Softwarearchitekt. Da er großen Wert auf die klare Kommunikation und Dokumentation seiner Ideen legt, hat er das Open-Source-Projekt docToolchain gestartet, das sich der effektiven Dokumentation von Softwarearchitekturen widmet und das arc42 Template als Grundlage nutzt. Zunehmend beschäftigt ihn aber der Einsatz von KI für das Softwaredesign. In diesem Zusammenhang hat Ralf bereits Erfahrungen mit ChatGPT gesammelt, etwa als Werkzeug zum Lösen spezifischer Teilprobleme in der \"iSAQB Advanced Level\"-Beispielprüfung. Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
-},
-
-{
-    "id": 44,
-    "uri": "blog/profiles/Oliver-Hammer.html",
-    "menu": "Autoren",
-    "title": "Oliver Hammer",
-    "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Oliver Hammer ist Product Owner einer Einheit mit 32 Teams und 300 Mitarbeitern bei der DB Systel, dem Digitalpartner der DB AG. Er arbeitet seit über 25 Jahren in der Beratung und Software-Entwicklung. In den unterschiedlichsten Rollen vom Entwickler über Architekten, fachlichem Berater und Projektleiter hat er viel Erfahrungen an der Schnittstelle zwischen Business und Technologie in großen Projekten und der Zusammenarbeit in Teams und Organisationen und Vorgehensmodellen gesammelt. "
-},
-
-{
-    "id": 45,
-    "uri": "blog/profiles/Maximilian-Franzke.html",
-    "menu": "Autoren",
-    "title": "Maximilian Franzke",
-    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
-},
-
-{
-    "id": 46,
-    "uri": "blog/profiles/Joachim-Schirrmacher.html",
-    "menu": "Autoren",
-    "title": "Joachim Schirrmacher",
-    "text": " Table of Contents Joachim Schirrmacher Links Joachim Schirrmacher span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Joachim ist seit 2017 bei der DB Systel als Berater und Entwickler. Am liebsten programmiert er funktional mit TypeScript, notfalls aber auch mit Java und Spring Boot, mag REST APIs, aber auch Event Sourcing und Streams. Links LinkedIn Profile GitHub Profile Mastodon Stack Overflow "
-},
-
-{
-    "id": 47,
-    "uri": "blog/profiles/Carsten-Thurau.html",
-    "menu": "Autoren",
-    "title": "Carsten Thurau",
-    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 48,
     "uri": "blog/profiles/Carsten-Hoffmann.html",
     "menu": "Autoren",
     "title": "Carsten Hoffmann",
@@ -393,23 +297,23 @@ var documents = [
 },
 
 {
-    "id": 49,
-    "uri": "blog/profiles/buildIT.html",
+    "id": 37,
+    "uri": "blog/profiles/Tim-Engeleiter.html",
     "menu": "Autoren",
-    "title": "BuildIT",
-    "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Tim Engeleiter",
+    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
 },
 
 {
-    "id": 50,
-    "uri": "blog/profiles/Sven-Hesse.html",
+    "id": 38,
+    "uri": "blog/profiles/Stefan-Gruendling.html",
     "menu": "Autoren",
-    "title": "Sven Hesse",
-    "text": " Table of Contents Sven Hesse Links Sven Hesse span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH. Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility. Links Persönliche Website "
+    "title": "Stefan Gründling",
+    "text": " Table of Contents Stefan Gründling Stefan Gründling span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Stefan Gründling ist SAFe® Solution Architect bei der DB Netz AG, dem größten Betreiber von Schieneninfrastruktur in Deutschland. Er arbeitet seit mehr als 10 Jahren in der Beratung und Softwareentwicklung. Als Architekt war er verantwortlich für die Entwicklung der Click&amp;Ride App und die automatische Fahrplankonstruktion mit welchen die DB Netz AG als weltweit erstes Unternehmen über eine App vollständig automatisiert Fahrpläne erstellen konnte. "
 },
 
 {
-    "id": 51,
+    "id": 39,
     "uri": "blog/profiles/Philippe-Rieffe.html",
     "menu": "Autoren",
     "title": "Philippe Rieffe",
@@ -417,11 +321,107 @@ var documents = [
 },
 
 {
-    "id": 52,
+    "id": 40,
     "uri": "blog/profiles/Konrad-Winkler.html",
     "menu": "Autoren",
     "title": "Konrad Winkler",
     "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 41,
+    "uri": "blog/profiles/Johannes-Dienst.html",
+    "menu": "Autoren",
+    "title": "Johannes Dienst",
+    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 42,
+    "uri": "blog/profiles/Danny-Koppenhagen.html",
+    "menu": "Autoren",
+    "title": "Danny Koppenhagen",
+    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+},
+
+{
+    "id": 43,
+    "uri": "blog/profiles/Carsten-Thurau.html",
+    "menu": "Autoren",
+    "title": "Carsten Thurau",
+    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 44,
+    "uri": "blog/profiles/buildIT.html",
+    "menu": "Autoren",
+    "title": "BuildIT",
+    "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 45,
+    "uri": "blog/profiles/Sven-Hesse.html",
+    "menu": "Autoren",
+    "title": "Sven Hesse",
+    "text": " Table of Contents Sven Hesse Links Sven Hesse span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH. Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility. Links Persönliche Website "
+},
+
+{
+    "id": 46,
+    "uri": "blog/profiles/Sascha-Wolter.html",
+    "menu": "Autoren",
+    "title": "Sascha Wolter",
+    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Persönliche Website "
+},
+
+{
+    "id": 47,
+    "uri": "blog/profiles/Oliver-Hammer.html",
+    "menu": "Autoren",
+    "title": "Oliver Hammer",
+    "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Oliver Hammer ist Product Owner einer Einheit mit 32 Teams und 300 Mitarbeitern bei der DB Systel, dem Digitalpartner der DB AG. Er arbeitet seit über 25 Jahren in der Beratung und Software-Entwicklung. In den unterschiedlichsten Rollen vom Entwickler über Architekten, fachlichem Berater und Projektleiter hat er viel Erfahrungen an der Schnittstelle zwischen Business und Technologie in großen Projekten und der Zusammenarbeit in Teams und Organisationen und Vorgehensmodellen gesammelt. "
+},
+
+{
+    "id": 48,
+    "uri": "blog/profiles/Jonas-Gassenmeyer.html",
+    "menu": "Autoren",
+    "title": "Jonas Gassenmeyer",
+    "text": " Table of Contents Jonas Gassenmeyer Links Jonas Gassenmeyer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Jonas könnte den ganzen Tag über relationale Datenbanken reden. Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte. Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel. Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten. Links Mastodon Profile X (formerly known as Twitter) Profile "
+},
+
+{
+    "id": 49,
+    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
+    "menu": "Autoren",
+    "title": "Dr. Martin Strunk",
+    "text": " Table of Contents Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Dr. Martin Strunk Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created. Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm. LinkedIn Xing "
+},
+
+{
+    "id": 50,
+    "uri": "blog/profiles/Bernd-Schimmer.html",
+    "menu": "Autoren",
+    "title": "Bernd Schimmer",
+    "text": " Table of Contents Bernd Schimmer Bernd Schimmer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bernd is an experienced frontend developer and Agility Master at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . "
+},
+
+{
+    "id": 51,
+    "uri": "blog/profiles/Maximilian-Franzke.html",
+    "menu": "Autoren",
+    "title": "Maximilian Franzke",
+    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
+},
+
+{
+    "id": 52,
+    "uri": "blog/profiles/Bertram-Fey.html",
+    "menu": "Autoren",
+    "title": "Bertram Fey",
+    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
 },
 
 {

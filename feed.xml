@@ -6,9 +6,376 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 30 Jan 2024 10:19:39 +0000</pubDate>
-    <lastBuildDate>Tue, 30 Jan 2024 10:19:39 +0000</lastBuildDate>
+    <pubDate>Wed, 7 Feb 2024 12:56:13 +0000</pubDate>
+    <lastBuildDate>Wed, 7 Feb 2024 12:56:13 +0000</lastBuildDate>
 
+    
+    <item>
+      <title>Ein Jahr PostgreSQL statt Oracle</title>
+      <link>http://jbake.org/blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html</link>
+      <pubDate>Wed, 7 Feb 2024 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_ein_jahr_postgresql_statt_oracle_das_leben_danach&quot;&gt;Ein Jahr PostgreSQL statt Oracle – Das Leben danach&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_syntaktische_unterschiede&quot;&gt;Syntaktische Unterschiede&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_architekturunterschiede&quot;&gt;Architekturunterschiede&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_performance_troubleshooting&quot;&gt;Performance Troubleshooting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_fazit&quot;&gt;Fazit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;style&gt;
+.bahn.ng code {
+  color: var(--color-cool-gray-700);
+}
+&lt;/style&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_ein_jahr_postgresql_statt_oracle_das_leben_danach&quot;&gt;Ein Jahr PostgreSQL statt Oracle – Das Leben danach&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Vor etwas über einem Jahr hatte ich die Möglichkeit tiefer in die Welt der PostgreSQL Datenbankentwicklung einzutauchen.
+Ein treibender Gedanke war:
+&quot;SQL ist SQL - ich werde mich schon schnell zurechtfinden, SQL bleibt schließlich eine Relationale Datenbank&quot;.
+Doch der Teufel steckt bekanntlich im Detail:
+Die Unterschiede und Herausforderungen, welche wirklich auf einen Oracle-Datenbankentwickler warten, waren mir vorher nicht bewusst.
+Sowohl Oracle als auch PostgreSQL haben schöne Seiten.
+Es ist durchaus von Vorteil, beide Systeme ein wenig genauer zu kennen.
+Dieser Artikel gibt meine Erfahrungen und Eindrücke wieder, die ich nach einem Jahr im PostgreSQL Ökosystem gemacht habe.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_syntaktische_unterschiede&quot;&gt;Syntaktische Unterschiede&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Beginnen wir einfach mit einem &lt;code&gt;create table&lt;/code&gt; Befehl.
+In meinem Oracle-Modus lege ich Textspalten mit dem Datentypen &lt;code&gt;varchar2&lt;/code&gt; an.
+Wenn ich einen solchen Befehl in PostgreSQL absetze, dann erhalte ich die Fehlermeldung &lt;code&gt;SQL Error [42704]: ERROR: type &quot;varchar2&quot; does not exist&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Schon das weist darauf hin, dass man mit den Skripten nicht einfach in &quot;Copy und Paste&quot; Manier auf eine PostgreSQL Datenbank wechseln kann.
+Die korrekte Alternative ist in diesem Fall der Datentyp &lt;code&gt;text&lt;/code&gt; (s. Listing 1).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Listing 1: &lt;code&gt;create table&lt;/code&gt; in PostgreSQL&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;sql&quot;&gt;create table demo (
+  descr text
+, col   text
+);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Entgegen der gängigen Praxis in Oracle, dass man die Zeichenketten-Länge möglichst einschränkt, ist das in PostgreSQL eher untypisch (vgl.&lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_1&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_1&quot; title=&quot;View footnote.&quot;&gt;1&lt;/a&gt;]&lt;/sup&gt;).
+Möchte man anschließend die erstellte Tabelle im Data Dictionary überprüfen, stellt man den nächsten Unterschied fest:
+Die bewährte Struktur &lt;code&gt;dba|all|user_tables&lt;/code&gt; gibt es so nicht.
+Stattdessen ist das Pendant im sogenannten &lt;code&gt;information_schema&lt;/code&gt; Schema unter dem Namen &lt;code&gt;pg_class&lt;/code&gt; zu finden.
+Objektnamen werden außerdem in Kleinbuchstaben hinterlegt (s. Listing 2).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Listing 2: Data Dictionary Abfrage in PostgreSQL&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;sql&quot;&gt;select *
+from pg_class
+where relname = &apos;demo&apos; ;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wie man sieht, ist die analoge Spalte zu &lt;code&gt;user_tables.table_name&lt;/code&gt; hier &lt;code&gt;pg_class.relname&lt;/code&gt;.
+Mir hat es geholfen an die relationale Theorie von Edgar F. Codd zu denken, wo ebenfalls von tupels(=row), relations(=table) und co. die Rede ist.
+Der Sprachgebrauch ist im Data Dictionary von PostgreSQL wiederzuerkennen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Als nächstes soll die Tabelle Demo mittels &lt;code&gt;Insert&lt;/code&gt;-Befehl befüllt werden. Zunächst werden dazu zwei Zeilen eingefügt – s. Listing 3.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Listing 3: &lt;code&gt;NULL&lt;/code&gt; vs. leere Zeichenkette&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;sql&quot;&gt;insert into demo (descr, col) values (&apos;1 insert&apos;, &apos;&apos;);
+insert into demo (descr, col) values (&apos;2 insert&apos;, null);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Anzumerken ist, dass die Spalte &lt;code&gt;col&lt;/code&gt; im ersten Befehl mittels leerem String und im zweiten explizit mit &lt;code&gt;NULL&lt;/code&gt; befüllt wird.
+In Oracle hat das dieselbe Bedeutung, aber in PostgreSQL ist mit dem leeren String etwas anderes gemeint, sodass eine Abfrage mittels &lt;code&gt;where col is null&lt;/code&gt; nur eine Zeile zurückgibt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Das muss man sich mal auf der Zunge zergehen lassen.
+Ich möchte nicht wissen, wie viele Applikationen eine explizite &lt;code&gt;NULL&lt;/code&gt;-Wert-Behandlung implementiert haben.
+Um beide Zeilen im &lt;code&gt;select&lt;/code&gt;-Befehl zu erhalten, könnte man die &lt;code&gt;where&lt;/code&gt;-Bedingung in &lt;code&gt;where coalesce(col, &apos;&apos;) = &apos;&apos;&lt;/code&gt; umschreiben. Damit ist es aber nicht getan.
+Man muss sich dann auch mit den möglichen Operationen (z. B. String Konkatenation – s. Listing 4) befassen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Listing 4: Operation mit Zeichenkette und &lt;code&gt;NULL&lt;/code&gt;&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;sql&quot;&gt;select &apos;test&apos;||null; --ergibt NULL!&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In Listing 4 mag Ihnen aufgefallen sein, dass die Tabellenangabe &lt;code&gt;from dual&lt;/code&gt; fehlt.
+Das ist in PostgreSQL valide Syntax – PostgreSQL kennt die Dummy Tabelle &lt;code&gt;dual&lt;/code&gt; nicht.
+Doch zurück zum eigentlichen Thema: &lt;code&gt;NULL&lt;/code&gt;-Werte.
+Wenn wir in Oracle einen &lt;code&gt;NULL&lt;/code&gt;-Wert an eine Zeichenkette hängen, können wir sicher sein, dass die Zeichenkette wieder ausgegeben wird.
+Das ist in PostgreSQL nicht so.
+Der gesamte Ausdruck liefert &lt;code&gt;NULL&lt;/code&gt; als Ergebnis.
+Tatsächlich bin ich mehrfach auf kleine Bugs in meinen Abfragen gestoßen, weil ich aus Gewohnheit falsche &lt;code&gt;NULL&lt;/code&gt;-Logiken im Kopf hatte.
+Der Artikel von AWS &quot;Handle empty Strings when migrating from Oracle to PostgreSQL&quot; umfasst 13 Seiten und 3300 Worte.
+Das zeigt, wie komplex die Unterschiede zwischen beiden Datenbanken alleinig im Bereich &lt;code&gt;NULL&lt;/code&gt;-Werte sind.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Listing 5 verdeutlicht einen weiteren Unterschied (der sich in Oracle 23c in Luft auflösen wird):
+Der Boolean Datentyp existiert und kann in PostgreSQL ohne Einschränkungen in SQL verwendet werden.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Listing 5: Booleans&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;sql&quot;&gt;select &apos;&apos; = &apos;&apos; tst; -- liefert TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Bisher ist auf der Demo Tabelle kein Primärschlüssel definiert.
+Wenn dieser ergänzt und anschließend zwei identische Werte eingefügt werden (s. Listing 6), kommt es zu einer Fehlermeldung.
+Im Gegensatz zur generischen Fehlerbeschreibung in Oracle (&lt;code&gt;SQL Error [1] [23000]: ORA-00001: unique constraint (SYSTEM.xyz) violated&lt;/code&gt;), enthält die Fehlerbeschreibung in PostgreSQL den tatsächlichen Spaltenwert, der zur Verletzung des Constraints geführt hat (im Beispiel ist das &lt;code&gt;key1&lt;/code&gt;).
+Gerade bei Bulk-Loads macht das die Suche nach der Nadel im Heuhaufen deutlich einfacher.
+Ein kleiner, aber feiner Unterschied.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Listing 6: Primärschlüssel-Verletzung in PostgreSQL&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;sql&quot;&gt;alter table demo add primary key (descr);
+insert into demo values (&apos;key1&apos;, &apos;i repeat&apos;);
+insert into demo values (&apos;key1&apos;, &apos;i repeat&apos;);
+
+SQL Error [23505]: ERROR: duplicate key value violates SQL
+Detail: Key (descr)=(key1) already exists.&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Im Kontext von Bulk-Loads und Primärschlüssel-Verletzungen ist in Oracle der &lt;code&gt;merge&lt;/code&gt;-Befehl hilfreich.
+Dieser ist seit 9i verfügbar und besitzt somit einen gewissen Reifegrad.
+In PostgreSQL wurde &lt;code&gt;merge&lt;/code&gt; erst im Oktober 2022 mit Version 15 eingeführt.
+Damit ist der Befehl nicht ganz ausgereift und noch etwas limitiert.
+Genaueres ist dem Syntax Baum in der offiziellen Dokumentation zu entnehmen (&lt;a href=&quot;https://www.postgresql.org/docs/15/sql-merge.html&quot; class=&quot;bare&quot;&gt;https://www.postgresql.org/docs/15/sql-merge.html&lt;/a&gt;).
+Apropos Dokumentation.
+Sowohl Oracle als auch PostgreSQL weisen eine sehr gute Doku auf.
+PostgreSQL verzichtet dabei (absichtlich) auf Code-Beispiele, was manchmal weitere Google-Suchen erforderlich macht.
+Den Luxus, den &lt;a href=&quot;https://oracle-base.com&quot;&gt;Oracle-Base.com&lt;/a&gt; bietet, hat man für PostgreSQL nicht.
+Wer noch nicht PostgreSQL Version 15 verwendet, dem sei die kleine Schwester des &lt;code&gt;merge&lt;/code&gt;-Befehls empfohlen (s. Listing 7).
+Hier lässt sich zumindest eine Update-Aktion (oder &quot;Fehler ignorieren&quot;) bestimmen, wenn eine entsprechende Constraint-Verletzung vorliegt.
+Nicht ganz so mächtig wie der &lt;code&gt;merge&lt;/code&gt;-Befehl, aber ich habe häufig darauf zurückgegriffen und fand ihn auch sehr selbsterklärend.
+Wirklich vermisst habe ich merge nicht.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;title&quot;&gt;Listing 7: &lt;code&gt;insert on conflict&lt;/code&gt; in PostgreSQL&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;sql&quot;&gt;insert into demo values (&apos;key2&apos;, &apos;i repeat&apos;) on conflict (descr)
+do nothing;
+insert into demo values (&apos;key2&apos;, &apos;i repeat&apos;)
+on conflict (descr) --pk or uk
+do update set col = &apos;i&apos;&apos;ve been updated&apos;;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Man ahnt es schon:
+An vielen Stellen wird man sich bei PostgreSQL an kleinere Syntax-Änderungen gewöhnen müssen, die mehr oder weniger einschränkende Funktionalität bedeuten.
+Sollte ich nach einem Jahr Vergleich die aktuell bedeutendste Einschränkung nennen, wären das die die Window-Functions.
+Diese sind zwar auch zahlreich in PostgreSQL vorhanden, allerdings hat mich Oracle in der Vergangenheit mit Details beeindruckt;
+z. B. wird ein &lt;code&gt;select count(distinct …) over(partition by …) &lt;/code&gt; mit der Fehlermeldung &lt;code&gt;SQL Error [0A000]: ERROR: DISTINCT is not implemented for window functions&lt;/code&gt; zurückgewiesen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Tabelle &lt;em&gt;Demo&lt;/em&gt; war bis hierhin ein dankbarer Begleiter zum Aufzeigen der Unterschiede.
+An dieser Stelle möchte ich ein neues Beispiel einführen, um zu verdeutlichen, dass die Syntax-Differenzen zwischen Oracle und PostgreSQL an vielen Stellen deutlich spürbar sind.
+Man stelle sich folgenden Datensatz vor:
+Für eine Webanwendungen ist in einer Tabelle der jeweilige URL-Aufruf mit Dauer und Zeitstempel des Aufrufs getrackt.
+Ich habe mittels SQL zu Demonstrationszwecken einen solchen Datensatz künstlich erzeugt.
+Aus Platzgründen erkläre ich die Gegenüberstellung stichpunktartig und nenne die gravierendsten Unterschiede:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Common Table Expression (&lt;code&gt;with&lt;/code&gt; Klausel in Kombination mit &lt;code&gt;create table&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Generierung mehrerer Zeilen (&lt;code&gt;connect by&lt;/code&gt; level vs. &lt;code&gt;generate_series&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Teilen von Strings (&lt;code&gt;substr&lt;/code&gt; vs. &lt;code&gt;substring&lt;/code&gt; Funktion; siehe auch Parameter)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Erzeugen von Zufallszahlen (&lt;code&gt;dbms&lt;/code&gt; Package vs. &lt;code&gt;random()&lt;/code&gt; Funktion)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Literale beim Erzeugen von Zeitintervallen (&lt;code&gt;interval &apos;1 minute&apos;&lt;/code&gt; vs. &lt;code&gt;interval &apos;1&apos; minute&lt;/code&gt;. - Hochkommas beachten!)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/20240207-postgreSQL/testdata_oracle_postgres.png&quot; alt=&quot;Gegenüberstellung einer beispielhaften Erzeugung von Testdaten im Vergleich: Oracle vs. PostgreSQL&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;title&quot;&gt;Figure 1. Erzeugen von Testdaten Oracle vs. PostgreSQL Syntax&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Bevor ich mich anderen Aspekten als den Syntax-Unterschieden widme, möchte ich noch erwähnen, dass auch syntaktisch gleiche Konstrukte zu unerwarteten Ergebnissen führen können:
+Ein &lt;code&gt;select 5/2&lt;/code&gt; ergibt in PostgreSQL &lt;code&gt;2&lt;/code&gt; (Zwei).
+Das ist auch so dokumentiert (vgl.&lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_2&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_2&quot; title=&quot;View footnote.&quot;&gt;2&lt;/a&gt;]&lt;/sup&gt;), allerdings finde ich den Default (&quot;for integral types, the devision truncates the result towards zero&quot;) nach wie vor gewöhnungsbedürftig.
+Explizite Casts wie &lt;code&gt;select 5.0/2&lt;/code&gt; oder &lt;code&gt;select 5::float/2&lt;/code&gt; sind mögliche Lösungen, die dann zum Ergebnis &lt;code&gt;2,5&lt;/code&gt; führen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_architekturunterschiede&quot;&gt;Architekturunterschiede&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Im zweiten Teil möchte ich noch etwas ins Detail gehen und ein paar markante architektonische Entscheidungen in PostgreSQL beleuchten.
+Was eine Datenbank grundlegend ausmacht, ist das MVCC (Multi Version Concurrency Control) Prinzip, welches den konkurrierenden Zugriff auf Daten regelt.
+Wenn eine Transaktion liest, soll sie nicht von einer schreibenden Transaktion geblockt sein und umgekehrt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Hierzu ist es essenziell, dass Datenänderungen versioniert sind.
+Oracle ändert die Daten &quot;inline&quot; im Block.
+Es wird um jeden Preis vermieden, dass die physikalische Adresse einer Zeile im Block nochmal wandert.
+Das hat z. B. den Vorteil, dass ein Index stets unverändert den Zugriff auf den Block für diese Zeile kennt.
+Die eigentlichen Änderungen/Versionen sind im &lt;code&gt;UNDO&lt;/code&gt; festgehalten.
+In PostgreSQL wird eine Zeile mehrfach kopiert und eine Transaktions-ID steuert, für welche Session die Zeile sichtbar bzw. unsichtbar ist.
+Je mehr parallele Transaktionen auf demselben Tupel (=Zeile) operieren, desto mehr Kopien derselben Zeile wird es geben.
+Das sorgt folglich für sogenannten Bloat:
+Die Tabelle plustert sich auf und verbraucht physikalisch mehr Speicherplatz.
+Wenn die älteren Versionen nicht mehr benötigt werden, bleiben überflüssige Versionen einer Zeile übrig.
+Ein Hintergrundprozess muss aktiv werden, um aufzuräumen.
+Dieser ist unter dem Begriff Vacuum (&quot;Staubsauger&quot;) bekannt.
+Ich selbst musste diesen Prozess nie tunen.
+In OLTP-Systemen mit viel Last sollte man sich jedoch genauere Gedanken machen, wann und wie dieser Hintergrundprozess aktiv werden soll/muss.
+Hierzu werden in der zentralen Konfigurationsdatei &lt;code&gt;postgresql.conf&lt;/code&gt; diverse Parameter angeboten (s. Abbildung 2).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/20240207-postgreSQL/postgresql_vacuum.png&quot; alt=&quot;Screenshot der PostgreSQL-Konfiguration mit möglichen Parametern zum Tunen von Vacuum&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;title&quot;&gt;Figure 2. Mögliche Parameter zum Tunen von Vacuum&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Ein viel-gelesener Artikel&lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_3&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_3&quot; title=&quot;View footnote.&quot;&gt;3&lt;/a&gt;]&lt;/sup&gt;, der die Schwächen von PostgreSQL aufzeigt, behandelt diese &quot;Copy on Write&quot; Versionierung und es wird angemerkt, dass es ein Limit der zu vergebenen Transaktions-IDs gibt.
+Bevor ich jemals eine PostgreSQL Datenbank live und in Farbe verwendet hatte, hat mir der Artikel nicht unbedingt Mut gemacht. Allerdings hat sich das im echten &quot;hands-on&quot; OLTP-Betrieb nicht bewahrheitet.
+Laurenz Albe hat eine interessante Gegendarstellung zum Transaktions-ID Wraparound Problem verfasst (vgl.&lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_4&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_4&quot; title=&quot;View footnote.&quot;&gt;4&lt;/a&gt;]&lt;/sup&gt;).
+Im Gegenteil – PostgreSQL hat im Bereich Transaktionen mein Herz gewonnen, weil DDL-Befehle (also z. B. &lt;code&gt;create table&lt;/code&gt;) mittels Rollback rückgängig gemacht werden können.
+So macht Skripte-Schreiben wirklich Spaß!
+Man muss im Fehlerfall nicht aufräumen und komplizierte Workarounds schaffen.
+Die Objekt-Änderungen werden einfach nicht commited.
+Das Auto-Commit ist in allen gängigen Clients (DBeaver, psql, pgAdmin,…) Standard.
+Man muss mittels &lt;code&gt;begin&lt;/code&gt; Befehl explizit eine Transaktion aufspannen, um ein implizites Commit zu verhindern.
+Das wiederum macht das Ausführen von DML, z. B. einem &lt;code&gt;delete&lt;/code&gt;-Befehl, erst einmal ungewohnt riskant.
+Wenn man nicht aufpasst, sind die gelöschten Daten wirklich festgeschrieben.
+Ein Rollback ist nicht mehr möglich.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In meinem Projekt musste ich intensiv mit Zeitstempeln und Zeitzonen hantieren.
+Vor allem, wenn Client und Server nicht mit der gleichen Zeitzone konfiguriert sind, muss es zwangsläufig zu einer Konvertierung kommen, sodass &quot;hin- und zurückgerechnet&quot; werden kann.
+Wenn in Oracle ein Zeitstempel im Datentyp &lt;code&gt;timestamptz&lt;/code&gt; gespeichert wird, gibt es Bytes, die festhalten in welcher Zeitzone diese Uhrzeitangabe zu verstehen ist.
+Was Bit-genau gespeichert wird, hängt von den &lt;code&gt;NLS&lt;/code&gt;-Settings von Client und Server ab.
+In PostgreSQL gibt es eine simple Regel:
+There is no such thing as a server time zone.
+Der Server nimmt den Zeitstempel so an, wie es vom Client angegeben wird (entweder indirekt über &lt;code&gt;set timezone&lt;/code&gt; in der Session oder direkt am übertragenen String durch die Formatmaske) und konvertiert in jedem Fall in UTC.
+Ein lesender Prozess findet anschließend immer Bits auf Platte, die den Zeitstempel in UTC repräsentieren.
+Zur Konvertierung nutzt PostgreSQL eine zentrale Datenbank für Zeitzonen – die IANA.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/20240207-postgreSQL/timestamp.png&quot; alt=&quot;PostgreSQL timestamp handling in UTC&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;title&quot;&gt;Figure 3. Zeitstempel werden stets in UTC gespeichert&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Ein wenig anders verhalten sich in PostgreSQL Client und Server übrigens auch beim Austausch des Zeichensatzes (z. B. Unicode). Aber da die NLS-Settings und UTF-8 Encoding in Oracle einen eigenen Artikel wert wären, möchte ich es lediglich erwähnen.
+Zum Thema Zeiten möchte ich außerdem noch knapp erwähnen:
+Wer viel mit Zeitstempel-Arithmetik zu kämpfen hat, sollte sich in PostgreSQL auf jeden Fall mit dem &lt;code&gt;tsrange()&lt;/code&gt; Datentypen vertraut machen&lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_5&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_5&quot; title=&quot;View footnote.&quot;&gt;5&lt;/a&gt;]&lt;/sup&gt;.
+Ich würde mir ein Pendant in der Oracle Datenbank wünschen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_performance_troubleshooting&quot;&gt;Performance Troubleshooting&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Im letzten Teil widme ich noch ein paar Zeilen einem Thema, welches mich im Oracle Kontext in den Bann gezogen hat.
+Performance Troubleshooting ist mit den Oracle Bordmitteln ein echter Zuckerschlecken.
+Die Art und Weise wie diese Software instrumentiert ist, ist einzigartig.
+Dabei gilt vor allem, dass das Logging per Default eingeschaltet ist;
+vornehmlich beziehe ich mich hier auf das Event Tracing und das &lt;code&gt;AWR=Active&lt;/code&gt; Workload Repository, worauf dann auch die &lt;code&gt;ASH=Active&lt;/code&gt; Session History basiert.
+Somit liegen die relevanten Informationen förmlich auf dem Tisch und man ist nur mit der eigentlichen &quot;Detektiv-Arbeit&quot; beschäftigt.
+Ich weiß nicht, bei wie viel Gigabyte eine Oracle-Installation inzwischen angekommen ist.
+Zwar ist eine PostgreSQL Vanilla-Version deutlich schlanker, das macht sich dann aber genau an solchen Features bemerkbar.
+Der Weg in der PostgreSQL-Welt führt dann über sogenannte Extensions.
+Diese sind nachträglich zu installieren.
+Somit ist zumindest eine Vanilla-Installation sorgfältiger zu planen.
+Ich habe sogar verstärkt wahrgenommen, dass bei Admins und Experten häufig noch der Performance-Nachteil (&quot;Workloads laufen 2% langsamer&quot;) der Gesamtinstallation als Argument aufgeführt wird, weshalb man intensives Logging nicht per Default aktiviert.
+Hier halte ich es wie Tom Kyte&lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_6&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_6&quot; title=&quot;View footnote.&quot;&gt;6&lt;/a&gt;]&lt;/sup&gt;. In allen Umgebungen, in denen ich aktiv war, wurden hilfreiche Instrumentations-Mechanismen nicht aktiviert, sodass die Suche bei erstmalig aufgetretenen Performance-Schwierigkeiten knifflig bis unmöglich war.
+Die Metriken für eine detaillierte Analyse waren schlichtweg nicht vorhanden.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Nach meinem ersten Jahr kann ich folgenden Ansatz empfehlen:
+Um proaktiv und nachträglich Langläufer im SQL zu identifizieren, sollte die Extension &lt;code&gt;pg_stat_statements&lt;/code&gt; installiert werden. Es handelt sich dann um eine View, die mittels SQL-Abfragen analysierbar ist.
+Diese hat einige Schwächen, z. B. dass statt dem echten SQL-Statement eine normalisierte Form gezeigt wird.
+Literale werden durch Bind-Variablen ersetzt und die Belegung der Binds kann nicht mehr nachvollzogen werden.
+Das lässt keine Einzelfallbetrachtung zu.
+Deswegen sollte zusätzlich auch &lt;code&gt;auto_explain&lt;/code&gt; geladen werden.
+Damit werden in den Server-Logs mehr Infos rund um ein SQL (inklusive ermitteltem Ausführungsplan) weggeschrieben.
+Der Schwellenwert, ab welcher Laufzeit ein SQL geloggt wird, lässt sich konfigurieren (&lt;code&gt;auto_explain.log_min_duration&lt;/code&gt;). Hat man mit der breiten Analyse den Langläufer identifiziert, kann man folglich auf die Server-Logs zurückgreifen, um mehr Infos zu erhalten.
+Wenn das Problem reproduzierbar ist, kann man in PostgreSQL leider kein echtes Tracing der Session aktivieren.
+Die Extension &lt;code&gt;pg_show_plans&lt;/code&gt; erlaubt es, zumindest aus einer zweiten Session heraus, in eine Langläufer-Session reinzuspicken, um den Ausführungsplan der laufenden Abfrage zu sehen.
+Im Fall, dass das Problem reproduzierbar ist, gibt es auch kein Sampling, wie man es von der &lt;code&gt;ASH&lt;/code&gt; kennt.
+Ich finde jedoch, dass die Extension &lt;code&gt;pg_sentinel&lt;/code&gt; vielversprechende &lt;code&gt;ASH&lt;/code&gt;-ähnliche Ansätze beinhaltet.
+Um dann ein Statement wirklich anzupacken und dem Optimizer unter die Arme zu greifen, kann man nur auf Hints zurückgreifen, wenn die Extension &lt;code&gt;pg_hint_plan&lt;/code&gt; installiert wird.
+Diese hat auch eine Funktionalität ähnlich zu Baselines.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Baselines werden in Oracle auf Basis der &lt;code&gt;SQL_ID&lt;/code&gt; erstellt, welche auch im Library Cache abgelegt wird.
+PostgreSQL hat keine SGA und damit auch keinen Library Cache.
+Deshalb bringen Bind-Variablen auch nur Performance-Vorteile in der gleichen Session.
+Session-übergreifend können geparste SQL-Befehle nicht mit einem Softparse wiederverwendet werden.
+Es gibt die Möglichkeit von Prepared Statements, die das mehrfache Ausführen desselben SQLs innerhalb einer Session beschleunigen. In der Ausgabe 01-2021 des Red Stack Magzins hat Herve Schweitzer einen eigens diesem Thema gewidmeten Artikel geschrieben&lt;sup class=&quot;footnote&quot;&gt;[&lt;a id=&quot;_footnoteref_7&quot; class=&quot;footnote&quot; href=&quot;#_footnotedef_7&quot; title=&quot;View footnote.&quot;&gt;7&lt;/a&gt;]&lt;/sup&gt; - sehr empfehlenswert!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_fazit&quot;&gt;Fazit&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Der vorliegende Artikel kann nur begrenzt technische Feinheiten beschreiben, die dann für die wirklichen Unterschiede zwischen den beiden Datenbanken sorgen.
+Es wurden Syntax- und Architektur-Unterschiede betrachtet - das Wort Migration wurde von mir beispielsweise komplett ausgespart.
+Für mich ist klar, dass ich mich nach einem Jahr nicht für Oracle oder PostgreSQL entscheiden kann/will und für einen Umstieg plädiere!
+Für mich gilt:
+&quot;Kenne beide Seiten und bleibe in Übung&quot;.
+Wenn jedoch keine Gründe dagegensprechen, starten Sie neue Projekte mit PostgreSQL und probieren Sie es aus.
+Ich freue mich auf Ihr Feedback.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_1&quot;&gt;
+&lt;a href=&quot;#_footnoteref_1&quot;&gt;1&lt;/a&gt;. &lt;a href=&quot;https://maximorlov.com/char-varchar-text-postgresql/&quot; class=&quot;bare&quot;&gt;https://maximorlov.com/char-varchar-text-postgresql/&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_2&quot;&gt;
+&lt;a href=&quot;#_footnoteref_2&quot;&gt;2&lt;/a&gt;. &lt;a href=&quot;https://www.postgresql.org/docs/14/functions-math.html&quot; class=&quot;bare&quot;&gt;https://www.postgresql.org/docs/14/functions-math.html&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_3&quot;&gt;
+&lt;a href=&quot;#_footnoteref_3&quot;&gt;3&lt;/a&gt;. &lt;a href=&quot;https://rbranson.medium.com/10-things-i-hate-about-postgresql-20dbab8c2791&quot; class=&quot;bare&quot;&gt;https://rbranson.medium.com/10-things-i-hate-about-postgresql-20dbab8c2791&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_4&quot;&gt;
+&lt;a href=&quot;#_footnoteref_4&quot;&gt;4&lt;/a&gt;. &lt;a href=&quot;https://www.cybertec-postgresql.com/en/transaction-id-wraparound-a-walk-on-the-wild-side/&quot; class=&quot;bare&quot;&gt;https://www.cybertec-postgresql.com/en/transaction-id-wraparound-a-walk-on-the-wild-side/&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_5&quot;&gt;
+&lt;a href=&quot;#_footnoteref_5&quot;&gt;5&lt;/a&gt;. &lt;a href=&quot;https://www.cybertec-postgresql.com/en/multiranges-in-postgresql-14/&quot; class=&quot;bare&quot;&gt;https://www.cybertec-postgresql.com/en/multiranges-in-postgresql-14/&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_6&quot;&gt;
+&lt;a href=&quot;#_footnoteref_6&quot;&gt;6&lt;/a&gt;. &lt;a href=&quot;https://carymillsap.blogspot.com/2009/02/on-usefulness-of-software.html&quot; class=&quot;bare&quot;&gt;https://carymillsap.blogspot.com/2009/02/on-usefulness-of-software.html&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_7&quot;&gt;
+&lt;a href=&quot;#_footnoteref_7&quot;&gt;7&lt;/a&gt;. &lt;a href=&quot;https://www.doag.org/de/home/news/red-stack-012021-database-blockchain/&quot; class=&quot;bare&quot;&gt;https://www.doag.org/de/home/news/red-stack-012021-database-blockchain/&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
     
     <item>
       <title>Meine Reise durch die Evolution der Webentwicklung</title>
@@ -361,63 +728,6 @@ Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine seh
 &lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.dbsystel.de/resource/blob/12597952/7bb044041329258cda34e653b2425adb/Von-der-Vision-eines-vollautomatisch-konstruierten-Fahrplans-data.pdf&quot;&gt;download&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-	  </description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL</title>
-      <link>http://jbake.org/blog/2023/2023-12-21-postgreSQL.html</link>
-      <pubDate>Thu, 21 Dec 2023 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">blog/2023/2023-12-21-postgreSQL.html</guid>
-      <description>
-      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
-&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
-&lt;ul class=&quot;sectlevel1&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;#_ein_jahr_postgresql_das_leben_danach&quot;&gt;Ein Jahr PostgreSQL – Das Leben danach&lt;/a&gt;
-&lt;ul class=&quot;sectlevel2&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;!-- endtoc --&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_ein_jahr_postgresql_das_leben_danach&quot;&gt;Ein Jahr PostgreSQL – Das Leben danach&lt;/h2&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Dieser Vortrag ist ein Jahr nach dem Entschluss entstanden, einen neuen Job anzunehmen und mich raus aus meiner Oracle-Blase und rein in die &quot;neue&quot; Welt der PostgreSQL-Datenbankentwicklung zu begeben.&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- teaser --&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Der Gedanke damals war: &quot;SQL ist SQL und ich werde mich schon schnell zurechtfinden. Es bleibt ja eine Relationale Datenbank&quot;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Dieser Vortrag soll eine kleine Zusammenfassung sein über:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;ulist&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Einige WTF-Momente: Der Teufel liegt im Detail und welche Unterschiede da wirklich auf einen Oracle-Datenbankentwickler warten, war mir vorher nicht bewusst.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Das schöne aus beiden Welten: Sowohl Oracle als auch PostgreSQL haben schöne Seiten. Es ist von Vorteil, beide Systeme ein bisschen genauer zu kennen.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Sonstige Erfahrungen und Eindrücke, die ich nach einem Jahr im PostgreSQL-Ökosystem so beobachtet habe. Ich konzentriere mich dabei auf den Bereich SQL (z. B. analytic functions oder die Behandlung von NULL values) und habe aber auch ein paar &quot;admin-nahe&quot; bzw. theoretische Unterschiede, die ich aufzeigen möchte (z. B. Tuning-Werkzeuge und MVCC).&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Nach dem Vortrag sollte klarer sein, mit welchen Fallstricken man beim Umstieg von Oracle auf PostgreSQL rechnen sollte.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.dbsystel.de/resource/blob/12597872/776fc8f4ab1b2bb699d72ceb3f157538/IT-Tage-Ein-Jahr-PostgreSQL-Das-Leben-danach-data.pdf&quot;&gt;download&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
