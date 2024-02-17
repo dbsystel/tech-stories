@@ -21,6 +21,14 @@ Wir stellen euch effektive Methoden und Tools vor, die euch bei der Umsetzung un
 Wir gehen darauf ein, welchen Einfluss Barrierefreiheit auf eure Frontend-Architekturen hat und welche Aspekte hier zu beachten sind.
 Dabei beten wir nicht die einzelnen WCAG-Kriterien herunter – vielmehr geben wir euch eine praktische Einführung in das Thema Barrierefreiheit im Web und welche Kniffe und Fallstricke zu beachten sind.
 
+=== Video
+
+[cols="1", width=100%]
+|===
+a|
+video::uJ77sMnkltA[youtube]
+|===
+
 === Slides
 
 [cols="1", width=100%]
