@@ -53,7 +53,7 @@ var documents = [
     "uri": "blog/2023/2023-11-20-einfuehrung-barrierefreiheit-web.html",
     "menu": "Blog",
     "title": "A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!",
-    "text": " Table of Contents A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it&#8217;s for the people stupid! Slides Referenzen A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it&#8217;s for the people stupid! Barrierefreiheit ist ein verstaubtes und unwichtiges Thema für Behördensoftware? Ganz im Gegenteil: Accessibility betrifft uns täglich und immer, wenn wir Software verwenden. Es ist an uns, diese umzusetzen. In unserem Talk von der W-JAX am 07.11.2023 zeigen wir euch, wie ihr eure Webanwendungen von Beginn an mit einfachen Mitteln zu einem hohen Grad barrierefrei gestaltet und entwickelt. Wir stellen euch effektive Methoden und Tools vor, die euch bei der Umsetzung und Prüfung in hohem Maße unterstützen. Wir gehen darauf ein, welchen Einfluss Barrierefreiheit auf eure Frontend-Architekturen hat und welche Aspekte hier zu beachten sind. Dabei beten wir nicht die einzelnen WCAG-Kriterien herunter – vielmehr geben wir euch eine praktische Einführung in das Thema Barrierefreiheit im Web und welche Kniffe und Fallstricke zu beachten sind. Slides Referenzen Bild von Bill Clinton W3C Logo Grafik \"human\" "
+    "text": " Table of Contents A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it&#8217;s for the people stupid! Video Slides Referenzen A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it&#8217;s for the people stupid! Barrierefreiheit ist ein verstaubtes und unwichtiges Thema für Behördensoftware? Ganz im Gegenteil: Accessibility betrifft uns täglich und immer, wenn wir Software verwenden. Es ist an uns, diese umzusetzen. In unserem Talk von der W-JAX am 07.11.2023 zeigen wir euch, wie ihr eure Webanwendungen von Beginn an mit einfachen Mitteln zu einem hohen Grad barrierefrei gestaltet und entwickelt. Wir stellen euch effektive Methoden und Tools vor, die euch bei der Umsetzung und Prüfung in hohem Maße unterstützen. Wir gehen darauf ein, welchen Einfluss Barrierefreiheit auf eure Frontend-Architekturen hat und welche Aspekte hier zu beachten sind. Dabei beten wir nicht die einzelnen WCAG-Kriterien herunter – vielmehr geben wir euch eine praktische Einführung in das Thema Barrierefreiheit im Web und welche Kniffe und Fallstricke zu beachten sind. Video Slides Referenzen Bild von Bill Clinton W3C Logo Grafik \"human\" "
 },
 
 {
@@ -250,42 +250,42 @@ var documents = [
 
 {
     "id": 31,
-    "uri": "blog/profiles/Ralf-D.-Mueller.html",
+    "uri": "blog/profiles/Maximilian-Franzke.html",
     "menu": "Autoren",
-    "title": "Ralf D. Müller",
-    "text": " Table of Contents Ralf D. Müller Links Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf D. Müller arbeitet seit über 25 Jahren in der Softwarebranche, zunächst als Entwickler und später als Softwarearchitekt. Da er großen Wert auf die klare Kommunikation und Dokumentation seiner Ideen legt, hat er das Open-Source-Projekt docToolchain gestartet, das sich der effektiven Dokumentation von Softwarearchitekturen widmet und das arc42 Template als Grundlage nutzt. Zunehmend beschäftigt ihn aber der Einsatz von KI für das Softwaredesign. In diesem Zusammenhang hat Ralf bereits Erfahrungen mit ChatGPT gesammelt, etwa als Werkzeug zum Lösen spezifischer Teilprobleme in der \"iSAQB Advanced Level\"-Beispielprüfung. Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+    "title": "Maximilian Franzke",
+    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
 },
 
 {
     "id": 32,
-    "uri": "blog/profiles/Marcus-Suemnick.html",
+    "uri": "blog/profiles/Konrad-Winkler.html",
     "menu": "Autoren",
-    "title": "Marcus Sümnick",
-    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Konrad Winkler",
+    "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
     "id": 33,
-    "uri": "blog/profiles/Joachim-Schirrmacher.html",
+    "uri": "blog/profiles/Jonas-Gassenmeyer.html",
     "menu": "Autoren",
-    "title": "Joachim Schirrmacher",
-    "text": " Table of Contents Joachim Schirrmacher Links Joachim Schirrmacher span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Joachim ist seit 2017 bei der DB Systel als Berater und Entwickler. Am liebsten programmiert er funktional mit TypeScript, notfalls aber auch mit Java und Spring Boot, mag REST APIs, aber auch Event Sourcing und Streams. Links LinkedIn Profile GitHub Profile Mastodon Stack Overflow "
+    "title": "Jonas Gassenmeyer",
+    "text": " Table of Contents Jonas Gassenmeyer Links Jonas Gassenmeyer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Jonas könnte den ganzen Tag über relationale Datenbanken reden. Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte. Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel. Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten. Links Mastodon Profile X (formerly known as Twitter) Profile "
 },
 
 {
     "id": 34,
-    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
+    "uri": "blog/profiles/Johannes-Dienst.html",
     "menu": "Autoren",
-    "title": "Gualter Barbas Baptista",
-    "text": " Table of Contents Gualter Barbas Baptista Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Johannes Dienst",
+    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
     "id": 35,
-    "uri": "blog/profiles/Christian-Fischer.html",
+    "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
-    "title": "Christian Fischer",
-    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Danny Koppenhagen",
+    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
 },
 
 {
@@ -298,62 +298,6 @@ var documents = [
 
 {
     "id": 37,
-    "uri": "blog/profiles/Tim-Engeleiter.html",
-    "menu": "Autoren",
-    "title": "Tim Engeleiter",
-    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
-},
-
-{
-    "id": 38,
-    "uri": "blog/profiles/Stefan-Gruendling.html",
-    "menu": "Autoren",
-    "title": "Stefan Gründling",
-    "text": " Table of Contents Stefan Gründling Stefan Gründling span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Stefan Gründling ist SAFe® Solution Architect bei der DB Netz AG, dem größten Betreiber von Schieneninfrastruktur in Deutschland. Er arbeitet seit mehr als 10 Jahren in der Beratung und Softwareentwicklung. Als Architekt war er verantwortlich für die Entwicklung der Click&amp;Ride App und die automatische Fahrplankonstruktion mit welchen die DB Netz AG als weltweit erstes Unternehmen über eine App vollständig automatisiert Fahrpläne erstellen konnte. "
-},
-
-{
-    "id": 39,
-    "uri": "blog/profiles/Philippe-Rieffe.html",
-    "menu": "Autoren",
-    "title": "Philippe Rieffe",
-    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 40,
-    "uri": "blog/profiles/Konrad-Winkler.html",
-    "menu": "Autoren",
-    "title": "Konrad Winkler",
-    "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 41,
-    "uri": "blog/profiles/Johannes-Dienst.html",
-    "menu": "Autoren",
-    "title": "Johannes Dienst",
-    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 42,
-    "uri": "blog/profiles/Danny-Koppenhagen.html",
-    "menu": "Autoren",
-    "title": "Danny Koppenhagen",
-    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
-},
-
-{
-    "id": 43,
-    "uri": "blog/profiles/Carsten-Thurau.html",
-    "menu": "Autoren",
-    "title": "Carsten Thurau",
-    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 44,
     "uri": "blog/profiles/buildIT.html",
     "menu": "Autoren",
     "title": "BuildIT",
@@ -361,15 +305,7 @@ var documents = [
 },
 
 {
-    "id": 45,
-    "uri": "blog/profiles/Sven-Hesse.html",
-    "menu": "Autoren",
-    "title": "Sven Hesse",
-    "text": " Table of Contents Sven Hesse Links Sven Hesse span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH. Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility. Links Persönliche Website "
-},
-
-{
-    "id": 46,
+    "id": 38,
     "uri": "blog/profiles/Sascha-Wolter.html",
     "menu": "Autoren",
     "title": "Sascha Wolter",
@@ -377,23 +313,15 @@ var documents = [
 },
 
 {
-    "id": 47,
-    "uri": "blog/profiles/Oliver-Hammer.html",
+    "id": 39,
+    "uri": "blog/profiles/Joachim-Schirrmacher.html",
     "menu": "Autoren",
-    "title": "Oliver Hammer",
-    "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Oliver Hammer ist Product Owner einer Einheit mit 32 Teams und 300 Mitarbeitern bei der DB Systel, dem Digitalpartner der DB AG. Er arbeitet seit über 25 Jahren in der Beratung und Software-Entwicklung. In den unterschiedlichsten Rollen vom Entwickler über Architekten, fachlichem Berater und Projektleiter hat er viel Erfahrungen an der Schnittstelle zwischen Business und Technologie in großen Projekten und der Zusammenarbeit in Teams und Organisationen und Vorgehensmodellen gesammelt. "
+    "title": "Joachim Schirrmacher",
+    "text": " Table of Contents Joachim Schirrmacher Links Joachim Schirrmacher span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Joachim ist seit 2017 bei der DB Systel als Berater und Entwickler. Am liebsten programmiert er funktional mit TypeScript, notfalls aber auch mit Java und Spring Boot, mag REST APIs, aber auch Event Sourcing und Streams. Links LinkedIn Profile GitHub Profile Mastodon Stack Overflow "
 },
 
 {
-    "id": 48,
-    "uri": "blog/profiles/Jonas-Gassenmeyer.html",
-    "menu": "Autoren",
-    "title": "Jonas Gassenmeyer",
-    "text": " Table of Contents Jonas Gassenmeyer Links Jonas Gassenmeyer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Jonas könnte den ganzen Tag über relationale Datenbanken reden. Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte. Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel. Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten. Links Mastodon Profile X (formerly known as Twitter) Profile "
-},
-
-{
-    "id": 49,
+    "id": 40,
     "uri": "blog/profiles/Dr.-Martin-Strunk.html",
     "menu": "Autoren",
     "title": "Dr. Martin Strunk",
@@ -401,7 +329,15 @@ var documents = [
 },
 
 {
-    "id": 50,
+    "id": 41,
+    "uri": "blog/profiles/Christian-Fischer.html",
+    "menu": "Autoren",
+    "title": "Christian Fischer",
+    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 42,
     "uri": "blog/profiles/Bernd-Schimmer.html",
     "menu": "Autoren",
     "title": "Bernd Schimmer",
@@ -409,19 +345,83 @@ var documents = [
 },
 
 {
-    "id": 51,
-    "uri": "blog/profiles/Maximilian-Franzke.html",
+    "id": 43,
+    "uri": "blog/profiles/Sven-Hesse.html",
     "menu": "Autoren",
-    "title": "Maximilian Franzke",
-    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
+    "title": "Sven Hesse",
+    "text": " Table of Contents Sven Hesse Links Sven Hesse span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH. Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility. Links Persönliche Website "
 },
 
 {
-    "id": 52,
+    "id": 44,
+    "uri": "blog/profiles/Philippe-Rieffe.html",
+    "menu": "Autoren",
+    "title": "Philippe Rieffe",
+    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 45,
+    "uri": "blog/profiles/Oliver-Hammer.html",
+    "menu": "Autoren",
+    "title": "Oliver Hammer",
+    "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Oliver Hammer ist Product Owner einer Einheit mit 32 Teams und 300 Mitarbeitern bei der DB Systel, dem Digitalpartner der DB AG. Er arbeitet seit über 25 Jahren in der Beratung und Software-Entwicklung. In den unterschiedlichsten Rollen vom Entwickler über Architekten, fachlichem Berater und Projektleiter hat er viel Erfahrungen an der Schnittstelle zwischen Business und Technologie in großen Projekten und der Zusammenarbeit in Teams und Organisationen und Vorgehensmodellen gesammelt. "
+},
+
+{
+    "id": 46,
+    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
+    "menu": "Autoren",
+    "title": "Gualter Barbas Baptista",
+    "text": " Table of Contents Gualter Barbas Baptista Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 47,
+    "uri": "blog/profiles/Carsten-Thurau.html",
+    "menu": "Autoren",
+    "title": "Carsten Thurau",
+    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 48,
     "uri": "blog/profiles/Bertram-Fey.html",
     "menu": "Autoren",
     "title": "Bertram Fey",
     "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
+},
+
+{
+    "id": 49,
+    "uri": "blog/profiles/Tim-Engeleiter.html",
+    "menu": "Autoren",
+    "title": "Tim Engeleiter",
+    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
+},
+
+{
+    "id": 50,
+    "uri": "blog/profiles/Stefan-Gruendling.html",
+    "menu": "Autoren",
+    "title": "Stefan Gründling",
+    "text": " Table of Contents Stefan Gründling Stefan Gründling span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Stefan Gründling ist SAFe® Solution Architect bei der DB Netz AG, dem größten Betreiber von Schieneninfrastruktur in Deutschland. Er arbeitet seit mehr als 10 Jahren in der Beratung und Softwareentwicklung. Als Architekt war er verantwortlich für die Entwicklung der Click&amp;Ride App und die automatische Fahrplankonstruktion mit welchen die DB Netz AG als weltweit erstes Unternehmen über eine App vollständig automatisiert Fahrpläne erstellen konnte. "
+},
+
+{
+    "id": 51,
+    "uri": "blog/profiles/Ralf-D.-Mueller.html",
+    "menu": "Autoren",
+    "title": "Ralf D. Müller",
+    "text": " Table of Contents Ralf D. Müller Links Ralf D. Müller span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Ralf D. Müller arbeitet seit über 25 Jahren in der Softwarebranche, zunächst als Entwickler und später als Softwarearchitekt. Da er großen Wert auf die klare Kommunikation und Dokumentation seiner Ideen legt, hat er das Open-Source-Projekt docToolchain gestartet, das sich der effektiven Dokumentation von Softwarearchitekturen widmet und das arc42 Template als Grundlage nutzt. Zunehmend beschäftigt ihn aber der Einsatz von KI für das Softwaredesign. In diesem Zusammenhang hat Ralf bereits Erfahrungen mit ChatGPT gesammelt, etwa als Werkzeug zum Lösen spezifischer Teilprobleme in der \"iSAQB Advanced Level\"-Beispielprüfung. Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+},
+
+{
+    "id": 52,
+    "uri": "blog/profiles/Marcus-Suemnick.html",
+    "menu": "Autoren",
+    "title": "Marcus Sümnick",
+    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {

@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 7 Feb 2024 12:56:13 +0000</pubDate>
-    <lastBuildDate>Wed, 7 Feb 2024 12:56:13 +0000</lastBuildDate>
+    <pubDate>Wed, 13 Mar 2024 09:05:45 +0000</pubDate>
+    <lastBuildDate>Wed, 13 Mar 2024 09:05:45 +0000</lastBuildDate>
 
     
     <item>
@@ -823,6 +823,7 @@ Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine seh
 &lt;ul class=&quot;sectlevel1&quot;&gt;
 &lt;li&gt;&lt;a href=&quot;#_a11y_eaa_bfsg_wcag_wai_aria_wtf_its_for_the_people_stupid&quot;&gt;A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it&amp;#8217;s for the people stupid!&lt;/a&gt;
 &lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_video&quot;&gt;Video&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#_referenzen&quot;&gt;Referenzen&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -842,6 +843,23 @@ In unserem Talk von der W-JAX am 07.11.2023 zeigen wir euch, wie ihr eure Webanw
 Wir stellen euch effektive Methoden und Tools vor, die euch bei der Umsetzung und Prüfung in hohem Maße unterstützen.
 Wir gehen darauf ein, welchen Einfluss Barrierefreiheit auf eure Frontend-Architekturen hat und welche Aspekte hier zu beachten sind.
 Dabei beten wir nicht die einzelnen WCAG-Kriterien herunter – vielmehr geben wir euch eine praktische Einführung in das Thema Barrierefreiheit im Web und welche Kniffe und Fallstricke zu beachten sind.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_video&quot;&gt;Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;videoblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;iframe src=&quot;https://www.youtube.com/embed/uJ77sMnkltA?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
