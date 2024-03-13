@@ -3,20 +3,19 @@
 :jbake-date: 2020-03-27
 :jbake-type: video
 :jbake-tags: OOP, Code
-:jbake-status: published 
+:jbake-status: published
 :jbake-menu: Blog
 :jbake-discussion: 1076
 :jbake-author: Carsten Thurau
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/devops.png
-
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == DB Systel streitet auf der OOP für guten Code
 
 Dieses Mal haben wir Pia Schwarz aus dem Team SALT zu Gast, mit der wir über das Thema “KITT”, das Künstliche Intelligenz Translation Tool, sprechen.
-Pia bringt mit ihrem Team Maschinen das Sprechen bei. 
+Pia bringt mit ihrem Team Maschinen das Sprechen bei.
 
 ++++
 <!-- teaser -->

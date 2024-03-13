@@ -10,7 +10,6 @@
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/devops.png
-
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == Die C4-Testpyramide - eine architekturgetriebene Teststrategie

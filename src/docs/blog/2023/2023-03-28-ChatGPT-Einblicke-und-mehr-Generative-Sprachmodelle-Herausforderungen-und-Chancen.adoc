@@ -10,7 +10,6 @@
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/dev.png
-
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == ChatGPT – Funktionsweise, Chancen, Risiken und Alternativen einfach erklärt

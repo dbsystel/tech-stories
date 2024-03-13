@@ -9,7 +9,7 @@
 :jbake-author: Danny Koppenhagen
 :jbake-teaser-image: profiles/Danny-Koppenhagen.png
 :jbake-tags: javascript, vue
-
+ifndef::imagesdir[:imagesdir: ../../images]
 
 == How we migrated our Vue 2 enterprise project to Vue 3
 

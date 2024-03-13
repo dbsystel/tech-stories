@@ -8,7 +8,7 @@
 :jbake-discussion: 1076
 :jbake-author: Danny Koppenhagen, Maximilian Franzke
 :jbake-teaser-image: wjax.png
-
+ifndef::imagesdir[:imagesdir: ../../images]
 
 == A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!
 

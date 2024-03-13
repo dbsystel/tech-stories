@@ -4,19 +4,18 @@
 :jbake-type: post
 :jbake-tags: KI, KITT
 :jbake-status: published
-:jbake-menu: Blog 
+:jbake-menu: Blog
 :jbake-discussion: 1076
 :jbake-author: Johannes Dienst
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/devops.png
-
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == KITT, das Künstliche Intelligenz Translation Tool
 
 Dieses Mal haben wir Pia Schwarz aus dem Team SALT zu Gast, mit der wir über das Thema “KITT”, das Künstliche Intelligenz Translation Tool, sprechen.
-Pia bringt mit ihrem Team Maschinen das Sprechen bei. 
+Pia bringt mit ihrem Team Maschinen das Sprechen bei.
 
 ++++
 <!-- teaser -->

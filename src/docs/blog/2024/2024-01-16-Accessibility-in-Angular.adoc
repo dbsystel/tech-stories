@@ -11,7 +11,7 @@
 :jbake-author: Danny Koppenhagen
 // cou can add a teaser image. The path to place the image is src/docs/images
 :jbake-teaser-image: 20240116-a11y-Angular/a11y-angular.png
-
+ifndef::imagesdir[:imagesdir: ../../images]
 
 == Accessibility in Angular – Angulars features for a better and more inclusive web
 

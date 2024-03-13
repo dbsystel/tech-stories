@@ -3,14 +3,13 @@
 :jbake-date: 2020-03-27
 :jbake-type: post
 :jbake-tags: OOP, Code
-:jbake-status: published 
+:jbake-status: published
 :jbake-menu: Blog
 :jbake-discussion: 1076
 :jbake-author: Carsten Thurau
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/devops.png
-
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == DB Systel streitet auf der OOP für guten Code

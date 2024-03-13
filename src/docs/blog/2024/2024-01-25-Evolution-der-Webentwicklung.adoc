@@ -10,7 +10,6 @@
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/dev.png
-
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == Vom Code zum Klick: Meine Reise durch die Evolution der Webentwicklung
@@ -64,7 +63,7 @@ Mehr Details und ausführlichere Infos gibt es unter anderem auf:
 
 Wenn ich mich an die Anfänge meiner Tätigkeit erinnere, haben wir HTML, CSS, PHP und jQuery mit BBedit selbst geschrieben, gespeichert und manuell per FTP auf Server hochgeladen. Das Beste, was es damals gab, war das Programm Transmit, mit dem einzelne Ordner synchronisiert werden konnten. Alles war sehr fehleranfällig, ohne Versionierung und daher schwer bis gar nicht testbar – nur manuell. jQuery-Plugins wurden mit Abhängigkeiten zu unterschiedlichen jQuery-Versionen benutzt, die nicht unbedingt kompatibel waren. Man musste jedes Mal hoffen, dass die Webseite noch funktionierte, nachdem man Code hinzugefügt hatte. Was mich immer am meisten geärgert hat, war ein Flackern, sobald das JavaScript geladen wurde und über das PHP-gerenderte HTML noch extra DOM-Elemente legte.
 
-Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch gerenderten Web: 
+Die folgenden Probleme sind meiner Meinung nach die größten beim klassisch gerenderten Web:
 
 -	Wann ist der DOM fertig geladen?
 -	Wann ist das JS geladen und wird ausgeführt?

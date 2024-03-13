@@ -13,7 +13,6 @@
 :jbake-status: published
 :jbake-teaser-image: topics/ki.png
 :jbake-menu: Blog
-
 ifndef::imagesdir[:imagesdir: ../../images]
 
 :url-conference: https://conferences.isaqb.org/software-architecture-gathering/program-2023/#using-ai-in-software-design-how-chatgpt-can-help-with-creating-a-solution-architecture

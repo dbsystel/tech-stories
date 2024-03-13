@@ -10,7 +10,6 @@
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/devops.png
-
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == Produkt- statt Projektmanagement
@@ -28,15 +27,15 @@ In der Systel arbeiten knapp 100 Teams nach dem Prinzip „Your build (or integr
 sind so in der Lage, regelmäßig und mit hoher Frequenz Änderungen und
 damit „Business Value“ zu den Nutzerinnen und Nutzern zu bringen.
 Nicht nur bei uns, sondern in allen vergleichbaren großen Konzernen sind Cloud-Nutzung, Automatisierung, Continuous Delivery, Platform Strategy und
-der dafür notwendige kulturelle Wandel auf der Tagesordnung. 
+der dafür notwendige kulturelle Wandel auf der Tagesordnung.
 Ein großer Hebel für den Wandel zu einer DevOps-Organisation wird allerdings häufig übersehen:
 das etablierte Funding von digitalen Maßnahmen über Projekte ist mittlerweile zu einem der Haupt-Hindernisse
 auf dem Weg zu einer leistungsfähigen Delivery-Organisation geworden.
 Aus meiner Sicht müssen wir daher ganz vorne mit der Veränderung ansetzen, nämlich dort, wo Projekte entstehen, und
-über Projektbudgets entschieden wird. 
+über Projektbudgets entschieden wird.
 
 Warum ich dieser Meinung bin, habe ich auf einem Vortrag beim DevOps Enterprise Summit dargelegt,
-der mittlerweile auch über den YouTube Kanal der DB Systel zugänglich ist. 
+der mittlerweile auch über den YouTube Kanal der DB Systel zugänglich ist.
 
 === Video
 

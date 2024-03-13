@@ -8,7 +8,7 @@
 :jbake-discussion: 1076
 :jbake-author: Sven Hesse
 :jbake-teaser-image: profiles/Sven-Hesse.jpg
-
+ifndef::imagesdir[:imagesdir: ../../images]
 
 == Hätt' ich das früher gewusst - Good Practices bei API-Konzeption & -Entwicklung
 

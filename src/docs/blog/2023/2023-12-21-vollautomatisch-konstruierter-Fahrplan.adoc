@@ -8,7 +8,7 @@
 :jbake-author: Stefan Gruendling, Oliver Hammer
 :jbake-teaser-image: topics/arc.png
 :jbake-tags: netz, konstruktion, fahrplan
-
+ifndef::imagesdir[:imagesdir: ../../images]
 
 == Von der Vision eines vollautomatisch konstruierten Fahrplans
 
@@ -30,10 +30,10 @@ Damit verbunden ist die Neugestaltung und Automatisierung von Abläufen und Proz
 
 Die agile Software-Entwicklung bietet eine höhere Flexibilität und Reaktionsschnelligkeit auf Kundenwünsche und neue Anforderungen.
 Wir arbeiten iterativ und sind im ständigen Austausch zu unseren Stakeholdern. Dadurch werden Teillieferungen in regelmäßigen Abständen gewährleistet, um so der großen Vision stückweise näher zu kommen.
-Die Herausforderung ist, mit über 600 Experten in crossfunktionalen, agilen Teams synchronisiert neue Abläufen, automatisierte Prozessschritte und flexibel kombinierbaren und modularen Services zu konzipieren, entwickeln und unter dem "rollenden Rad" sukzessive in Produktion zu bringen. 
+Die Herausforderung ist, mit über 600 Experten in crossfunktionalen, agilen Teams synchronisiert neue Abläufen, automatisierte Prozessschritte und flexibel kombinierbaren und modularen Services zu konzipieren, entwickeln und unter dem "rollenden Rad" sukzessive in Produktion zu bringen.
 
 Als DB Netz sind wir in Deutschland eines der größten Unternehmen, die einen signifikanten Anteil der IT-Entwicklung nach SAFe® 6.0 gestalten.
-Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine sehr hohe Automatisierung im Lebenszyklus der Softwareentwicklung und übernehmen eine Ende-zu-Ende Verantwortung für ihre entwickelten Artefakte.  
+Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine sehr hohe Automatisierung im Lebenszyklus der Softwareentwicklung und übernehmen eine Ende-zu-Ende Verantwortung für ihre entwickelten Artefakte.
 
 
 === Slides

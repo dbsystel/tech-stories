@@ -10,6 +10,7 @@
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/arc.png
+ifndef::imagesdir[:imagesdir: ../../images]
 
 ++++
 <style>
@@ -18,8 +19,6 @@ table.tableblock { overflow: auto; width: 100%;}
 td.tableblock {overflow: auto; width: 50%;}
 </style>
 ++++
-
-ifndef::imagesdir[:imagesdir: ../../images]
 
 == Deine PlantUML-Diagramme sind Legende?
 

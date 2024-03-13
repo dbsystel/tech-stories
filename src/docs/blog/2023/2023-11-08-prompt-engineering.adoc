@@ -8,7 +8,7 @@
 :jbake-author: Ralf D. Mueller
 :jbake-teaser-image: profiles/Ralf-D.-Mueller.png
 :jbake-tags: chatgpt, prompt-egineering
-
+ifndef::imagesdir[:imagesdir: ../../images]
 
 == Die faszinierende Welt des Prompt-Engineerings
 

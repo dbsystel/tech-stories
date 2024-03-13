@@ -8,19 +8,19 @@
 :jbake-discussion: 1076
 :jbake-author: Dr. Martin Strunk
 :jbake-teaser-image: profiles/Dr.-Martin-Strunk.jpg
-
+ifndef::imagesdir[:imagesdir: ../../images]
 
 == Conway’s Law in real life - why organizational development and software engineering have to go hand in hand.
 
-Conway’s Law inevitably connects the architecture of an software system with the responsible delivery organization. 
+Conway’s Law inevitably connects the architecture of an software system with the responsible delivery organization.
 
 ++++
 <!-- teaser -->
 ++++
 
-Unfortunately, persons responsible for organizational development and architects of software systems often work in separation – especially in large enterprises. 
-What are the negative effects of this separation and what can we do about it? 
-In this talk Dr. Martin Strunk presents “real world examples” of the impact that arising from the ignorance of Conway`s law by decision makers. 
+Unfortunately, persons responsible for organizational development and architects of software systems often work in separation – especially in large enterprises.
+What are the negative effects of this separation and what can we do about it?
+In this talk Dr. Martin Strunk presents “real world examples” of the impact that arising from the ignorance of Conway`s law by decision makers.
 He will also propose ways, in which companies might overcome and mitigate these problems.
 
 * Teams as first-class citizens

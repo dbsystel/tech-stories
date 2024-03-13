@@ -10,7 +10,6 @@
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/devops.png
-
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == Spock und AsciiDoc - vom Test zur Spezifikation und zurück
@@ -27,7 +26,7 @@ Dem Entwickler reicht die Ausgabe "PASSED" oder "FAILED", denn er kennt ja den C
 Wäre es nicht cool, wenn auch der Product Owner ein verständliches Dokument bekäme?
 Kein Problem!
 Wir generieren über ein Template einfach einen Test-Report in AsciiDoc und fügen weitere erklärende Texte hinzu um eine les- und ausführbare Spezifikation zu erhalten.
-Screenshots aller wichtigen Schritte bereichern die Spezifikation weiter. 
+Screenshots aller wichtigen Schritte bereichern die Spezifikation weiter.
 Sollte aber die Spezifikation nicht am Anfang stehen?
 Und warum Spezifikation, wenn wir agil sein wollen? Richtig!
 

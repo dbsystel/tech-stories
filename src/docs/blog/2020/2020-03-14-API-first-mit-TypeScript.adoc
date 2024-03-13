@@ -11,7 +11,7 @@
 :jbake-author: Joachim Schirrmacher
 // cou can add a teaser image. The path to place the image is src/docs/images
 :jbake-teaser-image: topics/dev.png
-
+ifndef::imagesdir[:imagesdir: ../../images]
 
 == API first mit TypeScript
 
