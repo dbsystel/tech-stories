@@ -6,7 +6,7 @@
 :jbake-status: published
 :jbake-menu: Blog
 :jbake-discussion: 1076
-:jbake-author:
+:jbake-author: 
 :icons: font
 :source-highlighter: highlight.js
 :jbake-teaser-image: topics/dev.png
