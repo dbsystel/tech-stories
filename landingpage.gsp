@@ -16,9 +16,29 @@
       <div class="col-md-6 col-sm-12">
         <h1>DB Systel Tech Stories</h1>
         <p>
-          Finde hier spannende Infos aus der Tech-Welt der DB Systel sowie des DB-Konzerns:
-          Talks, Fachartikel, Präsentationen und Aufzeichnungen von Vorträgen lassen dich tief in unsere Tech-Themen eintauchen.
+Herzlich willkommen!
+</p>
+<p>
+Die DB Systel Tech Stories sind ein Open-Source-Projekt der DB Systel.
+Als Digitalpartner treiben wir die Digitalisierung der Deutschen Bahn für die Mobilität der Zukunft mit digitalen Innovationen, Lösungen und Services voran.
+</p>
+<p>
+Mit den Tech Stories teilen unsere Expert:innen spannende Infos aus der Tech-Welt der DB Systel sowie des DB-Konzerns.
+Als leidenschaftliche und innovative Tech-Company möchten wir auf diese Weise die Welt der IT bereichern.
+Wir wollen neugierig machen und zu Diskussionen anregen.
+Unser Pool an Fachartikeln, Präsentationen und Videos wächst stetig und liefert wertvolles Wissen zu unterschiedlichsten Themenfeldern.
         </p>
+<!--
+Welcome to the DB Systel Tech Stories!
+
+The DB Systel Tech Stories are an open source project of DB Systel.
+As a digital partner, we are driving forward the digitalization of Deutsche Bahn for the mobility of the future with digital innovations, solutions and services.
+
+With the Tech Stories, our experts share exciting information from the tech world of DB Systel and the DB Group.
+As a passionate and innovative tech company, we want to enrich the world of IT in this way.
+We want to arouse curiosity and stimulate discussion.
+Our pool of specialist articles, presentations and videos is constantly growing and provides valuable knowledge on a wide range of topics.
+-->        
         <a class="elm-button btn-link" data-variant="primary" title="Zur Übersicht aller Tech-Stories" href='blog/index.html'>
           Alle Tech Stories <i class="fa fa-arrow-right fa-fw"></i>
         </a>

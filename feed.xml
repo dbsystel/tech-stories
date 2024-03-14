@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 13 Mar 2024 09:05:45 +0000</pubDate>
-    <lastBuildDate>Wed, 13 Mar 2024 09:05:45 +0000</lastBuildDate>
+    <pubDate>Thu, 14 Mar 2024 13:53:03 +0000</pubDate>
+    <lastBuildDate>Thu, 14 Mar 2024 13:53:03 +0000</lastBuildDate>
 
     
     <item>
@@ -372,6 +372,77 @@ Ich freue mich auf Ihr Feedback.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;footnote&quot; id=&quot;_footnotedef_7&quot;&gt;
 &lt;a href=&quot;#_footnoteref_7&quot;&gt;7&lt;/a&gt;. &lt;a href=&quot;https://www.doag.org/de/home/news/red-stack-012021-database-blockchain/&quot; class=&quot;bare&quot;&gt;https://www.doag.org/de/home/news/red-stack-012021-database-blockchain/&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
+    
+    <item>
+      <title>Architektur mit ChatGPT</title>
+      <link>http://jbake.org/blog/2024/2024-02-06-ChatGPT.html</link>
+      <pubDate>Tue, 6 Feb 2024 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2024/2024-02-06-ChatGPT.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_chatgpt_als_werkzeug_für_software_architektur&quot;&gt;ChatGPT als Werkzeug für Software-Architektur&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_chatgpt_als_werkzeug_für_software_architektur&quot;&gt;ChatGPT als Werkzeug für Software-Architektur&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Kann ChatGPT Software-Architektur? Das war die Frage, der Eberhard Wolff und ich in drei Sessions nachgegangen sind.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Zu einem Zeitpunkt, als ChatGPT noch viel weniger konnte als heute, interessierte ich mich schon sehr für die Technologie.
+Allerdings weniger für die Technik dahinter, als für die Anwendung.
+Ich fragte mich: Was kann ich als Software-Architekt mit diesem spannenden Tool anfangen?
+Kann ChatGPT die Beispielaufgabe der iSAQB-Advanced-Zertifizierung lösen?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Mutig habe ich die Idee als Talk beim &lt;a href=&quot;../2023-11-29-AI-in-Software-Design.html&quot;&gt;iSAQB Software Architecture Gathering eingereicht&lt;/a&gt; – wohl wissend, dass ChatGPT damals noch nicht so weit war.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Zeit zwischen Einreichung und dem Talk habe ich genutzt, um meine Fähigkeiten im Prompt Engineering zu schärfen.
+So kam es dann auch zu einem &lt;a href=&quot;../2023-11-08-prompt-engineering.html&quot;&gt;Talk auf der W-JAX&lt;/a&gt;.
+Dort hatte ich die Chance, mich mit Eberhard Wolff nach seinem Talk &lt;a href=&quot;https://jax.de/software-architecture/software-architektur-mensch-organisation/&quot;&gt;Architektur für Menschen - nicht für Software&lt;/a&gt; auszutauschen.
+Auch Eberhard hatte sich mit dem Thema &lt;a href=&quot;https://www.heise.de/blog/KI-in-der-Softwareentwicklung-Ueberschaetzt-9336902.html&quot;&gt;KI in der Softwareentwicklung&lt;/a&gt; auseinandergesetzt und so kamen wir auf die Idee, das Ganze mal gemeinsam anzugehen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Aus der Idee wurden recht schnell drei Videos auf Eberhards Youtube-Kanal &quot;Software-Architektur im Stream&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Im ersten Teil wiederholen wir nochmal die Grundlagen aus dem iSAQB Talk.
+Ich erzähle, wie ich das Problem angegangen bin.
+Wir diskutieren, auf welche Probleme ich gestossen bin und welche Prompt-Engineering-Techniken sinnvoll sind.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Im zweiten Teil wirft Eberhard einen genaueren Blick auf die Ergebnisse und erläutert, auf welche Details er als Prüfer schaut.
+Das Ergebnis: Ja, ChatGPT hat Lösungen für die gestellten Aufgaben produziert, einer genaueren Prüfung halten sie aber nicht stand.
+Für die Zertifizierung heisst das, ChatGPT bekommt die Chance, nachzuarbeiten.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Im dritten Teil versuchen wir, ChatGPT mit ein wenig mehr Aufwand eine bessere Lösung zu entlocken.
+Des Weiteren dsikutieren wir, wie die KI uns als Softwarearchitekten unterstüzen kann und was die Zukunft vielleicht noch bringt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 33.3333%;&quot;&gt;
+&lt;col style=&quot;width: 33.3333%;&quot;&gt;
+&lt;col style=&quot;width: 33.3334%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube-nocookie.com/embed/YOr6tIhXgFE?si=hH_puNoWeYluq4NJ&quot; title=&quot;Besteht ChatGPT die iSAQB-Advanced-Level-Prüfung? 1/x mit Ralf D. Müller&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube-nocookie.com/embed/FcPm5PAQFaU?si=ZaSyqqYmavljFqnD&quot; title=&quot;Besteht ChatGPT die iSAQB-Advanced-Level-Prüfung? 2/x mit Ralf D. Müller&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube-nocookie.com/embed/WFZppdVGqAw?si=vwox-2PLrIhe2SkH&quot; title=&quot;ChatGPT als Werkzeug für Software-Archiktektur mit Ralf D. Müller&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 	  </description>
@@ -747,7 +818,7 @@ Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine seh
 &lt;li&gt;&lt;a href=&quot;#_using_ai_in_software_design_how_chatgpt_can_help_with_creating_a_solution_architecture&quot;&gt;Using AI in Software Design: How ChatGPT Can Help With Creating a Solution Architecture&lt;/a&gt;
 &lt;ul class=&quot;sectlevel2&quot;&gt;
 &lt;li&gt;&lt;a href=&quot;#_references&quot;&gt;References&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides_video&quot;&gt;Slides &amp;amp; Video&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -761,10 +832,10 @@ Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine seh
 &lt;/div&gt;
 &lt;!-- teaser --&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;We delved into the intricacies of conversing with chatGPT, illustrating the strategies needed to generate productive prompts and effectively utilize the model as a sparring partner. The talk wexemplified these concepts by taking the audience on a step-by-step journey through the process of tackling the iSAQB Advanced Example Exam, utilizing chatGPT.&lt;/p&gt;
+&lt;p&gt;We delved into the intricacies of conversing with ChatGPT, illustrating the strategies needed to generate productive prompts and effectively utilize the model as a sparring partner. The talk exemplified these concepts by taking the audience on a step-by-step journey through the process of tackling the iSAQB Advanced Example Exam, utilizing ChatGPT.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;We demonstrated how to prepare for a chat session with chatGPT, how to generate robust prompts, and how to manage the chat for optimal outcomes. We aimed to highlight the model’s capabilities as an interactive tool that can provide valuable insights and streamline the process of developing software architecture.&lt;/p&gt;
+&lt;p&gt;We demonstrated how to prepare for a chat session with ChatGPT, how to generate robust prompts, and how to manage the chat for optimal outcomes. Our aim was to highlight the model’s capabilities as an interactive tool that can provide valuable insights and streamline the process of developing software architecture.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Whether you are a seasoned architect or a novice in the field, this presentation will equip you with novel techniques to navigate the challenging landscape of software architecture with the assistance of AI.&lt;/p&gt;
@@ -795,7 +866,7 @@ Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine seh
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
+&lt;h3 id=&quot;_slides_video&quot;&gt;Slides &amp;amp; Video&lt;/h3&gt;
 &lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
 &lt;colgroup&gt;
 &lt;col style=&quot;width: 100%;&quot;&gt;
@@ -803,6 +874,9 @@ Unsere Teams arbeiten mit modernsten Standards in der Cloud, setzen auf eine seh
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/b0ced25885bd464fa9c5210b9a674e33&quot; title=&quot;Speakerdeck Player&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; src=&quot;https://www.youtube-nocookie.com/embed/gyJ_mDj-s4I&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -998,6 +1072,9 @@ Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die 
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/f9d4a4977c4d4cc2a055a5f1687e5e56&quot; title=&quot;Spock and AsciiDoc - ein perfektes Paar&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; src=&quot;https://www.youtube-nocookie.com/embed/zeKc7FFSSv0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
