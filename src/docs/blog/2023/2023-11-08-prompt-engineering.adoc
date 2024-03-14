@@ -7,7 +7,8 @@
 :jbake-discussion: 1076
 :jbake-author: Ralf D. Mueller
 :jbake-teaser-image: profiles/Ralf-D.-Mueller.png
-:jbake-tags: chatgpt, prompt-egineering
+:jbake-tags: chatgpt, prompt-egineering, slides, video, talk
+
 ifndef::imagesdir[:imagesdir: ../../images]
 
 == Die faszinierende Welt des Prompt-Engineerings
@@ -27,12 +28,25 @@ Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die 
 
 === Slides
 
+:youtube-id: zeKc7FFSSv0
+
 [cols="1", width=100%]
 |===
 a|
 ++++
 <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/f9d4a4977c4d4cc2a055a5f1687e5e56" title="Spock and AsciiDoc - ein perfektes Paar" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
 ++++
+
+a|
+ifdef::youtube-id[]
+[subs=attributes]
++++++
+<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto; aspect-ratio: 560 / 315;" src="https://www.youtube-nocookie.com/embed/{youtube-id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
++++++
+endif::youtube-id[]
+ifndef::youtube-id[]
+kein Video vorhanden
+endif::youtube-id[]
 
 |===
 
