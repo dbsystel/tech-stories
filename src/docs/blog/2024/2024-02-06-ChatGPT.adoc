@@ -1,0 +1,68 @@
+:jbake-card: ChatGPT als Werkzeug für Software-Architektur
+:jbake-title: Architektur mit ChatGPT
+:jbake-date: 2024-02-06
+:jbake-type: post
+:jbake-tags: ChatGPT, archiktektur, iSAQB, video
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 
+:jbake-author: Ralf D. Mueller
+:icons: font
+:source-highlighter: highlight.js
+:jbake-teaser-image: profiles/Ralf-D.-Mueller.png
+
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== ChatGPT als Werkzeug für Software-Architektur
+
+Kann ChatGPT Software-Architektur? Das war die Frage, der Eberhard Wolff und ich in drei Sessions nachgegangen sind.
+
+
+++++
+<!-- teaser -->
+++++
+
+Zu einem Zeitpunkt, als ChatGPT noch viel weniger konnte als heute, interessierte ich mich schon sehr für die Technologie.
+Allerdings weniger für die Technik dahinter, als für die Anwendung.
+Ich fragte mich: Was kann ich als Software-Architekt mit diesem spannenden Tool anfangen?
+Kann ChatGPT die Beispielaufgabe der iSAQB-Advanced-Zertifizierung lösen?
+
+Mutig habe ich die Idee als Talk beim xref:../2023-11-29-AI-in-Software-Design.adoc[iSAQB Software Architecture Gathering eingereicht] – wohl wissend, dass ChatGPT damals noch nicht so weit war.
+
+Die Zeit zwischen Einreichung und dem Talk habe ich genutzt, um meine Fähigkeiten im Prompt Engineering zu schärfen.
+So kam es dann auch zu einem xref:../2023-11-08-prompt-engineering.adoc[Talk auf der W-JAX].
+Dort hatte ich die Chance, mich mit Eberhard Wolff nach seinem Talk https://jax.de/software-architecture/software-architektur-mensch-organisation/[Architektur für Menschen - nicht für Software] auszutauschen.
+Auch Eberhard hatte sich mit dem Thema https://www.heise.de/blog/KI-in-der-Softwareentwicklung-Ueberschaetzt-9336902.html[KI in der Softwareentwicklung] auseinandergesetzt und so kamen wir auf die Idee, das Ganze mal gemeinsam anzugehen.
+
+Aus der Idee wurden recht schnell drei Videos auf Eberhards Youtube-Kanal "Software-Architektur im Stream".
+
+Im ersten Teil wiederholen wir nochmal die Grundlagen aus dem iSAQB Talk. 
+Ich erzähle, wie ich das Problem angegangen bin. 
+Wir diskutieren, auf welche Probleme ich gestossen bin und welche Prompt-Engineering-Techniken sinnvoll sind.
+
+Im zweiten Teil wirft Eberhard einen genaueren Blick auf die Ergebnisse und erläutert, auf welche Details er als Prüfer schaut.
+Das Ergebnis: Ja, ChatGPT hat Lösungen für die gestellten Aufgaben produziert, einer genaueren Prüfung halten sie aber nicht stand.
+Für die Zertifizierung heisst das, ChatGPT bekommt die Chance, nachzuarbeiten.
+
+Im dritten Teil versuchen wir, ChatGPT mit ein wenig mehr Aufwand eine bessere Lösung zu entlocken.
+Des Weiteren dsikutieren wir, wie die KI uns als Softwarearchitekten unterstüzen kann und was die Zukunft vielleicht noch bringt.
+
+[cols="3", width=100%]
+
+|===
+a|
+++++
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube-nocookie.com/embed/YOr6tIhXgFE?si=hH_puNoWeYluq4NJ" title="Besteht ChatGPT die iSAQB-Advanced-Level-Prüfung? 1/x mit Ralf D. Müller" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+
+a|
++++++
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube-nocookie.com/embed/FcPm5PAQFaU?si=ZaSyqqYmavljFqnD" title="Besteht ChatGPT die iSAQB-Advanced-Level-Prüfung? 2/x mit Ralf D. Müller" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
++++++
+
+a|
+++++++
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube-nocookie.com/embed/WFZppdVGqAw?si=vwox-2PLrIhe2SkH" title="ChatGPT als Werkzeug für Software-Archiktektur mit Ralf D. Müller" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++++
+|===
+
