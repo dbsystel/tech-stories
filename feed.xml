@@ -6,9 +6,424 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Thu, 14 Mar 2024 13:53:03 +0000</pubDate>
-    <lastBuildDate>Thu, 14 Mar 2024 13:53:03 +0000</lastBuildDate>
+    <pubDate>Tue, 2 Apr 2024 11:46:54 +0000</pubDate>
+    <lastBuildDate>Tue, 2 Apr 2024 11:46:54 +0000</lastBuildDate>
 
+    
+    <item>
+      <title>My journey from TypeScript to Java - Part 1</title>
+      <link>http://jbake.org/blog/2024/2024-04-02-Journey-from-TypeScript-to-Java-part-1.html</link>
+      <pubDate>Tue, 2 Apr 2024 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2024/2024-04-02-Journey-from-TypeScript-to-Java-part-1.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_my_journey_from_typescript_to_java_part_1&quot;&gt;My journey from TypeScript to Java - Part 1&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#object-equality&quot;&gt;&lt;span class=&quot;line-through&quot;&gt;No&lt;/span&gt; some objects are equal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_fun_with_null_values&quot;&gt;Fun with null values&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_why_the_hell_do_i_need_to_specify_types&quot;&gt;Why the hell do I need to specify types?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_union_types&quot;&gt;Union types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_combine_object_structures&quot;&gt;Combine object structures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_my_journey_from_typescript_to_java_part_1&quot;&gt;My journey from TypeScript to Java - Part 1&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;For several years now, I&amp;#8217;ve been programming in Typescript and enjoyed it significantly due to its simple and yet powerful type safety system in contrast to JavaScript.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;However, a lot of people in DB Systel use Java as their preferred programming language.
+To understand what they like about Java, but also because it is easier to maintain the software in the team, I wanted to learn Java myself.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;My learnings on my way from TypeScript to Java might be useful for others going the same way.
+While I&amp;#8217;m going this way, I like to add more of these articles.
+For now, I start with some beginner problems, but I already have prepared some more!&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Part 1&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#object-equality&quot;&gt;&lt;span class=&quot;line-through&quot;&gt;No&lt;/span&gt; some objects are equal&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#_fun_with_null_values&quot;&gt;Fun with null values&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#_why_the_hell_do_i_need_to_specify_types&quot;&gt;Why the hell do I need to specify types?&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Part 2 (planned)&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Optional values and defaults&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Objectifying mappings&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;part 3 (planned)&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Enum-erable charm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Table manners for databases&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spice up your functions with curry&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Many thanks to my friends who helped me with the formulation of my travelogue and showed me new ways:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;/blog/profiles/Carsten-Hoffmann.html&quot;&gt;Carsten Hoffmann&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Caroline Rieseler&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Jasper Gerigk&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;/blog/profiles/Danny.Koppenhagen.html&quot;&gt;Danny Koppenhagen&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;/blog/profiles/Ralf-D.-Mueller.html&quot;&gt;Ralf D. Müller&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;object-equality&quot;&gt;&lt;span class=&quot;line-through&quot;&gt;No&lt;/span&gt; some objects are equal&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The first thing I stumbled upon might be a real beginner problem.
+I expected that I could compare strings very similar to TypeScript with the equality operator.
+Sure, the &lt;code&gt;===&lt;/code&gt; operator in TypeScript is very special, but the IDE stops you from using it in Java.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;However, it doesn&amp;#8217;t stops you to use the &apos;normal&apos; &lt;code&gt;==&lt;/code&gt; equality operator for strings.
+Since &lt;code&gt;String&lt;/code&gt; is a class, and classes are only equal, if they are the same object, equality on two Strings &lt;em&gt;normally&lt;/em&gt; doesn&amp;#8217;t work.
+You might already know this behavior from TypeScript when, e.g. comparing `Date`s.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;To make things more complicated, there are situations where comparisons work nevertheless:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;String param = &quot;expected&quot;;
+if (param == &quot;expected&quot;) {
+  System.out.println(&quot;These strings are equal!&quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This happens because Java re-uses string literals like &apos;expected&apos; in this example.
+So, the &lt;code&gt;param&lt;/code&gt; object and the &quot;expected&quot; string literal are actually equal!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;However, if the String is created dynamically (e.g. from user input), it doesn&amp;#8217;t:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;String param = &quot;  expected  &quot;.trim();
+if (param != &quot;expected&quot;) {
+  System.out.println(&quot;These strings are not equal, even if they have the same content!&quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In Java, comparing of objects is done with an &lt;code&gt;equals()&lt;/code&gt; method:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;if (param.equals(&quot;expected&quot;)) {
+  System.out.println(&quot;Now the equality is recognized&quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;However, on primitive types, equality is implemented just like I would expect.
+So &lt;code&gt;a == 5&lt;/code&gt; works if &lt;code&gt;a&lt;/code&gt; is an &lt;code&gt;int&lt;/code&gt;.
+And, surprisingly, if you see a variable defined as &lt;code&gt;Integer a&lt;/code&gt;, you can use &lt;code&gt;a == 5&lt;/code&gt;, though &lt;code&gt;Integer&lt;/code&gt; is a class and &lt;code&gt;a&lt;/code&gt; therefore is an object of this class.
+Actually, the &lt;code&gt;==&lt;/code&gt; operator defined here overloads the standard one, so the &apos;normal&apos; rule of non-equality of objects if they are not the same is not applicable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Try it out yourself:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;class Test {
+  public static void main(String[] args) {
+    Integer a = Integer.parseInt(args[0]);
+
+    if (a == 5) {
+      System.out.println(&quot;a is 5&quot;);
+    } else {
+      System.out.println(&quot;a is not 5&quot;);
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In my opinion, this is not very intuitive, but that might be due to my past in TypeScript.
+Regrettably, Java implements function overloading only in a few cases (like the above) and doesn&amp;#8217;t give us the opportunity to define them ourselves.
+Else, I would create a &lt;code&gt;MyString&lt;/code&gt; class and define a &lt;code&gt;==&lt;/code&gt; method to compare strings like numbers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_fun_with_null_values&quot;&gt;Fun with null values&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Typescript inherits the sometimes difficult distinction between &lt;code&gt;undefined&lt;/code&gt; and &lt;code&gt;null&lt;/code&gt; from Javascript.
+Some people might think, this is not really necessary, but the two actually have a slightly different meaning: while &lt;code&gt;null&lt;/code&gt; means that I actually assigned a kind of &lt;code&gt;empty value&lt;/code&gt; to a variable or parameter, &lt;code&gt;undefined&lt;/code&gt; means &apos;not set&apos;.
+&lt;code&gt;null&lt;/code&gt; is rather empty on purpose.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Java doesn&amp;#8217;t make such a distinction, it only has &lt;code&gt;null&lt;/code&gt; - which might be sufficient for most use cases.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;But how does both languages handle such values?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s say, you have a variable &lt;code&gt;myObject&lt;/code&gt; which might be an object having a function &lt;code&gt;value()&lt;/code&gt; but also may be &lt;code&gt;undefined&lt;/code&gt;.
+The function might return a Date or again &lt;code&gt;undefined&lt;/code&gt;.
+How can I compare this with the current time?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In Typescript this can be done with the so called &apos;Optional Chaining&apos; like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre&gt;if (myObject?.value()?.getTime() &amp;gt; Date.now()) {
+  // ...
+}&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The &lt;code&gt;?&lt;/code&gt; means that when we get an &lt;code&gt;undefined&lt;/code&gt;, just stop evaluating, returning &lt;code&gt;undefined&lt;/code&gt; as the result of the expression.
+TypeScript programmers know this as &apos;falsy&apos;, which means that it something that is similar to the implementation of &lt;code&gt;false&lt;/code&gt;.
+Falsy in TypeScript are the values &lt;code&gt;0&lt;/code&gt;, &lt;code&gt;undefined&lt;/code&gt;, &lt;code&gt;null&lt;/code&gt;, &lt;code&gt;&quot;&quot;&lt;/code&gt; (the empty string), and, of course, &lt;code&gt;false&lt;/code&gt;.
+This is a very compact and, if you understand the syntax, readable form.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In Java, there is no such thing as a optional chaining &lt;code&gt;?.&lt;/code&gt; operator, we have to check every possible null value.
+Also, Java uses different types for numbers, &lt;code&gt;int&lt;/code&gt; or &lt;code&gt;long&lt;/code&gt;, so we need to decide, what &lt;code&gt;value()&lt;/code&gt; should return.
+If we want to use &lt;code&gt;null&lt;/code&gt; as well, both types won&amp;#8217;t allow that.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;But there is an alternative: instead of using the native &lt;code&gt;int&lt;/code&gt; or &lt;code&gt;long&lt;/code&gt; types, use the classes &lt;code&gt;Integer&lt;/code&gt; or &lt;code&gt;Long&lt;/code&gt; (with capital first letter) for the return value of &lt;code&gt;value()&lt;/code&gt; instead!
+They may be null (as all objects).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;if (myObject != null
+  &amp;amp;&amp;amp; myObject.value() != null
+  &amp;amp;&amp;amp; myObject.value() &amp;gt; Long.valueOf(Instant.now().getEpochSecond())) {
+    // ...
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_why_the_hell_do_i_need_to_specify_types&quot;&gt;Why the hell do I need to specify types?&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As you saw in my previous examples, Java requires you to specify the data type when defining a variable.
+While in Typescript, a definition with a value looks like&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;const string = functionThatReturnsAString();&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;in Java, it requires an additional specification&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;String string = functionThatReturnsAString();&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This gets particularly strange, if you have a value that needs to be explicitly converted to a string:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;String string = functionThatReturnsAnObject().toString();&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;When the function is already specifying a return type, specifying the type of the variable seems to be just overhead.
+The compiler could just infer the type automatically!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;But to improve the situation in Java 10 and higher, instead of the data type, one can use the &lt;code&gt;var&lt;/code&gt; keyword (which is rather a reserved type name, to be exact), so that it looks similar to TypeScript:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;final var string = functionThatReturnsAnObject().toString();&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The Java compiler then also automatically infers the actual type.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In fact, TypeScript also has a &lt;code&gt;var&lt;/code&gt; keyword, though I never would use it, and instead only use &lt;code&gt;const&lt;/code&gt; or - in rare cases - &lt;code&gt;let&lt;/code&gt;.
+Differentiating between variables that can change later (&lt;code&gt;let&lt;/code&gt;) and those which may not be changed (&lt;code&gt;const&lt;/code&gt; - an immutable value) is a very useful feature to avoid unwanted changes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_union_types&quot;&gt;Union types&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A nice feature of TypeScript are Union Types.
+They allow to combine multiple types to be used in a clear way:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;type Fruit = &quot;apple&quot; | &quot;orange&quot; | &quot;banana&quot;;
+type DairyProducts = &quot;milk&quot; | &quot;butter&quot;;
+
+type Food = Fruit | DairyProducts;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;There is no such thing as Union Types in Java.
+In Java, you would instead use &lt;code&gt;enum`s for defining `Fruit&lt;/code&gt; and &lt;code&gt;DairyProducts&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;@AllArgsConstructor
+public enum Fruit {
+  APPLE(&quot;apple&quot;),
+  ORANGE(&quot;orange&quot;),
+  BANANA(&quot;banana&quot;);
+
+  String name;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The upper case identifiers work as constants, the string literals in the braces the values of these constants.
+The field &lt;code&gt;name&lt;/code&gt; is needed to hold the value in each of the three instances of &lt;code&gt;Fruit&lt;/code&gt;.
+Fruit values can be accessed like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;Fruit fruit = Fruit.BANANA;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;However, it is not easily possible to combine such enums, because they are compiled to constants.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Instead, you would use interfaces and let the &lt;code&gt;Fruit&lt;/code&gt; and the &lt;code&gt;DairyProduct&lt;/code&gt; enums implement this interface.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;public interface Food {}
+
+@AllArgsConstructor
+@Getter
+public enum Fruit implements Food {
+  APPLE(&quot;apple&quot;),
+  ORANGE(&quot;orange&quot;),
+  BANANA(&quot;banana&quot;);
+
+  String name;
+}
+
+@AllArgsConstructor
+@Getter
+public enum DairyProduct implements Food {
+  MILK(&quot;milk&quot;),
+  CHEESE(&quot;cheese&quot;);
+
+  String name;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Now you can use the new &lt;code&gt;Food&lt;/code&gt; interface as the type to collect both, `Fruit`s and `DairyProduct`s together:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;List&amp;lt;Food&amp;gt; food = List.of(Fruit.BANANA, DairyProduct.CHEESE);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Note that it is not possible (as far as I know) to use &lt;code&gt;Food&lt;/code&gt; as the qualifier for &lt;code&gt;BANANA&lt;/code&gt; and &lt;code&gt;CHEESE&lt;/code&gt; and that it is not that easy to use the lower case equivalents for assignments.
+Instead, one would need to iterate over the enum values and &lt;code&gt;find&lt;/code&gt; the requested value text.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I use Lombok to not have to implement getters and constructors.
+They are necessary to have the lower case values at least when using the enum for writing to a database or when generating JSON.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Also note that every interface and class needs a separate file in Java.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;All in all, `enum`s seems to be a very cumbersome feature.
+But this is also valid for TypeScript, where I prefer to use Union Types.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_combine_object_structures&quot;&gt;Combine object structures&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;To combine object structures in TypeScript you would use the &lt;code&gt;&amp;amp;&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;type Person = {
+  name: string;
+  email: string;
+};
+
+type AuthDetails = {
+  username: string;
+  password: string;
+};
+
+type User = Person &amp;amp; AuthDetails;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In Java, you would rather define two interfaces, and define a class implementing both.
+This would work in Typescript as well.
+However, interfaces in TypeScript can only be used to describe object strucures, not primitives.
+Read more about the differences of type aliases and interfaces &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces&quot;&gt;in the official TypeScript documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I&amp;#8217;m still working with Java, so stay tuned to read more experiences in the next chapters of my journey, when I will cover optional values, defaults and mapping of objects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
     
     <item>
       <title>Ein Jahr PostgreSQL statt Oracle</title>
@@ -2433,7 +2848,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-f9c1a40657c8f5bf22f6862687071035.png&quot; alt=&quot;Diagram&quot; width=&quot;374&quot; height=&quot;161&quot;&gt;
+&lt;img src=&quot;/images/diag-f9c1a40657c8f5bf22f6862687071035.png&quot; alt=&quot;Diagram&quot; width=&quot;373&quot; height=&quot;160&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -2469,7 +2884,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-c3a8ead5c9df4992e1c834a5128bd7d6.png&quot; alt=&quot;Diagram&quot; width=&quot;374&quot; height=&quot;204&quot;&gt;
+&lt;img src=&quot;/images/diag-c3a8ead5c9df4992e1c834a5128bd7d6.png&quot; alt=&quot;Diagram&quot; width=&quot;373&quot; height=&quot;203&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -2508,7 +2923,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-238f8b73f33f13606ea63993a15e9fad.png&quot; alt=&quot;Diagram&quot; width=&quot;374&quot; height=&quot;233&quot;&gt;
+&lt;img src=&quot;/images/diag-238f8b73f33f13606ea63993a15e9fad.png&quot; alt=&quot;Diagram&quot; width=&quot;373&quot; height=&quot;232&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -2574,7 +2989,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-69a88801b07d3f3a5533fe729f017f52.png&quot; alt=&quot;Diagram&quot; width=&quot;374&quot; height=&quot;358&quot;&gt;
+&lt;img src=&quot;/images/diag-69a88801b07d3f3a5533fe729f017f52.png&quot; alt=&quot;Diagram&quot; width=&quot;373&quot; height=&quot;357&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -2627,7 +3042,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-1893f34850155c3870866563e0efca44.png&quot; alt=&quot;Diagram&quot; width=&quot;374&quot; height=&quot;310&quot;&gt;
+&lt;img src=&quot;/images/diag-1893f34850155c3870866563e0efca44.png&quot; alt=&quot;Diagram&quot; width=&quot;373&quot; height=&quot;309&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -2696,7 +3111,7 @@ legende -[hidden]down-&amp;gt; a
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-138a71d715ccc25cdd84d12ec5d921a2.png&quot; alt=&quot;Diagram&quot; width=&quot;431&quot; height=&quot;472&quot;&gt;
+&lt;img src=&quot;/images/diag-138a71d715ccc25cdd84d12ec5d921a2.png&quot; alt=&quot;Diagram&quot; width=&quot;431&quot; height=&quot;471&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
