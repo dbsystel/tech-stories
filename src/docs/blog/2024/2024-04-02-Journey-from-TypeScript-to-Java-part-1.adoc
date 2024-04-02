@@ -24,6 +24,10 @@ My learnings on my way from TypeScript to Java might be useful for others going 
 While I'm going this way, I like to add more of these articles.
 For now, I start with some beginner problems, but I already have prepared some more!
 
+++++
+<!-- teaser -->
+++++
+
 * Part 1
   ** xref:object-equality[]
   ** <<Fun with null values>>
