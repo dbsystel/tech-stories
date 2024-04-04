@@ -1,0 +1,55 @@
+:jbake-title: DB Systel auf der KubeCon 2024 in Paris
+:jbake-card: DB Systel auf der KubeCon 2024 in Paris
+:jbake-date: 2024-04-04
+:jbake-type: post
+:jbake-tags: KubeCon,Kubernetes
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Gualter Barbas Baptista
+:icons: font
+:jbake-teaser-image: 20240404-kubecon/kubecon2024.jpg
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== DB Systel auf der KubeCon 2024 in Paris
+
+Die Tech-Expert:innen der DB Systel treiben nicht nur die Digitalisierung der DB voran,
+sie sind mit ihrem umfassenden Knowhow auch gefragte Speaker:innen bei internationalen Kongressen wie der KubeCon.
+
+++++
+<!-- teaser -->
+++++
+
+Vom 19. bis 22. März fand die größte Anwender- und Entwicklerkonferenz für Software aus dem Kubernetes- und Cloud-Native-Universum in Paris statt.
+Über 12.000 Besucher:innen machten sich auf den Weg in die Hauptstadt Frankreichs,
+um ein buntes Programm mit über 10 Tracks, Keynote-Livestreamings, Tutorials und Networking-Events zu erleben.
+
+Unser Kollege Gualter Baptista konnte dort im Rahmen seiner Keynote „Building IT Green: A Journey of Platforms, Data, and Developer Empowerment at Deutsche Bahn”
+Einblicke geben, mit welchen Ansätzen die DB Systel versucht,
+den ökologischen Fußabdruck der DB-Cloud-Anwendungen zu überwachen und kontinuierlich zu minimieren.
+
+Die komplette Keynote zum Nachschauen gibt es hier:
+
+=== Slides & Video
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/f6388fc0900645efa33125c20be216c3" title="Speakerdeck Player" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+
+a|
++++++
+<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/VI33buvdomE?si=DJvB9MJoQpmYNcMT" title="Youtube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
++++++
+|===
+
+
+https://summarize.ing/video-16024-Keynote-Building-IT-Green-A-Journey-of-Platforms-Data-and-Developer-Empowerment-at-Deutsche-Bahn[KI Summary]
+
+
+=== Links
+
+https://www.linkedin.com/posts/dr-gualter-barbas-baptista-a3935428_kubecon-activity-7178388968198021120-anIf?utm_source=share&utm_medium=member_desktop[LinkedIn-Post Gualter Baptista] +
+https://www.thestack.technology/how-a-platform-focus-helped-deutsche-bahns-developers-cut-energy-consumption/[How a platform focus helped Deutsche Bahn]

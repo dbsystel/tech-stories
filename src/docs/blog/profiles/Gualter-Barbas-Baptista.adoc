@@ -18,4 +18,14 @@ max-width: 100px;
 </style>
 ++++
 
+image:profiles/Gualter-Barbas-Baptista.jpg[float=right,role=profile]
+
+Lead Consultant for Platform Strategy and Enablement
+
+Gualter is a platform strategist and enabler with over 25 years experience in Linux and FLOSS. He worked as a Product Owner within multiple platform teams. Driven by a passion for sustainability, Gualter draws from his unique academic journey in environmental engineering, complemented by a PhD in ecological economics. He is dedicated to shedding light on the ecological impact of digitalization and empowering developers to make informed decisions for sustainable practices in their daily work.
+
+=== Links
+
+* https://www.linkedin.com/in/dr-gualter-barbas-baptista-a3935428[LinkedIn Profile]
+
 
