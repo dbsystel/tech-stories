@@ -6,9 +6,79 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Tue, 2 Apr 2024 11:46:54 +0000</pubDate>
-    <lastBuildDate>Tue, 2 Apr 2024 11:46:54 +0000</lastBuildDate>
+    <pubDate>Thu, 4 Apr 2024 18:06:43 +0000</pubDate>
+    <lastBuildDate>Thu, 4 Apr 2024 18:06:43 +0000</lastBuildDate>
 
+    
+    <item>
+      <title>DB Systel auf der KubeCon 2024 in Paris</title>
+      <link>http://jbake.org/blog/2024/2024-04-04-DB-Systel-KubeCon.html</link>
+      <pubDate>Thu, 4 Apr 2024 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2024/2024-04-04-DB-Systel-KubeCon.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_db_systel_auf_der_kubecon_2024_in_paris&quot;&gt;DB Systel auf der KubeCon 2024 in Paris&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_slides_video&quot;&gt;Slides &amp;amp; Video&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_links&quot;&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_db_systel_auf_der_kubecon_2024_in_paris&quot;&gt;DB Systel auf der KubeCon 2024 in Paris&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die Tech-Expert:innen der DB Systel treiben nicht nur die Digitalisierung der DB voran,
+sie sind mit ihrem umfassenden Knowhow auch gefragte Speaker:innen bei internationalen Kongressen wie der KubeCon.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Vom 19. bis 22. März fand die größte Anwender- und Entwicklerkonferenz für Software aus dem Kubernetes- und Cloud-Native-Universum in Paris statt.
+Über 12.000 Besucher:innen machten sich auf den Weg in die Hauptstadt Frankreichs,
+um ein buntes Programm mit über 10 Tracks, Keynote-Livestreamings, Tutorials und Networking-Events zu erleben.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Unser Kollege Gualter Baptista konnte dort im Rahmen seiner Keynote „Building IT Green: A Journey of Platforms, Data, and Developer Empowerment at Deutsche Bahn”
+Einblicke geben, mit welchen Ansätzen die DB Systel versucht,
+den ökologischen Fußabdruck der DB-Cloud-Anwendungen zu überwachen und kontinuierlich zu minimieren.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Die komplette Keynote zum Nachschauen gibt es hier:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_slides_video&quot;&gt;Slides &amp;amp; Video&lt;/h3&gt;
+&lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/f6388fc0900645efa33125c20be216c3&quot; title=&quot;Speakerdeck Player&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/VI33buvdomE?si=DJvB9MJoQpmYNcMT&quot; title=&quot;Youtube Video Player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://summarize.ing/video-16024-Keynote-Building-IT-Green-A-Journey-of-Platforms-Data-and-Developer-Empowerment-at-Deutsche-Bahn&quot;&gt;KI Summary&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_links&quot;&gt;Links&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/posts/dr-gualter-barbas-baptista-a3935428_kubecon-activity-7178388968198021120-anIf?utm_source=share&amp;amp;utm_medium=member_desktop&quot;&gt;LinkedIn-Post Gualter Baptista&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://www.thestack.technology/how-a-platform-focus-helped-deutsche-bahns-developers-cut-energy-consumption/&quot;&gt;How a platform focus helped Deutsche Bahn&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
     
     <item>
       <title>My journey from TypeScript to Java - Part 1</title>
