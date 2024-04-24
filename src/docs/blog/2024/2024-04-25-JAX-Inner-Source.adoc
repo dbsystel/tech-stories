@@ -1,5 +1,5 @@
 :jbake-title: Inner Source@DB
-:jbake-card: Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im Großkonzern
+:jbake-card: Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im DB Konzern
 :jbake-date: 2024-04-25
 :jbake-type: post
 :jbake-tags: InnerSource, talk, slides
@@ -11,7 +11,7 @@
 :jbake-teaser-image: topics/dev.png
 ifndef::imagesdir[:imagesdir: ../../images]
 
-== Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im Großkonzern
+== Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im DB Konzern
 
 Entdecken Sie mit mir die Welt von Inner Source bei der Deutschen Bahn (DB) während meines Vortrags.
 Ich werde mit einem Rückblick auf die Geschichte von Inner Source bei der DB beginnen und dabei die einzigartigen Herausforderungen beleuchten, auf die wir gestoßen sind, sowie die Lösungsansätze, die wir entwickelt haben. 
