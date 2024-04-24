@@ -1,0 +1,43 @@
+:jbake-title: Inner Source@DB
+:jbake-card: Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im Großkonzern
+:jbake-date: 2024-04-25
+:jbake-type: post
+:jbake-tags: InnerSource, talk, slides
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Carsten Hoffmann
+:icons: font
+:jbake-teaser-image: topics/dev.png
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im Großkonzern
+
+Entdecken Sie mit mir die Welt von Inner Source bei der Deutschen Bahn (DB) während meines Vortrags.
+Ich werde mit einem Rückblick auf die Geschichte von Inner Source bei der DB beginnen und dabei die einzigartigen Herausforderungen beleuchten, auf die wir gestoßen sind, sowie die Lösungsansätze, die wir entwickelt haben. 
+
+++++
+<!-- teaser -->
+++++
+
+Erfahren Sie, wie die Gründung eines Thementeams in unserer Architekturgilde dazu beigetragen hat, die Verbreitung von Inner Source zu fördern und Hindernisse zu überwinden. Ich werde den Nutzen von Inner Source für das Unternehmen und die Softwareentwicklung erläutern und den Unterschied zwischen "Community-maintained" und "Team-maintained" Inner Source erklären. Dabei zeige ich auf, warum eine zentrale Plattform für die Entstehung von Community-maintained Inner-Source-Projekten unerlässlich ist und welche Eigenschaften wir dieser Plattform gegeben haben. Abschließend werde ich enthüllen, wie Inner Source eine Brücke zu Open Source schlägt und einige konkrete Inner-Source-Projekte vorstellen. Seien Sie gespannt und lassen Sie sich inspirieren, wie Inner Source die Zukunft der Softwareentwicklung bei der Deutschen Bahn vorantreibt!
+
+=== Slides
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/9d8f105e49fc45d5acf72c3cd30efee6" title="Speakerdeck Player" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+
+a|
++++++
+<!--iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/VI33buvdomE?si=DJvB9MJoQpmYNcMT" title="Youtube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe-->
++++++
+|===
+
+=== Links
+
+
+https://opensource.deutschebahn.com/[Open-Source-Manifest der Deutschen Bahn]
