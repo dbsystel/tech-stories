@@ -13,7 +13,7 @@ var documents = [
     "uri": "blog/2024/2024-04-25-JAX-Inner-Source.html",
     "menu": "Blog",
     "title": "Inner Source@DB",
-    "text": " Table of Contents Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im Großkonzern Slides Links Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im Großkonzern Entdecken Sie mit mir die Welt von Inner Source bei der Deutschen Bahn (DB) während meines Vortrags. Ich werde mit einem Rückblick auf die Geschichte von Inner Source bei der DB beginnen und dabei die einzigartigen Herausforderungen beleuchten, auf die wir gestoßen sind, sowie die Lösungsansätze, die wir entwickelt haben. Erfahren Sie, wie die Gründung eines Thementeams in unserer Architekturgilde dazu beigetragen hat, die Verbreitung von Inner Source zu fördern und Hindernisse zu überwinden. Ich werde den Nutzen von Inner Source für das Unternehmen und die Softwareentwicklung erläutern und den Unterschied zwischen \"Community-maintained\" und \"Team-maintained\" Inner Source erklären. Dabei zeige ich auf, warum eine zentrale Plattform für die Entstehung von Community-maintained Inner-Source-Projekten unerlässlich ist und welche Eigenschaften wir dieser Plattform gegeben haben. Abschließend werde ich enthüllen, wie Inner Source eine Brücke zu Open Source schlägt und einige konkrete Inner-Source-Projekte vorstellen. Seien Sie gespannt und lassen Sie sich inspirieren, wie Inner Source die Zukunft der Softwareentwicklung bei der Deutschen Bahn vorantreibt! Slides Links Open-Source-Manifest der Deutschen Bahn "
+    "text": " Table of Contents Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im DB Konzern Slides Links Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im DB Konzern Entdecken Sie mit mir die Welt von Inner Source bei der Deutschen Bahn (DB) während meines Vortrags. Ich werde mit einem Rückblick auf die Geschichte von Inner Source bei der DB beginnen und dabei die einzigartigen Herausforderungen beleuchten, auf die wir gestoßen sind, sowie die Lösungsansätze, die wir entwickelt haben. Erfahren Sie, wie die Gründung eines Thementeams in unserer Architekturgilde dazu beigetragen hat, die Verbreitung von Inner Source zu fördern und Hindernisse zu überwinden. Ich werde den Nutzen von Inner Source für das Unternehmen und die Softwareentwicklung erläutern und den Unterschied zwischen \"Community-maintained\" und \"Team-maintained\" Inner Source erklären. Dabei zeige ich auf, warum eine zentrale Plattform für die Entstehung von Community-maintained Inner-Source-Projekten unerlässlich ist und welche Eigenschaften wir dieser Plattform gegeben haben. Abschließend werde ich enthüllen, wie Inner Source eine Brücke zu Open Source schlägt und einige konkrete Inner-Source-Projekte vorstellen. Seien Sie gespannt und lassen Sie sich inspirieren, wie Inner Source die Zukunft der Softwareentwicklung bei der Deutschen Bahn vorantreibt! Slides Links Open-Source-Manifest der Deutschen Bahn "
 },
 
 {
@@ -282,14 +282,6 @@ var documents = [
 
 {
     "id": 35,
-    "uri": "blog/profiles/Sascha-Wolter.html",
-    "menu": "Autoren",
-    "title": "Sascha Wolter",
-    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Persönliche Website "
-},
-
-{
-    "id": 36,
     "uri": "blog/profiles/Philippe-Rieffe.html",
     "menu": "Autoren",
     "title": "Philippe Rieffe",
@@ -297,7 +289,7 @@ var documents = [
 },
 
 {
-    "id": 37,
+    "id": 36,
     "uri": "blog/profiles/Oliver-Hammer.html",
     "menu": "Autoren",
     "title": "Oliver Hammer",
@@ -305,7 +297,7 @@ var documents = [
 },
 
 {
-    "id": 38,
+    "id": 37,
     "uri": "blog/profiles/Johannes-Dienst.html",
     "menu": "Autoren",
     "title": "Johannes Dienst",
@@ -313,7 +305,7 @@ var documents = [
 },
 
 {
-    "id": 39,
+    "id": 38,
     "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
     "menu": "Autoren",
     "title": "Gualter Barbas Baptista",
@@ -321,11 +313,19 @@ var documents = [
 },
 
 {
-    "id": 40,
+    "id": 39,
     "uri": "blog/profiles/buildIT.html",
     "menu": "Autoren",
     "title": "BuildIT",
     "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 40,
+    "uri": "blog/profiles/Sascha-Wolter.html",
+    "menu": "Autoren",
+    "title": "Sascha Wolter",
+    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Persönliche Website "
 },
 
 {
@@ -338,14 +338,6 @@ var documents = [
 
 {
     "id": 42,
-    "uri": "blog/profiles/Maximilian-Franzke.html",
-    "menu": "Autoren",
-    "title": "Maximilian Franzke",
-    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
-},
-
-{
-    "id": 43,
     "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
     "title": "Marcus Sümnick",
@@ -353,7 +345,7 @@ var documents = [
 },
 
 {
-    "id": 44,
+    "id": 43,
     "uri": "blog/profiles/Konrad-Winkler.html",
     "menu": "Autoren",
     "title": "Konrad Winkler",
@@ -361,15 +353,15 @@ var documents = [
 },
 
 {
-    "id": 45,
-    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
+    "id": 44,
+    "uri": "blog/profiles/Maximilian-Franzke.html",
     "menu": "Autoren",
-    "title": "Dr. Martin Strunk",
-    "text": " Table of Contents Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Dr. Martin Strunk Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created. Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm. LinkedIn Xing "
+    "title": "Maximilian Franzke",
+    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
 },
 
 {
-    "id": 46,
+    "id": 45,
     "uri": "blog/profiles/Jonas-Gassenmeyer.html",
     "menu": "Autoren",
     "title": "Jonas Gassenmeyer",
@@ -377,15 +369,15 @@ var documents = [
 },
 
 {
-    "id": 47,
-    "uri": "blog/profiles/Danny-Koppenhagen.html",
+    "id": 46,
+    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
     "menu": "Autoren",
-    "title": "Danny Koppenhagen",
-    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+    "title": "Dr. Martin Strunk",
+    "text": " Table of Contents Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Dr. Martin Strunk Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created. Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm. LinkedIn Xing "
 },
 
 {
-    "id": 48,
+    "id": 47,
     "uri": "blog/profiles/Carsten-Hoffmann.html",
     "menu": "Autoren",
     "title": "Carsten Hoffmann",
@@ -393,15 +385,7 @@ var documents = [
 },
 
 {
-    "id": 49,
-    "uri": "blog/profiles/Bertram-Fey.html",
-    "menu": "Autoren",
-    "title": "Bertram Fey",
-    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
-},
-
-{
-    "id": 50,
+    "id": 48,
     "uri": "blog/profiles/Bernd-Schimmer.html",
     "menu": "Autoren",
     "title": "Bernd Schimmer",
@@ -409,7 +393,7 @@ var documents = [
 },
 
 {
-    "id": 51,
+    "id": 49,
     "uri": "blog/profiles/Sven-Hesse.html",
     "menu": "Autoren",
     "title": "Sven Hesse",
@@ -417,7 +401,7 @@ var documents = [
 },
 
 {
-    "id": 52,
+    "id": 50,
     "uri": "blog/profiles/Stefan-Gruendling.html",
     "menu": "Autoren",
     "title": "Stefan Gründling",
@@ -425,7 +409,31 @@ var documents = [
 },
 
 {
+    "id": 51,
+    "uri": "blog/profiles/Danny-Koppenhagen.html",
+    "menu": "Autoren",
+    "title": "Danny Koppenhagen",
+    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+},
+
+{
+    "id": 52,
+    "uri": "blog/profiles/Bertram-Fey.html",
+    "menu": "Autoren",
+    "title": "Bertram Fey",
+    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
+},
+
+{
     "id": 53,
+    "uri": "blog/profiles/Tim-Engeleiter.html",
+    "menu": "Autoren",
+    "title": "Tim Engeleiter",
+    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
+},
+
+{
+    "id": 54,
     "uri": "blog/profiles/Joachim-Schirrmacher.html",
     "menu": "Autoren",
     "title": "Joachim Schirrmacher",
@@ -433,7 +441,7 @@ var documents = [
 },
 
 {
-    "id": 54,
+    "id": 55,
     "uri": "blog/profiles/Christian-Fischer.html",
     "menu": "Autoren",
     "title": "Christian Fischer",
@@ -441,19 +449,11 @@ var documents = [
 },
 
 {
-    "id": 55,
+    "id": 56,
     "uri": "blog/profiles/Carsten-Thurau.html",
     "menu": "Autoren",
     "title": "Carsten Thurau",
     "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 56,
-    "uri": "blog/profiles/Tim-Engeleiter.html",
-    "menu": "Autoren",
-    "title": "Tim Engeleiter",
-    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
 },
 
 {

@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 24 Apr 2024 12:53:56 +0000</pubDate>
-    <lastBuildDate>Wed, 24 Apr 2024 12:53:56 +0000</lastBuildDate>
+    <pubDate>Wed, 24 Apr 2024 14:33:50 +0000</pubDate>
+    <lastBuildDate>Wed, 24 Apr 2024 14:33:50 +0000</lastBuildDate>
 
     
     <item>
@@ -19,7 +19,7 @@
       &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
 &lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
 &lt;ul class=&quot;sectlevel1&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;#_inner_sourcedb_eine_geschichte_über_open_source_praktiken_im_großkonzern&quot;&gt;Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im Großkonzern&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;#_inner_sourcedb_eine_geschichte_über_open_source_praktiken_im_db_konzern&quot;&gt;Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im DB Konzern&lt;/a&gt;
 &lt;ul class=&quot;sectlevel2&quot;&gt;
 &lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#_links&quot;&gt;Links&lt;/a&gt;&lt;/li&gt;
@@ -29,7 +29,7 @@
 &lt;/div&gt;
 &lt;!-- endtoc --&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_inner_sourcedb_eine_geschichte_über_open_source_praktiken_im_großkonzern&quot;&gt;Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im Großkonzern&lt;/h2&gt;
+&lt;h2 id=&quot;_inner_sourcedb_eine_geschichte_über_open_source_praktiken_im_db_konzern&quot;&gt;Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im DB Konzern&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Entdecken Sie mit mir die Welt von Inner Source bei der Deutschen Bahn (DB) während meines Vortrags.
