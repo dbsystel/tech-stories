@@ -282,14 +282,6 @@ var documents = [
 
 {
     "id": 35,
-    "uri": "blog/profiles/Philippe-Rieffe.html",
-    "menu": "Autoren",
-    "title": "Philippe Rieffe",
-    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 36,
     "uri": "blog/profiles/Oliver-Hammer.html",
     "menu": "Autoren",
     "title": "Oliver Hammer",
@@ -297,15 +289,7 @@ var documents = [
 },
 
 {
-    "id": 37,
-    "uri": "blog/profiles/Johannes-Dienst.html",
-    "menu": "Autoren",
-    "title": "Johannes Dienst",
-    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 38,
+    "id": 36,
     "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
     "menu": "Autoren",
     "title": "Gualter Barbas Baptista",
@@ -313,15 +297,7 @@ var documents = [
 },
 
 {
-    "id": 39,
-    "uri": "blog/profiles/buildIT.html",
-    "menu": "Autoren",
-    "title": "BuildIT",
-    "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 40,
+    "id": 37,
     "uri": "blog/profiles/Sascha-Wolter.html",
     "menu": "Autoren",
     "title": "Sascha Wolter",
@@ -329,7 +305,7 @@ var documents = [
 },
 
 {
-    "id": 41,
+    "id": 38,
     "uri": "blog/profiles/Ralf-D.-Mueller.html",
     "menu": "Autoren",
     "title": "Ralf D. Müller",
@@ -337,7 +313,15 @@ var documents = [
 },
 
 {
-    "id": 42,
+    "id": 39,
+    "uri": "blog/profiles/Philippe-Rieffe.html",
+    "menu": "Autoren",
+    "title": "Philippe Rieffe",
+    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 40,
     "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
     "title": "Marcus Sümnick",
@@ -345,11 +329,27 @@ var documents = [
 },
 
 {
-    "id": 43,
+    "id": 41,
     "uri": "blog/profiles/Konrad-Winkler.html",
     "menu": "Autoren",
     "title": "Konrad Winkler",
     "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 42,
+    "uri": "blog/profiles/Johannes-Dienst.html",
+    "menu": "Autoren",
+    "title": "Johannes Dienst",
+    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 43,
+    "uri": "blog/profiles/buildIT.html",
+    "menu": "Autoren",
+    "title": "BuildIT",
+    "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
@@ -386,14 +386,6 @@ var documents = [
 
 {
     "id": 48,
-    "uri": "blog/profiles/Bernd-Schimmer.html",
-    "menu": "Autoren",
-    "title": "Bernd Schimmer",
-    "text": " Table of Contents Bernd Schimmer Bernd Schimmer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bernd is an experienced frontend developer and Agility Master at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . "
-},
-
-{
-    "id": 49,
     "uri": "blog/profiles/Sven-Hesse.html",
     "menu": "Autoren",
     "title": "Sven Hesse",
@@ -401,7 +393,7 @@ var documents = [
 },
 
 {
-    "id": 50,
+    "id": 49,
     "uri": "blog/profiles/Stefan-Gruendling.html",
     "menu": "Autoren",
     "title": "Stefan Gründling",
@@ -409,7 +401,7 @@ var documents = [
 },
 
 {
-    "id": 51,
+    "id": 50,
     "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
     "title": "Danny Koppenhagen",
@@ -417,11 +409,19 @@ var documents = [
 },
 
 {
-    "id": 52,
+    "id": 51,
     "uri": "blog/profiles/Bertram-Fey.html",
     "menu": "Autoren",
     "title": "Bertram Fey",
     "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
+},
+
+{
+    "id": 52,
+    "uri": "blog/profiles/Bernd-Schimmer.html",
+    "menu": "Autoren",
+    "title": "Bernd Schimmer",
+    "text": " Table of Contents Bernd Schimmer Bernd Schimmer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bernd is an experienced frontend developer and Agility Master at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . "
 },
 
 {
