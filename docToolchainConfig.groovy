@@ -86,6 +86,8 @@ microsite.with {
     //
     // twitter account url
     footerTwitter = 'https://twitter.com/dbsystel'
+    // mastodon account url
+    footerMastodon = 'https://bahn.social/@dbsystel'
     //
     // Github Repository
     footerGithub = 'https://github.com/dbsystel'

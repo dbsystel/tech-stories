@@ -99,6 +99,9 @@ metakeys.each { key ->
     <meta name="msapplication-TileImage" content="${content.rootpath}ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Mastodon verification -->
+    <link rel="me" href="https://bahn.social/@dbsystel">
+
   <script src="${content.rootpath}js/jquery-3.5.1.min.js"></script>
   <script src="${content.rootpath}js/openseadragon-4.1.0/openseadragon.js"></script>
 
