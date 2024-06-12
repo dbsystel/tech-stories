@@ -1,5 +1,5 @@
-:jbake-title: Prompt-Engineering
-:jbake-card: Die faszinierende Welt des Prompt-Engineerings
+:jbake-title: Prompt Engineering
+:jbake-card: Die faszinierende Welt des Prompt Engineerings
 :jbake-date: 2023-11-08
 :jbake-type: post
 :jbake-status: published
@@ -11,20 +11,20 @@
 
 ifndef::imagesdir[:imagesdir: ../../images]
 
-== Die faszinierende Welt des Prompt-Engineerings
+== Die faszinierende Welt des Prompt Engineerings
 
-Im Zentrum meines jüngsten Vortrags stand das Prompt-Engineering, ein Schlüsselelement im Umgang mit fortschrittlichen Sprachmodellen wie GPT-3 und GPT-4.
+Im Zentrum meines jüngsten Vortrags stand das Prompt Engineering, ein Schlüsselelement im Umgang mit fortschrittlichen Sprachmodellen wie GPT-3 und GPT-4.
 
 ++++
 <!-- teaser -->
 ++++
 
-Das Prompt-Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen.
+Das Prompt Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen.
 Wir tauchten tief in die Unterschiede zwischen GPT-3 und GPT-4 ein,
 erkundeten die Komplexität neuronaler Netze und die Bedeutung der Multi-Modalität in der heutigen KI-Landschaft.
 Ein besonderes Augenmerk legten wir auf die Kunst des Primings und der Kontextualisierung von Prompts,
 die die Effektivität und Präzision der KI-Interaktionen erheblich steigern können.
-Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die das Potenzial von Prompt-Engineering veranschaulichen.
+Neben theoretischen Überlegungen wurden reale Anwendungsfälle diskutiert, die das Potenzial von Prompt Engineering veranschaulichen.
 
 === Slides
 
@@ -52,7 +52,7 @@ endif::youtube-id[]
 
 === Referenzen
 
-- link:https://www.golem.de/news/security-bsi-sieht-ki-als-sicherheitsrisiko-2311-179043.html[Golem.de: BSI sieht KI als Sicherhitsrisiko]
+- link:https://www.golem.de/news/security-bsi-sieht-ki-als-sicherheitsrisiko-2311-179043.html[Golem.de: BSI sieht KI als Sicherheitsrisiko]
 - link:https://twitter.com/TheHiredAI/status/1716485469079257282[Twitter: The Hired AI]
 - link:https://medium.com/@sreedevr/chatgpt-architecture-explained-7fc0cbb7426c[Medium: ChatGPT Architecture Explained by Sreedev R]
 - link:https://www.nature.com/articles/s41598-023-45837-2[Scientific Reports: Comparative performance of humans versus GPT-4.0 and GPT-3.5]
