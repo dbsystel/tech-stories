@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Wed, 8 May 2024 14:21:14 +0000</pubDate>
-    <lastBuildDate>Wed, 8 May 2024 14:21:14 +0000</lastBuildDate>
+    <pubDate>Wed, 12 Jun 2024 12:54:42 +0000</pubDate>
+    <lastBuildDate>Wed, 12 Jun 2024 12:54:42 +0000</lastBuildDate>
 
     
     <item>
@@ -1572,7 +1572,7 @@ He will also propose ways, in which companies might overcome and mitigate these 
     </item>
     
     <item>
-      <title>Prompt-Engineering</title>
+      <title>Prompt Engineering</title>
       <link>http://jbake.org/blog/2023/2023-11-08-prompt-engineering.html</link>
       <pubDate>Wed, 8 Nov 2023 00:00:00 +0000</pubDate>
       <guid isPermaLink="false">blog/2023/2023-11-08-prompt-engineering.html</guid>
@@ -1580,7 +1580,7 @@ He will also propose ways, in which companies might overcome and mitigate these 
       &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
 &lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
 &lt;ul class=&quot;sectlevel1&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;#_die_faszinierende_welt_des_prompt_engineerings&quot;&gt;Die faszinierende Welt des Prompt-Engineerings&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;#_die_faszinierende_welt_des_prompt_engineerings&quot;&gt;Die faszinierende Welt des Prompt Engineerings&lt;/a&gt;
 &lt;ul class=&quot;sectlevel2&quot;&gt;
 &lt;li&gt;&lt;a href=&quot;#_slides&quot;&gt;Slides&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#_referenzen&quot;&gt;Referenzen&lt;/a&gt;&lt;/li&gt;
@@ -1590,19 +1590,19 @@ He will also propose ways, in which companies might overcome and mitigate these 
 &lt;/div&gt;
 &lt;!-- endtoc --&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_die_faszinierende_welt_des_prompt_engineerings&quot;&gt;Die faszinierende Welt des Prompt-Engineerings&lt;/h2&gt;
+&lt;h2 id=&quot;_die_faszinierende_welt_des_prompt_engineerings&quot;&gt;Die faszinierende Welt des Prompt Engineerings&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Im Zentrum meines jüngsten Vortrags stand das Prompt-Engineering, ein Schlüsselelement im Umgang mit fortschrittlichen Sprachmodellen wie GPT-3 und GPT-4.&lt;/p&gt;
+&lt;p&gt;Im Zentrum meines jüngsten Vortrags stand das Prompt Engineering, ein Schlüsselelement im Umgang mit fortschrittlichen Sprachmodellen wie GPT-3 und GPT-4.&lt;/p&gt;
 &lt;/div&gt;
 &lt;!-- teaser --&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Das Prompt-Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen.
+&lt;p&gt;Das Prompt Engineering ermöglicht es Entwicklern, genaue und nuancierte Antworten von KI-Modellen zu erhalten und das Potenzial der KI voll auszuschöpfen.
 Wir tauchten tief in die Unterschiede zwischen GPT-3 und GPT-4 ein,
 erkundeten die Komplexität neuronaler Netze und die Bedeutung der Multi-Modalität in der heutigen KI-Landschaft.
 Ein besonderes Augenmerk legten wir auf die Kunst des Primings und der Kontextualisierung von Prompts,
 die die Effektivität und Präzision der KI-Interaktionen erheblich steigern können.
-Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die das Potenzial von Prompt-Engineering veranschaulichen.&lt;/p&gt;
+Neben theoretischen Überlegungen wurden reale Anwendungsfälle diskutiert, die das Potenzial von Prompt Engineering veranschaulichen.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
@@ -1625,7 +1625,7 @@ Neben theoretischen Überlegungen werden reale Anwendungsfälle diskutiert, die 
 &lt;div class=&quot;ulist&quot;&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.golem.de/news/security-bsi-sieht-ki-als-sicherheitsrisiko-2311-179043.html&quot;&gt;Golem.de: BSI sieht KI als Sicherhitsrisiko&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.golem.de/news/security-bsi-sieht-ki-als-sicherheitsrisiko-2311-179043.html&quot;&gt;Golem.de: BSI sieht KI als Sicherheitsrisiko&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https://twitter.com/TheHiredAI/status/1716485469079257282&quot;&gt;Twitter: The Hired AI&lt;/a&gt;&lt;/p&gt;
