@@ -306,14 +306,6 @@ var documents = [
 
 {
     "id": 38,
-    "uri": "blog/profiles/Carsten-Thurau.html",
-    "menu": "Autoren",
-    "title": "Carsten Thurau",
-    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 39,
     "uri": "blog/profiles/Stefan-Gruendling.html",
     "menu": "Autoren",
     "title": "Stefan Gründling",
@@ -321,7 +313,7 @@ var documents = [
 },
 
 {
-    "id": 40,
+    "id": 39,
     "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
     "title": "Marcus Sümnick",
@@ -329,7 +321,7 @@ var documents = [
 },
 
 {
-    "id": 41,
+    "id": 40,
     "uri": "blog/profiles/Joachim-Schirrmacher.html",
     "menu": "Autoren",
     "title": "Joachim Schirrmacher",
@@ -337,11 +329,19 @@ var documents = [
 },
 
 {
-    "id": 42,
+    "id": 41,
     "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
     "title": "Danny Koppenhagen",
     "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+},
+
+{
+    "id": 42,
+    "uri": "blog/profiles/Carsten-Thurau.html",
+    "menu": "Autoren",
+    "title": "Carsten Thurau",
+    "text": " Table of Contents Carsten Thurau Carsten Thurau span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
@@ -378,14 +378,6 @@ var documents = [
 
 {
     "id": 47,
-    "uri": "blog/profiles/Philippe-Rieffe.html",
-    "menu": "Autoren",
-    "title": "Philippe Rieffe",
-    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 48,
     "uri": "blog/profiles/Maximilian-Franzke.html",
     "menu": "Autoren",
     "title": "Maximilian Franzke",
@@ -393,7 +385,7 @@ var documents = [
 },
 
 {
-    "id": 49,
+    "id": 48,
     "uri": "blog/profiles/Johannes-Dienst.html",
     "menu": "Autoren",
     "title": "Johannes Dienst",
@@ -401,7 +393,7 @@ var documents = [
 },
 
 {
-    "id": 50,
+    "id": 49,
     "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
     "menu": "Autoren",
     "title": "Gualter Barbas Baptista",
@@ -409,7 +401,7 @@ var documents = [
 },
 
 {
-    "id": 51,
+    "id": 50,
     "uri": "blog/profiles/Sven-Hesse.html",
     "menu": "Autoren",
     "title": "Sven Hesse",
@@ -417,11 +409,19 @@ var documents = [
 },
 
 {
-    "id": 52,
+    "id": 51,
     "uri": "blog/profiles/Sascha-Wolter.html",
     "menu": "Autoren",
     "title": "Sascha Wolter",
     "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Persönliche Website "
+},
+
+{
+    "id": 52,
+    "uri": "blog/profiles/Philippe-Rieffe.html",
+    "menu": "Autoren",
+    "title": "Philippe Rieffe",
+    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
