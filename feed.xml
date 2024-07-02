@@ -6,9 +6,770 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Sat, 15 Jun 2024 12:52:52 +0000</pubDate>
-    <lastBuildDate>Sat, 15 Jun 2024 12:52:52 +0000</lastBuildDate>
+    <pubDate>Tue, 2 Jul 2024 13:38:31 +0000</pubDate>
+    <lastBuildDate>Tue, 2 Jul 2024 13:38:31 +0000</lastBuildDate>
 
+    
+    <item>
+      <title>Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging</title>
+      <link>http://jbake.org/blog/2024/2024-07-02-Angular-Push-Notifications.html</link>
+      <pubDate>Tue, 2 Jul 2024 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2024/2024-07-02-Angular-Push-Notifications.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_supercharge_your_angular_pwa_with_push_notifications_from_setup_to_debugging&quot;&gt;Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_high_level_overview&quot;&gt;High Level Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_set_up_a_simple_demo_app&quot;&gt;Set up a simple demo app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_test_notifications_without_a_backend&quot;&gt;Test notifications without a backend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_create_a_simple_messaging_server&quot;&gt;Create a simple Messaging Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_send_notifications_via_a_backend&quot;&gt;Send Notifications via a backend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_pitfalls_limitations&quot;&gt;Pitfalls &amp;amp; Limitations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_next_steps&quot;&gt;Next Steps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_supercharge_your_angular_pwa_with_push_notifications_from_setup_to_debugging&quot;&gt;Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In modern web applications, push notifications have become an essential feature for engaging users.
+Service workers are crucial in enabling this functionality by running scripts in the background, independent of a web page.
+This guide will walk you through setting up a service worker with push notifications in Angular, including testing, verifying, debugging, and avoiding common pitfalls.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- teaser --&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Registering a service worker and setting up push notifications can be very cumbersome.
+You need to create and register a service worker script in your JavaScript code using the &lt;code&gt;navigator.serviceWorker.register&lt;/code&gt; method.
+This script handles events by listening for the &lt;code&gt;push&lt;/code&gt; event and displaying notifications using the &lt;code&gt;self.registration.showNotification&lt;/code&gt; method.
+Additionally, you need to manually handle requesting user permission for push notifications, typically using the &lt;code&gt;Notification.requestPermission&lt;/code&gt; method,
+and manage push subscriptions with the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Push_API?retiredLocale=de&quot;&gt;Push API&lt;/a&gt;,
+including handling VAPID keys for authorization.
+This requires quite a lot of boilerplate code and direct management of the service worker lifecycle and push events.
+And last but not least:
+You probably need to find a way to communicate/connect the service worker with your Angular app, for example, to handle a direct jump-in from a push notification and passing over data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Luckily, the Angular Framework comes with built-in support for all this.
+But let&amp;#8217;s start step-by-step by setting up a very simple Angular demo app.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_high_level_overview&quot;&gt;High Level Overview&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Sending a notification to an application sounds easy but&amp;#8230;&amp;#8203;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;We need a secure client/server communication to deliver publish messages and subscribe to notifications.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The server needs to find the specific browser to deliver the notifications reliably.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We must integrate with the native notifications of our operating system.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To receive messages even when a browser or tab is closed, we need a background service (Service Worker) listening to incoming notifications.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The following sequence diagram gives you a high-level overview of the general flow we will establish in the next sections.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/diag-076fd1cc3f0d23b6316b3419307ae751.png&quot; alt=&quot;Diagram&quot; width=&quot;663&quot; height=&quot;443&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_set_up_a_simple_demo_app&quot;&gt;Set up a simple demo app&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We are creating a blank Angular app by using the Angular CLI.
+After creation, we can directly add &lt;code&gt;@angular/pwa&lt;/code&gt; by using its provided &lt;a href=&quot;https://angular.dev/tools/cli/schematics&quot;&gt;Angular Schematic&lt;/a&gt;.
+It will turn our app into a Progressive Web App (PWA) and add all necessary features including a service worker.
+Let&amp;#8217;s name our app &quot;Push Parrot&quot; since we use it to demonstrate push notifications and it should repeat every input like a parrot.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;bash&quot;&gt;ng new push-parrot
+cd push-parrot
+ng add @angular/pwa&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Now we have a working web application that can be installed as a Progressive Web App.
+Its prepared with a &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Manifest&quot;&gt;Web app manifest&lt;/a&gt;,
+and it registers a service worker &lt;a href=&quot;https://angular.dev/ecosystem/service-workers/config&quot;&gt;configured with cached resources&lt;/a&gt;.
+The created file &lt;code&gt;ngsw-config.json&lt;/code&gt; is used by Angular for this basic service worker configuration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The service worker Angular registers for us is also linked to some services we can consume now in our app to check for new versions or handle push notifications (which we will do in a sec).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Alright, lets start the app:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;bash&quot;&gt;npm start&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As we can see, we are able to install the app (Icon in Browser URL bar).
+Checking out the Google Chrome Developer Tools, we can see in the &quot;Application&quot; tab under &quot;Service Worker&quot;: No service worker.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/20240702-angular-push/ngsw-not-registered.png&quot; alt=&quot;Screenshot: Started Angular app with no service worker registered&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wait&amp;#8230;&amp;#8203; No service worker? Shouldn&amp;#8217;t we see a service worker here?
+Yes, you are right, but let&amp;#8217;s have a look into our &lt;code&gt;app.config.ts&lt;/code&gt; file.
+Here we can see that the &lt;code&gt;enabled&lt;/code&gt; option is only activated in production mode by default.
+So in conclusion, the service worker will not be registered in dev mode.
+We can change this line to be always &lt;code&gt;true&lt;/code&gt; for our demo.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;diff&quot;&gt;// ...
+export const appConfig: ApplicationConfig = {
+providers: [
+  // ...
+  provideServiceWorker(&apos;ngsw-worker.js&apos;, {
+-   enabled: !isDevMode(),
++   enabled: true,
+    registrationStrategy: &apos;registerWhenStable:30000&apos;
+  })]
+};&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;A second thing we have to do, to make service workers work locally in dev mode is that we need to tell Angular about the service worker config file.
+Therefore, we copy the line for the config file from the production config to the development config:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;diff&quot;&gt;{
+  // ...
+  &quot;projects&quot;: {
+    &quot;push-parrot&quot;: {
+      // ...
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          // ...
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              // ...
+              &quot;serviceWorker&quot;: &quot;ngsw-config.json&quot;
+            },
+            &quot;development&quot;: {
+              // ...
++             &quot;serviceWorker&quot;: &quot;ngsw-config.json&quot;
+            }
+          },
+          // ...
+        },
+        //...
+      }
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Alright, if we have another look now, we can see the service worker is successfully registered.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/20240702-angular-push/ngsw-registered.png&quot; alt=&quot;Screenshot: Started Angular app with the &amp;quot;ngsw&amp;quot; service worker registered&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_test_notifications_without_a_backend&quot;&gt;Test notifications without a backend&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Okay, let&amp;#8217;s make our parrot talk.
+We want to simply output all received push messages in the UI.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_create_a_service&quot;&gt;Create a service&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;We start by creating a simple service which handles all the notification stuff for us.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;bash&quot;&gt;ng g s web-notification&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The service should have the responsibility to tell us whether push messaging is activated or not.
+Also, it should inform us about the latest message received.
+We are injecting the &lt;code&gt;SwPush&lt;/code&gt; instance which is an abstraction for the interaction with the underlying service worker and uses the &lt;code&gt;ngsw-config.json&lt;/code&gt;.
+We want to consume the messages as a signal.
+Therefore, we can use the &lt;code&gt;toSignal&lt;/code&gt; function from the rxjs-interop package provided by Angular.
+This will update the signal &lt;code&gt;messages&lt;/code&gt; every time the Observable &lt;code&gt;swPush.messages&lt;/code&gt; emits a new value.
+The last thing we need is a simple getter &lt;code&gt;isEnabled&lt;/code&gt; which basically passes through the information if service is enabled and supported by the browser from the private &lt;code&gt;#swPush&lt;/code&gt; instance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;import { inject, Injectable } from &quot;@angular/core&quot;;
+import { SwPush } from &quot;@angular/service-worker&quot;;
+import { toSignal } from &quot;@angular/core/rxjs-interop&quot;;
+
+@Injectable({ providedIn: &apos;root&apos; })
+export class WebNotificationService {
+  #swPush = inject(SwPush)
+
+  messages = toSignal(this.#swPush.messages)
+
+  get isEnabled() {
+    return this.#swPush.isEnabled;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_use_the_service&quot;&gt;Use the service&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Great, let&amp;#8217;s consume our service in the &lt;code&gt;AppComponent&lt;/code&gt;.
+We want to create a Signal &lt;code&gt;permission&lt;/code&gt; that represents the current state of Notifications (can be &quot;default&quot;, &quot;denied&quot; or &quot;granted&quot;).
+Later on, we are updating the signal, but one step at a time.
+The last thing we need here is the &lt;code&gt;JsonPipe&lt;/code&gt;.
+We need to include it, to display JSON data we received as a notification directly in the UI.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;import { Component, inject, signal } from &quot;@angular/core&quot;;
+import { WebNotificationService } from &quot;./web-notification.service&quot;;
+import { JsonPipe } from &quot;@angular/common&quot;;
+
+@Component({
+  /* ... */
+  imports: [JsonPipe]
+})
+export class AppComponent {
+  permission = signal&amp;lt;NotificationPermission&amp;gt;(&quot;default&quot;);
+
+  notificationService = inject(WebNotificationService)
+
+  constructor() {
+    if (this.notificationService.isEnabled) {
+      this.permission.set(Notification.permission)
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Now we need to output our results in the template.
+First, we get rid of all the current demo code created by the Angular CLI.
+Next, we add a simple template to print the current permission state and show the received messages.
+You can add some styles to make it look good, but it&amp;#8217;s out-of-scope of this article.
+At the end of this article, you will find a link to the demo code with all the styles I added.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&amp;lt;h1&amp;gt;Push Parrot&amp;lt;/h1&amp;gt;
+
+&amp;lt;div type=&quot;button&quot; (click)=&quot;subscribe()&quot;
+  [class.green]=&quot;permission() === &apos;granted&apos;&quot;
+  [class.red]=&quot;permission() === &apos;denied&apos;&quot;
+&amp;gt;Notifications: ({{ permission() }})&amp;lt;/div&amp;gt;
+
+@if(notificationService.messages(); as messages) {
+  &amp;lt;pre&amp;gt;{{ messages | json }}&amp;lt;/pre&amp;gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;So far so good.
+But how can we test it if we don&amp;#8217;t have a backend connected?&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_test_with_chrome_developer_tools&quot;&gt;Test with Chrome Developer Tools&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Luckily the Chrome Developer Tools are our friend.
+We can directly send messages to our connected service worker using the &quot;Push&quot; button.
+Let&amp;#8217;s try it out and see what happens.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Enter the following JSON input here and press &quot;Push&quot;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;json&quot;&gt;{&quot;notification&quot;:&quot;Hello little Parrot!&quot;}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Awesome, now we should see the message in our UI.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/20240702-angular-push/push-message1.png&quot; alt=&quot;Screenshot: Chrome Developer Tools - use the &amp;quot;Push&amp;quot; feature to simulate push messages&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;But wait? This wasn&amp;#8217;t a push message which should appear as a native message in our operating system right?
+We simply display the data of the last received message here.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;And this totally makes sense since we haven&amp;#8217;t granted any permissions that allow us to be notified in case of new messages.
+The &lt;code&gt;permission&lt;/code&gt; signal is still in the &quot;default&quot; state. which means permissions have neither being granted nor denied.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_start_recording_notifications_and_push_messaging&quot;&gt;Start recording notifications and push messaging&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Before we start the implementation of this step, let&amp;#8217;s use our developer tools to investigate a few more details.
+In the &quot;Application&quot; tab of the DevTools, we have a section for background services with the label &quot;Notifications&quot;.
+Let&amp;#8217;s have a look at it.
+This neat little feature allows us to record any received push messages for further inspection.
+We can simply start the recording for notifications received from now on.
+The cool thing is:
+It even records the notifications of delivered messages when the current tab is in background or even when the browser is closed but the service worker still receives messages.
+With this you can inspect messages you expect to have received, when your application is closed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The counterpart to the received notifications is the section &quot;Push Messaging&quot;.
+This works quite similar and we can start recording from now on.
+In comparison to the &quot;Notifications&quot; view, here we can see all push messaging activity even if users haven&amp;#8217;t granted permission for notification.
+This helps us to inspect scenarios where we received messages in general but did not get notified.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s try it out and start recording both: &quot;Notifications&quot; and &quot;Push Messaging&quot;.
+We switch to the &quot;Service Workers&quot; section again and send our JSON input a second time.
+Now we should not see any new entry in the section for &quot;Notifications&quot; because we haven&amp;#8217;t granted it permission.
+But checking the section &quot;Push Messaging&quot; gives us the insight, that the messaging works in general and that an event was dispatched and completed.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/20240622-angular-push/push-message2.png&quot; alt=&quot;Screenshot: Investiget Push Messaging in the Google Chrome Developer Tools&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_create_a_simple_messaging_server&quot;&gt;Create a simple Messaging Server&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;What we need to actually deliver real push messages is a little server.
+The server needs to register each subscriber and is responsible for sending messages to them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In the following example I am using a simple nodejs server written in JavaScript.
+I put this demo server right next to my angular app.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_basic_server&quot;&gt;Basic Server&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;First things first, we need to install some dependencies for our server:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;bash&quot;&gt;npm i express cors body-parser web-push&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Let&amp;#8217;s start by creating a new file &lt;code&gt;src/server/index.js&lt;/code&gt; with a simple express.js skeleton.
+We need to enable &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS&quot;&gt;Cross-Origin Resource Sharing (CORS)&lt;/a&gt; since we want to get access from another origin (&lt;a href=&quot;http://localhost:4200&quot; class=&quot;bare&quot;&gt;http://localhost:4200&lt;/a&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;javascript&quot;&gt;import express from &quot;express&quot;;
+import bodyParser from &quot;body-parser&quot;;
+import cors from &quot;cors&quot;;
+
+const app = express();
+const port = 3000;
+
+app.use(cors());
+app.use(bodyParser.json());
+
+app.listen(port, () =&amp;gt; {
+  console.log(`Server started at http://localhost:${port}`);
+});&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_vapid_keys&quot;&gt;VAPID Keys&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;To securely send notifications to a browser, we use &lt;a href=&quot;https://www.rfc-editor.org/rfc/rfc8292&quot;&gt;VAPID&lt;/a&gt; (Voluntary Application Server Identification for Web Push) keys.
+VAPID keys are a pair of public and private keys used to identify the server and ensure the authenticity of notifications.
+We use the &lt;a href=&quot;https://www.npmjs.com/package/web-push&quot;&gt;web-push&lt;/a&gt; library to generates these keys.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The public key can be used by an application when setting up notifications.
+It will be checked by the server to ensure our connected frontends are allowed to make use of the notifications.
+But let&amp;#8217;s start by creating a simple endpoint that sends the public key to a client when requested.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;javascript&quot;&gt;/* ... */
+import webPush from &quot;web-push&quot;;
+
+/* ... */
+
+const vapidKeys = webPush.generateVAPIDKeys();
+
+app.get(&apos;/vapidPublicKey&apos;, (req, res) =&amp;gt; {
+  res.send(vapidKeys.publicKey);
+});
+
+/* ... */&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Now we can start the server and check if the endpoint sends us a public key once started.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;bash&quot;&gt;&amp;gt; node src/server/index.mjs
+Server started at http://localhost:3000&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;bash&quot;&gt;&amp;gt; curl http://localhost:3000/vapidPublicKey
+BALZVv0uBWpP9ttSJFCid0VB7x99e4oLkbsamrit5CzKvZQEwyQ_YsK95YEo418OBhfQqcS8XsYS6KSpuLCAdNA%&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_subscribe_to_messages&quot;&gt;Subscribe to messages&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Clients can now use the public key, to create subscriptions in the browser.
+To be able to send messages to the subscribers, the server needs to know about these subscriptions.
+Therefore, we create another endpoint, that receives the subscription data and stores it internally.
+With this, the backend now has the information about connected clients / push subscriptions and we are able to send data to this subscribers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;javascript&quot;&gt;/* ... */
+
+const subscriptions = [];
+
+/* ... */
+
+app.post(&apos;/notifications/subscribe&apos;, (req, res) =&amp;gt; {
+  const subscription = req.body;
+  subscriptions.push(subscription);
+  res.status(201).json({});
+});
+
+/* ... */&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect3&quot;&gt;
+&lt;h4 id=&quot;_send_messages&quot;&gt;Send messages&lt;/h4&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;First we must configure web-push with the contact email, public key and private key.
+This function is crucial for configuring the push notifications.
+It ensures that notifications are trusted and can be decrypted by the user&amp;#8217;s browser.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The last step is to handle incoming messages for subscribers.
+We iterate over all subscribers and call &lt;code&gt;sendNotification&lt;/code&gt;.
+We send the &lt;code&gt;title&lt;/code&gt; and  &lt;code&gt;description&lt;/code&gt; we received as the POST body as JSON.
+Last but not least, we iterate over the returning promises using &lt;code&gt;Promise.all()&lt;/code&gt; and send a response to the requester.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;javascript&quot;&gt;/* ... */
+
+const subscriptions = [];
+webPush.setVapidDetails(
+  &apos;mailto:mail@example.org&apos;,
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+
+/* ... */
+
+app.post(&apos;/notifications/send&apos;, (req, res) =&amp;gt; {
+  const promises = subscriptions.map(sub =&amp;gt;
+    webPush.sendNotification(sub, JSON.stringify({
+      notification: {
+        title: req.body.title,
+        body: req.body.description
+      }
+    }))
+  );
+
+  Promise.all(promises)
+    .then(() =&amp;gt; res.status(200).json({ message: &apos;Notification sent successfully.&apos; }))
+    .catch(err =&amp;gt; {
+      console.error(&apos;Error sending notification, reason: &apos;, err);
+      res.sendStatus(500);
+    });
+});
+
+/* ... */&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Great, our server code should be good enough for our purpose now.
+Let&amp;#8217;s continue by connecting a frontend.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_send_notifications_via_a_backend&quot;&gt;Send Notifications via a backend&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;As always we start by adjusting our service.
+Lets add three new methods that will fetch / post data from / to our backend.
+The private methods &lt;code&gt;#vapidPublicKey&lt;/code&gt; and &lt;code&gt;#registerOnServer&lt;/code&gt; should be used in the next step for setting up the push subscription.
+The method &lt;code&gt;#vapidPublicKey&lt;/code&gt; will simply retrieve the public key from our backend whereas &lt;code&gt;#registerOnServer&lt;/code&gt; posts the subscription params to it.
+The third method &lt;code&gt;sendMessage&lt;/code&gt; should be public since we want to use it in our component.
+This service should receive a title and a description and sends this data as JSON body to the server&amp;#8217;s responsible endpoint.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;/* ... */
+import { HttpClient } from &quot;@angular/common/http&quot;;
+
+@Injectable({ providedIn: &apos;root&apos; })
+export class WebNotificationService {
+  /* ... */
+  #http = inject(HttpClient)
+  #baseUrl = &apos;http://localhost:3000&apos;
+
+  /* ... */
+
+  #vapidPublicKey() {
+    return this.#http.get(
+      `${this.#baseUrl}/vapidPublicKey`,
+      { responseType: &apos;text&apos; }
+    )
+  }
+
+  #registerOnServer(params: PushSubscription) {
+    return this.#http.post(
+      `${this.#baseUrl}/notifications/subscribe`,
+      params
+    );
+  }
+
+  sendMessage(title: string, description: string) {
+    return this.#http.post(
+      `${this.#baseUrl}/notifications/send`,
+      { title, description }
+    );
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Now, we introduce another public method in the service called &lt;code&gt;requestSubscription&lt;/code&gt;.
+This method should be called from the component to setup the subscription.
+It will use the Observable with the public VAPID key.
+We use the &lt;code&gt;switchMap&lt;/code&gt; operator in the pipe to switch to another observable created out of a promise using the &lt;code&gt;from&lt;/code&gt; creator function.
+Within which we call the &lt;code&gt;swPush&lt;/code&gt; instance and request to subscribe using the public key.
+The next step in the pipe is to use &lt;code&gt;concatMap&lt;/code&gt; for sending the subscription data via the private method &lt;code&gt;#registerOnServer&lt;/code&gt;.
+Last but not least, we catch any errors, log them and return an empty Observable.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;/* ... */
+import { catchError, concatMap, EMPTY, from, switchMap } from &quot;rxjs&quot;;
+
+@Injectable({ providedIn: &apos;root&apos; })
+export class WebNotificationService {
+  /* ... */
+
+  requestSubscription() {
+    return this.#vapidPublicKey().pipe(
+      switchMap(key =&amp;gt;
+        from(this.#swPush.requestSubscription({
+          serverPublicKey: key
+        }))
+      ),
+      concatMap(sub =&amp;gt; this.#registerOnServer(sub)),
+      catchError((e) =&amp;gt; {
+        console.log(e)
+        return EMPTY
+      })
+    )
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Now we need to adjust our component.
+We want to create a small form using Angulars reactive forms.
+Therefore we need to import the &lt;code&gt;ReactiveFormsModule&lt;/code&gt; to use it in the template in the next step.
+We initialize a simple form with two inputs: &lt;code&gt;title&lt;/code&gt; and &lt;code&gt;description&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Next, we create a &lt;code&gt;subscribe&lt;/code&gt; method, that&amp;#8217;s triggered by a button to activate push notifications and subscribe to new messages on the server.
+In the subscription we set the &lt;code&gt;permission&lt;/code&gt; signal to the current value of &lt;code&gt;Notification.permission&lt;/code&gt;.
+With this, we can see in our UI, if the current permission state is &quot;default&quot;, &quot;denied&quot; or &quot;granted&quot;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The last method we need is the &lt;code&gt;submit&lt;/code&gt; method to send the current form data via the service to our backend which will push the entered message to all subscribers.
+We also need to subscribe to this call in order to start the HTTP call as it only sends notifications if a subscriber is registered.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;/* ... */
+import { FormControl, FormGroup, ReactiveFormsModule } from &quot;@angular/forms&quot;;
+
+@Component({
+  /* ... */
+  imports: [JsonPipe, ReactiveFormsModule],
+})
+export class AppComponent {
+  notificationForm = new FormGroup({
+    title: new FormControl(&apos;&apos;),
+    description: new FormControl(&apos;&apos;),
+  });
+
+  /* ... */
+
+  subscribe() {
+    this.notificationService.requestSubscription().subscribe(() =&amp;gt; {
+      this.permission.set(Notification.permission)
+    });
+  }
+
+  submit() {
+    this.notificationService.sendMessage(
+      this.notificationForm.value.title || &apos;&apos;,
+      this.notificationForm.value.description || &apos;&apos;
+    ).subscribe()
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Okay, the logic is ready so far, let&amp;#8217;s adjust the template of our component to actually implement and show the subscribe button and the formular.
+The first button triggers the subscription and under the hood the process of asking the user for the permissions to show notifications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The form must be connected with the &lt;code&gt;notificationForm&lt;/code&gt; form group.
+With the combination of the button &lt;code&gt;button[type=&quot;submit&quot;]&lt;/code&gt; and the output handler for &lt;code&gt;ngSubmit&lt;/code&gt; we start sending the form data to the subscribers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;listingblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code data-lang=&quot;html&quot;&gt;&amp;lt;h1&amp;gt;Push Parrot&amp;lt;/h1&amp;gt;
+
+&amp;lt;button type=&quot;button&quot; (click)=&quot;subscribe()&quot;
+  [class.green]=&quot;permission() === &apos;granted&apos;&quot;
+  [class.red]=&quot;permission() === &apos;denied&apos;&quot;
+&amp;gt;Notifications: ({{ permission() }})&amp;lt;/button&amp;gt;
+
+&amp;lt;form [formGroup]=&quot;notificationForm&quot; (ngSubmit)=&quot;submit()&quot;&amp;gt;
+  &amp;lt;label for=&quot;title&quot;&amp;gt;Title&amp;lt;/label&amp;gt;
+  &amp;lt;input id=&quot;title&quot; placeholder=&quot;Please enter a title&quot; type=&quot;text&quot; formControlName=&quot;title&quot;&amp;gt;
+  &amp;lt;label for=&quot;description&quot;&amp;gt;Description&amp;lt;/label&amp;gt;
+  &amp;lt;input id=&quot;description&quot; placeholder=&quot;Please enter a description&quot; type=&quot;text&quot; formControlName=&quot;description&quot;&amp;gt;
+  &amp;lt;button type=&quot;submit&quot;&amp;gt;Send&amp;lt;/button&amp;gt;
+&amp;lt;/form&amp;gt;
+
+@if(notificationService.messages(); as messages) {
+  &amp;lt;pre&amp;gt;{{ messages | json }}&amp;lt;/pre&amp;gt;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Done. Let&amp;#8217;s try it out!
+Please be aware, you need to re-activate the permissions every time the backend is restarted since a new VAPID keypair is generated.
+Once you press the notifications button, your browser should ask you to grant permissions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/20240702-angular-push/push-message3.png&quot; alt=&quot;Screenshot: Browser prompt to grant permissions for notifications&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Now your local app ist registered to receive push notifications from the backend and you are registered as a subscriber for new messages.
+We can use our UI and the formular to send a message to the servers which is echoed by our parrot in the UI as well as a push notification sent by the backend to our subscribed frontend.
+Once we submit the form, we also see the message in the developer tools in the &quot;Notifications&quot; section.
+The cool thing is: this will even work if we close the tab / browser and receive messages.
+So it helps us to inspect potentially missed messages.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;imageblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;/images/20240702-angular-push/push-message4.png&quot; alt=&quot;Screenshot: Browser prompt to grant permissions for notifications&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_pitfalls_limitations&quot;&gt;Pitfalls &amp;amp; Limitations&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Push messages are a great way to notify users about important information.
+This helps us to keep users informed but on the other hand they can be very noisy and distracting if overused.
+So please always think twice if a message is really necessary and helpful.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Also, there are some common pitfalls / limitations where you might wonder why you haven&amp;#8217;t received a message.
+So always ensure the following things when testing / debuggung such situations:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Is the messaging server up and running?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Were permissions granted in the browser?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Is you system in &quot;Don-not-disturb&quot; mode?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Have you checked the DevTools for the Push Messaging and Notification settings and verified that you should have received the message?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Does your application code filter out any messages?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Is your application served over HTTPS (or on localhost)? A service workers requires a secure context.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clear your browser cache and unregister the service worker manually in DevTools if updates are not being reflecting.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make sure to handle cases where users deny notification permissions and provide a way to request permissions again.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_next_steps&quot;&gt;Next Steps&lt;/h3&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Great, you managed to setup a very simple frontend and backend for creating and a delivering push messages to all subscribers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The setup is currently very basic and only processes some text information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Push messages can be configured in more detail which is out-of-scope of this article but stay tuned!
+I will publish a followup article where we will configure messages a bit more and learn how to react to message clicks etc.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect2&quot;&gt;
+&lt;h3 id=&quot;_resources&quot;&gt;Resources&lt;/h3&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/d-koppenhagen/push-parrot&quot;&gt;Github Demo Project: Push Parrot&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
     
     <item>
       <title>Inner Source@DB</title>

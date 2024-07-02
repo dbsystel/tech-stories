@@ -1,0 +1,1321 @@
+<!doctype html>
+<html lang="de">
+<head>
+<style>
+a[href^="//"]:after,
+a[href^="http://"]:after,
+a[href^="https://"]:after {
+    content: "" !important;
+    margin: 0 0 0 0;
+}
+
+</style>
+
+    
+    
+    <script>var toRoot = '../../';</script>
+    <!-- blog/2024/2024-07-02-Angular-Push-Notifications.html -->
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="jbake" name="generator">
+    <meta content="INDEX, FOLLOW" name="ROBOTS">
+
+    <title>Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging</title>
+    <meta content="Supercharge Your Angular PWA with Push Notifications" property="og:title">
+    <meta content="     In modern web applications, push notifications have become an essential feature for engaging users. Service workers are crucial in enabling this functionality by running scripts in the background, independent of a web page. This guide will walk you through setting up a service worker with push notifications in Angular, including testing, verifying, debugging, and avoiding common pitfalls.  " property="og:description">
+    <meta content="website" property="og:type">
+    <meta content="Tech Stories" property="og:site_name">
+    <meta content="https://dbsystel.github.io/tech-stories/images/home.png" property="og:image">
+    <meta content="Supercharge Your Angular PWA with Push Notifications" itemprop="name">
+    <meta content="     In modern web applications, push notifications have become an essential feature for engaging users. Service workers are crucial in enabling this functionality by running scripts in the background, independent of a web page. This guide will walk you through setting up a service worker with push notifications in Angular, including testing, verifying, debugging, and avoiding common pitfalls.  " itemprop="description">
+    <meta content="summary" name="twitter:card">
+    <meta content="Supercharge Your Angular PWA with Push Notifications" name="twitter:title">
+    <meta content="     In modern web applications, push notifications have become an essential feature for engaging users. Service workers are crucial in enabling this functionality by running scripts in the background, independent of a web page. This guide will walk you through setting up a service worker with push notifications in Angular, including testing, verifying, debugging, and avoiding common pitfalls.  " name="twitter:description">
+
+    <link as="style" href="../../css/main.min.docsy.css" rel="preload">
+    <link href="../../css/main.min.docsy.css" integrity="" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+    <link href="../../css/bahn-ng-theme.css" rel="stylesheet">
+    <link href="../../css/tabbed-blocks.css" rel="stylesheet">
+    <link href="../../css/tech-stories.css" rel="stylesheet">
+
+    <!-- favicon generated with https://www.favicon-generator.org/ -->
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="../../apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Mastodon verification -->
+    <link rel="me" href="https://bahn.social/@dbsystel">
+
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/openseadragon-4.1.0/openseadragon.js"></script>
+
+
+    <link rel="stylesheet" href="../../css/micrositemaster.db-ui-core.css" rel="stylesheet">
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setExcludedQueryParams", ["hl","start","itemsPerPage"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://dbwas.service.deutschebahn.com/piwik/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1002']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://dbwas.service.deutschebahn.com/piwik/matomo.php?idsite=1002&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+
+</head>
+
+<body onload="prettyPrint()" class="td-section bahn ng">
+<header>
+  
+<nav aria-label="main navigation" class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="../../index.html">
+      <span class="navbar-logo"></span><span
+          class="font-weight-bold">Tech Stories</span>
+  </a>
+  <div class="td-navbar-nav-scroll ml-auto mx-lg-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      
+    </ul>
+  </div>
+  <div class="navbar-nav d-none d-lg-block" >
+    
+  </div>
+</nav>
+
+</header>
+<div class="container-fluid">
+  <div class="td-main">
+    <div class="row flex-xl-nowrap">
+      <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+        <div class="td-sidebar__inner" id="td-sidebar-menu">
+          
+        <form class="td-sidebar__search d-flex align-items-center d-lg-none" action="../../search.html">
+
+            <input aria-label="Suchen" name="q" autocomplete="off" class="form-control td-search-input"
+                   placeholder="Suchen" type="search">
+
+
+            <button aria-controls="td-docs-nav" aria-expanded="false"
+                    aria-label="Toggle section navigation" class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" data-target="#td-section-nav"
+                    data-toggle="collapse" type="button">
+            </button>
+        </form>
+
+        <nav aria-label="Submenu" class="collapse td-sidebar-nav" id="td-section-nav" >
+
+            <ul class="td-sidebar-nav__section">
+                <li class="td-sidebar-nav__section-title">
+                    <span class="align-left pl-0 pr-2 pt-2 active td-sidebar-link td-sidebar-link__section">-</span>
+                </li>
+                <li>
+                  <ul>
+                      <li class="collapse show" id="docs">
+                          
+                        <ul class="td-sidebar-nav__section ul-0">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/index.html">Übersicht</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2024</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section active"
+                                   href="../../blog/2024/2024-07-02-Angular-Push-Notifications.html">Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2024/2024-04-25-JAX-Inner-Source.html">Inner Source@DB</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2024/2024-04-04-DB-Systel-KubeCon.html">DB Systel auf der KubeCon 2024 in Paris</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2024/2024-04-02-Journey-from-TypeScript-to-Java-part-1.html">My journey from TypeScript to Java - Part 1</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html">Ein Jahr PostgreSQL statt Oracle</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2024/2024-02-06-ChatGPT.html">Architektur mit ChatGPT</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2024/2024-01-25-Evolution-der-Webentwicklung.html">Meine Reise durch die Evolution der Webentwicklung</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2024/2024-01-16-Accessibility-in-Angular.html">Accessibility in Angular</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2023</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html">Fahrplankonstruktion</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-29-AI-in-Software-Design.html">AI in Software Design</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-20-einfuehrung-barrierefreiheit-web.html">A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-20-conways-law.html">Conway’s Law</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-11-08-prompt-engineering.html">Prompt Engineering</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-08-21-vue2-vue3-migration.html">Migrate Vue 2 to Vue 3</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-05-15-developer-experience-platform-fuer-entwicklerinnen.html">Developer Experience Platform</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-05-05-loom-threading.html">Projekt Loom ist da</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-04-01-Indoor-GIS-zur-Rationalisierung-von-Wartungsarbeiten.html">Indoor-GIS</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-04-09-vortrag-auf-der-javaland.html">JavaLand 2023</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-03-28-ChatGPT-Einblicke-und-mehr-Generative-Sprachmodelle-Herausforderungen-und-Chancen.html">ChatGPT</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2023/2023-03-08-Re-Platforming-Mainframe-Mehr-als-nur-Lift-Shift.html">Re-Platforming Mainframe</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2022</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-15-03-good-practices-api.html">Good Practices im API-Umfeld</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-11-24-the-journey-towards-K8s-at-Deutsche-Bahn.html">K8s at Deutsche Bahn</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-11-04-Produkt-statt-Projekmanagement.html">Produkt- statt Projektmanagement</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html">Deine Diagramme sind Legende?</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2022/2022-03-23-Vielfalt-bei-der-Bahn-Computerlinguistinnen-treiben-Digitalisierung-voran.html">Vielfalt bei der Bahn</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2021</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-11-02-KITT-das-Kuenstliche-Intelligenz-Translation-Tool.html">KITT Tool</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-06-08-Bad-bots-Chancen-und-Herausforderungen-fuer-KI-und-Sprache.html">Bad Bots</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-04-12-Computer-Vision-Use-Cases-at-Deutsche-Bahn.html">Computer Vision Use Cases</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2021/2021-03-20-Die-C4-Testpyramide-eine-architekturgetriebene-Teststrategie.html">Die C4-Testpyramide</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2020</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-12-07-devops-mehr-geschwindigkeit-auf-der-schiene.html">DevOps Geschwindigkeit</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html">Vue.js vs. Angular</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html">OOP: Guter Code</a>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2020/2020-03-14-API-first-mit-TypeScript.html">API first mit TS</a>
+                            </li>
+                        </ul>
+                            </li>
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child"><span class="label">2019</span>
+                        <ul class="ul-1">
+                            <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child">
+                                <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section "
+                                   href="../../blog/2019/2019-09-13-Spock-und-AsciiDoc.html">Spock und AsciiDoc</a>
+                            </li>
+                        </ul>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+	   </ul>
+        </nav>
+
+        </div>
+      </div>
+      <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+        <div class="td-page-meta ml-2 pb-1 pt-2 mb-0" role="navigation" aria-label="page content navigation">
+          
+
+        <a href="https://github.com/dbsystel/tech-stories/edit/main/src/docs/blog/2024/2024-07-02-Angular-Push-Notifications.adoc"
+           target="_blank"><i class="fa fa-edit fa-fw"></i> Improve this doc</a>
+
+
+
+            <a href="https://github.com/dbsystel/tech-stories/issues/new?title=Docs%3A+Feedback+for+%27Supercharge+Your+Angular+PWA+with+Push+Notifications%3A+From+Setup+to+Debugging%27&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page: https://github.com/dbsystel/tech-stories/edit/main/src/docs/blog/2024/2024-07-02-Angular-Push-Notifications.adoc%0A%23branch: main" target="_blank"><i
+                class="fab fa-github fa-fw"></i> Create an issue</a>
+        
+        
+        <hr />
+
+<!--script>
+    var discussionId = 1076;
+    alert(discussionId);
+</script>
+
+
+<script>
+
+    function showNumberOfComments() {
+        console.log("DiscussionId: 1076");
+
+        const query = `
+            query {
+                repository(owner: "docToolchain", name: "docToolchain") {
+                    discussion(number: 1076) {
+                        comments {
+                            totalCount
+                        }
+                    }
+                }
+            }
+        `;
+
+        fetch('https://api.github.com/graphql', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer GITHUB_TOKEN',
+        },
+        body: JSON.stringify({ query }),
+        })
+        .then((response) => response.json())
+        .then((data) => document.getElementById("noOfComments").innerHTML = data.data.repository.discussion.comments.totalCount);
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        showNumberOfComments();
+    });
+
+</script-->
+<div id="noOfComments" style="border: solid 0px red; font-size: 16pt;"></div>
+
+
+
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_supercharge_your_angular_pwa_with_push_notifications_from_setup_to_debugging">Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging</a>
+<ul class="sectlevel2">
+<li><a href="#_high_level_overview">High Level Overview</a></li>
+<li><a href="#_set_up_a_simple_demo_app">Set up a simple demo app</a></li>
+<li><a href="#_test_notifications_without_a_backend">Test notifications without a backend</a></li>
+<li><a href="#_create_a_simple_messaging_server">Create a simple Messaging Server</a></li>
+<li><a href="#_send_notifications_via_a_backend">Send Notifications via a backend</a></li>
+<li><a href="#_pitfalls_limitations">Pitfalls &amp; Limitations</a></li>
+<li><a href="#_next_steps">Next Steps</a></li>
+<li><a href="#_resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+        </div>
+      </div>
+      <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+        <!-- Date, Author -->
+        <p class="increase-zindex">
+          <em>02 July 2024,
+          
+          <a href="../../blog/profiles/Danny-Koppenhagen.html">Danny Koppenhagen</a></em>
+          
+        </p>
+        <!-- Share buttons above headline -->
+        
+<div class="increase-zindex">
+    <span style="font-size: x-large;">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-07-02-Angular-Push-Notifications.html&text=Supercharge+Your+Angular+PWA+with+Push+Notifications" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-07-02-Angular-Push-Notifications.html" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-07-02-Angular-Push-Notifications.html" target="_blank"><i class="fab fa-facebook"></i></a>
+    </span>
+</div>
+
+        <!-- Content -->
+        <h1 class='sr-only'>Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging</h1>
+<div class="sect1">
+<h2 id="_supercharge_your_angular_pwa_with_push_notifications_from_setup_to_debugging">Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging</h2><img src='../../images/20240702-angular-push/angular-push-teaser-image.png' style='float:left;max-width: 10em; margin-right: 1em;' />
+<div class="sectionbody">
+<div class="paragraph">
+<p>In modern web applications, push notifications have become an essential feature for engaging users.
+Service workers are crucial in enabling this functionality by running scripts in the background, independent of a web page.
+This guide will walk you through setting up a service worker with push notifications in Angular, including testing, verifying, debugging, and avoiding common pitfalls.</p>
+</div>
+<!-- teaser -->
+<div class="paragraph">
+<p>Registering a service worker and setting up push notifications can be very cumbersome.
+You need to create and register a service worker script in your JavaScript code using the <code>navigator.serviceWorker.register</code> method.
+This script handles events by listening for the <code>push</code> event and displaying notifications using the <code>self.registration.showNotification</code> method.
+Additionally, you need to manually handle requesting user permission for push notifications, typically using the <code>Notification.requestPermission</code> method,
+and manage push subscriptions with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API?retiredLocale=de">Push API</a>,
+including handling VAPID keys for authorization.
+This requires quite a lot of boilerplate code and direct management of the service worker lifecycle and push events.
+And last but not least:
+You probably need to find a way to communicate/connect the service worker with your Angular app, for example, to handle a direct jump-in from a push notification and passing over data.</p>
+</div>
+<div class="paragraph">
+<p>Luckily, the Angular Framework comes with built-in support for all this.
+But let&#8217;s start step-by-step by setting up a very simple Angular demo app.</p>
+</div>
+<div class="sect2">
+<h3 id="_high_level_overview">High Level Overview</h3>
+<div class="paragraph">
+<p>Sending a notification to an application sounds easy but&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We need a secure client/server communication to deliver publish messages and subscribe to notifications.</p>
+</li>
+<li>
+<p>The server needs to find the specific browser to deliver the notifications reliably.</p>
+</li>
+<li>
+<p>We must integrate with the native notifications of our operating system.</p>
+</li>
+<li>
+<p>To receive messages even when a browser or tab is closed, we need a background service (Service Worker) listening to incoming notifications.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram gives you a high-level overview of the general flow we will establish in the next sections.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/diag-076fd1cc3f0d23b6316b3419307ae751.png" alt="Diagram" width="663" height="443">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_up_a_simple_demo_app">Set up a simple demo app</h3>
+<div class="paragraph">
+<p>We are creating a blank Angular app by using the Angular CLI.
+After creation, we can directly add <code>@angular/pwa</code> by using its provided <a href="https://angular.dev/tools/cli/schematics">Angular Schematic</a>.
+It will turn our app into a Progressive Web App (PWA) and add all necessary features including a service worker.
+Let&#8217;s name our app "Push Parrot" since we use it to demonstrate push notifications and it should repeat every input like a parrot.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="bash">ng new push-parrot
+cd push-parrot
+ng add @angular/pwa</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we have a working web application that can be installed as a Progressive Web App.
+Its prepared with a <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest">Web app manifest</a>,
+and it registers a service worker <a href="https://angular.dev/ecosystem/service-workers/config">configured with cached resources</a>.
+The created file <code>ngsw-config.json</code> is used by Angular for this basic service worker configuration.</p>
+</div>
+<div class="paragraph">
+<p>The service worker Angular registers for us is also linked to some services we can consume now in our app to check for new versions or handle push notifications (which we will do in a sec).</p>
+</div>
+<div class="paragraph">
+<p>Alright, lets start the app:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="bash">npm start</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As we can see, we are able to install the app (Icon in Browser URL bar).
+Checking out the Google Chrome Developer Tools, we can see in the "Application" tab under "Service Worker": No service worker.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/20240702-angular-push/ngsw-not-registered.png" alt="Screenshot: Started Angular app with no service worker registered">
+</div>
+</div>
+<div class="paragraph">
+<p>Wait&#8230;&#8203; No service worker? Shouldn&#8217;t we see a service worker here?
+Yes, you are right, but let&#8217;s have a look into our <code>app.config.ts</code> file.
+Here we can see that the <code>enabled</code> option is only activated in production mode by default.
+So in conclusion, the service worker will not be registered in dev mode.
+We can change this line to be always <code>true</code> for our demo.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="diff">// ...
+export const appConfig: ApplicationConfig = {
+providers: [
+  // ...
+  provideServiceWorker('ngsw-worker.js', {
+-   enabled: !isDevMode(),
++   enabled: true,
+    registrationStrategy: 'registerWhenStable:30000'
+  })]
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A second thing we have to do, to make service workers work locally in dev mode is that we need to tell Angular about the service worker config file.
+Therefore, we copy the line for the config file from the production config to the development config:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="diff">{
+  // ...
+  "projects": {
+    "push-parrot": {
+      // ...
+      "architect": {
+        "build": {
+          // ...
+          "configurations": {
+            "production": {
+              // ...
+              "serviceWorker": "ngsw-config.json"
+            },
+            "development": {
+              // ...
++             "serviceWorker": "ngsw-config.json"
+            }
+          },
+          // ...
+        },
+        //...
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alright, if we have another look now, we can see the service worker is successfully registered.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/20240702-angular-push/ngsw-registered.png" alt="Screenshot: Started Angular app with the &quot;ngsw&quot; service worker registered">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_test_notifications_without_a_backend">Test notifications without a backend</h3>
+<div class="paragraph">
+<p>Okay, let&#8217;s make our parrot talk.
+We want to simply output all received push messages in the UI.</p>
+</div>
+<div class="sect3">
+<h4 id="_create_a_service">Create a service</h4>
+<div class="paragraph">
+<p>We start by creating a simple service which handles all the notification stuff for us.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="bash">ng g s web-notification</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The service should have the responsibility to tell us whether push messaging is activated or not.
+Also, it should inform us about the latest message received.
+We are injecting the <code>SwPush</code> instance which is an abstraction for the interaction with the underlying service worker and uses the <code>ngsw-config.json</code>.
+We want to consume the messages as a signal.
+Therefore, we can use the <code>toSignal</code> function from the rxjs-interop package provided by Angular.
+This will update the signal <code>messages</code> every time the Observable <code>swPush.messages</code> emits a new value.
+The last thing we need is a simple getter <code>isEnabled</code> which basically passes through the information if service is enabled and supported by the browser from the private <code>#swPush</code> instance.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="typescript">import { inject, Injectable } from "@angular/core";
+import { SwPush } from "@angular/service-worker";
+import { toSignal } from "@angular/core/rxjs-interop";
+
+@Injectable({ providedIn: 'root' })
+export class WebNotificationService {
+  #swPush = inject(SwPush)
+
+  messages = toSignal(this.#swPush.messages)
+
+  get isEnabled() {
+    return this.#swPush.isEnabled;
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_use_the_service">Use the service</h4>
+<div class="paragraph">
+<p>Great, let&#8217;s consume our service in the <code>AppComponent</code>.
+We want to create a Signal <code>permission</code> that represents the current state of Notifications (can be "default", "denied" or "granted").
+Later on, we are updating the signal, but one step at a time.
+The last thing we need here is the <code>JsonPipe</code>.
+We need to include it, to display JSON data we received as a notification directly in the UI.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="typescript">import { Component, inject, signal } from "@angular/core";
+import { WebNotificationService } from "./web-notification.service";
+import { JsonPipe } from "@angular/common";
+
+@Component({
+  /* ... */
+  imports: [JsonPipe]
+})
+export class AppComponent {
+  permission = signal&lt;NotificationPermission&gt;("default");
+
+  notificationService = inject(WebNotificationService)
+
+  constructor() {
+    if (this.notificationService.isEnabled) {
+      this.permission.set(Notification.permission)
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we need to output our results in the template.
+First, we get rid of all the current demo code created by the Angular CLI.
+Next, we add a simple template to print the current permission state and show the received messages.
+You can add some styles to make it look good, but it&#8217;s out-of-scope of this article.
+At the end of this article, you will find a link to the demo code with all the styles I added.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="html">&lt;h1&gt;Push Parrot&lt;/h1&gt;
+
+&lt;div type="button" (click)="subscribe()"
+  [class.green]="permission() === 'granted'"
+  [class.red]="permission() === 'denied'"
+&gt;Notifications: ({{ permission() }})&lt;/div&gt;
+
+@if(notificationService.messages(); as messages) {
+  &lt;pre&gt;{{ messages | json }}&lt;/pre&gt;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So far so good.
+But how can we test it if we don&#8217;t have a backend connected?</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_test_with_chrome_developer_tools">Test with Chrome Developer Tools</h4>
+<div class="paragraph">
+<p>Luckily the Chrome Developer Tools are our friend.
+We can directly send messages to our connected service worker using the "Push" button.
+Let&#8217;s try it out and see what happens.</p>
+</div>
+<div class="paragraph">
+<p>Enter the following JSON input here and press "Push":</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="json">{"notification":"Hello little Parrot!"}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Awesome, now we should see the message in our UI.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/20240702-angular-push/push-message1.png" alt="Screenshot: Chrome Developer Tools - use the &quot;Push&quot; feature to simulate push messages">
+</div>
+</div>
+<div class="paragraph">
+<p>But wait? This wasn&#8217;t a push message which should appear as a native message in our operating system right?
+We simply display the data of the last received message here.</p>
+</div>
+<div class="paragraph">
+<p>And this totally makes sense since we haven&#8217;t granted any permissions that allow us to be notified in case of new messages.
+The <code>permission</code> signal is still in the "default" state. which means permissions have neither being granted nor denied.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_start_recording_notifications_and_push_messaging">Start recording notifications and push messaging</h4>
+<div class="paragraph">
+<p>Before we start the implementation of this step, let&#8217;s use our developer tools to investigate a few more details.
+In the "Application" tab of the DevTools, we have a section for background services with the label "Notifications".
+Let&#8217;s have a look at it.
+This neat little feature allows us to record any received push messages for further inspection.
+We can simply start the recording for notifications received from now on.
+The cool thing is:
+It even records the notifications of delivered messages when the current tab is in background or even when the browser is closed but the service worker still receives messages.
+With this you can inspect messages you expect to have received, when your application is closed.</p>
+</div>
+<div class="paragraph">
+<p>The counterpart to the received notifications is the section "Push Messaging".
+This works quite similar and we can start recording from now on.
+In comparison to the "Notifications" view, here we can see all push messaging activity even if users haven&#8217;t granted permission for notification.
+This helps us to inspect scenarios where we received messages in general but did not get notified.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s try it out and start recording both: "Notifications" and "Push Messaging".
+We switch to the "Service Workers" section again and send our JSON input a second time.
+Now we should not see any new entry in the section for "Notifications" because we haven&#8217;t granted it permission.
+But checking the section "Push Messaging" gives us the insight, that the messaging works in general and that an event was dispatched and completed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/20240622-angular-push/push-message2.png" alt="Screenshot: Investiget Push Messaging in the Google Chrome Developer Tools">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_a_simple_messaging_server">Create a simple Messaging Server</h3>
+<div class="paragraph">
+<p>What we need to actually deliver real push messages is a little server.
+The server needs to register each subscriber and is responsible for sending messages to them.</p>
+</div>
+<div class="paragraph">
+<p>In the following example I am using a simple nodejs server written in JavaScript.
+I put this demo server right next to my angular app.</p>
+</div>
+<div class="sect3">
+<h4 id="_basic_server">Basic Server</h4>
+<div class="paragraph">
+<p>First things first, we need to install some dependencies for our server:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="bash">npm i express cors body-parser web-push</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start by creating a new file <code>src/server/index.js</code> with a simple express.js skeleton.
+We need to enable <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a> since we want to get access from another origin (<a href="http://localhost:4200" class="bare">http://localhost:4200</a>).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="javascript">import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+
+const app = express();
+const port = 3000;
+
+app.use(cors());
+app.use(bodyParser.json());
+
+app.listen(port, () =&gt; {
+  console.log(`Server started at http://localhost:${port}`);
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vapid_keys">VAPID Keys</h4>
+<div class="paragraph">
+<p>To securely send notifications to a browser, we use <a href="https://www.rfc-editor.org/rfc/rfc8292">VAPID</a> (Voluntary Application Server Identification for Web Push) keys.
+VAPID keys are a pair of public and private keys used to identify the server and ensure the authenticity of notifications.
+We use the <a href="https://www.npmjs.com/package/web-push">web-push</a> library to generates these keys.</p>
+</div>
+<div class="paragraph">
+<p>The public key can be used by an application when setting up notifications.
+It will be checked by the server to ensure our connected frontends are allowed to make use of the notifications.
+But let&#8217;s start by creating a simple endpoint that sends the public key to a client when requested.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="javascript">/* ... */
+import webPush from "web-push";
+
+/* ... */
+
+const vapidKeys = webPush.generateVAPIDKeys();
+
+app.get('/vapidPublicKey', (req, res) =&gt; {
+  res.send(vapidKeys.publicKey);
+});
+
+/* ... */</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we can start the server and check if the endpoint sends us a public key once started.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="bash">&gt; node src/server/index.mjs
+Server started at http://localhost:3000</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="bash">&gt; curl http://localhost:3000/vapidPublicKey
+BALZVv0uBWpP9ttSJFCid0VB7x99e4oLkbsamrit5CzKvZQEwyQ_YsK95YEo418OBhfQqcS8XsYS6KSpuLCAdNA%</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_subscribe_to_messages">Subscribe to messages</h4>
+<div class="paragraph">
+<p>Clients can now use the public key, to create subscriptions in the browser.
+To be able to send messages to the subscribers, the server needs to know about these subscriptions.
+Therefore, we create another endpoint, that receives the subscription data and stores it internally.
+With this, the backend now has the information about connected clients / push subscriptions and we are able to send data to this subscribers.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="javascript">/* ... */
+
+const subscriptions = [];
+
+/* ... */
+
+app.post('/notifications/subscribe', (req, res) =&gt; {
+  const subscription = req.body;
+  subscriptions.push(subscription);
+  res.status(201).json({});
+});
+
+/* ... */</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_send_messages">Send messages</h4>
+<div class="paragraph">
+<p>First we must configure web-push with the contact email, public key and private key.
+This function is crucial for configuring the push notifications.
+It ensures that notifications are trusted and can be decrypted by the user&#8217;s browser.</p>
+</div>
+<div class="paragraph">
+<p>The last step is to handle incoming messages for subscribers.
+We iterate over all subscribers and call <code>sendNotification</code>.
+We send the <code>title</code> and  <code>description</code> we received as the POST body as JSON.
+Last but not least, we iterate over the returning promises using <code>Promise.all()</code> and send a response to the requester.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="javascript">/* ... */
+
+const subscriptions = [];
+webPush.setVapidDetails(
+  'mailto:mail@example.org',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+
+/* ... */
+
+app.post('/notifications/send', (req, res) =&gt; {
+  const promises = subscriptions.map(sub =&gt;
+    webPush.sendNotification(sub, JSON.stringify({
+      notification: {
+        title: req.body.title,
+        body: req.body.description
+      }
+    }))
+  );
+
+  Promise.all(promises)
+    .then(() =&gt; res.status(200).json({ message: 'Notification sent successfully.' }))
+    .catch(err =&gt; {
+      console.error('Error sending notification, reason: ', err);
+      res.sendStatus(500);
+    });
+});
+
+/* ... */</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Great, our server code should be good enough for our purpose now.
+Let&#8217;s continue by connecting a frontend.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_send_notifications_via_a_backend">Send Notifications via a backend</h3>
+<div class="paragraph">
+<p>As always we start by adjusting our service.
+Lets add three new methods that will fetch / post data from / to our backend.
+The private methods <code>#vapidPublicKey</code> and <code>#registerOnServer</code> should be used in the next step for setting up the push subscription.
+The method <code>#vapidPublicKey</code> will simply retrieve the public key from our backend whereas <code>#registerOnServer</code> posts the subscription params to it.
+The third method <code>sendMessage</code> should be public since we want to use it in our component.
+This service should receive a title and a description and sends this data as JSON body to the server&#8217;s responsible endpoint.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="typescript">/* ... */
+import { HttpClient } from "@angular/common/http";
+
+@Injectable({ providedIn: 'root' })
+export class WebNotificationService {
+  /* ... */
+  #http = inject(HttpClient)
+  #baseUrl = 'http://localhost:3000'
+
+  /* ... */
+
+  #vapidPublicKey() {
+    return this.#http.get(
+      `${this.#baseUrl}/vapidPublicKey`,
+      { responseType: 'text' }
+    )
+  }
+
+  #registerOnServer(params: PushSubscription) {
+    return this.#http.post(
+      `${this.#baseUrl}/notifications/subscribe`,
+      params
+    );
+  }
+
+  sendMessage(title: string, description: string) {
+    return this.#http.post(
+      `${this.#baseUrl}/notifications/send`,
+      { title, description }
+    );
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, we introduce another public method in the service called <code>requestSubscription</code>.
+This method should be called from the component to setup the subscription.
+It will use the Observable with the public VAPID key.
+We use the <code>switchMap</code> operator in the pipe to switch to another observable created out of a promise using the <code>from</code> creator function.
+Within which we call the <code>swPush</code> instance and request to subscribe using the public key.
+The next step in the pipe is to use <code>concatMap</code> for sending the subscription data via the private method <code>#registerOnServer</code>.
+Last but not least, we catch any errors, log them and return an empty Observable.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="typescript">/* ... */
+import { catchError, concatMap, EMPTY, from, switchMap } from "rxjs";
+
+@Injectable({ providedIn: 'root' })
+export class WebNotificationService {
+  /* ... */
+
+  requestSubscription() {
+    return this.#vapidPublicKey().pipe(
+      switchMap(key =&gt;
+        from(this.#swPush.requestSubscription({
+          serverPublicKey: key
+        }))
+      ),
+      concatMap(sub =&gt; this.#registerOnServer(sub)),
+      catchError((e) =&gt; {
+        console.log(e)
+        return EMPTY
+      })
+    )
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we need to adjust our component.
+We want to create a small form using Angulars reactive forms.
+Therefore we need to import the <code>ReactiveFormsModule</code> to use it in the template in the next step.
+We initialize a simple form with two inputs: <code>title</code> and <code>description</code>.</p>
+</div>
+<div class="paragraph">
+<p>Next, we create a <code>subscribe</code> method, that&#8217;s triggered by a button to activate push notifications and subscribe to new messages on the server.
+In the subscription we set the <code>permission</code> signal to the current value of <code>Notification.permission</code>.
+With this, we can see in our UI, if the current permission state is "default", "denied" or "granted".</p>
+</div>
+<div class="paragraph">
+<p>The last method we need is the <code>submit</code> method to send the current form data via the service to our backend which will push the entered message to all subscribers.
+We also need to subscribe to this call in order to start the HTTP call as it only sends notifications if a subscriber is registered.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="typescript">/* ... */
+import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+
+@Component({
+  /* ... */
+  imports: [JsonPipe, ReactiveFormsModule],
+})
+export class AppComponent {
+  notificationForm = new FormGroup({
+    title: new FormControl(''),
+    description: new FormControl(''),
+  });
+
+  /* ... */
+
+  subscribe() {
+    this.notificationService.requestSubscription().subscribe(() =&gt; {
+      this.permission.set(Notification.permission)
+    });
+  }
+
+  submit() {
+    this.notificationService.sendMessage(
+      this.notificationForm.value.title || '',
+      this.notificationForm.value.description || ''
+    ).subscribe()
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Okay, the logic is ready so far, let&#8217;s adjust the template of our component to actually implement and show the subscribe button and the formular.
+The first button triggers the subscription and under the hood the process of asking the user for the permissions to show notifications.</p>
+</div>
+<div class="paragraph">
+<p>The form must be connected with the <code>notificationForm</code> form group.
+With the combination of the button <code>button[type="submit"]</code> and the output handler for <code>ngSubmit</code> we start sending the form data to the subscribers.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="html">&lt;h1&gt;Push Parrot&lt;/h1&gt;
+
+&lt;button type="button" (click)="subscribe()"
+  [class.green]="permission() === 'granted'"
+  [class.red]="permission() === 'denied'"
+&gt;Notifications: ({{ permission() }})&lt;/button&gt;
+
+&lt;form [formGroup]="notificationForm" (ngSubmit)="submit()"&gt;
+  &lt;label for="title"&gt;Title&lt;/label&gt;
+  &lt;input id="title" placeholder="Please enter a title" type="text" formControlName="title"&gt;
+  &lt;label for="description"&gt;Description&lt;/label&gt;
+  &lt;input id="description" placeholder="Please enter a description" type="text" formControlName="description"&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+
+@if(notificationService.messages(); as messages) {
+  &lt;pre&gt;{{ messages | json }}&lt;/pre&gt;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Done. Let&#8217;s try it out!
+Please be aware, you need to re-activate the permissions every time the backend is restarted since a new VAPID keypair is generated.
+Once you press the notifications button, your browser should ask you to grant permissions.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/20240702-angular-push/push-message3.png" alt="Screenshot: Browser prompt to grant permissions for notifications">
+</div>
+</div>
+<div class="paragraph">
+<p>Now your local app ist registered to receive push notifications from the backend and you are registered as a subscriber for new messages.
+We can use our UI and the formular to send a message to the servers which is echoed by our parrot in the UI as well as a push notification sent by the backend to our subscribed frontend.
+Once we submit the form, we also see the message in the developer tools in the "Notifications" section.
+The cool thing is: this will even work if we close the tab / browser and receive messages.
+So it helps us to inspect potentially missed messages.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/20240702-angular-push/push-message4.png" alt="Screenshot: Browser prompt to grant permissions for notifications">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pitfalls_limitations">Pitfalls &amp; Limitations</h3>
+<div class="paragraph">
+<p>Push messages are a great way to notify users about important information.
+This helps us to keep users informed but on the other hand they can be very noisy and distracting if overused.
+So please always think twice if a message is really necessary and helpful.</p>
+</div>
+<div class="paragraph">
+<p>Also, there are some common pitfalls / limitations where you might wonder why you haven&#8217;t received a message.
+So always ensure the following things when testing / debuggung such situations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Is the messaging server up and running?</p>
+</li>
+<li>
+<p>Were permissions granted in the browser?</p>
+</li>
+<li>
+<p>Is you system in "Don-not-disturb" mode?</p>
+</li>
+<li>
+<p>Have you checked the DevTools for the Push Messaging and Notification settings and verified that you should have received the message?</p>
+</li>
+<li>
+<p>Does your application code filter out any messages?</p>
+</li>
+<li>
+<p>Is your application served over HTTPS (or on localhost)? A service workers requires a secure context.</p>
+</li>
+<li>
+<p>Clear your browser cache and unregister the service worker manually in DevTools if updates are not being reflecting.</p>
+</li>
+<li>
+<p>Make sure to handle cases where users deny notification permissions and provide a way to request permissions again.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_next_steps">Next Steps</h3>
+<div class="paragraph">
+<p>Great, you managed to setup a very simple frontend and backend for creating and a delivering push messages to all subscribers.</p>
+</div>
+<div class="paragraph">
+<p>The setup is currently very basic and only processes some text information.</p>
+</div>
+<div class="paragraph">
+<p>Push messages can be configured in more detail which is out-of-scope of this article but stay tuned!
+I will publish a followup article where we will configure messages a bit more and learn how to react to message clicks etc.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_resources">Resources</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/d-koppenhagen/push-parrot">Github Demo Project: Push Parrot</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+        <!-- tags -->
+        <p>
+        <a class='tag' href='../../tags/Push Notification.html'>Push Notification</a> <a class='tag' href='../../tags/PWA.html'>PWA</a> <a class='tag' href='../../tags/JavaScript.html'>JavaScript</a> <a class='tag' href='../../tags/Angular.html'>Angular</a> <a class='tag' href='../../tags/Service Worker.html'>Service Worker</a> <a class='tag' href='../../tags/Web Push.html'>Web Push</a>
+        </p>
+        <!-- Share buttons below content -->
+        
+<div class="increase-zindex">
+    <span style="font-size: x-large;">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-07-02-Angular-Push-Notifications.html&text=Supercharge+Your+Angular+PWA+with+Push+Notifications" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-07-02-Angular-Push-Notifications.html" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechstories.dbsystel.de%2Fblog%2F2024%2F2024-07-02-Angular-Push-Notifications.html" target="_blank"><i class="fab fa-facebook"></i></a>
+    </span>
+</div>
+
+        
+        <style>
+.feedback--answer {
+    display: inline-block;
+}
+
+.feedback--answer-no {
+    margin-left: 1em;
+}
+
+.feedback--response {
+    display: none;
+    margin-top: 1em;
+}
+
+.feedback--response__visible {
+    display: block;
+}
+</style>
+
+<div class="d-print-none">
+    <h2 class="feedback--title">Feedback</h2>
+    <p class="feedback--question">Was this page helpful?</p>
+    <button class="feedback--answer feedback--answer-yes">Yes</button>
+    <button class="feedback--answer feedback--answer-no">No</button>
+    <p class="feedback--response feedback--response-yes">
+        Glad to hear it! Please <a href="https://github.com/dbsystel/tech-stories/issues/new?issue%5Btitle%5D=Docs%3A+Feedback+for+%27Supercharge+Your+Angular+PWA+with+Push+Notifications%3A+From+Setup+to+Debugging%27%20%F0%9F%91%8D&issue%5Bdescription%5D=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:blog/2024/2024-07-02-Angular-Push-Notifications.adoc">tell us
+    how we can improve</a>.
+    </p>
+    <p class="feedback--response feedback--response-no">
+        Sorry to hear that. Please <a href="https://github.com/dbsystel/tech-stories/issues/new?issue%5Btitle%5D=Docs%3A+Feedback+for+%27Supercharge+Your+Angular+PWA+with+Push+Notifications%3A+From+Setup+to+Debugging%27%20%F0%9F%91%8E&issue%5Bdescription%5D=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23page:blog/2024/2024-07-02-Angular-Push-Notifications.adoc">tell
+    us how we can improve</a>.
+    </p>
+</div>
+<script>
+    const yesButton = document.querySelector('.feedback--answer-yes');
+    const noButton = document.querySelector('.feedback--answer-no');
+    const yesResponse = document.querySelector('.feedback--response-yes');
+    const noResponse = document.querySelector('.feedback--response-no');
+    const disableButtons = () => {
+        yesButton.disabled = true;
+        noButton.disabled = true;
+    };
+    const sendFeedback = (value) => {
+        if (typeof ga !== 'function') return;
+        const args = {
+            command: 'send',
+            hitType: 'event',
+            category: 'Helpful',
+            action: 'click',
+            label: window.location.pathname,
+            value: value
+        };
+        ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+    };
+    yesButton.addEventListener('click', () => {
+        yesResponse.classList.add('feedback--response__visible');
+        disableButtons();
+        sendFeedback(1);
+    });
+    noButton.addEventListener('click', () => {
+        noResponse.classList.add('feedback--response__visible');
+        disableButtons();
+        sendFeedback(0);
+    });
+</script>
+
+        
+
+      </main>
+    </div>
+  </div>
+  
+    <!--footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">&copy; 2020 | based on <a href="https://arc42.org">arc42 7.0</a> | mixed with <a href="http://getbootstrap.com/">Bootstrap v5.0.0-beta</a> | Baked with <a href="http://jbake.org">JBake v2.6.7</a></span>
+        </div>
+    </footer-->
+
+    <footer class="bg-dark py-2 row d-print-none">
+        <div class="container-fluid mx-sm-5">
+            <div class="row">
+                <div class="col-3 col-sm-2 text-xs-center order-sm-2">
+
+
+                    <ul class="list-inline mb-0">
+                        
+                        
+                        <li class="list-inline-item mx-2 h3" data-original-title="Contact on Twitter" data-placement="top"
+                            data-toggle="tooltip" title="">
+                            <a aria-label="Contact on Twitter" title="Contact on Twitter" class="text-white" href="https://twitter.com/dbsystel" rel="noopener noreferrer"
+                               target="_blank" style="text-decoration: none;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                    </ul>
+
+
+                </div>
+                <div class="col-3 col-sm-2 text-right text-xs-center order-sm-3">
+
+
+                    <ul class="list-inline mb-0">
+
+                        
+                        <li class="list-inline-item mx-2 h3" data-original-title="Checkout on GitHub" data-placement="top"
+                            data-toggle="tooltip" title="">
+                            <a aria-label="Checkout on GitHub" title="Checkout on GitHub" class="text-white" href="https://github.com/dbsystel" rel="noopener noreferrer"
+                               target="_blank" style="text-decoration: none;">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        
+
+                        
+
+
+                    </ul>
+
+
+                </div>
+                <div class="col-18 col-sm-8 text-center py-2 order-sm-2">
+
+                        [<small class="text-white">built with <a href="https://doctoolchain.org">docToolchain</a> and <a href="https://jbake.org">jBake</a>, <br />
+styling supported by <a href="https://db-ui.github.io/">DB UI Core</a>, theme based on <a href="https://www.docsy.dev/">Docsy</a><br />
+<a href="https://db-ui.github.io/datenschutzerklaerung.html">Datenschutzerklärung / Data Privacy</a> |
+<a href="https://www.dbsystel.de/dbsystel-en/legal-3715942">Imprint</a> |
+<a href="https://www.dbsystel.de/">DB Systel GmbH</a></small>]
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script crossorigin="anonymous"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            src="../../js/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            src="../../js/bootstrap.min.js"></script>
+
+
+    <script crossorigin="anonymous"
+            integrity="sha256-tfwbKdJGWDWEQlS9TYBHOOryTAzsUwCbTGiZmJvlWkc=" src="../..//js/main.min.b5fc1b29d2465835844254bd4d804738eaf24c0cec53009b4c6899989be55a47.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/blocks.js" ></script>
+    <script src="../../js/prettify.js"></script>
+    <script src="../../js/adoc-scrollspy.js"></script>
+    <script src="../../js/lightbox.js"></script>
+    <script src="../../js/copy-n-paste.js"></script>
+    <script src="../../js/openseadragon.js"></script>
+
+    
+
+</body>
+</html>

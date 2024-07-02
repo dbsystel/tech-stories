@@ -10,6 +10,14 @@ var documents = [
 
 {
     "id": 1,
+    "uri": "blog/2024/2024-07-02-Angular-Push-Notifications.html",
+    "menu": "Blog",
+    "title": "Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging",
+    "text": " Table of Contents Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging High Level Overview Set up a simple demo app Test notifications without a backend Create a simple Messaging Server Send Notifications via a backend Pitfalls &amp; Limitations Next Steps Resources Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging In modern web applications, push notifications have become an essential feature for engaging users. Service workers are crucial in enabling this functionality by running scripts in the background, independent of a web page. This guide will walk you through setting up a service worker with push notifications in Angular, including testing, verifying, debugging, and avoiding common pitfalls. Registering a service worker and setting up push notifications can be very cumbersome. You need to create and register a service worker script in your JavaScript code using the navigator.serviceWorker.register method. This script handles events by listening for the push event and displaying notifications using the self.registration.showNotification method. Additionally, you need to manually handle requesting user permission for push notifications, typically using the Notification.requestPermission method, and manage push subscriptions with the Push API , including handling VAPID keys for authorization. This requires quite a lot of boilerplate code and direct management of the service worker lifecycle and push events. And last but not least: You probably need to find a way to communicate/connect the service worker with your Angular app, for example, to handle a direct jump-in from a push notification and passing over data. Luckily, the Angular Framework comes with built-in support for all this. But let&#8217;s start step-by-step by setting up a very simple Angular demo app. High Level Overview Sending a notification to an application sounds easy but&#8230;&#8203; We need a secure client/server communication to deliver publish messages and subscribe to notifications. The server needs to find the specific browser to deliver the notifications reliably. We must integrate with the native notifications of our operating system. To receive messages even when a browser or tab is closed, we need a background service (Service Worker) listening to incoming notifications. The following sequence diagram gives you a high-level overview of the general flow we will establish in the next sections. Set up a simple demo app We are creating a blank Angular app by using the Angular CLI. After creation, we can directly add @angular/pwa by using its provided Angular Schematic . It will turn our app into a Progressive Web App (PWA) and add all necessary features including a service worker. Let&#8217;s name our app \"Push Parrot\" since we use it to demonstrate push notifications and it should repeat every input like a parrot. ng new push-parrot cd push-parrot ng add @angular/pwa Now we have a working web application that can be installed as a Progressive Web App. Its prepared with a Web app manifest , and it registers a service worker configured with cached resources . The created file ngsw-config.json is used by Angular for this basic service worker configuration. The service worker Angular registers for us is also linked to some services we can consume now in our app to check for new versions or handle push notifications (which we will do in a sec). Alright, lets start the app: npm start As we can see, we are able to install the app (Icon in Browser URL bar). Checking out the Google Chrome Developer Tools, we can see in the \"Application\" tab under \"Service Worker\": No service worker. Wait&#8230;&#8203; No service worker? Shouldn&#8217;t we see a service worker here? Yes, you are right, but let&#8217;s have a look into our app.config.ts file. Here we can see that the enabled option is only activated in production mode by default. So in conclusion, the service worker will not be registered in dev mode. We can change this line to be always true for our demo. // ... export const appConfig: ApplicationConfig = { providers: [ // ... provideServiceWorker('ngsw-worker.js', { - enabled: !isDevMode(), + enabled: true, registrationStrategy: 'registerWhenStable:30000' })] }; A second thing we have to do, to make service workers work locally in dev mode is that we need to tell Angular about the service worker config file. Therefore, we copy the line for the config file from the production config to the development config: { // ... \"projects\": { \"push-parrot\": { // ... \"architect\": { \"build\": { // ... \"configurations\": { \"production\": { // ... \"serviceWorker\": \"ngsw-config.json\" }, \"development\": { // ... + \"serviceWorker\": \"ngsw-config.json\" } }, // ... }, //... } } } } Alright, if we have another look now, we can see the service worker is successfully registered. Test notifications without a backend Okay, let&#8217;s make our parrot talk. We want to simply output all received push messages in the UI. Create a service We start by creating a simple service which handles all the notification stuff for us. ng g s web-notification The service should have the responsibility to tell us whether push messaging is activated or not. Also, it should inform us about the latest message received. We are injecting the SwPush instance which is an abstraction for the interaction with the underlying service worker and uses the ngsw-config.json . We want to consume the messages as a signal. Therefore, we can use the toSignal function from the rxjs-interop package provided by Angular. This will update the signal messages every time the Observable swPush.messages emits a new value. The last thing we need is a simple getter isEnabled which basically passes through the information if service is enabled and supported by the browser from the private #swPush instance. import { inject, Injectable } from \"@angular/core\"; import { SwPush } from \"@angular/service-worker\"; import { toSignal } from \"@angular/core/rxjs-interop\"; @Injectable({ providedIn: 'root' }) export class WebNotificationService { #swPush = inject(SwPush) messages = toSignal(this.#swPush.messages) get isEnabled() { return this.#swPush.isEnabled; } } Use the service Great, let&#8217;s consume our service in the AppComponent . We want to create a Signal permission that represents the current state of Notifications (can be \"default\", \"denied\" or \"granted\"). Later on, we are updating the signal, but one step at a time. The last thing we need here is the JsonPipe . We need to include it, to display JSON data we received as a notification directly in the UI. import { Component, inject, signal } from \"@angular/core\"; import { WebNotificationService } from \"./web-notification.service\"; import { JsonPipe } from \"@angular/common\"; @Component({ /* ... */ imports: [JsonPipe] }) export class AppComponent { permission = signal&lt;NotificationPermission&gt;(\"default\"); notificationService = inject(WebNotificationService) constructor() { if (this.notificationService.isEnabled) { this.permission.set(Notification.permission) } } } Now we need to output our results in the template. First, we get rid of all the current demo code created by the Angular CLI. Next, we add a simple template to print the current permission state and show the received messages. You can add some styles to make it look good, but it&#8217;s out-of-scope of this article. At the end of this article, you will find a link to the demo code with all the styles I added. &lt;h1&gt;Push Parrot&lt;/h1&gt; &lt;div type=\"button\" (click)=\"subscribe()\" [class.green]=\"permission() === 'granted'\" [class.red]=\"permission() === 'denied'\" &gt;Notifications: ({{ permission() }})&lt;/div&gt; @if(notificationService.messages(); as messages) { &lt;pre&gt;{{ messages | json }}&lt;/pre&gt; } So far so good. But how can we test it if we don&#8217;t have a backend connected? Test with Chrome Developer Tools Luckily the Chrome Developer Tools are our friend. We can directly send messages to our connected service worker using the \"Push\" button. Let&#8217;s try it out and see what happens. Enter the following JSON input here and press \"Push\": {\"notification\":\"Hello little Parrot!\"} Awesome, now we should see the message in our UI. But wait? This wasn&#8217;t a push message which should appear as a native message in our operating system right? We simply display the data of the last received message here. And this totally makes sense since we haven&#8217;t granted any permissions that allow us to be notified in case of new messages. The permission signal is still in the \"default\" state. which means permissions have neither being granted nor denied. Start recording notifications and push messaging Before we start the implementation of this step, let&#8217;s use our developer tools to investigate a few more details. In the \"Application\" tab of the DevTools, we have a section for background services with the label \"Notifications\". Let&#8217;s have a look at it. This neat little feature allows us to record any received push messages for further inspection. We can simply start the recording for notifications received from now on. The cool thing is: It even records the notifications of delivered messages when the current tab is in background or even when the browser is closed but the service worker still receives messages. With this you can inspect messages you expect to have received, when your application is closed. The counterpart to the received notifications is the section \"Push Messaging\". This works quite similar and we can start recording from now on. In comparison to the \"Notifications\" view, here we can see all push messaging activity even if users haven&#8217;t granted permission for notification. This helps us to inspect scenarios where we received messages in general but did not get notified. Let&#8217;s try it out and start recording both: \"Notifications\" and \"Push Messaging\". We switch to the \"Service Workers\" section again and send our JSON input a second time. Now we should not see any new entry in the section for \"Notifications\" because we haven&#8217;t granted it permission. But checking the section \"Push Messaging\" gives us the insight, that the messaging works in general and that an event was dispatched and completed. Create a simple Messaging Server What we need to actually deliver real push messages is a little server. The server needs to register each subscriber and is responsible for sending messages to them. In the following example I am using a simple nodejs server written in JavaScript. I put this demo server right next to my angular app. Basic Server First things first, we need to install some dependencies for our server: npm i express cors body-parser web-push Let&#8217;s start by creating a new file src/server/index.js with a simple express.js skeleton. We need to enable Cross-Origin Resource Sharing (CORS) since we want to get access from another origin ( http://localhost:4200 ). import express from \"express\"; import bodyParser from \"body-parser\"; import cors from \"cors\"; const app = express(); const port = 3000; app.use(cors()); app.use(bodyParser.json()); app.listen(port, () =&gt; { console.log(`Server started at http://localhost:${port}`); }); VAPID Keys To securely send notifications to a browser, we use VAPID (Voluntary Application Server Identification for Web Push) keys. VAPID keys are a pair of public and private keys used to identify the server and ensure the authenticity of notifications. We use the web-push library to generates these keys. The public key can be used by an application when setting up notifications. It will be checked by the server to ensure our connected frontends are allowed to make use of the notifications. But let&#8217;s start by creating a simple endpoint that sends the public key to a client when requested. /* ... */ import webPush from \"web-push\"; /* ... */ const vapidKeys = webPush.generateVAPIDKeys(); app.get('/vapidPublicKey', (req, res) =&gt; { res.send(vapidKeys.publicKey); }); /* ... */ Now we can start the server and check if the endpoint sends us a public key once started. &gt; node src/server/index.mjs Server started at http://localhost:3000 &gt; curl http://localhost:3000/vapidPublicKey BALZVv0uBWpP9ttSJFCid0VB7x99e4oLkbsamrit5CzKvZQEwyQ_YsK95YEo418OBhfQqcS8XsYS6KSpuLCAdNA% Subscribe to messages Clients can now use the public key, to create subscriptions in the browser. To be able to send messages to the subscribers, the server needs to know about these subscriptions. Therefore, we create another endpoint, that receives the subscription data and stores it internally. With this, the backend now has the information about connected clients / push subscriptions and we are able to send data to this subscribers. /* ... */ const subscriptions = []; /* ... */ app.post('/notifications/subscribe', (req, res) =&gt; { const subscription = req.body; subscriptions.push(subscription); res.status(201).json({}); }); /* ... */ Send messages First we must configure web-push with the contact email, public key and private key. This function is crucial for configuring the push notifications. It ensures that notifications are trusted and can be decrypted by the user&#8217;s browser. The last step is to handle incoming messages for subscribers. We iterate over all subscribers and call sendNotification . We send the title and description we received as the POST body as JSON. Last but not least, we iterate over the returning promises using Promise.all() and send a response to the requester. /* ... */ const subscriptions = []; webPush.setVapidDetails( 'mailto:mail@example.org', vapidKeys.publicKey, vapidKeys.privateKey ); /* ... */ app.post('/notifications/send', (req, res) =&gt; { const promises = subscriptions.map(sub =&gt; webPush.sendNotification(sub, JSON.stringify({ notification: { title: req.body.title, body: req.body.description } })) ); Promise.all(promises) .then(() =&gt; res.status(200).json({ message: 'Notification sent successfully.' })) .catch(err =&gt; { console.error('Error sending notification, reason: ', err); res.sendStatus(500); }); }); /* ... */ Great, our server code should be good enough for our purpose now. Let&#8217;s continue by connecting a frontend. Send Notifications via a backend As always we start by adjusting our service. Lets add three new methods that will fetch / post data from / to our backend. The private methods #vapidPublicKey and #registerOnServer should be used in the next step for setting up the push subscription. The method #vapidPublicKey will simply retrieve the public key from our backend whereas #registerOnServer posts the subscription params to it. The third method sendMessage should be public since we want to use it in our component. This service should receive a title and a description and sends this data as JSON body to the server&#8217;s responsible endpoint. /* ... */ import { HttpClient } from \"@angular/common/http\"; @Injectable({ providedIn: 'root' }) export class WebNotificationService { /* ... */ #http = inject(HttpClient) #baseUrl = 'http://localhost:3000' /* ... */ #vapidPublicKey() { return this.#http.get( `${this.#baseUrl}/vapidPublicKey`, { responseType: 'text' } ) } #registerOnServer(params: PushSubscription) { return this.#http.post( `${this.#baseUrl}/notifications/subscribe`, params ); } sendMessage(title: string, description: string) { return this.#http.post( `${this.#baseUrl}/notifications/send`, { title, description } ); } } Now, we introduce another public method in the service called requestSubscription . This method should be called from the component to setup the subscription. It will use the Observable with the public VAPID key. We use the switchMap operator in the pipe to switch to another observable created out of a promise using the from creator function. Within which we call the swPush instance and request to subscribe using the public key. The next step in the pipe is to use concatMap for sending the subscription data via the private method #registerOnServer . Last but not least, we catch any errors, log them and return an empty Observable. /* ... */ import { catchError, concatMap, EMPTY, from, switchMap } from \"rxjs\"; @Injectable({ providedIn: 'root' }) export class WebNotificationService { /* ... */ requestSubscription() { return this.#vapidPublicKey().pipe( switchMap(key =&gt; from(this.#swPush.requestSubscription({ serverPublicKey: key })) ), concatMap(sub =&gt; this.#registerOnServer(sub)), catchError((e) =&gt; { console.log(e) return EMPTY }) ) } } Now we need to adjust our component. We want to create a small form using Angulars reactive forms. Therefore we need to import the ReactiveFormsModule to use it in the template in the next step. We initialize a simple form with two inputs: title and description . Next, we create a subscribe method, that&#8217;s triggered by a button to activate push notifications and subscribe to new messages on the server. In the subscription we set the permission signal to the current value of Notification.permission . With this, we can see in our UI, if the current permission state is \"default\", \"denied\" or \"granted\". The last method we need is the submit method to send the current form data via the service to our backend which will push the entered message to all subscribers. We also need to subscribe to this call in order to start the HTTP call as it only sends notifications if a subscriber is registered. /* ... */ import { FormControl, FormGroup, ReactiveFormsModule } from \"@angular/forms\"; @Component({ /* ... */ imports: [JsonPipe, ReactiveFormsModule], }) export class AppComponent { notificationForm = new FormGroup({ title: new FormControl(''), description: new FormControl(''), }); /* ... */ subscribe() { this.notificationService.requestSubscription().subscribe(() =&gt; { this.permission.set(Notification.permission) }); } submit() { this.notificationService.sendMessage( this.notificationForm.value.title || '', this.notificationForm.value.description || '' ).subscribe() } } Okay, the logic is ready so far, let&#8217;s adjust the template of our component to actually implement and show the subscribe button and the formular. The first button triggers the subscription and under the hood the process of asking the user for the permissions to show notifications. The form must be connected with the notificationForm form group. With the combination of the button button[type=\"submit\"] and the output handler for ngSubmit we start sending the form data to the subscribers. &lt;h1&gt;Push Parrot&lt;/h1&gt; &lt;button type=\"button\" (click)=\"subscribe()\" [class.green]=\"permission() === 'granted'\" [class.red]=\"permission() === 'denied'\" &gt;Notifications: ({{ permission() }})&lt;/button&gt; &lt;form [formGroup]=\"notificationForm\" (ngSubmit)=\"submit()\"&gt; &lt;label for=\"title\"&gt;Title&lt;/label&gt; &lt;input id=\"title\" placeholder=\"Please enter a title\" type=\"text\" formControlName=\"title\"&gt; &lt;label for=\"description\"&gt;Description&lt;/label&gt; &lt;input id=\"description\" placeholder=\"Please enter a description\" type=\"text\" formControlName=\"description\"&gt; &lt;button type=\"submit\"&gt;Send&lt;/button&gt; &lt;/form&gt; @if(notificationService.messages(); as messages) { &lt;pre&gt;{{ messages | json }}&lt;/pre&gt; } Done. Let&#8217;s try it out! Please be aware, you need to re-activate the permissions every time the backend is restarted since a new VAPID keypair is generated. Once you press the notifications button, your browser should ask you to grant permissions. Now your local app ist registered to receive push notifications from the backend and you are registered as a subscriber for new messages. We can use our UI and the formular to send a message to the servers which is echoed by our parrot in the UI as well as a push notification sent by the backend to our subscribed frontend. Once we submit the form, we also see the message in the developer tools in the \"Notifications\" section. The cool thing is: this will even work if we close the tab / browser and receive messages. So it helps us to inspect potentially missed messages. Pitfalls &amp; Limitations Push messages are a great way to notify users about important information. This helps us to keep users informed but on the other hand they can be very noisy and distracting if overused. So please always think twice if a message is really necessary and helpful. Also, there are some common pitfalls / limitations where you might wonder why you haven&#8217;t received a message. So always ensure the following things when testing / debuggung such situations: Is the messaging server up and running? Were permissions granted in the browser? Is you system in \"Don-not-disturb\" mode? Have you checked the DevTools for the Push Messaging and Notification settings and verified that you should have received the message? Does your application code filter out any messages? Is your application served over HTTPS (or on localhost)? A service workers requires a secure context. Clear your browser cache and unregister the service worker manually in DevTools if updates are not being reflecting. Make sure to handle cases where users deny notification permissions and provide a way to request permissions again. Next Steps Great, you managed to setup a very simple frontend and backend for creating and a delivering push messages to all subscribers. The setup is currently very basic and only processes some text information. Push messages can be configured in more detail which is out-of-scope of this article but stay tuned! I will publish a followup article where we will configure messages a bit more and learn how to react to message clicks etc. Resources Github Demo Project: Push Parrot "
+},
+
+{
+    "id": 2,
     "uri": "blog/2024/2024-04-25-JAX-Inner-Source.html",
     "menu": "Blog",
     "title": "Inner Source@DB",
@@ -17,7 +25,7 @@ var documents = [
 },
 
 {
-    "id": 2,
+    "id": 3,
     "uri": "blog/2024/2024-04-04-DB-Systel-KubeCon.html",
     "menu": "Blog",
     "title": "DB Systel auf der KubeCon 2024 in Paris",
@@ -25,7 +33,7 @@ var documents = [
 },
 
 {
-    "id": 3,
+    "id": 4,
     "uri": "blog/2024/2024-04-02-Journey-from-TypeScript-to-Java-part-1.html",
     "menu": "Blog",
     "title": "My journey from TypeScript to Java - Part 1",
@@ -33,7 +41,7 @@ var documents = [
 },
 
 {
-    "id": 4,
+    "id": 5,
     "uri": "blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html",
     "menu": "Blog",
     "title": "Ein Jahr PostgreSQL statt Oracle",
@@ -41,7 +49,7 @@ var documents = [
 },
 
 {
-    "id": 5,
+    "id": 6,
     "uri": "blog/2024/2024-02-06-ChatGPT.html",
     "menu": "Blog",
     "title": "Architektur mit ChatGPT",
@@ -49,7 +57,7 @@ var documents = [
 },
 
 {
-    "id": 6,
+    "id": 7,
     "uri": "blog/2024/2024-01-25-Evolution-der-Webentwicklung.html",
     "menu": "Blog",
     "title": "Meine Reise durch die Evolution der Webentwicklung",
@@ -57,7 +65,7 @@ var documents = [
 },
 
 {
-    "id": 7,
+    "id": 8,
     "uri": "blog/2024/2024-01-16-Accessibility-in-Angular.html",
     "menu": "Blog",
     "title": "Accessibility in Angular",
@@ -65,7 +73,7 @@ var documents = [
 },
 
 {
-    "id": 8,
+    "id": 9,
     "uri": "blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html",
     "menu": "Blog",
     "title": "Fahrplankonstruktion",
@@ -73,7 +81,7 @@ var documents = [
 },
 
 {
-    "id": 9,
+    "id": 10,
     "uri": "blog/2023/2023-11-29-AI-in-Software-Design.html",
     "menu": "Blog",
     "title": "AI in Software Design",
@@ -81,7 +89,7 @@ var documents = [
 },
 
 {
-    "id": 10,
+    "id": 11,
     "uri": "blog/2023/2023-11-20-einfuehrung-barrierefreiheit-web.html",
     "menu": "Blog",
     "title": "A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!",
@@ -89,7 +97,7 @@ var documents = [
 },
 
 {
-    "id": 11,
+    "id": 12,
     "uri": "blog/2023/2023-11-20-conways-law.html",
     "menu": "Blog",
     "title": "Conway’s Law",
@@ -97,7 +105,7 @@ var documents = [
 },
 
 {
-    "id": 12,
+    "id": 13,
     "uri": "blog/2023/2023-11-08-prompt-engineering.html",
     "menu": "Blog",
     "title": "Prompt Engineering",
@@ -105,7 +113,7 @@ var documents = [
 },
 
 {
-    "id": 13,
+    "id": 14,
     "uri": "blog/2023/2023-08-21-vue2-vue3-migration.html",
     "menu": "Blog",
     "title": "Migrate Vue 2 to Vue 3",
@@ -113,7 +121,7 @@ var documents = [
 },
 
 {
-    "id": 14,
+    "id": 15,
     "uri": "blog/2023/2023-05-15-developer-experience-platform-fuer-entwicklerinnen.html",
     "menu": "Blog",
     "title": "Developer Experience Platform",
@@ -121,7 +129,7 @@ var documents = [
 },
 
 {
-    "id": 15,
+    "id": 16,
     "uri": "blog/2023/2023-05-05-loom-threading.html",
     "menu": "Blog",
     "title": "Projekt Loom ist da",
@@ -129,7 +137,7 @@ var documents = [
 },
 
 {
-    "id": 16,
+    "id": 17,
     "uri": "blog/2023/2023-04-09-vortrag-auf-der-javaland.html",
     "menu": "Blog",
     "title": "JavaLand 2023",
@@ -137,7 +145,7 @@ var documents = [
 },
 
 {
-    "id": 17,
+    "id": 18,
     "uri": "blog/2023/2023-04-01-Indoor-GIS-zur-Rationalisierung-von-Wartungsarbeiten.html",
     "menu": "Blog",
     "title": "Indoor-GIS",
@@ -145,7 +153,7 @@ var documents = [
 },
 
 {
-    "id": 18,
+    "id": 19,
     "uri": "blog/2023/2023-03-28-ChatGPT-Einblicke-und-mehr-Generative-Sprachmodelle-Herausforderungen-und-Chancen.html",
     "menu": "Blog",
     "title": "ChatGPT",
@@ -153,7 +161,7 @@ var documents = [
 },
 
 {
-    "id": 19,
+    "id": 20,
     "uri": "blog/2023/2023-03-08-Re-Platforming-Mainframe-Mehr-als-nur-Lift-Shift.html",
     "menu": "Blog",
     "title": "Re-Platforming Mainframe",
@@ -161,7 +169,7 @@ var documents = [
 },
 
 {
-    "id": 20,
+    "id": 21,
     "uri": "blog/2022/2022-15-03-good-practices-api.html",
     "menu": "Blog",
     "title": "Good Practices im API-Umfeld",
@@ -169,7 +177,7 @@ var documents = [
 },
 
 {
-    "id": 21,
+    "id": 22,
     "uri": "blog/2022/2022-11-24-the-journey-towards-K8s-at-Deutsche-Bahn.html",
     "menu": "Blog",
     "title": "K8s at Deutsche Bahn",
@@ -177,7 +185,7 @@ var documents = [
 },
 
 {
-    "id": 22,
+    "id": 23,
     "uri": "blog/2022/2022-11-04-Produkt-statt-Projekmanagement.html",
     "menu": "Blog",
     "title": "Produkt- statt Projektmanagement",
@@ -185,7 +193,7 @@ var documents = [
 },
 
 {
-    "id": 23,
+    "id": 24,
     "uri": "blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html",
     "menu": "Blog",
     "title": "Deine Diagramme sind Legende?",
@@ -193,7 +201,7 @@ var documents = [
 },
 
 {
-    "id": 24,
+    "id": 25,
     "uri": "blog/2022/2022-03-23-Vielfalt-bei-der-Bahn-Computerlinguistinnen-treiben-Digitalisierung-voran.html",
     "menu": "Blog",
     "title": "Vielfalt bei der Bahn",
@@ -201,7 +209,7 @@ var documents = [
 },
 
 {
-    "id": 25,
+    "id": 26,
     "uri": "blog/2021/2021-11-02-KITT-das-Kuenstliche-Intelligenz-Translation-Tool.html",
     "menu": "Blog",
     "title": "KITT Tool",
@@ -209,7 +217,7 @@ var documents = [
 },
 
 {
-    "id": 26,
+    "id": 27,
     "uri": "blog/2021/2021-06-08-Bad-bots-Chancen-und-Herausforderungen-fuer-KI-und-Sprache.html",
     "menu": "Blog",
     "title": "Bad Bots",
@@ -217,7 +225,7 @@ var documents = [
 },
 
 {
-    "id": 27,
+    "id": 28,
     "uri": "blog/2021/2021-04-12-Computer-Vision-Use-Cases-at-Deutsche-Bahn.html",
     "menu": "Blog",
     "title": "Computer Vision Use Cases",
@@ -225,7 +233,7 @@ var documents = [
 },
 
 {
-    "id": 28,
+    "id": 29,
     "uri": "blog/2021/2021-03-20-Die-C4-Testpyramide-eine-architekturgetriebene-Teststrategie.html",
     "menu": "Blog",
     "title": "Die C4-Testpyramide",
@@ -233,7 +241,7 @@ var documents = [
 },
 
 {
-    "id": 29,
+    "id": 30,
     "uri": "blog/2020/2020-12-07-devops-mehr-geschwindigkeit-auf-der-schiene.html",
     "menu": "Blog",
     "title": "DevOps Geschwindigkeit",
@@ -241,7 +249,7 @@ var documents = [
 },
 
 {
-    "id": 30,
+    "id": 31,
     "uri": "blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html",
     "menu": "Blog",
     "title": "Vue.js vs. Angular",
@@ -249,7 +257,7 @@ var documents = [
 },
 
 {
-    "id": 31,
+    "id": 32,
     "uri": "blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html",
     "menu": "Blog",
     "title": "OOP: Guter Code",
@@ -257,7 +265,7 @@ var documents = [
 },
 
 {
-    "id": 32,
+    "id": 33,
     "uri": "blog/2020/2020-03-14-API-first-mit-TypeScript.html",
     "menu": "Blog",
     "title": "API first mit TS",
@@ -265,7 +273,7 @@ var documents = [
 },
 
 {
-    "id": 33,
+    "id": 34,
     "uri": "blog/2019/2019-09-13-Spock-und-AsciiDoc.html",
     "menu": "Blog",
     "title": "Spock und AsciiDoc",
@@ -273,7 +281,7 @@ var documents = [
 },
 
 {
-    "id": 34,
+    "id": 35,
     "uri": "blog/index.html",
     "menu": "Blog",
     "title": "Übersicht",
@@ -281,31 +289,7 @@ var documents = [
 },
 
 {
-    "id": 35,
-    "uri": "blog/profiles/Bernd-Schimmer.html",
-    "menu": "Autoren",
-    "title": "Bernd Schimmer",
-    "text": " Table of Contents Bernd Schimmer Bernd Schimmer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bernd is an experienced frontend developer and Agility Master at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . "
-},
-
-{
     "id": 36,
-    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
-    "menu": "Autoren",
-    "title": "Dr. Martin Strunk",
-    "text": " Table of Contents Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Dr. Martin Strunk Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created. Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm. LinkedIn Xing "
-},
-
-{
-    "id": 37,
-    "uri": "blog/profiles/Christian-Fischer.html",
-    "menu": "Autoren",
-    "title": "Christian Fischer",
-    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 38,
     "uri": "blog/profiles/Stefan-Gruendling.html",
     "menu": "Autoren",
     "title": "Stefan Gründling",
@@ -313,27 +297,43 @@ var documents = [
 },
 
 {
-    "id": 39,
-    "uri": "blog/profiles/Marcus-Suemnick.html",
+    "id": 37,
+    "uri": "blog/profiles/Jonas-Gassenmeyer.html",
     "menu": "Autoren",
-    "title": "Marcus Sümnick",
-    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "Jonas Gassenmeyer",
+    "text": " Table of Contents Jonas Gassenmeyer Links Jonas Gassenmeyer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Jonas könnte den ganzen Tag über relationale Datenbanken reden. Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte. Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel. Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten. Links Mastodon Profile X (formerly known as Twitter) Profile "
+},
+
+{
+    "id": 38,
+    "uri": "blog/profiles/Konrad-Winkler.html",
+    "menu": "Autoren",
+    "title": "Konrad Winkler",
+    "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 39,
+    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
+    "menu": "Autoren",
+    "title": "Gualter Barbas Baptista",
+    "text": " Table of Contents Gualter Barbas Baptista Links Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Lead Consultant for Platform Strategy and Enablement Gualter is a platform strategist and enabler with over 25 years experience in Linux and FLOSS. He worked as a Product Owner within multiple platform teams. Driven by a passion for sustainability, Gualter draws from his unique academic journey in environmental engineering, complemented by a PhD in ecological economics. He is dedicated to shedding light on the ecological impact of digitalization and empowering developers to make informed decisions for sustainable practices in their daily work. Links LinkedIn Profile "
 },
 
 {
     "id": 40,
-    "uri": "blog/profiles/Joachim-Schirrmacher.html",
-    "menu": "Autoren",
-    "title": "Joachim Schirrmacher",
-    "text": " Table of Contents Joachim Schirrmacher Links Joachim Schirrmacher span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Joachim ist seit 2017 bei der DB Systel als Berater und Entwickler. Am liebsten programmiert er funktional mit TypeScript, notfalls aber auch mit Java und Spring Boot, mag REST APIs, aber auch Event Sourcing und Streams. Links LinkedIn Profile GitHub Profile Mastodon Stack Overflow "
-},
-
-{
-    "id": 41,
     "uri": "blog/profiles/Danny-Koppenhagen.html",
     "menu": "Autoren",
     "title": "Danny Koppenhagen",
     "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+},
+
+{
+    "id": 41,
+    "uri": "blog/profiles/Christian-Fischer.html",
+    "menu": "Autoren",
+    "title": "Christian Fischer",
+    "text": " Table of Contents Christian Fischer Christian Fischer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
@@ -346,26 +346,26 @@ var documents = [
 
 {
     "id": 43,
-    "uri": "blog/profiles/Carsten-Hoffmann.html",
+    "uri": "blog/profiles/buildIT.html",
     "menu": "Autoren",
-    "title": "Carsten Hoffmann",
-    "text": " Table of Contents Carsten Hoffmann Links Carsten Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Carsten is an experienced software architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . As a member of a DevOps-Team he is a strong believer, that an architect should be close to the development team in order to create and evolve a software architecture, that meets the business needs. He is a conference speaker and held talks at internal and external conferences, like the DB TechCon and the IT-Tage . He is an Open-Source enthusiast and maintainer of the Trivy Vulnerability Explorer . Links LinkedIn Profile Mastodon Profile GitHub Profile "
+    "title": "BuildIT",
+    "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
     "id": 44,
-    "uri": "blog/profiles/Bertram-Fey.html",
-    "menu": "Autoren",
-    "title": "Bertram Fey",
-    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
-},
-
-{
-    "id": 45,
     "uri": "blog/profiles/Tim-Engeleiter.html",
     "menu": "Autoren",
     "title": "Tim Engeleiter",
     "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
+},
+
+{
+    "id": 45,
+    "uri": "blog/profiles/Sascha-Wolter.html",
+    "menu": "Autoren",
+    "title": "Sascha Wolter",
+    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Persönliche Website "
 },
 
 {
@@ -386,22 +386,6 @@ var documents = [
 
 {
     "id": 48,
-    "uri": "blog/profiles/Johannes-Dienst.html",
-    "menu": "Autoren",
-    "title": "Johannes Dienst",
-    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 49,
-    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
-    "menu": "Autoren",
-    "title": "Gualter Barbas Baptista",
-    "text": " Table of Contents Gualter Barbas Baptista Links Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Lead Consultant for Platform Strategy and Enablement Gualter is a platform strategist and enabler with over 25 years experience in Linux and FLOSS. He worked as a Product Owner within multiple platform teams. Driven by a passion for sustainability, Gualter draws from his unique academic journey in environmental engineering, complemented by a PhD in ecological economics. He is dedicated to shedding light on the ecological impact of digitalization and empowering developers to make informed decisions for sustainable practices in their daily work. Links LinkedIn Profile "
-},
-
-{
-    "id": 50,
     "uri": "blog/profiles/Sven-Hesse.html",
     "menu": "Autoren",
     "title": "Sven Hesse",
@@ -409,15 +393,55 @@ var documents = [
 },
 
 {
-    "id": 51,
-    "uri": "blog/profiles/Sascha-Wolter.html",
+    "id": 49,
+    "uri": "blog/profiles/Marcus-Suemnick.html",
     "menu": "Autoren",
-    "title": "Sascha Wolter",
-    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Persönliche Website "
+    "title": "Marcus Sümnick",
+    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 50,
+    "uri": "blog/profiles/Johannes-Dienst.html",
+    "menu": "Autoren",
+    "title": "Johannes Dienst",
+    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 51,
+    "uri": "blog/profiles/Joachim-Schirrmacher.html",
+    "menu": "Autoren",
+    "title": "Joachim Schirrmacher",
+    "text": " Table of Contents Joachim Schirrmacher Links Joachim Schirrmacher span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Joachim ist seit 2017 bei der DB Systel als Berater und Entwickler. Am liebsten programmiert er funktional mit TypeScript, notfalls aber auch mit Java und Spring Boot, mag REST APIs, aber auch Event Sourcing und Streams. Links LinkedIn Profile GitHub Profile Mastodon Stack Overflow "
 },
 
 {
     "id": 52,
+    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
+    "menu": "Autoren",
+    "title": "Dr. Martin Strunk",
+    "text": " Table of Contents Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Dr. Martin Strunk Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created. Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm. LinkedIn Xing "
+},
+
+{
+    "id": 53,
+    "uri": "blog/profiles/Bertram-Fey.html",
+    "menu": "Autoren",
+    "title": "Bertram Fey",
+    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
+},
+
+{
+    "id": 54,
+    "uri": "blog/profiles/Bernd-Schimmer.html",
+    "menu": "Autoren",
+    "title": "Bernd Schimmer",
+    "text": " Table of Contents Bernd Schimmer Bernd Schimmer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bernd is an experienced frontend developer and Agility Master at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . "
+},
+
+{
+    "id": 55,
     "uri": "blog/profiles/Philippe-Rieffe.html",
     "menu": "Autoren",
     "title": "Philippe Rieffe",
@@ -425,7 +449,7 @@ var documents = [
 },
 
 {
-    "id": 53,
+    "id": 56,
     "uri": "blog/profiles/Oliver-Hammer.html",
     "menu": "Autoren",
     "title": "Oliver Hammer",
@@ -433,31 +457,15 @@ var documents = [
 },
 
 {
-    "id": 54,
-    "uri": "blog/profiles/Konrad-Winkler.html",
-    "menu": "Autoren",
-    "title": "Konrad Winkler",
-    "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 55,
-    "uri": "blog/profiles/Jonas-Gassenmeyer.html",
-    "menu": "Autoren",
-    "title": "Jonas Gassenmeyer",
-    "text": " Table of Contents Jonas Gassenmeyer Links Jonas Gassenmeyer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Jonas könnte den ganzen Tag über relationale Datenbanken reden. Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte. Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel. Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten. Links Mastodon Profile X (formerly known as Twitter) Profile "
-},
-
-{
-    "id": 56,
-    "uri": "blog/profiles/buildIT.html",
-    "menu": "Autoren",
-    "title": "BuildIT",
-    "text": " Table of Contents BuildIT BuildIT span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
     "id": 57,
+    "uri": "blog/profiles/Carsten-Hoffmann.html",
+    "menu": "Autoren",
+    "title": "Carsten Hoffmann",
+    "text": " Table of Contents Carsten Hoffmann Links Carsten Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Carsten is an experienced software architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . As a member of a DevOps-Team he is a strong believer, that an architect should be close to the development team in order to create and evolve a software architecture, that meets the business needs. He is a conference speaker and held talks at internal and external conferences, like the DB TechCon and the IT-Tage . He is an Open-Source enthusiast and maintainer of the Trivy Vulnerability Explorer . Links LinkedIn Profile Mastodon Profile GitHub Profile "
+},
+
+{
+    "id": 58,
     "uri": "lunrjsindex.html",
     "menu": "null",
     "title": "null",
