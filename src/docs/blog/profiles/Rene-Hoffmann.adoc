@@ -18,7 +18,7 @@ max-width: 100px;
 </style>
 ++++
 
-image:profiles/Rene-Hoffmann.png[float=right,role=profile]
+image:profiles/Rene-Hoffmann.jpg[float=right,role=profile]
 
 René Hoffmann bringt über 25 Jahre Erfahrung in der Beratung und Software-Entwicklung mit.
 In verschiedenen Fach- und Führungsrollen, von Software-Entwickler und -Architekt bis hin zur Unternehmens- und Organisationsentwicklung, hat er umfangreiche Erfahrungen an der Schnittstelle zwischen Business und IT in großen Organisationen gesammelt.
