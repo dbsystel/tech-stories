@@ -1,0 +1,30 @@
+:jbake-status: published
+:jbake-menu: Autoren
+:jbake-type: profile
+:jbake-order: 1
+:sectanchors:
+:jbake-author: Rene Hoffmann
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== René Hoffmann
+
+++++
+<style>
+span.profile img {
+border: 5px solid #288ABF;
+border-radius: 10px;
+max-width: 100px;
+}
+</style>
+++++
+
+image:profiles/Rene-Hoffmann.png[float=right,role=profile]
+
+René Hoffmann bringt über 25 Jahre Erfahrung in der Beratung und Software-Entwicklung mit.
+In verschiedenen Fach- und Führungsrollen, von Software-Entwickler und -Architekt bis hin zur Unternehmens- und Organisationsentwicklung, hat er umfangreiche Erfahrungen an der Schnittstelle zwischen Business und IT in großen Organisationen gesammelt.
+Ein strategischer Weitblick ist ihm wichtig, um zukunftsorientierte Digitalisierungs- und Veränderungsinitiativen zu starten, die Menschen in Business und IT zusammenbringen.
+Aktuell widmet er sich mit großer Begeisterung den Möglichkeiten generativer KI und deren transformativem Potenzial für Geschäftsprozesse und IT.
+
+=== Links
+
+* https://www.linkedin.com/in/hoffmannrene/[LinkedIn Profile]

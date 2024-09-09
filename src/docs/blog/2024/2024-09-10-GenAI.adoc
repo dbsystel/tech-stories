@@ -1,0 +1,45 @@
+:jbake-title: AI-gile Zeiten
+:jbake-card: AI-gile Zeiten: Wie generative KI die IT-Welt neu gestaltet
+:jbake-date: 2024-09-10
+:jbake-type: post
+// enter tags comma separated
+:jbake-tags: genai
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+// multiple authors can be comma separated. Be sure the spelling matches with the Authors in the profiles
+:jbake-author: Rene Hoffmann
+// you can add a teaser image. The path to place the image is src/docs/images
+:jbake-teaser-image: topics/ki.png
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== AI-gile Zeiten: Wie generative KI die IT-Welt neu gestaltet
+
+Mein beruflicher Weg begann in den frühen 90er Jahren als Softwareentwickler, parallel zur zunehmenden Verbreitung des Internets.
+Diese technologische Revolution veränderte nicht nur die Art und Weise, wie Software entwickelt wurde, sondern führte auch zur Entstehung agiler Methoden und zu einer tiefgreifenden Transformation von Geschäftsprozessen und Organisationsstrukturen.
+
+++++
+<!-- teaser -->
+++++
+
+Heute stehen wir erneut an einem Wendepunkt, diesmal durch die Einführung generativer Künstlicher Intelligenz (KI). 
+Genau wie das Internet die agile Bewegung befeuerte, wird auch die generative KI die Softwareentwicklung und die IT-Arbeitswelt grundlegend verändern.
+In meinem Vortrag werde ich aufzeigen, wie diese Technologie nicht nur die Entwicklung selbst automatisiert, sondern meines Erachtens auch die Zusammenarbeit zwischen IT und Fachbereichen, sowie die Struktur von Organisationen, maßgeblich beeinflussen wird.
+
+Basierend auf meiner persönlichen Erfahrung, die von der Softwareentwicklung bis hin zur Organisations- und Unternehmensentwicklung reicht, möchte ich aufzeigen, wie sich die Rolle der IT in Unternehmen verändern könnte. 
+Der Vortrag zielt darauf ab, eine spannende Diskussion darüber anzuregen, wie wir uns auf diese Revolution vorbereiten können und welche Chancen und Herausforderungen uns erwarten.
+
+=== Slides
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/715331059a4543edb34c1570a9fd8b21" title="Speakerdeck Player" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+
+//a|
+//+++++
+//<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/VI33buvdomE?si=DJvB9MJoQpmYNcMT" title="Youtube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+//+++++
+|===
