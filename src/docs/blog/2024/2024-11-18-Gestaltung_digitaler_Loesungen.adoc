@@ -3,7 +3,7 @@
 :jbake-date: 2024-11-18
 :jbake-type: post
 // enter tags comma separated
-:jbake-tags: design digital loesung
+:jbake-tags: DigitalDesign, DevOps
 :jbake-status: published
 :jbake-menu: Blog
 :jbake-discussion: 1076
