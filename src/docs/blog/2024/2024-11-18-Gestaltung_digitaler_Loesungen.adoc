@@ -1,0 +1,46 @@
+:jbake-title: Gestaltung digitaler Lösungen
+:jbake-card: Gestaltung digitaler Lösungen – Produktions- oder Designprozess?
+:jbake-date: 2024-11-18
+:jbake-type: post
+// enter tags comma separated
+:jbake-tags: design digital loesung
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+// multiple authors can be comma separated. Be sure the spelling matches with the Authors in the profiles
+:jbake-author: Dr. Martin Strunk
+// you can add a teaser image. The path to place the image is src/docs/images
+:jbake-teaser-image: topics/dev.png
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== Gestaltung digitaler Lösungen – Produktions- oder Designprozess?
+
+Mein beruflicher Weg begann in den frühen 90er Jahren als Softwareentwickler, parallel zur zunehmenden Verbreitung des Internets.
+Diese technologische Revolution veränderte nicht nur die Art und Weise, wie Software entwickelt wurde, sondern führte auch zur Entstehung agiler Methoden und zu einer tiefgreifenden Transformation von Geschäftsprozessen und Organisationsstrukturen.
+
+++++
+<!-- teaser -->
+++++
+
+In diesem Vortrag wird die Diskrepanz zwischen dem traditionellen Produktionsprozessansatz und einem designorientierten Ansatz in einer DevOps-Welt beleuchtet. Was auf den ersten Blick als akademische Frage anmutet, kann in der konkreten Unternehmenspraxis einen großen Unterschied machen, da Designprozesse grundsätzlich anders strukturiert werden als Produktionsprozesse. Durch Beispiele wird verdeutlicht, wie der holistische Ansatz des Digital Solution Design, Anwenderbedürfnisse, Geschäftsanforderungen und IT-Technologie gleichermaßen berücksichtigt, um zu erfolgreichen digitalen Lösungen zu gelangen.
+
+Key Takeaways:
+
+Wie wirkt der Ansatz des Digital Solution Design auf bestehende DevOps-Prozesse und kann gleichzeitig die Qualität der digitalen Lösung erhöhen?
+Welche konkreten Schritte können Unternehmen angehen, um eine ganzheitliche Betrachtung von Anwenderbedürfnissen, Geschäftsanforderungen und IT-Technologien in ihren DevOps-Praktiken zu implementieren?
+Welche Auswirkungen hat die Einführung eines designorientierten Ansatzes auf die Organisationsstruktur, die Arbeitsweise der Teams und die Kultur innerhalb eines Unternehmens, insbesondere im Hinblick auf die Verbindung von Anwenderbusiness und IT?
+
+=== Slides
+
+[cols="1", width=100%]
+|===
+a|
+++++
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/f51bcf9ae1b24482933b45ecf81aaf98" title="Speakerdeck Player" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+
+//a|
+//+++++
+//<iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/VI33buvdomE?si=DJvB9MJoQpmYNcMT" title="Youtube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+//+++++
+|===
