@@ -6,8 +6,8 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 18 Nov 2024 16:54:15 +0000</pubDate>
-    <lastBuildDate>Mon, 18 Nov 2024 16:54:15 +0000</lastBuildDate>
+    <pubDate>Mon, 10 Mar 2025 19:37:41 +0000</pubDate>
+    <lastBuildDate>Mon, 10 Mar 2025 19:37:41 +0000</lastBuildDate>
 
     
     <item>
@@ -910,14 +910,20 @@ Ich werde mit einem Rückblick auf die Geschichte von Inner Source bei der DB be
 &lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
 &lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
 &lt;colgroup&gt;
-&lt;col style=&quot;width: 100%;&quot;&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;col style=&quot;width: 50%;&quot;&gt;
 &lt;/colgroup&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/9d8f105e49fc45d5acf72c3cd30efee6&quot; title=&quot;Speakerdeck Player&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;!--iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/VI33buvdomE?si=DJvB9MJoQpmYNcMT&quot; title=&quot;Youtube Video Player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe--&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;strong&gt;Deutsch&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/9d8f105e49fc45d5acf72c3cd30efee6&quot; title=&quot;Speakerdeck Player&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;strong&gt;English&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/70314151acd0429db3cf7a7c5aaa9266&quot; title=&quot;Inner Source @ DB: A Story About Open Source Practices at Deutsche Bahn&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;
+&lt;!--iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/VI33buvdomE?si=DJvB9MJoQpmYNcMT&quot; title=&quot;Youtube Video Player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe--&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
