@@ -1,0 +1,22 @@
+:jbake-title: DevOps-Aufteilung
+:jbake-card: DevOps über mehrere Teams: kann das funktionieren?
+:jbake-date: 2025-07-10
+:jbake-type: post
+:jbake-tags: devops, agile
+:jbake-status: published
+:jbake-menu: Blog
+:jbake-discussion: 1076
+:jbake-author: Sven Hesse
+:jbake-teaser-image: profiles/Sven-Hesse.jpg
+ifndef::imagesdir[:imagesdir: ../../images]
+
+== DevOps über mehrere Teams: kann das funktionieren?
+
+Wie kann DevOps über mehrere Teams hinweg skaliert werden, ohne die Autonomie der Teams zu gefährden?
+In diesem Vortag teile ich meine Erfahrung aus der Arbeit in einem DevOps-Team der DB Systel GmbH, das operative Tätigkeiten für gemeinsam genutzte Infrastruktur mit anderen Teams teilt.
+
+In unseren organisch gewachsenen Team-Strukturen wurden viele operative Aufgaben redundant durchgeführt.
+Daher haben wir nach einfachen Lösungen gesucht, solche Aufgaben über mehrere Teams zu verteilen, ohne deren Lieferfähigkeit und Eigenständigkeit zu beeinflussen.
+Neben der Zusammenlegung von Infrastruktur und Automatisierung konnten wir auch flexible Zusammenarbeitsmodelle entwickeln.
+
+Der Vortrag zeigt, welche Überlegungen unserem skalierten DevOps-Modell zugrunde liegen, welche Ergebnisse wir erreicht haben und an welchen Stellen dieses Vorgehen seine Grenzen erreicht.

@@ -21,7 +21,7 @@ max-width: 100px;
 image:profiles/Sven-Hesse.jpg[float=right,role=profile]
 
 Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH.
-Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility.
+Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs rund um Zug-Daten sowie Shared-Mobility.
 
 === Links
 
