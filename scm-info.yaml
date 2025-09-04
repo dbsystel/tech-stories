@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2025 DB Systel GmbH
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+version: v3
+license: Apache-2.0
+contacts:
+  - opensource@deutschebahn.com
+confidentiality: open
+reference-ids:
+  - none
+usage-scenario: service
+protected-branches:
+  - main
