@@ -24,7 +24,7 @@ Erfahren Sie, wie die Gründung eines Thementeams in unserer Architekturgilde da
 
 === Slides
 
-[cols="2", width=100%]
+[cols="3", width=100%]
 |===
 a|
 *Deutsch*
@@ -39,6 +39,14 @@ a|
 <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/70314151acd0429db3cf7a7c5aaa9266" title="Inner Source @ DB: A Story About Open Source Practices at Deutsche Bahn" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
 <!--iframe style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;" height="315" src="https://www.youtube-nocookie.com/embed/VI33buvdomE?si=DJvB9MJoQpmYNcMT" title="Youtube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe-->
 +++++
+
+a|
+*English Video*
+++++
+<iframe class="video-iframe" frameborder="0" src="https://www.youtube-nocookie.com/embed/9e-K9G0O2DQ?si=sucnGmVocgsFKIey" title="InnerSource@DB: A Story About Open Source Practices at Deutsche Bahn
+ mit Carsten Hoffmann" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
+++++
+
 |===
 
 === Links
