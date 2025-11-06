@@ -24,7 +24,7 @@ Erfahren Sie, wie die Gründung eines Thementeams in unserer Architekturgilde da
 
 === Slides
 
-[cols="2", width=100%]
+[cols="3", width=100%]
 |===
 a|
 *Deutsch*
