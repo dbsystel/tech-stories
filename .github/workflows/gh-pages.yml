@@ -8,13 +8,13 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     env:
       DTC_HEADLESS: true
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: setup
         run: chmod +x dtcw
       - name: generateSite
@@ -22,7 +22,7 @@ jobs:
       - name: copyToPublic
         run: cp -r ./build/microsite/output ./public
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@373f7f263a76c20808c831209c920827a82a2847  # v3.9.3
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e  # v4.0.0
         #        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
