@@ -10,6 +10,14 @@ var documents = [
 
 {
     "id": 1,
+    "uri": "blog/2025/2025-07-10-devops-aufteilung.html",
+    "menu": "Blog",
+    "title": "DevOps-Aufteilung",
+    "text": " Table of Contents DevOps über mehrere Teams: kann das funktionieren? DevOps über mehrere Teams: kann das funktionieren? Wie kann DevOps über mehrere Teams hinweg skaliert werden, ohne die Autonomie der Teams zu gefährden? In diesem Vortag teile ich meine Erfahrung aus der Arbeit in einem DevOps-Team der DB Systel GmbH, das operative Tätigkeiten für gemeinsam genutzte Infrastruktur mit anderen Teams teilt. In unseren organisch gewachsenen Team-Strukturen wurden viele operative Aufgaben redundant durchgeführt. Daher haben wir nach einfachen Lösungen gesucht, solche Aufgaben über mehrere Teams zu verteilen, ohne deren Lieferfähigkeit und Eigenständigkeit zu beeinflussen. Neben der Zusammenlegung von Infrastruktur und Automatisierung konnten wir auch flexible Zusammenarbeitsmodelle entwickeln. Der Vortrag zeigt, welche Überlegungen unserem skalierten DevOps-Modell zugrunde liegen, welche Ergebnisse wir erreicht haben und an welchen Stellen dieses Vorgehen seine Grenzen erreicht. "
+},
+
+{
+    "id": 2,
     "uri": "blog/2024/2024-11-18-Gestaltung_digitaler_Loesungen.html",
     "menu": "Blog",
     "title": "Gestaltung digitaler Lösungen",
@@ -17,7 +25,7 @@ var documents = [
 },
 
 {
-    "id": 2,
+    "id": 3,
     "uri": "blog/2024/2024-09-10-GenAI.html",
     "menu": "Blog",
     "title": "AI-gile Zeiten",
@@ -25,7 +33,7 @@ var documents = [
 },
 
 {
-    "id": 3,
+    "id": 4,
     "uri": "blog/2024/2024-07-02-Angular-Push-Notifications.html",
     "menu": "Blog",
     "title": "Supercharge Your Angular PWA with Push Notifications: From Setup to Debugging",
@@ -33,15 +41,15 @@ var documents = [
 },
 
 {
-    "id": 4,
+    "id": 5,
     "uri": "blog/2024/2024-04-25-JAX-Inner-Source.html",
     "menu": "Blog",
     "title": "Inner Source@DB",
-    "text": " Table of Contents Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im DB Konzern Slides Links Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im DB Konzern Entdecken Sie mit mir die Welt von Inner Source bei der Deutschen Bahn (DB) während meines Vortrags. Ich werde mit einem Rückblick auf die Geschichte von Inner Source bei der DB beginnen und dabei die einzigartigen Herausforderungen beleuchten, auf die wir gestoßen sind, sowie die Lösungsansätze, die wir entwickelt haben. Erfahren Sie, wie die Gründung eines Thementeams in unserer Architekturgilde dazu beigetragen hat, die Verbreitung von Inner Source zu fördern und Hindernisse zu überwinden. Ich werde den Nutzen von Inner Source für das Unternehmen und die Softwareentwicklung erläutern und den Unterschied zwischen \"Community-maintained\" und \"Team-maintained\" Inner Source erklären. Dabei zeige ich auf, warum eine zentrale Plattform für die Entstehung von Community-maintained Inner-Source-Projekten unerlässlich ist und welche Eigenschaften wir dieser Plattform gegeben haben. Abschließend werde ich enthüllen, wie Inner Source eine Brücke zu Open Source schlägt und einige konkrete Inner-Source-Projekte vorstellen. Seien Sie gespannt und lassen Sie sich inspirieren, wie Inner Source die Zukunft der Softwareentwicklung bei der Deutschen Bahn vorantreibt! Slides Deutsch English Links Open-Source-Manifest der Deutschen Bahn "
+    "text": " Table of Contents Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im DB Konzern Slides Links Inner Source@DB: Eine Geschichte über Open-Source-Praktiken im DB Konzern Entdecken Sie mit mir die Welt von Inner Source bei der Deutschen Bahn (DB) während meines Vortrags. Ich werde mit einem Rückblick auf die Geschichte von Inner Source bei der DB beginnen und dabei die einzigartigen Herausforderungen beleuchten, auf die wir gestoßen sind, sowie die Lösungsansätze, die wir entwickelt haben. Erfahren Sie, wie die Gründung eines Thementeams in unserer Architekturgilde dazu beigetragen hat, die Verbreitung von Inner Source zu fördern und Hindernisse zu überwinden. Ich werde den Nutzen von Inner Source für das Unternehmen und die Softwareentwicklung erläutern und den Unterschied zwischen \"Community-maintained\" und \"Team-maintained\" Inner Source erklären. Dabei zeige ich auf, warum eine zentrale Plattform für die Entstehung von Community-maintained Inner-Source-Projekten unerlässlich ist und welche Eigenschaften wir dieser Plattform gegeben haben. Abschließend werde ich enthüllen, wie Inner Source eine Brücke zu Open Source schlägt und einige konkrete Inner-Source-Projekte vorstellen. Seien Sie gespannt und lassen Sie sich inspirieren, wie Inner Source die Zukunft der Softwareentwicklung bei der Deutschen Bahn vorantreibt! Slides Deutsch English English Video Links Open-Source-Manifest der Deutschen Bahn "
 },
 
 {
-    "id": 5,
+    "id": 6,
     "uri": "blog/2024/2024-04-04-DB-Systel-KubeCon.html",
     "menu": "Blog",
     "title": "DB Systel auf der KubeCon 2024 in Paris",
@@ -49,7 +57,7 @@ var documents = [
 },
 
 {
-    "id": 6,
+    "id": 7,
     "uri": "blog/2024/2024-04-02-Journey-from-TypeScript-to-Java-part-1.html",
     "menu": "Blog",
     "title": "My journey from TypeScript to Java - Part 1",
@@ -57,7 +65,7 @@ var documents = [
 },
 
 {
-    "id": 7,
+    "id": 8,
     "uri": "blog/2024/2024-02-07-Ein-Jahr-PostgreSQL-statt-Oracle-Das-Leben-danach.html",
     "menu": "Blog",
     "title": "Ein Jahr PostgreSQL statt Oracle",
@@ -65,7 +73,7 @@ var documents = [
 },
 
 {
-    "id": 8,
+    "id": 9,
     "uri": "blog/2024/2024-02-06-ChatGPT.html",
     "menu": "Blog",
     "title": "Architektur mit ChatGPT",
@@ -73,7 +81,7 @@ var documents = [
 },
 
 {
-    "id": 9,
+    "id": 10,
     "uri": "blog/2024/2024-01-25-Evolution-der-Webentwicklung.html",
     "menu": "Blog",
     "title": "Meine Reise durch die Evolution der Webentwicklung",
@@ -81,7 +89,7 @@ var documents = [
 },
 
 {
-    "id": 10,
+    "id": 11,
     "uri": "blog/2024/2024-01-16-Accessibility-in-Angular.html",
     "menu": "Blog",
     "title": "Accessibility in Angular",
@@ -89,7 +97,7 @@ var documents = [
 },
 
 {
-    "id": 11,
+    "id": 12,
     "uri": "blog/2023/2023-12-21-vollautomatisch-konstruierter-Fahrplan.html",
     "menu": "Blog",
     "title": "Fahrplankonstruktion",
@@ -97,7 +105,7 @@ var documents = [
 },
 
 {
-    "id": 12,
+    "id": 13,
     "uri": "blog/2023/2023-11-29-AI-in-Software-Design.html",
     "menu": "Blog",
     "title": "AI in Software Design",
@@ -105,7 +113,7 @@ var documents = [
 },
 
 {
-    "id": 13,
+    "id": 14,
     "uri": "blog/2023/2023-11-20-einfuehrung-barrierefreiheit-web.html",
     "menu": "Blog",
     "title": "A11y: EAA, BFSG, WCAG, WAI, ARIA, WTF? – it's for the people stupid!",
@@ -113,7 +121,7 @@ var documents = [
 },
 
 {
-    "id": 14,
+    "id": 15,
     "uri": "blog/2023/2023-11-20-conways-law.html",
     "menu": "Blog",
     "title": "Conway’s Law",
@@ -121,7 +129,7 @@ var documents = [
 },
 
 {
-    "id": 15,
+    "id": 16,
     "uri": "blog/2023/2023-11-08-prompt-engineering.html",
     "menu": "Blog",
     "title": "Prompt Engineering",
@@ -129,7 +137,7 @@ var documents = [
 },
 
 {
-    "id": 16,
+    "id": 17,
     "uri": "blog/2023/2023-08-21-vue2-vue3-migration.html",
     "menu": "Blog",
     "title": "Migrate Vue 2 to Vue 3",
@@ -137,7 +145,7 @@ var documents = [
 },
 
 {
-    "id": 17,
+    "id": 18,
     "uri": "blog/2023/2023-05-15-developer-experience-platform-fuer-entwicklerinnen.html",
     "menu": "Blog",
     "title": "Developer Experience Platform",
@@ -145,7 +153,7 @@ var documents = [
 },
 
 {
-    "id": 18,
+    "id": 19,
     "uri": "blog/2023/2023-05-05-loom-threading.html",
     "menu": "Blog",
     "title": "Projekt Loom ist da",
@@ -153,7 +161,7 @@ var documents = [
 },
 
 {
-    "id": 19,
+    "id": 20,
     "uri": "blog/2023/2023-04-09-vortrag-auf-der-javaland.html",
     "menu": "Blog",
     "title": "JavaLand 2023",
@@ -161,7 +169,7 @@ var documents = [
 },
 
 {
-    "id": 20,
+    "id": 21,
     "uri": "blog/2023/2023-04-01-Indoor-GIS-zur-Rationalisierung-von-Wartungsarbeiten.html",
     "menu": "Blog",
     "title": "Indoor-GIS",
@@ -169,7 +177,7 @@ var documents = [
 },
 
 {
-    "id": 21,
+    "id": 22,
     "uri": "blog/2023/2023-03-28-ChatGPT-Einblicke-und-mehr-Generative-Sprachmodelle-Herausforderungen-und-Chancen.html",
     "menu": "Blog",
     "title": "ChatGPT",
@@ -177,7 +185,7 @@ var documents = [
 },
 
 {
-    "id": 22,
+    "id": 23,
     "uri": "blog/2023/2023-03-08-Re-Platforming-Mainframe-Mehr-als-nur-Lift-Shift.html",
     "menu": "Blog",
     "title": "Re-Platforming Mainframe",
@@ -185,7 +193,7 @@ var documents = [
 },
 
 {
-    "id": 23,
+    "id": 24,
     "uri": "blog/2022/2022-15-03-good-practices-api.html",
     "menu": "Blog",
     "title": "Good Practices im API-Umfeld",
@@ -193,7 +201,7 @@ var documents = [
 },
 
 {
-    "id": 24,
+    "id": 25,
     "uri": "blog/2022/2022-11-24-the-journey-towards-K8s-at-Deutsche-Bahn.html",
     "menu": "Blog",
     "title": "K8s at Deutsche Bahn",
@@ -201,7 +209,7 @@ var documents = [
 },
 
 {
-    "id": 25,
+    "id": 26,
     "uri": "blog/2022/2022-11-04-Produkt-statt-Projekmanagement.html",
     "menu": "Blog",
     "title": "Produkt- statt Projektmanagement",
@@ -209,7 +217,7 @@ var documents = [
 },
 
 {
-    "id": 26,
+    "id": 27,
     "uri": "blog/2022/2022-10-21-Deine-Diagramme-sind-Legende.html",
     "menu": "Blog",
     "title": "Deine Diagramme sind Legende?",
@@ -217,7 +225,7 @@ var documents = [
 },
 
 {
-    "id": 27,
+    "id": 28,
     "uri": "blog/2022/2022-03-23-Vielfalt-bei-der-Bahn-Computerlinguistinnen-treiben-Digitalisierung-voran.html",
     "menu": "Blog",
     "title": "Vielfalt bei der Bahn",
@@ -225,7 +233,7 @@ var documents = [
 },
 
 {
-    "id": 28,
+    "id": 29,
     "uri": "blog/2021/2021-11-02-KITT-das-Kuenstliche-Intelligenz-Translation-Tool.html",
     "menu": "Blog",
     "title": "KITT Tool",
@@ -233,7 +241,7 @@ var documents = [
 },
 
 {
-    "id": 29,
+    "id": 30,
     "uri": "blog/2021/2021-06-08-Bad-bots-Chancen-und-Herausforderungen-fuer-KI-und-Sprache.html",
     "menu": "Blog",
     "title": "Bad Bots",
@@ -241,7 +249,7 @@ var documents = [
 },
 
 {
-    "id": 30,
+    "id": 31,
     "uri": "blog/2021/2021-04-12-Computer-Vision-Use-Cases-at-Deutsche-Bahn.html",
     "menu": "Blog",
     "title": "Computer Vision Use Cases",
@@ -249,7 +257,7 @@ var documents = [
 },
 
 {
-    "id": 31,
+    "id": 32,
     "uri": "blog/2021/2021-03-20-Die-C4-Testpyramide-eine-architekturgetriebene-Teststrategie.html",
     "menu": "Blog",
     "title": "Die C4-Testpyramide",
@@ -257,7 +265,7 @@ var documents = [
 },
 
 {
-    "id": 32,
+    "id": 33,
     "uri": "blog/2020/2020-12-07-devops-mehr-geschwindigkeit-auf-der-schiene.html",
     "menu": "Blog",
     "title": "DevOps Geschwindigkeit",
@@ -265,7 +273,7 @@ var documents = [
 },
 
 {
-    "id": 33,
+    "id": 34,
     "uri": "blog/2020/2020-05-19-5vue-js-vs-angular-was-ist-besser.html",
     "menu": "Blog",
     "title": "Vue.js vs. Angular",
@@ -273,7 +281,7 @@ var documents = [
 },
 
 {
-    "id": 34,
+    "id": 35,
     "uri": "blog/2020/2020-03-27-DB-Systel-streitet-auf-der-OOP-fuer-guten-Code.html",
     "menu": "Blog",
     "title": "OOP: Guter Code",
@@ -281,7 +289,7 @@ var documents = [
 },
 
 {
-    "id": 35,
+    "id": 36,
     "uri": "blog/2020/2020-03-14-API-first-mit-TypeScript.html",
     "menu": "Blog",
     "title": "API first mit TS",
@@ -289,7 +297,7 @@ var documents = [
 },
 
 {
-    "id": 36,
+    "id": 37,
     "uri": "blog/2019/2019-09-13-Spock-und-AsciiDoc.html",
     "menu": "Blog",
     "title": "Spock und AsciiDoc",
@@ -297,7 +305,7 @@ var documents = [
 },
 
 {
-    "id": 37,
+    "id": 38,
     "uri": "blog/index.html",
     "menu": "Blog",
     "title": "Übersicht",
@@ -305,27 +313,19 @@ var documents = [
 },
 
 {
-    "id": 38,
-    "uri": "blog/profiles/Sven-Hesse.html",
-    "menu": "Autoren",
-    "title": "Sven Hesse",
-    "text": " Table of Contents Sven Hesse Links Sven Hesse span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH. Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs zu Zug- und Wagendaten sowie Shared-Mobility. Links Persönliche Website "
-},
-
-{
     "id": 39,
-    "uri": "blog/profiles/Rene-Hoffmann.html",
+    "uri": "blog/profiles/Johannes-Dienst.html",
     "menu": "Autoren",
-    "title": "René Hoffmann",
-    "text": " Table of Contents René Hoffmann Links René Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } René Hoffmann bringt über 25 Jahre Erfahrung in der Beratung und Software-Entwicklung mit. In verschiedenen Fach- und Führungsrollen, von Software-Entwickler und -Architekt bis hin zur Unternehmens- und Organisationsentwicklung, hat er umfangreiche Erfahrungen an der Schnittstelle zwischen Business und IT in großen Organisationen gesammelt. Ein strategischer Weitblick ist ihm wichtig, um zukunftsorientierte Digitalisierungs- und Veränderungsinitiativen zu starten, die Menschen in Business und IT zusammenbringen. Aktuell widmet er sich mit großer Begeisterung den Möglichkeiten generativer KI und deren transformativem Potenzial für Geschäftsprozesse und IT. Links LinkedIn Profile "
+    "title": "Johannes Dienst",
+    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
     "id": 40,
-    "uri": "blog/profiles/Maximilian-Franzke.html",
+    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
     "menu": "Autoren",
-    "title": "Maximilian Franzke",
-    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
+    "title": "Gualter Barbas Baptista",
+    "text": " Table of Contents Gualter Barbas Baptista Links Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Lead Consultant for Platform Strategy and Enablement Gualter is a platform strategist and enabler with over 25 years experience in Linux and FLOSS. He worked as a Product Owner within multiple platform teams. Driven by a passion for sustainability, Gualter draws from his unique academic journey in environmental engineering, complemented by a PhD in ecological economics. He is dedicated to shedding light on the ecological impact of digitalization and empowering developers to make informed decisions for sustainable practices in their daily work. Links LinkedIn Profile "
 },
 
 {
@@ -338,26 +338,26 @@ var documents = [
 
 {
     "id": 42,
-    "uri": "blog/profiles/Carsten-Hoffmann.html",
+    "uri": "blog/profiles/Philippe-Rieffe.html",
     "menu": "Autoren",
-    "title": "Carsten Hoffmann",
-    "text": " Table of Contents Carsten Hoffmann Links Carsten Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Carsten is an experienced software architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . As a member of a DevOps-Team he is a strong believer, that an architect should be close to the development team in order to create and evolve a software architecture, that meets the business needs. He is a conference speaker and held talks at internal and external conferences, like the DB TechCon and the IT-Tage . He is an Open-Source enthusiast and maintainer of the Trivy Vulnerability Explorer . Links LinkedIn Profile Mastodon Profile GitHub Profile "
+    "title": "Philippe Rieffe",
+    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
 },
 
 {
     "id": 43,
-    "uri": "blog/profiles/Bertram-Fey.html",
+    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
     "menu": "Autoren",
-    "title": "Bertram Fey",
-    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
+    "title": "Dr. Martin Strunk",
+    "text": " Table of Contents Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Dr. Martin Strunk Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created. Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm. LinkedIn Xing "
 },
 
 {
     "id": 44,
-    "uri": "blog/profiles/Tim-Engeleiter.html",
+    "uri": "blog/profiles/Jonas-Gassenmeyer.html",
     "menu": "Autoren",
-    "title": "Tim Engeleiter",
-    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
+    "title": "Jonas Gassenmeyer",
+    "text": " Table of Contents Jonas Gassenmeyer Links Jonas Gassenmeyer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Jonas könnte den ganzen Tag über relationale Datenbanken reden. Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte. Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel. Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten. Links Mastodon Profile X (formerly known as Twitter) Profile "
 },
 
 {
@@ -370,78 +370,14 @@ var documents = [
 
 {
     "id": 46,
-    "uri": "blog/profiles/Marcus-Suemnick.html",
+    "uri": "blog/profiles/Rene-Hoffmann.html",
     "menu": "Autoren",
-    "title": "Marcus Sümnick",
-    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+    "title": "René Hoffmann",
+    "text": " Table of Contents René Hoffmann Links René Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } René Hoffmann bringt über 25 Jahre Erfahrung in der Beratung und Software-Entwicklung mit. In verschiedenen Fach- und Führungsrollen, von Software-Entwickler und -Architekt bis hin zur Unternehmens- und Organisationsentwicklung, hat er umfangreiche Erfahrungen an der Schnittstelle zwischen Business und IT in großen Organisationen gesammelt. Ein strategischer Weitblick ist ihm wichtig, um zukunftsorientierte Digitalisierungs- und Veränderungsinitiativen zu starten, die Menschen in Business und IT zusammenbringen. Aktuell widmet er sich mit großer Begeisterung den Möglichkeiten generativer KI und deren transformativem Potenzial für Geschäftsprozesse und IT. Links LinkedIn Profile "
 },
 
 {
     "id": 47,
-    "uri": "blog/profiles/Konrad-Winkler.html",
-    "menu": "Autoren",
-    "title": "Konrad Winkler",
-    "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 48,
-    "uri": "blog/profiles/Johannes-Dienst.html",
-    "menu": "Autoren",
-    "title": "Johannes Dienst",
-    "text": " Table of Contents Johannes Dienst Johannes Dienst span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 49,
-    "uri": "blog/profiles/Bernd-Schimmer.html",
-    "menu": "Autoren",
-    "title": "Bernd Schimmer",
-    "text": " Table of Contents Bernd Schimmer Bernd Schimmer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bernd is an experienced frontend developer and Agility Master at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . "
-},
-
-{
-    "id": 50,
-    "uri": "blog/profiles/Gualter-Barbas-Baptista.html",
-    "menu": "Autoren",
-    "title": "Gualter Barbas Baptista",
-    "text": " Table of Contents Gualter Barbas Baptista Links Gualter Barbas Baptista span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Lead Consultant for Platform Strategy and Enablement Gualter is a platform strategist and enabler with over 25 years experience in Linux and FLOSS. He worked as a Product Owner within multiple platform teams. Driven by a passion for sustainability, Gualter draws from his unique academic journey in environmental engineering, complemented by a PhD in ecological economics. He is dedicated to shedding light on the ecological impact of digitalization and empowering developers to make informed decisions for sustainable practices in their daily work. Links LinkedIn Profile "
-},
-
-{
-    "id": 51,
-    "uri": "blog/profiles/Sascha-Wolter.html",
-    "menu": "Autoren",
-    "title": "Sascha Wolter",
-    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Persönliche Website "
-},
-
-{
-    "id": 52,
-    "uri": "blog/profiles/Philippe-Rieffe.html",
-    "menu": "Autoren",
-    "title": "Philippe Rieffe",
-    "text": " Table of Contents Philippe Rieffe Philippe Rieffe span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
-},
-
-{
-    "id": 53,
-    "uri": "blog/profiles/Oliver-Hammer.html",
-    "menu": "Autoren",
-    "title": "Oliver Hammer",
-    "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Oliver Hammer ist Product Owner einer Einheit mit 32 Teams und 300 Mitarbeitern bei der DB Systel, dem Digitalpartner der DB AG. Er arbeitet seit über 25 Jahren in der Beratung und Software-Entwicklung. In den unterschiedlichsten Rollen vom Entwickler über Architekten, fachlichem Berater und Projektleiter hat er viel Erfahrungen an der Schnittstelle zwischen Business und Technologie in großen Projekten und der Zusammenarbeit in Teams und Organisationen und Vorgehensmodellen gesammelt. "
-},
-
-{
-    "id": 54,
-    "uri": "blog/profiles/Jonas-Gassenmeyer.html",
-    "menu": "Autoren",
-    "title": "Jonas Gassenmeyer",
-    "text": " Table of Contents Jonas Gassenmeyer Links Jonas Gassenmeyer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Jonas könnte den ganzen Tag über relationale Datenbanken reden. Er ist froh, dass er diese Leidenschaft auch zu einem Beruf machen konnte. Nach einigen Jahren in der Beratung als Datenbank-Entwickler arbeitet er nun für die Bahnstromer bei der DB Systel. Dort sind sowohl Oracle als auch PostgreSQL Datenbanken im Betrieb, die Telemetrie-Daten der elektrisch betriebenen Loks in Europa speichern und verarbeiten. Links Mastodon Profile X (formerly known as Twitter) Profile "
-},
-
-{
-    "id": 55,
     "uri": "blog/profiles/Joachim-Schirrmacher.html",
     "menu": "Autoren",
     "title": "Joachim Schirrmacher",
@@ -449,23 +385,15 @@ var documents = [
 },
 
 {
-    "id": 56,
-    "uri": "blog/profiles/Dr.-Martin-Strunk.html",
+    "id": 48,
+    "uri": "blog/profiles/Bertram-Fey.html",
     "menu": "Autoren",
-    "title": "Dr. Martin Strunk",
-    "text": " Table of Contents Dr. Martin Strunk span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Dr. Martin Strunk Dr. Martin Strunk has been working for more than 22 years in different expert and management roles in development and operations at DB Systel. In 2018 Dr. Martin Strunk initiated and lead the DevOps-Transformation Project “Two Deployments per Day (2D/d)” at DB Systel, where the technical, organizational and cultural foundations for a DevOps IT delivery model have been created. Currently, he leads as an Agility Master the Customer Experience Unit of DB Systel with more than half a dozen engineering teams that work according to the “You build it, you run it”-paradigm. LinkedIn Xing "
+    "title": "Bertram Fey",
+    "text": " Table of Contents Bertram Fey Lieblings-OpenSource Eigene Open Source Bertram Fey span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bertram ist Technologie Veteran bei der DB Systel GmbH bei den Platform Enablern und den Software Engineering Advocates. Er macht am liebsten aus komplizierten Architekturen einfache. Oder zumindest übersichtliche. Nebenher kümmert er sich um Inner Source, die DB Architektur-Katas und - falls Zeit bleibt - um API-Design. Lieblings-OpenSource PlantUML Fly By Wire Simulation Dark HTTPd Mediathek View Eigene Open Source Bertrams eigene OpenSource-Projekte sind zum Beispiel Fintenfisch - das Degen Trainingsbuch Mediatheken DLNA Bridge "
 },
 
 {
-    "id": 57,
-    "uri": "blog/profiles/Danny-Koppenhagen.html",
-    "menu": "Autoren",
-    "title": "Danny Koppenhagen",
-    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
-},
-
-{
-    "id": 58,
+    "id": 49,
     "uri": "blog/profiles/buildIT.html",
     "menu": "Autoren",
     "title": "BuildIT",
@@ -473,7 +401,55 @@ var documents = [
 },
 
 {
-    "id": 59,
+    "id": 50,
+    "uri": "blog/profiles/Sven-Hesse.html",
+    "menu": "Autoren",
+    "title": "Sven Hesse",
+    "text": " Table of Contents Sven Hesse Links Sven Hesse span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sven arbeitet als DevOps-Engineer bei der DB Systel GmbH. Seine Schwerpunkte liegen im Bereich der Entwicklung und Betreuung von APIs rund um Zug-Daten sowie Shared-Mobility. Links Persönliche Website "
+},
+
+{
+    "id": 51,
+    "uri": "blog/profiles/Carsten-Hoffmann.html",
+    "menu": "Autoren",
+    "title": "Carsten Hoffmann",
+    "text": " Table of Contents Carsten Hoffmann Links Carsten Hoffmann span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Carsten is an experienced software architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . As a member of a DevOps-Team he is a strong believer, that an architect should be close to the development team in order to create and evolve a software architecture, that meets the business needs. He is a conference speaker and held talks at internal and external conferences, like the DB TechCon and the IT-Tage . He is an Open-Source enthusiast and maintainer of the Trivy Vulnerability Explorer . Links LinkedIn Profile Mastodon Profile GitHub Profile "
+},
+
+{
+    "id": 52,
+    "uri": "blog/profiles/Danny-Koppenhagen.html",
+    "menu": "Autoren",
+    "title": "Danny Koppenhagen",
+    "text": " Table of Contents Danny Koppenhagen Links Danny Koppenhagen span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Danny is an experienced frontend architect at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . He develops and architects’ enterprise web applications within a DevOps team facing the micro mobility market. Furthermore, he is an open-source enthusiast and one of the authors of the popular German-language Angular book . Links LinkedIn Profile Mastodon Profile X (formerly known as Twitter) Profile GitHub Profile Personal Website "
+},
+
+{
+    "id": 53,
+    "uri": "blog/profiles/Tim-Engeleiter.html",
+    "menu": "Autoren",
+    "title": "Tim Engeleiter",
+    "text": " Table of Contents Tim Engeleiter Tim Engeleiter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } image: "
+},
+
+{
+    "id": 54,
+    "uri": "blog/profiles/Maximilian-Franzke.html",
+    "menu": "Autoren",
+    "title": "Maximilian Franzke",
+    "text": " Table of Contents Maximilian Franzke Links Maximilian Franzke span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Maximilian ist ein erfahrener Softwarearchitekt und Development Lead des DB UX Design System Core bei der DB Systel GmbH, dem Digitalpartner der Deutschen Bahn AG. Er konzipiert und entwickelt Customer und Enterprise Web Anwendungen, und ist spezialisiert im herausfordernden Umfeld von High Performance Websites und Digitaler Barrierefreiheit. Des Weiteren ist er ein Open-Source Enthusiast und an zahlreichen Web-bezogenen Lösungen beteiligt. Links X (formerly known as Twitter) Profile GitHub Profile "
+},
+
+{
+    "id": 55,
+    "uri": "blog/profiles/Oliver-Hammer.html",
+    "menu": "Autoren",
+    "title": "Oliver Hammer",
+    "text": " Table of Contents Oliver Hammer Oliver Hammer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Oliver Hammer ist Product Owner einer Einheit mit 32 Teams und 300 Mitarbeitern bei der DB Systel, dem Digitalpartner der DB AG. Er arbeitet seit über 25 Jahren in der Beratung und Software-Entwicklung. In den unterschiedlichsten Rollen vom Entwickler über Architekten, fachlichem Berater und Projektleiter hat er viel Erfahrungen an der Schnittstelle zwischen Business und Technologie in großen Projekten und der Zusammenarbeit in Teams und Organisationen und Vorgehensmodellen gesammelt. "
+},
+
+{
+    "id": 56,
     "uri": "blog/profiles/Stefan-Gruendling.html",
     "menu": "Autoren",
     "title": "Stefan Gründling",
@@ -481,7 +457,23 @@ var documents = [
 },
 
 {
-    "id": 60,
+    "id": 57,
+    "uri": "blog/profiles/Sascha-Wolter.html",
+    "menu": "Autoren",
+    "title": "Sascha Wolter",
+    "text": " Table of Contents Sascha Wolter Links Sascha Wolter span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Sascha Wolter ist Experte für die Planung und Umsetzung von geräteübergreifenden Anwendungen. Als solcher begeistert er sich für das Benutzererlebnis und erkundet verbesserte multimodale Interaktionsformen zwischen Mensch und Maschine – u. a. in Form von Konversation über Text (Chatbots) und Sprache (auch als Alexa bekannt). Bereits seit 1995 arbeitet er als Berater, Dozent, Sprecher und Autor. In seiner Freizeit begeistert er sich für Bergsport von Wandern bis Ski und genießt guten italienischen Kaffee. Er ist Chief Advisor für Conversational AI bei DB Systel, TecCo Lead HMI bei Deutsche Bahn und er engagiert er sich als Vorstandsmitglied im Arbeitskreis Usability &amp; User Experience der BITKOM. Für sein Developer- und Community-Engagement wurde er mehrfach als Google Developer Expert für den Google Assistant (GDE) ausgezeichnet. Vorher war er Senior UX Consultant und Principal Technology Evangelist bei der Conversational AI Platform Company Cognigy, arbeitete er als Senior Developer Evangelist bei der Deutschen Telekom (u. a. Smart Home), als Senior Technology Evangelist für Alexa bei Amazon und als Freiberufler. Links LinkedIn Persönliche Website "
+},
+
+{
+    "id": 58,
+    "uri": "blog/profiles/Marcus-Suemnick.html",
+    "menu": "Autoren",
+    "title": "Marcus Sümnick",
+    "text": " Table of Contents Marcus Sümnick Marcus Sümnick span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 59,
     "uri": "blog/profiles/Christian-Fischer.html",
     "menu": "Autoren",
     "title": "Christian Fischer",
@@ -489,7 +481,23 @@ var documents = [
 },
 
 {
+    "id": 60,
+    "uri": "blog/profiles/Bernd-Schimmer.html",
+    "menu": "Autoren",
+    "title": "Bernd Schimmer",
+    "text": " Table of Contents Bernd Schimmer Bernd Schimmer span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } Bernd is an experienced frontend developer and Agility Master at DB Systel GmbH which is the digital partner of the biggest German railway company Deutsche Bahn . "
+},
+
+{
     "id": 61,
+    "uri": "blog/profiles/Konrad-Winkler.html",
+    "menu": "Autoren",
+    "title": "Konrad Winkler",
+    "text": " Table of Contents Konrad Winkler Konrad Winkler span.profile img { border: 5px solid #288ABF; border-radius: 10px; max-width: 100px; } "
+},
+
+{
+    "id": 62,
     "uri": "lunrjsindex.html",
     "menu": "null",
     "title": "null",

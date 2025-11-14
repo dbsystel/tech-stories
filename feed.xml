@@ -6,9 +6,42 @@
     <atom:link href="http://jbake.org/feed.xml" rel="self" type="application/rss+xml" />
     <description>JBake Bootstrap Template</description>
     <language>en-gb</language>
-    <pubDate>Mon, 10 Mar 2025 19:37:41 +0000</pubDate>
-    <lastBuildDate>Mon, 10 Mar 2025 19:37:41 +0000</lastBuildDate>
+    <pubDate>Fri, 14 Nov 2025 08:51:40 +0000</pubDate>
+    <lastBuildDate>Fri, 14 Nov 2025 08:51:40 +0000</lastBuildDate>
 
+    
+    <item>
+      <title>DevOps-Aufteilung</title>
+      <link>http://jbake.org/blog/2025/2025-07-10-devops-aufteilung.html</link>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2025/2025-07-10-devops-aufteilung.html</guid>
+      <description>
+      &lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_devops_über_mehrere_teams_kann_das_funktionieren&quot;&gt;DevOps über mehrere Teams: kann das funktionieren?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- endtoc --&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_devops_über_mehrere_teams_kann_das_funktionieren&quot;&gt;DevOps über mehrere Teams: kann das funktionieren?&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Wie kann DevOps über mehrere Teams hinweg skaliert werden, ohne die Autonomie der Teams zu gefährden?
+In diesem Vortag teile ich meine Erfahrung aus der Arbeit in einem DevOps-Team der DB Systel GmbH, das operative Tätigkeiten für gemeinsam genutzte Infrastruktur mit anderen Teams teilt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In unseren organisch gewachsenen Team-Strukturen wurden viele operative Aufgaben redundant durchgeführt.
+Daher haben wir nach einfachen Lösungen gesucht, solche Aufgaben über mehrere Teams zu verteilen, ohne deren Lieferfähigkeit und Eigenständigkeit zu beeinflussen.
+Neben der Zusammenlegung von Infrastruktur und Automatisierung konnten wir auch flexible Zusammenarbeitsmodelle entwickeln.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Der Vortrag zeigt, welche Überlegungen unserem skalierten DevOps-Modell zugrunde liegen, welche Ergebnisse wir erreicht haben und an welchen Stellen dieses Vorgehen seine Grenzen erreicht.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+	  </description>
+    </item>
     
     <item>
       <title>Gestaltung digitaler Lösungen</title>
@@ -190,7 +223,7 @@ But let&amp;#8217;s start step-by-step by setting up a very simple Angular demo 
 &lt;/div&gt;
 &lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-076fd1cc3f0d23b6316b3419307ae751.png&quot; alt=&quot;Diagram&quot; width=&quot;663&quot; height=&quot;443&quot;&gt;
+&lt;img src=&quot;/images/diag-076fd1cc3f0d23b6316b3419307ae751.png&quot; alt=&quot;Diagram&quot; width=&quot;680&quot; height=&quot;443&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -910,8 +943,9 @@ Ich werde mit einem Rückblick auf die Geschichte von Inner Source bei der DB be
 &lt;h3 id=&quot;_slides&quot;&gt;Slides&lt;/h3&gt;
 &lt;table class=&quot;tableblock frame-all grid-all stretch&quot;&gt;
 &lt;colgroup&gt;
-&lt;col style=&quot;width: 50%;&quot;&gt;
-&lt;col style=&quot;width: 50%;&quot;&gt;
+&lt;col style=&quot;width: 33.3333%;&quot;&gt;
+&lt;col style=&quot;width: 33.3333%;&quot;&gt;
+&lt;col style=&quot;width: 33.3334%;&quot;&gt;
 &lt;/colgroup&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
@@ -924,6 +958,11 @@ Ich werde mit einem Rückblick auf die Geschichte von Inner Source bei der DB be
 &lt;/div&gt;
 &lt;iframe class=&quot;speakerdeck-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://speakerdeck.com/player/70314151acd0429db3cf7a7c5aaa9266&quot; title=&quot;Inner Source @ DB: A Story About Open Source Practices at Deutsche Bahn&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;
 &lt;!--iframe style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; width: 100%; height: auto;&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/VI33buvdomE?si=DJvB9MJoQpmYNcMT&quot; title=&quot;Youtube Video Player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe--&gt;&lt;/div&gt;&lt;/td&gt;
+&lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;&lt;strong&gt;English Video&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;iframe class=&quot;video-iframe&quot; frameborder=&quot;0&quot; src=&quot;https://www.youtube-nocookie.com/embed/9e-K9G0O2DQ?si=sucnGmVocgsFKIey&quot; title=&quot;InnerSource@DB: A Story About Open Source Practices at Deutsche Bahn
+ mit Carsten Hoffmann&quot; allowfullscreen=&quot;true&quot; style=&quot;border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px;  width: 100%; height: auto; aspect-ratio: 560 / 315;&quot; data-ratio=&quot;1.7777777777777777&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -3847,7 +3886,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-f9c1a40657c8f5bf22f6862687071035.png&quot; alt=&quot;Diagram&quot; width=&quot;373&quot; height=&quot;160&quot;&gt;
+&lt;img src=&quot;/images/diag-f9c1a40657c8f5bf22f6862687071035.png&quot; alt=&quot;Diagram&quot; width=&quot;372&quot; height=&quot;160&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -3883,7 +3922,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-c3a8ead5c9df4992e1c834a5128bd7d6.png&quot; alt=&quot;Diagram&quot; width=&quot;373&quot; height=&quot;203&quot;&gt;
+&lt;img src=&quot;/images/diag-c3a8ead5c9df4992e1c834a5128bd7d6.png&quot; alt=&quot;Diagram&quot; width=&quot;372&quot; height=&quot;203&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -3922,7 +3961,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-238f8b73f33f13606ea63993a15e9fad.png&quot; alt=&quot;Diagram&quot; width=&quot;373&quot; height=&quot;232&quot;&gt;
+&lt;img src=&quot;/images/diag-238f8b73f33f13606ea63993a15e9fad.png&quot; alt=&quot;Diagram&quot; width=&quot;372&quot; height=&quot;232&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -3988,7 +4027,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-69a88801b07d3f3a5533fe729f017f52.png&quot; alt=&quot;Diagram&quot; width=&quot;373&quot; height=&quot;357&quot;&gt;
+&lt;img src=&quot;/images/diag-69a88801b07d3f3a5533fe729f017f52.png&quot; alt=&quot;Diagram&quot; width=&quot;372&quot; height=&quot;357&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -4041,7 +4080,7 @@ endlegend
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;td class=&quot;tableblock halign-left valign-top&quot;&gt;&lt;div class=&quot;content&quot;&gt;&lt;div class=&quot;imageblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;img src=&quot;/images/diag-1893f34850155c3870866563e0efca44.png&quot; alt=&quot;Diagram&quot; width=&quot;373&quot; height=&quot;309&quot;&gt;
+&lt;img src=&quot;/images/diag-1893f34850155c3870866563e0efca44.png&quot; alt=&quot;Diagram&quot; width=&quot;372&quot; height=&quot;309&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;
